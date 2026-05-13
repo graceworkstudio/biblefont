@@ -1,13 +1,11 @@
-const CACHE_NAME = 'biblezoom-v3.0.0';
+const CACHE_NAME = 'biblezoom-v3.1.0'; // 버전 변경 → 강제 캐시 갱신
 const PRECACHE_ASSETS = [
-  '/',
-  '/index.html',
   '/manifest.json',
   '/icon-192.png',
   '/icon-512.png',
 ];
 
-// ① Install: 핵심 파일을 즉시 캐시
+// Install: 정적 에셋만 캐시 (index.html 제외)
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
@@ -16,7 +14,7 @@ self.addEventListener('install', (event) => {
   );
 });
 
-// ② Activate: 구버전 캐시 삭제
+// Activate: 구버전 캐시 삭제 + 즉시 모든 클라이언트 제어
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys().then((keys) =>
@@ -27,29 +25,46 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// ③ Fetch: 캐시 우선(Cache-First) + 백그라운드 업데이트 (Stale-While-Revalidate)
+// Fetch 전략:
+// - index.html → 항상 네트워크 우선 (Network First) → 최신 GA 코드 보장
+// - JS/CSS 해시 에셋 → 캐시 우선 (Cache First) → 빠른 로딩
+// - 외부 도메인 → 통과 (GA, Kakao SDK 등)
 self.addEventListener('fetch', (event) => {
-  // 외부 요청(Google Fonts, Analytics, Kakao SDK)은 캐시 안 함
   const url = new URL(event.request.url);
+
+  // 외부 요청은 캐시하지 않음
   if (url.origin !== self.location.origin) return;
 
-  event.respondWith(
-    caches.match(event.request).then((cachedResponse) => {
-      const networkFetch = fetch(event.request).then((networkResponse) => {
-        if (networkResponse && networkResponse.status === 200 && networkResponse.type !== 'opaque') {
-          const responseClone = networkResponse.clone();
-          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, responseClone));
-        }
-        return networkResponse;
-      }).catch(() => cachedResponse);
+  const isHTML = url.pathname === '/' || url.pathname.endsWith('.html');
+  const isHashedAsset = /\/assets\/.*\.[a-f0-9]{8}\.(js|css)$/.test(url.pathname);
 
-      // 캐시 있으면 즉시 반환, 동시에 백그라운드에서 최신 버전 업데이트
-      return cachedResponse || networkFetch;
-    })
-  );
+  if (isHTML) {
+    // Network First: 항상 서버에서 최신 HTML 가져오기
+    event.respondWith(
+      fetch(event.request)
+        .then((response) => {
+          const clone = response.clone();
+          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone));
+          return response;
+        })
+        .catch(() => caches.match(event.request))
+    );
+  } else if (isHashedAsset) {
+    // Cache First: 해시된 JS/CSS는 변경되지 않으므로 캐시 우선
+    event.respondWith(
+      caches.match(event.request).then((cached) => {
+        if (cached) return cached;
+        return fetch(event.request).then((response) => {
+          const clone = response.clone();
+          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone));
+          return response;
+        });
+      })
+    );
+  }
+  // 그 외: 기본 네트워크 요청 (SW 개입 없음)
 });
 
-// 메시지 처리
 self.addEventListener('message', (event) => {
   if (event.data && event.data.type === 'SKIP_WAITING') {
     self.skipWaiting();
