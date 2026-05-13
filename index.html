@@ -28,16 +28,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@700&family=Nanum+Myeongjo:wght@400;700;800&display=swap" rel="stylesheet">
     <!-- 카카오톡 공유 SDK -->
     <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js" crossorigin="anonymous"></script>
-    <!-- 구글 애널리틱스 통계 카메라 시작 -->
+    <!-- 구글 애널리틱스 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-45W7QGLF8X"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      window.gtag = function(){ window.dataLayer.push(arguments); };
-      window.gtag('js', new Date());
-
-      window.gtag('config', 'G-45W7QGLF8X', { send_page_view: false });
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-45W7QGLF8X');
     </script>
-    <!-- 구글 애널리틱스 통계 카메라 끝 -->
     <style>
       /* iOS 블랙 스크린 방지: html 요소에 배경색 즉시 적용 */
       html {

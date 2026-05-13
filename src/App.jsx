@@ -82,26 +82,25 @@ const App = () => {
     }
   }, []);
 
-  // 구글 애널리틱스 SPA 실시간 통계 (화면/탭 변경 시)
+  // 구글 애널리틱스 SPA 화면 전환 추적
   useEffect(() => {
-    if (typeof window.gtag === 'function') {
-      let pagePath = '/';
-      let pageTitle = '바이블줌 BibleZoom - 홈';
-      
-      if (showBibleList) {
-         pagePath = `/bible-list?tab=${activeTab}`;
-         pageTitle = `바이블줌 BibleZoom - 성경 목록 (${activeTab} 탭)`;
-      } else if (selectedItem) {
-         pagePath = `/product-modal?model=${encodeURIComponent(selectedItem.model)}`;
-         pageTitle = `바이블줌 BibleZoom - 상세 (${selectedItem.model})`;
-      }
+    if (typeof gtag !== 'function') return;
+    let pageTitle = '바이블줌 BibleZoom - 홈';
+    let pagePath = '/';
 
-      window.gtag('config', 'G-45W7QGLF8X', {
-        page_title: pageTitle,
-        page_location: window.location.href,
-        page_path: pagePath
-      });
+    if (showBibleList) {
+       pagePath = `/bible-list?tab=${activeTab}`;
+       pageTitle = `바이블줌 BibleZoom - 성경 목록 (${activeTab} 탭)`;
+    } else if (selectedItem) {
+       pagePath = `/product-modal?model=${encodeURIComponent(selectedItem.model)}`;
+       pageTitle = `바이블줌 BibleZoom - 상세 (${selectedItem.model})`;
     }
+
+    gtag('event', 'page_view', {
+      page_title: pageTitle,
+      page_location: window.location.href,
+      page_path: pagePath,
+    });
   }, [activeTab, showBibleList, selectedItem]);
 
   const closeUpdateNotice = () => {
