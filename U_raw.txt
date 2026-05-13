@@ -1,0 +1,100 @@
+    U: { name: "대한기독교서회", items: [
+      { 
+        model: "NKR83BU", 
+        size: "특대", 
+        mm: 4.9, 
+        type: "standard",
+        variants: [
+          { label: "특대합본/천연/지퍼/블루블랙", img: "https://chhouse.kr/web/product/big/202404/798e54d2d0c2bb1e649b7cff9129f05e.jpg", url: "https://chhouse.kr/product/detail.html?product_no=38198&cate_no=1366&display_group=1", originalPrice: 86000, salePrice: 77400 },
+          { label: "특대합본/천연/지퍼/다크브라운", img: "https://chhouse.kr/web/product/big/202404/3b2171cd06d50f2fb603b039a570d4ff.jpg", url: "https://chhouse.kr/product/detail.html?product_no=18288&cate_no=1366&display_group=1", originalPrice: 86000, salePrice: 77400 },
+          { label: "특대합본/천연/지퍼/모카브라운", img: "https://chhouse.kr/web/product/big/202405/0788f8b5209ae565e3e5686c1f733501.jpg", url: "https://chhouse.kr/product/detail.html?product_no=42583&cate_no=1366&display_group=1", originalPrice: 86000, salePrice: 77400 },
+          { label: "특대합본/천연/지퍼/버건디", img: "https://chhouse.kr/web/product/big/202404/da866f1f52693bde237cb0e751864fdd.jpg", url: "https://chhouse.kr/product/detail.html?product_no=18291&cate_no=1366&display_group=1", originalPrice: 86000, salePrice: 77400 },
+          { label: "특대합본/PU/지퍼/블루블랙", img: "https://chhouse.kr/web/product/big/202404/cd8d4db5b2dc355759b3d481fb802789.jpg", url: "https://chhouse.kr/product/detail.html?product_no=42532&cate_no=1366&display_group=1", originalPrice: 75000, salePrice: 67500 },
+          { label: "특대합본/PU/지퍼/버건디", img: "https://chhouse.kr/web/product/big/202404/8ee5bc290c4aacdc54f06ce060fab701.jpg", url: "https://chhouse.kr/product/detail.html?product_no=42533&cate_no=1366&display_group=1", originalPrice: 75000, salePrice: 67500 }
+        ]
+      },
+      { 
+        model: "NKR73EBU", 
+        size: "대", 
+        mm: 4.6, 
+        type: "standard",
+        variants: [
+          { label: "대합본/천연/지퍼/블루블랙", img: "https://chhouse.kr/web/product/big/202404/7593d868ac88fb2999cd688e72408d51.jpg", url: "https://chhouse.kr/product/detail.html?product_no=46840&cate_no=1380&display_group=1", originalPrice: 83000, salePrice: 74700 },
+          { label: "대합본/천연/지퍼/버건디", img: "https://chhouse.kr/web/product/big/202404/e18f4f0af7d05ed5016f55c50b2a6e30.jpg", url: "https://chhouse.kr/product/detail.html?product_no=46761&cate_no=1380&display_group=1", originalPrice: 83000, salePrice: 74700 },
+          { label: "대합본/PU/지퍼/버건디", img: "https://chhouse.kr/web/product/big/202405/fefeaa86a6b98715ef3102ae3d8c0759.jpg", url: "https://chhouse.kr/product/detail.html?product_no=42703&cate_no=1380&display_group=1", originalPrice: 67000, salePrice: 60300 },
+          { label: "대합본/PU/지퍼/블루블랙", img: "https://chhouse.kr/web/product/big/202405/24ba1fb05f18c33ae82bc64445ab8325.jpg", url: "https://chhouse.kr/product/detail.html?product_no=42702&cate_no=1380&display_group=1", originalPrice: 67000, salePrice: 60300 }
+        ]
+      },
+      { 
+        model: "NKR73BU", 
+        size: "중", 
+        mm: 4.4, 
+        type: "standard",
+        variants: [
+          { label: "중합본/천연/지퍼/버건디", img: "https://chhouse.kr/web/product/big/202405/f0ae81e70643d1f3f494c63078cf256c.jpg", url: "https://chhouse.kr/product/detail.html?product_no=18285&cate_no=1353&display_group=1", originalPrice: 75000, salePrice: 67500 },
+          { label: "중합본/천연/지퍼/블루블랙", img: "https://chhouse.kr/web/product/big/202405/b5a1668be5dafc43a97bee8195f6c16a.jpg", url: "https://chhouse.kr/product/detail.html?product_no=38136&cate_no=1353&display_group=1", originalPrice: 75000, salePrice: 67500 },
+          { label: "중합본/PU/지퍼/다크브라운", img: "https://chhouse.kr/web/product/big/202405/ccba522590d46e7724a5ca97abbdbdf2.jpg", url: "https://chhouse.kr/product/detail.html?product_no=42809&cate_no=1353&display_group=1", originalPrice: 61000, salePrice: 54900 },
+          { label: "중합본/PU/지퍼/블루블랙", img: "https://chhouse.kr/web/product/big/202405/145b6f0dcdb4cfb8dc9dc2ba4e71551e.jpg", url: "https://chhouse.kr/product/detail.html?product_no=42807&cate_no=1353&display_group=1", originalPrice: 61000, salePrice: 54900 }
+        ]
+      },
+      { 
+        model: "NKR83TU", 
+        size: "특대", 
+        mm: 4.2, 
+        type: "standard",
+        variants: [
+          { label: "특대합본/천연/지퍼/블루블랙", img: "https://chhouse.kr/web/product/big/202405/26c8c8fffa5ad1bc00a16b4fe709f303.jpg", url: "https://chhouse.kr/product/detail.html?product_no=43118&cate_no=1366&display_group=1", originalPrice: 70000, salePrice: 63000 },
+          { label: "특대합본/천연/지퍼/버건디", img: "https://chhouse.kr/web/product/big/202405/d44be0b0fb0d7825db617fbbebe11918.jpg", url: "https://chhouse.kr/product/detail.html?product_no=43119&cate_no=1366&display_group=1", originalPrice: 70000, salePrice: 63000 },
+          { label: "특대합본/PU/지퍼/모카브라운", img: "https://chhouse.kr/web/product/big/202405/fc3f077da1cbaa9a3e0fcfacd51e6a22.jpg", url: "https://chhouse.kr/product/detail.html?product_no=43121&cate_no=1366&display_group=1", originalPrice: 55000, salePrice: 49500 },
+          { label: "특대합본/PU/지퍼/다크브라운", img: "https://chhouse.kr/web/product/big/202405/ec4574ff093f30754031d246f8457be7.jpg", url: "https://chhouse.kr/product/detail.html?product_no=43120&cate_no=1366&display_group=1", originalPrice: 55000, salePrice: 49500 }
+        ]
+      },
+      { 
+        model: "NKR73THU", 
+        size: "중", 
+        mm: 3.6, 
+        type: "standard",
+        variants: [
+          { label: "중합본/천연/지퍼/딥버건디", img: "https://chhouse.kr/web/product/big/202405/0cd420aad8f14bdc0dd37c6af061099a.jpg", url: "https://chhouse.kr/product/detail.html?product_no=37960&cate_no=1353&display_group=1", originalPrice: 60000, salePrice: 54000 },
+          { label: "중합본/천연/지퍼/카키그레이", img: "https://chhouse.kr/web/product/big/202405/bf5c102577effc64962ca8ae0d9d0453.jpg", url: "https://chhouse.kr/product/detail.html?product_no=42148&cate_no=1353&display_group=1", originalPrice: 60000, salePrice: 54000 },
+          { label: "중합본/천연/지퍼/블루블랙", img: "https://chhouse.kr/web/product/big/202405/f54461feb24e8fe8706b282c2fd274c3.jpg", url: "https://chhouse.kr/product/detail.html?product_no=37959&cate_no=1353&display_group=1", originalPrice: 60000, salePrice: 54000 },
+          { label: "중합본/PU/지퍼/블루블랙", img: "https://chhouse.kr/web/product/big/202507/f279dcf2b1d96c3e7578b479270af86b.jpg", url: "https://chhouse.kr/product/detail.html?product_no=54240&cate_no=1353&display_group=1", originalPrice: 49000, salePrice: 44100 },
+          { label: "중합본/PU/지퍼/다크브라운", img: "https://chhouse.kr/web/product/big/202507/d03278e260053fa67d67330d4bf196ad.jpg", url: "https://chhouse.kr/product/detail.html?product_no=54241&cate_no=1353&display_group=1", originalPrice: 49000, salePrice: 44100 },
+          { label: "중합본/PU/무지퍼/블루블랙", img: "https://chhouse.kr/web/product/big/202507/b5f078893b67569d5a84e0733e3f316c.jpg", url: "https://chhouse.kr/product/detail.html?product_no=54238&cate_no=1353&display_group=1", originalPrice: 42500, salePrice: 38250 },
+          { label: "중합본/PU/무지퍼/다크브라운", img: "https://chhouse.kr/web/product/big/202507/49f336e185f530daf9c1a239b29e326f.jpg", url: "https://chhouse.kr/product/detail.html?product_no=54239&cate_no=1353&display_group=1", originalPrice: 42500, salePrice: 38250 }
+        ]
+      },
+      { 
+        model: "NKR63EXU", 
+        size: "소", 
+        mm: 3.5, 
+        type: "standard",
+        variants: [
+          { label: "소합본/천연/지퍼/블루블랙", img: "https://chhouse.kr/web/product/big/202404/2801c02922b067389801b5d6987870e0.jpg", url: "https://chhouse.kr/product/detail.html?product_no=47031&cate_no=1408&display_group=1", originalPrice: 59000, salePrice: 53100 },
+          { label: "소합본/천연/지퍼/버건디", img: "https://chhouse.kr/web/product/big/202404/825afeea6a25b4c82404ff5a4839c70b.jpg", url: "https://chhouse.kr/product/detail.html?product_no=47032&cate_no=1408&display_group=1", originalPrice: 59000, salePrice: 53100 },
+          { label: "소합본/천연/지퍼/크림", img: "https://chhouse.kr/web/product/big/202404/bc5f9e5b5c1aeddccac327052e6a0cb3.jpg", url: "https://chhouse.kr/product/detail.html?product_no=47033&cate_no=1408&display_group=1", originalPrice: 59000, salePrice: 53100 },
+          { label: "소합본/PU/지퍼/라벤더", img: "https://chhouse.kr/web/product/big/202404/86b30fa2d7a58f8c19933e197f0aa7cf.jpg", url: "https://chhouse.kr/product/detail.html?product_no=47034&cate_no=1408&display_group=1", originalPrice: 47000, salePrice: 42300 },
+          { label: "소합본/PU/지퍼/인디고블루", img: "https://chhouse.kr/web/product/big/202404/ed4114487f28caec6f6dee209bdc663a.jpg", url: "https://chhouse.kr/product/detail.html?product_no=47030&cate_no=1408&display_group=1", originalPrice: 47000, salePrice: 42300 }
+        ]
+      },
+      { 
+        model: "NKR63ETHU", 
+        size: "소", 
+        mm: 3.1, 
+        type: "standard",
+        variants: [
+          { label: "소합본/천연/지퍼/크림", img: "https://chhouse.kr/web/product/big/202404/4a69a10db89a156dc47e79110ca210e3.jpg", url: "https://chhouse.kr/product/detail.html?product_no=46924&cate_no=1408&display_group=1", originalPrice: 53000, salePrice: 47700 },
+          { label: "소합본/천연/지펴/블루스카이", img: "https://chhouse.kr/web/product/big/202404/e9e541dab8d02b9ba89fa5828bd191b2.jpg", url: "https://chhouse.kr/product/detail.html?product_no=39850&cate_no=1408&display_group=1", originalPrice: 53000, salePrice: 47700 },
+          { label: "소합본/천연/지펴/블루블랙", img: "https://chhouse.kr/web/product/big/202404/1a54046cc98c69b09e9dda0e5ed6de82.jpg", url: "https://chhouse.kr/product/detail.html?product_no=39851&cate_no=1408&display_group=1", originalPrice: 53000, salePrice: 47700 },
+          { label: "소합본/PU/지퍼/트윙클골드", img: "https://chhouse.kr/web/product/big/202405/6a62a58b228fd5229ba9ca1aeeb18bb5.jpg", url: "https://chhouse.kr/product/detail.html?product_no=44077&cate_no=1408&display_group=1", originalPrice: 37000, salePrice: 33300 }
+        ]
+      },
+      // 스터디 데이터
+      { model: "포커스 성경", size: "특소", mm: 2.6, type: "study" },
+      { model: "포커스 성경", size: "초미니", mm: 2.1, type: "study" },
+      { model: "프라임 주석 성경", size: "중", mm: 4.1, type: "study" },
+      { model: "프라임 주석 성경", size: "대", mm: 4.5, type: "study" },
+      { model: "취리히바이블", size: "소", mm: 3.0, type: "study" },
+      { model: "취리히바이블", size: "특중", mm: 3.5, type: "study" },
+      { model: "취리히바이블", size: "특대", mm: 4.0, type: "study" }
+    ]},

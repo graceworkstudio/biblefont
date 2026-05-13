@@ -1,0 +1,24 @@
+{
+  "name": "바이블줌 BibleZoom",
+  "short_name": "바이블줌",
+  "description": "돋보기 없이 고르는 큰 글자 성경 - 내 눈에 맞는 성경 찾기",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

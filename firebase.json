@@ -1,0 +1,36 @@
+{
+  "hosting": {
+    "public": "dist",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "/api/cafe24Products",
+        "function": "cafe24ProductsTest"
+      },
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  },
+  "functions": [
+    {
+      "source": "functions",
+      "codebase": "default",
+      "runtime": "nodejs16"
+    }
+  ],
+  "emulators": {
+    "functions": {
+      "port": 5005,
+      "host": "127.0.0.1"
+    },
+    "hosting": {
+      "port": 5004
+    }
+  }
+}
