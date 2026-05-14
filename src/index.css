@@ -112,13 +112,14 @@
   --spacing-section-subtitle: 0.5rem;
 }
 
-/* Exclusions from Zoom */
+/* [!] 중요: 아래의 line-height 설정이 모든 텍스트의 줄간격을 고정하고 있습니다. */
+/* 개별 요소에서 줄간격을 조정하려면 이 1.2 설정을 덮어써야 합니다. (!important를 제거하여 인라인 스타일이 적용되도록 수정함) */
 .bible-preview-text, 
 .bible-preview-text *,
 .measurement-result, 
 .no-zoom,
 .no-zoom * {
-    line-height: 1.2 !important;
+    line-height: 1.2; /* 이 값이 윗단에서 줄간격을 붙잡고 있는 범인입니다. */
 }
 
 /* Custom Range Slider Thumb for Mobile Touchability */
