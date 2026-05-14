@@ -4018,11 +4018,16 @@ const App = () => {
         </div>
 
         <div className="p-8 pb-16 bg-white border-t border-gray-100 rounded-b-2xl no-zoom">
-            <div className="text-center mb-10">
-                <span className="bg-yellow-400 text-yellow-900 px-4 py-1.5 rounded-full text-[12px] md:text-[14px] font-black border border-yellow-500 shadow-sm">특허출원번호 10-2026-0076623</span>
-            </div>
-            <div className="flex justify-center mb-10">
-                <img src="/chhouse-logo.png" alt="상록크리스챤하우스" className="h-16 md:h-20 object-contain opacity-90" />
+            <div className="flex flex-col items-center gap-6 mb-12">
+                <div>
+                    <span className="bg-yellow-400 text-yellow-900 px-4 py-1.5 rounded-full text-[12px] md:text-[14px] font-black border border-yellow-500 shadow-sm">특허출원번호 10-2026-0076623</span>
+                </div>
+                <div className="text-gray-300 font-bold text-[10px] md:text-xs tracking-[0.2em] uppercase">
+                    POWERED by
+                </div>
+                <div className="flex justify-center">
+                    <img src="/chhouse-logo.png" alt="상록크리스챤하우스" className="h-16 md:h-20 object-contain opacity-90" />
+                </div>
             </div>
             
             <div className="max-w-2xl mx-auto bg-gray-50 border border-gray-100 rounded-3xl p-4 sm:p-8 md:p-10 mb-12 text-center shadow-sm">
