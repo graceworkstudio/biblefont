@@ -4041,9 +4041,9 @@ const App = () => {
             </div>
             
             <div className="max-w-2xl mx-auto px-4">
-                <div className="text-gray-400 font-bold text-[11px] md:text-[13px] text-center md:text-left leading-6 md:leading-relaxed">
-                    상호 : 상록크리스챤하우스(기독서점) <span className="mx-1 opacity-30">|</span> 대표 : 이정숙 <br className="md:hidden" />
-                    <span className="hidden md:inline mx-1 opacity-30">|</span> 사업자등록번호 : 243-27-01845 <span className="mx-1 opacity-30">|</span> <br className="md:hidden" />
+                <div className="text-gray-400 font-bold text-[11px] md:text-[12px] text-center md:text-left leading-7">
+                    상호 : 상록크리스챤하우스(기독서점) <span className="mx-1 opacity-30">|</span> 대표 : 이정숙 <br />
+                    사업자등록번호 : 243-27-01845 <span className="hidden md:inline mx-1 opacity-30">|</span> <br className="md:hidden" />
                     통신판매업신고 : 2024-경기안산-1136 <br />
                     주소 : 경기도 안산시 단원구 광덕4로 220 (밀레니엄프라자) 3층 307호
                 </div>
