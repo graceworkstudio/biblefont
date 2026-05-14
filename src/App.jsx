@@ -4069,11 +4069,12 @@ const App = () => {
                     통신판매업신고 : 2024-경기안산-1136 <br />
                     주소 : 경기도 안산시 단원구 광덕4로 220 (밀레니엄프라자) 3층 307호
                 </div>
-                
-                <div className="mt-10 pt-8 border-t border-gray-50 text-center">
-                    <p className="text-gray-300 text-[11px] md:text-xs font-bold uppercase tracking-widest">
-                        Copyright © Christian House. All rights reserved.
-                    </p>
+            </div>
+
+            <div className="mt-10 pt-8 border-t border-gray-50 text-center">
+                <div className="flex flex-wrap justify-center gap-1 text-gray-300 text-[9px] sm:text-[10px] md:text-xs font-bold uppercase tracking-widest leading-relaxed">
+                    <span className="whitespace-nowrap">Copyright © Christian House.</span> 
+                    <span className="whitespace-nowrap">All rights reserved.</span>
                 </div>
             </div>
         </div>
