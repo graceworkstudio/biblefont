@@ -37,6 +37,7 @@
   
   --font-modal-btn: 12px;
   --font-modal-btn-md: 14px;
+  --font-purpose-leading: 1.5;
 }
 
 .ui-font-zoom-medium {
@@ -69,6 +70,7 @@
   
   --font-modal-btn: 14px;
   --font-modal-btn-md: 18px;
+  --font-purpose-leading: 1.6;
 }
 
 .ui-font-zoom-large {
@@ -101,6 +103,7 @@
   
   --font-modal-btn: 16px;
   --font-modal-btn-md: 20px;
+  --font-purpose-leading: 1.75;
 }
 
 /* Exclusions from Zoom */
