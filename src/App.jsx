@@ -3669,7 +3669,7 @@ const App = () => {
                 >
                   {EMPATHY_PARENT_HEADLINE}
                 </p>
-                <ul className="space-y-3 text-gray-700 font-bold text-[length:var(--font-hero-bullets)]">
+                <ul className="space-y-0 text-gray-700 font-bold text-[length:var(--font-hero-bullets)]">
                   {EMPATHY_BULLETS.map((line, i) => (
                     <li 
                       key={i} 
