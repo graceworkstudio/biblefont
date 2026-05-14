@@ -4018,13 +4018,16 @@ const App = () => {
         </div>
 
         <div className="p-8 pb-16 bg-white border-t border-gray-100 rounded-b-2xl no-zoom">
-            <div className="flex justify-center mb-8">
-                <img src="/chhouse-logo.png" alt="상록크리스챤하우스" className="h-8 md:h-10 object-contain opacity-90" />
+            <div className="flex justify-center mb-10">
+                <img src="/chhouse-logo.png" alt="상록크리스챤하우스" className="h-16 md:h-20 object-contain opacity-90" />
             </div>
             
-            <div className="max-w-xl mx-auto bg-gray-50 border border-gray-100 rounded-3xl p-6 md:p-8 mb-10 text-center shadow-sm">
-                <p className="text-orange-600 font-black text-sm md:text-base mb-2">성경책 단체 주문 및 상품 문의</p>
-                <h4 className="text-2xl md:text-3xl font-black text-gray-800 mb-3">고객센터 010-8870-8436</h4>
+            <div className="max-w-xl mx-auto bg-gray-50 border border-gray-100 rounded-3xl p-6 md:p-8 mb-12 text-center shadow-sm">
+                <p className="text-orange-600 font-black text-sm md:text-base mb-4">성경책 단체 주문 및 상품 문의</p>
+                <div className="flex flex-col gap-1 mb-4">
+                    <h4 className="text-2xl md:text-3xl font-black text-gray-800">고객센터 031-483-9152</h4>
+                    <h4 className="text-2xl md:text-3xl font-black text-gray-800">010-8870-8436</h4>
+                </div>
                 <p className="text-gray-500 font-bold text-sm md:text-base leading-relaxed">
                     운영시간 : 월~토 10:00 ~ 18:00<br className="md:hidden" />
                     <span className="hidden md:inline mx-2">|</span>
@@ -4033,9 +4036,9 @@ const App = () => {
             </div>
             
             <div className="max-w-2xl mx-auto px-4">
-                <div className="space-y-2 text-gray-400 font-bold text-[13px] md:text-sm text-center md:text-left">
+                <div className="space-y-1.5 text-gray-400 font-bold text-[13px] md:text-sm text-center md:text-left">
                     <p className="leading-relaxed">상호 : 상록크리스챤하우스(기독서점) <span className="mx-1 opacity-30">|</span> 대표 : 이정숙</p>
-                    <p className="leading-relaxed">사업자등록번호 : 243-27-01845 <span className="hidden md:inline mx-1 opacity-30">|</span> <br className="md:hidden" /> 통신판매업신고 : 2024-경기안산-1136</p>
+                    <p className="leading-relaxed">사업자등록번호 : 243-27-01845 <span className="hidden md:inline mx-1 opacity-30">|</span> 통신판매업신고 : 2024-경기안산-1136</p>
                     <p className="leading-relaxed text-balance">주소 : 경기도 안산시 단원구 광덕4로 220 (밀레니엄프라자) 3층 307호</p>
                 </div>
                 
