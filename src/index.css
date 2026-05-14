@@ -38,8 +38,8 @@
   --font-modal-btn: 12px;
   --font-modal-btn-md: 14px;
   --font-purpose-leading: 1.5;
-  --font-empathy-leading: 1.8;
-  --spacing-section-subtitle: 0.5rem;
+  --font-empathy-leading: 1.6;
+  --spacing-section-subtitle: 0.4rem;
 }
 
 .ui-font-zoom-medium {
@@ -73,8 +73,8 @@
   --font-modal-btn: 14px;
   --font-modal-btn-md: 18px;
   --font-purpose-leading: 1.65;
-  --font-empathy-leading: 2.0;
-  --spacing-section-subtitle: 0.55rem;
+  --font-empathy-leading: 1.7;
+  --spacing-section-subtitle: 0.45rem;
 }
 
 .ui-font-zoom-large {
@@ -108,8 +108,8 @@
   --font-modal-btn: 16px;
   --font-modal-btn-md: 20px;
   --font-purpose-leading: 1.9;
-  --font-empathy-leading: 2.3;
-  --spacing-section-subtitle: 0.625rem;
+  --font-empathy-leading: 1.9;
+  --spacing-section-subtitle: 0.5rem;
 }
 
 /* Exclusions from Zoom */

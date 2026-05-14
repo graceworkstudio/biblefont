@@ -3648,7 +3648,7 @@ const App = () => {
               className="text-[length:var(--font-hero-bullets)] font-medium text-slate-700 tracking-tight"
               style={{ lineHeight: 'var(--font-purpose-leading)' }}
             >
-              본 서비스는 온라인에서 가늠하기 어려웠던 <span className="text-orange-600">성경책의 실제 글자 크기</span>를<br className="hidden md:block" />
+              본 서비스는 온라인에서 가늠하기 어려웠던 <span className="text-orange-600">성경책의 실제 글자 크기를,</span> <br className="hidden md:block" />
               내 스마트폰(PC) 화면에 그대로 재현하여,<br className="hidden md:block" />
               내 눈에 가장 편안한 성경을 고를 수 있도록 돕는 <span className="bg-yellow-200/50 px-1 rounded-sm">맞춤형 가이드</span>입니다.
             </p>
