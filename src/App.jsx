@@ -3669,13 +3669,14 @@ const App = () => {
                 >
                   {EMPATHY_PARENT_HEADLINE}
                 </p>
-                <ul 
-                  className="space-y-2 text-gray-700 font-bold text-[length:var(--font-hero-bullets)]"
-                  style={{ lineHeight: 'var(--font-empathy-leading)' }}
-                >
+                <ul className="space-y-3 text-gray-700 font-bold text-[length:var(--font-hero-bullets)]">
                   {EMPATHY_BULLETS.map((line, i) => (
-                    <li key={i} className="flex items-start gap-2">
-                      <span className="text-orange-500 mt-0.5 shrink-0 select-none" aria-hidden>•</span>
+                    <li 
+                      key={i} 
+                      className="flex items-start gap-2"
+                      style={{ lineHeight: 'var(--font-empathy-leading)' }}
+                    >
+                      <span className="text-orange-500 mt-1 shrink-0 select-none" aria-hidden>•</span>
                       <span>{line}</span>
                     </li>
                   ))}
