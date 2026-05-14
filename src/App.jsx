@@ -3638,7 +3638,7 @@ const App = () => {
             </span>
           </h1>
         </div>
-        <div className="p-4 md:p-8">
+        <div className="p-2 sm:p-4 md:p-8">
           <div
             className="mb-6 md:mb-8 rounded-2xl border-2 border-orange-200 bg-gradient-to-br from-orange-50 to-amber-50/90 p-4 md:p-6 shadow-sm no-zoom"
             role="region"
@@ -3777,7 +3777,7 @@ const App = () => {
                 <div className="flex justify-start items-center mb-2 px-1">
                     <p className="text-sm font-black text-gray-400 uppercase">좌측 상단 고정</p>
                 </div>
-                <div className="bg-grid-pattern bg-white border-2 border-gray-200 rounded-2xl p-8 shadow-inner min-h-[400px] relative overflow-hidden flex items-start justify-start">
+                <div className="bg-grid-pattern bg-white border-2 border-gray-200 rounded-2xl p-1 md:p-8 shadow-inner min-h-[400px] relative overflow-hidden flex items-start justify-start">
 
                     <div className="credit-card-dynamic bg-orange-50 border-[3px] border-dashed border-orange-400 relative rounded-xl z-10"
                          style={{ width: `${53.98 * globalScale}mm`, height: `${85.6 * globalScale}mm` }}>
