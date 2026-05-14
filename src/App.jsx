@@ -4038,8 +4038,8 @@ const App = () => {
                         </div>
                         <span className="text-gray-400 font-bold text-sm mb-2">고객센터</span>
                         <div className="flex flex-col gap-1">
-                            <h4 className="text-2xl md:text-3xl font-black text-gray-800 tracking-tight">031-483-9152</h4>
-                            <h4 className="text-2xl md:text-3xl font-black text-gray-800 tracking-tight">010-8870-8436</h4>
+                            <h4 className="text-base md:text-lg font-black text-gray-800 tracking-tight">031-483-9152</h4>
+                            <h4 className="text-base md:text-lg font-black text-gray-800 tracking-tight">010-8870-8436</h4>
                         </div>
                     </div>
 
@@ -4055,8 +4055,8 @@ const App = () => {
                         </div>
                         <span className="text-gray-400 font-bold text-sm mb-2">운영시간</span>
                         <div className="flex flex-col gap-1">
-                            <h4 className="text-xl md:text-2xl font-black text-gray-800">월~토 10:00 ~ 18:00</h4>
-                            <p className="text-gray-400 font-bold text-base md:text-lg">(주일은 휴무)</p>
+                            <h4 className="text-base md:text-lg font-black text-gray-800">월~토 10:00 ~ 18:00</h4>
+                            <p className="text-gray-400 font-bold text-xs md:text-sm">(주일은 휴무)</p>
                         </div>
                     </div>
                 </div>
