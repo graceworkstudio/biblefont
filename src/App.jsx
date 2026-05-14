@@ -3973,9 +3973,8 @@ const App = () => {
         <div className="p-6 md:p-8 bg-black/5 border-t border-stone-200">
           <div className="flex items-start gap-4 text-slate-600 leading-snug">
             <AlertCircle className="mt-0.5 shrink-0 text-slate-500" size={18} />
-            <div className="space-y-1.5">
-              <p className="text-sm md:text-base font-black text-slate-800">꼭 확인해 주세요!</p>
-              <p className="text-[13px] md:text-[16px] leading-relaxed text-slate-700">본 수치는 직접 자로 측정하여 산출한 근사치입니다. 측정방법에 따라 오차가 있을 수 있습니다.</p>
+            <div className="">
+              <p className="text-[13px] md:text-[16px] leading-relaxed font-black text-slate-800">본 수치는 직접 자로 측정하여 산출한 근사치로 측정방법에 따라 오차가 있을 수 있습니다.</p>
             </div>
           </div>
         </div>
