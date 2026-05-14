@@ -112,12 +112,21 @@
   --spacing-section-subtitle: 0.5rem;
 }
 
-/* [!] 중요: 아래의 line-height 설정이 모든 텍스트의 줄간격을 고정하고 있습니다. */
-/* 개별 요소에서 줄간격을 조정하려면 이 1.2 설정을 덮어써야 합니다. (!important를 제거하여 인라인 스타일이 적용되도록 수정함) */
+/* [!] 중요: 이 앱은 실제 사이즈를 재현하므로 화면 줌 등에 의해 레이아웃이 변하지 않도록 줄간격을 강제 고정합니다. */
 .bible-preview-text, 
+.bible-preview-text *,
 .measurement-result, 
-.no-zoom {
-    line-height: 1.2; /* 자식 요소들이 상속받을 기본값입니다. 이제 개별 설정이 가능합니다. */
+.no-zoom,
+.no-zoom * {
+    line-height: 1.2 !important;
+}
+
+/* 위 고정 설정 속에서도 예외적으로 줄간격 조절이 필요한 영역을 위한 클래스입니다. */
+.leading-adaptive-purpose {
+    line-height: var(--font-purpose-leading) !important;
+}
+.leading-adaptive-empathy {
+    line-height: var(--font-empathy-leading) !important;
 }
 
 /* Custom Range Slider Thumb for Mobile Touchability */

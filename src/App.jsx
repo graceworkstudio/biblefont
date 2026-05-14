@@ -3644,10 +3644,7 @@ const App = () => {
             <div className="inline-block px-4 py-1.5 bg-slate-100 rounded-full text-slate-500 text-[length:var(--font-tag)] font-bold mb-5 uppercase tracking-widest">
               Service Purpose
             </div>
-            <p 
-              className="text-[length:var(--font-hero-bullets)] font-medium text-slate-700 tracking-tight"
-              style={{ lineHeight: 'var(--font-purpose-leading)' }}
-            >
+            <p className="text-[length:var(--font-hero-bullets)] font-medium text-slate-700 tracking-tight leading-adaptive-purpose">
               본 서비스는 온라인에서 가늠하기 어려웠던 <span className="text-orange-600">성경책의 실제 글자 크기</span>를 <br className="hidden md:block" />
               내 스마트폰(PC) 화면에 그대로 재현하여,<br className="hidden md:block" />
               내 눈에 가장 편안한 성경을 고를 수 있도록 돕는 <span className="bg-yellow-200/50 px-1 rounded-sm">맞춤형 가이드</span>입니다.
@@ -3673,8 +3670,7 @@ const App = () => {
                   {EMPATHY_BULLETS.map((line, i) => (
                     <li 
                       key={i} 
-                      className="flex items-start gap-2"
-                      style={{ lineHeight: 'var(--font-empathy-leading)' }}
+                      className="flex items-start gap-2 leading-adaptive-empathy"
                     >
                       <span className="text-orange-500 mt-1 shrink-0 select-none" aria-hidden>•</span>
                       <span>{line}</span>
@@ -3705,10 +3701,7 @@ const App = () => {
                     </div>
                 </div>
 
-                <p 
-                    className="text-sm text-gray-700 mb-6 font-bold instruction-text"
-                    style={{ lineHeight: 'var(--font-empathy-leading)' }}
-                >
+                <p className="text-sm text-gray-700 mb-6 font-bold instruction-text leading-adaptive-empathy">
                     지갑 속 카드를 우측(또는 아래) 측정 영역의 좌측 상단 모서리에 바짝 붙여 올려놓으세요. 슬라이더를 움직여 화면의 네모칸과 실제 카드의 크기를 똑같이 맞춰주세요.
                 </p>
 
