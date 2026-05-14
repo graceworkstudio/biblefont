@@ -4,6 +4,7 @@
 
 :root {
   font-family: 'Gowun Batang', serif;
+  touch-action: pan-x pan-y;
 }
 
 /* UI Font Zoom Styles - Defines scale factor and semantic sizes */

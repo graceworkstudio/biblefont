@@ -9,6 +9,24 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   </React.StrictMode>
 )
 
+// 모바일 브라우저 강제 줌 방지 스크립트 (iOS/Android 대응)
+// 1. 두 손가락 핀치 줌 방지
+document.addEventListener('touchstart', (e) => {
+  if (e.touches.length > 1) {
+    e.preventDefault();
+  }
+}, { passive: false });
+
+// 2. 더블 탭 확대 방지
+let lastTouchEnd = 0;
+document.addEventListener('touchend', (e) => {
+  const now = (new Date()).getTime();
+  if (now - lastTouchEnd <= 300) {
+    e.preventDefault();
+  }
+  lastTouchEnd = now;
+}, false);
+
 // PWA Service Worker Registration & Update Logic
 // PWA 업데이트 알림 수동 제어 플래그 (true일 때만 알림 표시)
 const ENABLE_AUTO_UPDATE_BANNER = false;
