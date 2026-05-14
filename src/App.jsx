@@ -4028,35 +4028,35 @@ const App = () => {
             <div className="max-w-2xl mx-auto bg-gray-50 border border-gray-100 rounded-3xl p-8 md:p-10 mb-12 text-center shadow-sm">
                 <p className="text-orange-600 font-black text-sm md:text-base mb-8">성경책 단체 주문 및 상품 문의</p>
                 
-                <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] items-center gap-8 md:gap-0">
+                <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-2 md:gap-0">
                     {/* Left: Contact info */}
                     <div className="flex flex-col items-center">
-                        <div className="w-12 h-12 bg-white rounded-full shadow-sm flex items-center justify-center mb-4 border border-gray-50">
-                            <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-full shadow-sm flex items-center justify-center mb-3 md:mb-4 border border-gray-50">
+                            <svg className="w-5 h-5 md:w-6 md:h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M18 13V11C18 7.68629 15.3137 5 12 5C8.68629 5 6 7.68629 6 11V13M3 13V15C3 16.1046 3.89543 17 5 17H6M21 13V15C21 16.1046 20.1046 17 19 17H18M18 13V17H6V13M18 13H19C20.1046 13 21 12.1046 21 11V10C21 8.89543 20.1046 8 19 8H18M6 13H5C3.89543 13 3 12.1046 3 11V10C3 8.89543 3.89543 8 5 8H6" />
                             </svg>
                         </div>
-                        <span className="text-gray-400 font-bold text-sm mb-2">고객센터</span>
-                        <div className="flex flex-col gap-1">
-                            <h4 className="text-base md:text-lg font-black text-gray-800 tracking-tight">031-483-9152</h4>
-                            <h4 className="text-base md:text-lg font-black text-gray-800 tracking-tight">010-8870-8436</h4>
+                        <span className="text-gray-400 font-bold text-[10px] md:text-sm mb-1 md:mb-2">고객센터</span>
+                        <div className="flex flex-col gap-0.5 md:gap-1">
+                            <h4 className="text-[12px] sm:text-base md:text-lg font-black text-gray-800 tracking-tight">031-483-9152</h4>
+                            <h4 className="text-[12px] sm:text-base md:text-lg font-black text-gray-800 tracking-tight">010-8870-8436</h4>
                         </div>
                     </div>
 
                     {/* Middle: Separator */}
-                    <div className="hidden md:block h-28 w-[1px] bg-gray-200 mx-8"></div>
+                    <div className="h-20 md:h-28 w-[1px] bg-gray-200 mx-2 md:mx-8"></div>
 
                     {/* Right: Operating hours */}
                     <div className="flex flex-col items-center">
-                        <div className="w-12 h-12 bg-white rounded-full shadow-sm flex items-center justify-center mb-4 border border-gray-50">
-                            <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-full shadow-sm flex items-center justify-center mb-3 md:mb-4 border border-gray-50">
+                            <svg className="w-5 h-5 md:w-6 md:h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 8V12L15 15M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" />
                             </svg>
                         </div>
-                        <span className="text-gray-400 font-bold text-sm mb-2">운영시간</span>
-                        <div className="flex flex-col gap-1">
-                            <h4 className="text-base md:text-lg font-black text-gray-800">월~토 10:00 ~ 18:00</h4>
-                            <p className="text-gray-400 font-bold text-xs md:text-sm">(주일은 휴무)</p>
+                        <span className="text-gray-400 font-bold text-[10px] md:text-sm mb-1 md:mb-2">운영시간</span>
+                        <div className="flex flex-col gap-0.5 md:gap-1">
+                            <h4 className="text-[11px] sm:text-base md:text-lg font-black text-gray-800">월~토 10:00~18:00</h4>
+                            <p className="text-gray-400 font-bold text-[10px] md:text-sm">(주일은 휴무)</p>
                         </div>
                     </div>
                 </div>
