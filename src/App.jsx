@@ -4018,7 +4018,7 @@ const App = () => {
         </div>
 
         <div className="p-8 pb-16 bg-white border-t border-gray-100 rounded-b-2xl no-zoom">
-            <div className="text-center mb-5">
+            <div className="text-center mb-10">
                 <span className="bg-yellow-400 text-yellow-900 px-4 py-1.5 rounded-full text-[12px] md:text-[14px] font-black border border-yellow-500 shadow-sm">특허출원번호 10-2026-0076623</span>
             </div>
             <div className="flex justify-center mb-10">
