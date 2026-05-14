@@ -3986,7 +3986,7 @@ const App = () => {
           </div>
         )}
 
-        <div className="p-8 bg-gray-50 border-t border-gray-100 rounded-b-2xl">
+        <div className="p-8 bg-gray-50 border-t border-gray-100">
             <div className="text-center mb-8">
                 <h3 className="text-xl font-black text-gray-800">지인들에게 전달해 주세요</h3>
                 <p className="text-base font-bold text-gray-500 mt-2">링크 하나로 내 눈에 꼭 맞는 성경을 쉽게 찾을 수 있습니다.</p>
@@ -4014,6 +4014,36 @@ const App = () => {
                     </div>
                     <span className="text-base text-gray-700 font-black mt-3">문자메시지</span>
                 </button>
+            </div>
+        </div>
+
+        <div className="p-8 pb-16 bg-white border-t border-gray-100 rounded-b-2xl no-zoom">
+            <div className="flex justify-center mb-8">
+                <img src="/chhouse-logo.png" alt="상록크리스챤하우스" className="h-8 md:h-10 object-contain opacity-90" />
+            </div>
+            
+            <div className="max-w-xl mx-auto bg-gray-50 border border-gray-100 rounded-3xl p-6 md:p-8 mb-10 text-center shadow-sm">
+                <p className="text-orange-600 font-black text-sm md:text-base mb-2">성경책 단체 주문 및 상품 문의</p>
+                <h4 className="text-2xl md:text-3xl font-black text-gray-800 mb-3">고객센터 010-8870-8436</h4>
+                <p className="text-gray-500 font-bold text-sm md:text-base leading-relaxed">
+                    운영시간 : 월~토 10:00 ~ 18:00<br className="md:hidden" />
+                    <span className="hidden md:inline mx-2">|</span>
+                    (주일은 휴무)
+                </p>
+            </div>
+            
+            <div className="max-w-2xl mx-auto px-4">
+                <div className="space-y-2 text-gray-400 font-bold text-[13px] md:text-sm text-center md:text-left">
+                    <p className="leading-relaxed">상호 : 상록크리스챤하우스(기독서점) <span className="mx-1 opacity-30">|</span> 대표 : 이정숙</p>
+                    <p className="leading-relaxed">사업자등록번호 : 243-27-01845 <span className="hidden md:inline mx-1 opacity-30">|</span> <br className="md:hidden" /> 통신판매업신고 : 2024-경기안산-1136</p>
+                    <p className="leading-relaxed text-balance">주소 : 경기도 안산시 단원구 광덕4로 220 (밀레니엄프라자) 3층 307호</p>
+                </div>
+                
+                <div className="mt-10 pt-8 border-t border-gray-50 text-center">
+                    <p className="text-gray-300 text-[11px] md:text-xs font-bold uppercase tracking-widest">
+                        Copyright © Christian House. All rights reserved.
+                    </p>
+                </div>
             </div>
         </div>
 
