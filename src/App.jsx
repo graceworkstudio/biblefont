@@ -3639,6 +3639,18 @@ const App = () => {
           </h1>
         </div>
         <div className="p-4 md:p-8">
+          {/* 서비스 목적 안내 */}
+          <div className="mb-10 mt-2 md:mt-4 text-center no-zoom px-2">
+            <div className="inline-block px-4 py-1.5 bg-slate-100 rounded-full text-slate-500 text-[11px] md:text-xs font-black mb-5 uppercase tracking-widest">
+              Service Purpose
+            </div>
+            <p className="text-[17px] md:text-[22px] font-black text-slate-800 leading-relaxed tracking-tight">
+              본 서비스는 온라인에서 가늠하기 어려웠던 <span className="text-orange-600">성경책의 실제 글자 크기</span>를<br className="hidden md:block" />
+              내 스마트폰(PC) 화면에 그대로 재현하여,<br className="hidden md:block" />
+              내 눈에 가장 편안한 성경을 고를 수 있도록 돕는 <span className="bg-yellow-200/50 px-1 rounded-sm">맞춤형 가이드</span>입니다.
+            </p>
+          </div>
+
           <div
             className="mb-6 md:mb-8 rounded-2xl border-2 border-orange-200 bg-gradient-to-br from-orange-50 to-amber-50/90 p-4 md:p-6 shadow-sm no-zoom"
             role="region"
