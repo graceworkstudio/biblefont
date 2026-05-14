@@ -3669,7 +3669,10 @@ const App = () => {
                 >
                   {EMPATHY_PARENT_HEADLINE}
                 </p>
-                <ul className="space-y-2 text-gray-700 font-bold leading-relaxed text-[length:var(--font-hero-bullets)]">
+                <ul 
+                  className="space-y-2 text-gray-700 font-bold text-[length:var(--font-hero-bullets)]"
+                  style={{ lineHeight: 'var(--font-empathy-leading)' }}
+                >
                   {EMPATHY_BULLETS.map((line, i) => (
                     <li key={i} className="flex items-start gap-2">
                       <span className="text-orange-500 mt-0.5 shrink-0 select-none" aria-hidden>•</span>
@@ -3687,7 +3690,8 @@ const App = () => {
                 <div className="flex justify-between items-start mb-6">
                     <div>
                         <h2 
-                            className="font-black text-gray-900 leading-none tracking-tighter text-[length:var(--font-section-title)] mb-2"
+                            className="font-black text-gray-900 leading-none tracking-tighter text-[length:var(--font-section-title)]"
+                            style={{ marginBottom: 'var(--spacing-section-subtitle)' }}
                         >
                             화면 배율 맞추기
                         </h2>
@@ -3700,7 +3704,10 @@ const App = () => {
                     </div>
                 </div>
 
-                <p className="text-sm text-gray-700 mb-6 leading-relaxed font-bold instruction-text">
+                <p 
+                    className="text-sm text-gray-700 mb-6 font-bold instruction-text"
+                    style={{ lineHeight: 'var(--font-empathy-leading)' }}
+                >
                     지갑 속 카드를 우측(또는 아래) 측정 영역의 좌측 상단 모서리에 바짝 붙여 올려놓으세요. 슬라이더를 움직여 화면의 네모칸과 실제 카드의 크기를 똑같이 맞춰주세요.
                 </p>
 
