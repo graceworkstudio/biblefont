@@ -3979,7 +3979,6 @@ const App = () => {
           </div>
         </div>
         
-        <BannerComponent />
 
             </div>
           </div>
