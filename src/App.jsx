@@ -4031,8 +4031,8 @@ const App = () => {
             </div>
         </div>
 
-        <div className="p-8 pb-16 bg-white border-t border-gray-100 rounded-b-2xl no-zoom">
-            <div className="flex flex-col items-center gap-6 mb-12">
+        <div className="p-8 pb-12 bg-white border-t border-gray-100 rounded-b-2xl no-zoom">
+            <div className="flex flex-col items-center gap-4 mb-6">
                 <div>
                     <span className="bg-yellow-400 text-yellow-900 px-4 py-1.5 rounded-full text-[12px] md:text-[14px] font-black border border-yellow-500 shadow-sm">특허출원번호 10-2026-0076623</span>
                 </div>
@@ -4044,8 +4044,8 @@ const App = () => {
                 </div>
             </div>
             
-            <div className="max-w-2xl mx-auto bg-gray-50 border border-gray-100 rounded-3xl p-4 sm:p-8 md:p-10 mb-12 text-center shadow-sm">
-                <p className="text-orange-600 font-black text-sm md:text-base mb-8">성경책 단체 주문 및 상품 문의</p>
+            <div className="max-w-2xl mx-auto bg-gray-50 border border-gray-100 rounded-3xl p-4 sm:p-5 md:p-6 mb-12 text-center shadow-sm">
+                <p className="text-orange-600 font-black text-sm md:text-base mb-5">성경책 단체 주문 및 상품 문의</p>
                 
                 <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-1 md:gap-0">
                     {/* Left: Contact info */}
