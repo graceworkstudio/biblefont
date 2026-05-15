@@ -40,6 +40,8 @@
   --font-modal-btn-md: 14px;
   --font-purpose-leading: 1.2;
   --font-empathy-leading: 1.2;
+  --font-share-title: 16px;
+  --font-share-desc: 12px;
   --spacing-section-subtitle: 0.4rem;
 }
 
@@ -75,6 +77,8 @@
   --font-modal-btn-md: 18px;
   --font-purpose-leading: 1.3;
   --font-empathy-leading: 1.3;
+  --font-share-title: 18px;
+  --font-share-desc: 14px;
   --spacing-section-subtitle: 0.45rem;
 }
 
@@ -110,6 +114,8 @@
   --font-modal-btn-md: 20px;
   --font-purpose-leading: 1.4;
   --font-empathy-leading: 1.4;
+  --font-share-title: 21px;
+  --font-share-desc: 16px;
   --spacing-section-subtitle: 0.5rem;
 }
 

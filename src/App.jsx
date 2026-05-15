@@ -4002,8 +4002,8 @@ const App = () => {
 
         <div className="p-8 bg-gray-50 border-t border-gray-100">
             <div className="text-center mb-8">
-                <h3 className="text-xl font-black text-gray-800">지인들에게 전달해 주세요</h3>
-                <p className="text-base font-bold text-gray-500 mt-2">링크 하나로 내 눈에 꼭 맞는 성경을 쉽게 찾을 수 있습니다.</p>
+                <h3 className="font-black text-gray-800" style={{ fontSize: 'var(--font-share-title)' }}>지인들에게 전달해 주세요</h3>
+                <p className="font-bold text-gray-500 mt-2" style={{ fontSize: 'var(--font-share-desc)' }}>링크 하나로 내 눈에 꼭 맞는 성경을 쉽게 찾을 수 있습니다.</p>
             </div>
             
             <div className="flex justify-center space-x-10">
