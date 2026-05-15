@@ -130,6 +130,10 @@
     line-height: var(--font-empathy-leading) !important;
 }
 
+.leading-footer-info {
+    line-height: 1.7 !important;
+}
+
 /* Custom Range Slider Thumb for Mobile Touchability */
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
