@@ -3652,7 +3652,7 @@ const App = () => {
           </div>
 
           <div
-            className="mb-6 md:mb-8 rounded-2xl border-2 border-orange-200 bg-gradient-to-br from-orange-50 to-amber-50/90 p-4 md:p-6 shadow-sm no-zoom"
+            className="mb-12 md:mb-16 rounded-2xl border-2 border-orange-200 bg-gradient-to-br from-orange-50 to-amber-50/90 p-4 md:p-6 shadow-sm no-zoom"
             role="region"
             aria-label="이 서비스가 도움이 되는 경우"
           >
