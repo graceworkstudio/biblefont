@@ -115,7 +115,7 @@ const App = () => {
           objectType: 'feed',
           content: {
             title: '🔎 돋보기 없이 고르는 큰 글자 성경',
-            description: '앱 설치 없이 지금 바로 내 스마트폰에서 실제 글자 크기를 확인해 보세요! 👉 biblezoom.co.kr',
+            description: '앱 설치 없이 지금 바로 내 스마트폰에서 실제 글자 크기를 확인해 보세요!',
             imageUrl: 'https://biblefont.web.app/biblezoom-kakao-share2.png',
             link: {
               mobileWebUrl: 'https://biblezoom.co.kr',
