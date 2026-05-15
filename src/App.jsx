@@ -4036,7 +4036,7 @@ const App = () => {
                 <div>
                     <span className="bg-yellow-400 text-yellow-900 px-4 py-1.5 rounded-full text-[12px] md:text-[14px] font-black border border-yellow-500 shadow-sm">특허출원번호 10-2026-0076623</span>
                 </div>
-                <div className="text-gray-300 font-bold text-[10px] md:text-xs tracking-[0.2em] uppercase">
+                <div className="text-gray-300 font-bold text-[12px] md:text-xs tracking-[0.2em] uppercase mt-2">
                     POWERED by
                 </div>
                 <div className="flex justify-center">
@@ -4082,7 +4082,7 @@ const App = () => {
             </div>
             
             <div className="max-w-xl mx-auto pl-12 md:pl-20 pr-8">
-                <div className="text-gray-400 font-bold text-[11px] md:text-[12px] text-left" style={{ lineHeight: '1.2' }}>
+                <div className="text-gray-400 font-bold text-[11px] md:text-[12px] text-left" style={{ lineHeight: '1.7' }}>
                     상호 : 크리스챤하우스(기독서점) <span className="mx-1 opacity-30">|</span> 대표 : 이정숙 <br />
                     사업자등록번호 : 243-27-01845 <span className="hidden md:inline mx-1 opacity-30">|</span> <br className="block md:hidden" />
                     통신판매업신고 : 2024-경기안산-1136 <br />
