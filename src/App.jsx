@@ -3,7 +3,7 @@ import { Ruler, BookOpen, AlertCircle, X, Bell, ExternalLink, ShoppingCart, Shop
 import BannerComponent from './BannerComponent';
 
 
-const APP_VERSION = 'v2.5.4';
+const APP_VERSION = 'v2.6.0';
 const UPDATE_NOTES = [
   "출판사 데이터(생명의말씀사, 대한기독교서회, 성서원, 두란노) 복구 완료",
   "영점 조절 및 출판사 선택 영역 배경색 모바일 최적화",
