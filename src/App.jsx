@@ -3705,7 +3705,10 @@ const App = () => {
                     지갑 속 카드를 우측(또는 아래) 측정 영역의 좌측 상단 모서리에 바짝 붙여 올려놓으세요. 슬라이더를 움직여 화면의 네모칸과 실제 카드의 크기를 똑같이 맞춰주세요.
                 </p>
 
-                <div className="relative w-full h-4 bg-gray-200 rounded-full mb-8 mt-2">
+                <div className="relative w-full h-14 mb-8 mt-2 flex items-center">
+                    {/* 비주얼 트랙 (실제 터치 영역과 별개로 보기 좋게 얇게 유지) */}
+                    <div className="absolute w-full h-4 bg-gray-200 rounded-full"></div>
+                    
                     <input 
                         type="range" 
                         min="0.5" 
@@ -3716,12 +3719,12 @@ const App = () => {
                         className="orange-slider absolute top-0 left-0 w-full h-full opacity-0 z-20 cursor-pointer"
                     />
                     <div 
-                        className="absolute left-0 top-0 h-full bg-orange-400 rounded-full z-10 transition-all duration-75" 
+                        className="absolute left-0 top-1/2 -translate-y-1/2 h-4 bg-orange-400 rounded-full z-10 transition-all duration-75" 
                         style={{ width: `${((globalScale - 0.5) / (3.0 - 0.5)) * 100}%` }}
                     ></div>
                     <div 
-                        className="absolute top-1/2 -translate-y-1/2 w-10 h-10 bg-orange-500 border-4 border-white rounded-full shadow-lg z-30 pointer-events-none transition-all duration-75"
-                        style={{ left: `calc(${((globalScale - 0.5) / (3.0 - 0.5)) * 100}% - 20px)` }}
+                        className="absolute top-1/2 -translate-y-1/2 w-14 h-14 bg-orange-500 border-4 border-white rounded-full shadow-lg z-30 pointer-events-none transition-all duration-75"
+                        style={{ left: `calc(${((globalScale - 0.5) / (3.0 - 0.5)) * 100}% - 28px)` }}
                     ></div>
                 </div>
                 
