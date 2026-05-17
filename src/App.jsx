@@ -3628,7 +3628,7 @@ const App = () => {
     pubValue.items.map(item => ({
       ...item,
       publisherKey: pubKey,
-      publisherName: pubValue.name
+      publisherName: ['A', 'W', 'S', 'C', 'D'].includes(pubKey) ? pubValue.name : '기타'
     }))
   ).filter(item => {
     // 1. Commentary filter (해설유무)
