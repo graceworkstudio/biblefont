@@ -253,3 +253,9 @@ input[type="range"].orange-slider {
 .pretty-scrollbar::-webkit-scrollbar-thumb:hover {
   background: #cbd5e1; /* slate-300 */
 }
+
+/* Sleek premium checkbox outline & orange accent coloring */
+input[type="checkbox"] {
+  accent-color: #ea580c; /* orange-600 */
+  cursor: pointer;
+}

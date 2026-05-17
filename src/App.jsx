@@ -4012,21 +4012,259 @@ const App = () => {
         {showBibleList && (
           <div className="animate-in fade-in slide-in-from-bottom-8 duration-700 ease-out">
 
-        <div className="bg-[#F5F4F0] border-b border-stone-200 px-4 py-4">
-          <div className="text-[12px] md:text-xs font-bold text-stone-400 mb-2 px-1">출판사 선택 (옆으로 밀어보세요)</div>
-          <div ref={tabsRef} className="flex overflow-x-auto no-scrollbar gap-2 pb-1 px-1 whitespace-nowrap scroll-smooth">
-            {Object.keys(bibleData).map(key => (
-              <button key={key} onClick={() => setActiveTab(key)} className={`flex-none px-4 py-1.5 md:px-6 md:py-2 rounded-full text-xs md:text-sm font-black border transition-all duration-200 ${activeTab === key ? "bg-yellow-400 text-slate-900 border-yellow-500 shadow-md transform scale-105" : "bg-white text-slate-400 border-stone-100 hover:border-stone-300 shadow-sm"}`}>{bibleData[key].name}</button>
-            ))}
-          </div>
-        </div>
-
-        <div className="bg-white border-b border-slate-100 py-4">
-          <div className="text-center mb-3"><p className="text-[11px] md:text-[14px] font-black text-slate-400 uppercase tracking-widest">종류 및 용도</p></div>
-          <div className="flex justify-center gap-2 md:gap-4 px-4">
-            {['all', 'standard', 'study'].map(type => (
-              <button key={type} onClick={() => setSelectedType(type)} className={`px-4 py-1.5 md:min-w-[100px] rounded-full text-xs md:text-sm font-black border transition-all duration-200 ${selectedType === type ? 'bg-orange-600 text-white border-orange-700 shadow-md scale-105' : 'bg-white text-slate-400 border-slate-100 hover:border-slate-200'}`}>{type === 'all' ? '전체보기' : type === 'standard' ? '성경전서' : '해설/주석'}</button>
-            ))}
+        {/* 신규 5대 가로형 실시간 필터 격자 표 */}
+        <div className="bg-slate-50 border-b border-slate-200 py-6 px-4">
+          <div className="max-w-7xl mx-auto">
+            {/* 필터 안내 헤더 */}
+            <div className="flex justify-between items-center mb-4 px-1">
+              <span className="text-[13px] md:text-base font-black text-slate-800 flex items-center gap-2">
+                <span className="w-2.5 h-2.5 rounded-full bg-orange-500"></span>
+                실시간 맞춤 필터 
+                <span className="hidden sm:inline text-[11px] md:text-xs font-bold text-slate-400">
+                  (마스터 체크로 전체 선택/해제 및 세부 개별 선택 가능)
+                </span>
+              </span>
+              <button 
+                onClick={resetFilters} 
+                className="text-[11px] md:text-xs font-black text-slate-500 bg-white border border-slate-200 px-3 py-1.5 rounded-lg hover:bg-slate-100 hover:text-slate-700 transition-colors shadow-sm cursor-pointer"
+              >
+                필터 초기화 🔄
+              </button>
+            </div>
+            
+            {/* 가로형 격자 표 필터 (모바일 스크롤 지원) */}
+            <div className="overflow-x-auto rounded-2xl border border-slate-200 shadow-sm bg-white pretty-scrollbar">
+              <table className="w-full border-collapse text-left min-w-[760px] table-fixed">
+                <thead>
+                  <tr className="bg-[#ebf2f7] border-b border-slate-200">
+                    {/* 1. 찬송가유무 */}
+                    <th className="px-4 py-3 border-r border-slate-200 w-1/5 select-none">
+                      <label className="flex items-center gap-2 cursor-pointer">
+                        <input 
+                          type="checkbox" 
+                          checked={filters.hymn.master} 
+                          onChange={() => toggleMaster('hymn')} 
+                          className="w-4 h-4 rounded text-orange-500 border-slate-300 focus:ring-orange-400 cursor-pointer"
+                        />
+                        <span className="text-sm font-black text-slate-700">1. 찬송가유무</span>
+                      </label>
+                    </th>
+                    {/* 2. 해설유무 */}
+                    <th className="px-4 py-3 border-r border-slate-200 w-1/5 select-none">
+                      <label className="flex items-center gap-2 cursor-pointer">
+                        <input 
+                          type="checkbox" 
+                          checked={filters.commentary.master} 
+                          onChange={() => toggleMaster('commentary')} 
+                          className="w-4 h-4 rounded text-orange-500 border-slate-300 focus:ring-orange-400 cursor-pointer"
+                        />
+                        <span className="text-sm font-black text-slate-700">2. 해설유무</span>
+                      </label>
+                    </th>
+                    {/* 3. 재질 */}
+                    <th className="px-4 py-3 border-r border-slate-200 w-1/5 select-none">
+                      <label className="flex items-center gap-2 cursor-pointer">
+                        <input 
+                          type="checkbox" 
+                          checked={filters.material.master} 
+                          onChange={() => toggleMaster('material')} 
+                          className="w-4 h-4 rounded text-orange-500 border-slate-300 focus:ring-orange-400 cursor-pointer"
+                        />
+                        <span className="text-sm font-black text-slate-700">3. 재질</span>
+                      </label>
+                    </th>
+                    {/* 4. 크기/휴대성 */}
+                    <th className="px-4 py-3 border-r border-slate-200 w-1/5 select-none">
+                      <label className="flex items-center gap-2 cursor-pointer">
+                        <input 
+                          type="checkbox" 
+                          checked={filters.portability.master} 
+                          onChange={() => toggleMaster('portability')} 
+                          className="w-4 h-4 rounded text-orange-500 border-slate-300 focus:ring-orange-400 cursor-pointer"
+                        />
+                        <span className="text-sm font-black text-slate-700">4. 크기/휴대성</span>
+                      </label>
+                    </th>
+                    {/* 5. 글씨크기 */}
+                    <th className="px-4 py-3 w-1/5 select-none">
+                      <label className="flex items-center gap-2 cursor-pointer">
+                        <input 
+                          type="checkbox" 
+                          checked={filters.fontSize.master} 
+                          onChange={() => toggleMaster('fontSize')} 
+                          className="w-4 h-4 rounded text-orange-500 border-slate-300 focus:ring-orange-400 cursor-pointer"
+                        />
+                        <span className="text-sm font-black text-slate-700">5. 글씨크기</span>
+                      </label>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    {/* 1. 찬송가유무 옵션들 */}
+                    <td className={`px-4 py-4 border-r border-slate-200 align-top transition-opacity duration-200 ${!filters.hymn.master && Object.values(filters.hymn.options).every(v => !v) ? 'opacity-40' : 'opacity-100'}`}>
+                      <div className="flex flex-col gap-2.5">
+                        <label className="flex items-center gap-2 cursor-pointer select-none group">
+                          <input 
+                            type="checkbox" 
+                            checked={filters.hymn.options.yes} 
+                            onChange={() => toggleOption('hymn', 'yes')} 
+                            className="w-4 h-4 rounded text-orange-500 border-slate-300 focus:ring-orange-400 cursor-pointer transition-colors"
+                          />
+                          <span className="text-[13px] font-bold text-slate-600 group-hover:text-slate-800">있음</span>
+                        </label>
+                        <label className="flex items-center gap-2 cursor-pointer select-none group">
+                          <input 
+                            type="checkbox" 
+                            checked={filters.hymn.options.no} 
+                            onChange={() => toggleOption('hymn', 'no')} 
+                            className="w-4 h-4 rounded text-orange-500 border-slate-300 focus:ring-orange-400 cursor-pointer transition-colors"
+                          />
+                          <span className="text-[13px] font-bold text-slate-600 group-hover:text-slate-800">없음</span>
+                        </label>
+                      </div>
+                    </td>
+                    
+                    {/* 2. 해설유무 옵션들 */}
+                    <td className={`px-4 py-4 border-r border-slate-200 align-top transition-opacity duration-200 ${!filters.commentary.master && Object.values(filters.commentary.options).every(v => !v) ? 'opacity-40' : 'opacity-100'}`}>
+                      <div className="flex flex-col gap-2.5">
+                        <label className="flex items-center gap-2 cursor-pointer select-none group">
+                          <input 
+                            type="checkbox" 
+                            checked={filters.commentary.options.yes} 
+                            onChange={() => toggleOption('commentary', 'yes')} 
+                            className="w-4 h-4 rounded text-orange-500 border-slate-300 focus:ring-orange-400 cursor-pointer transition-colors"
+                          />
+                          <span className="text-[13px] font-bold text-slate-600 group-hover:text-slate-800">있음</span>
+                        </label>
+                        <label className="flex items-center gap-2 cursor-pointer select-none group">
+                          <input 
+                            type="checkbox" 
+                            checked={filters.commentary.options.no} 
+                            onChange={() => toggleOption('commentary', 'no')} 
+                            className="w-4 h-4 rounded text-orange-500 border-slate-300 focus:ring-orange-400 cursor-pointer transition-colors"
+                          />
+                          <span className="text-[13px] font-bold text-slate-600 group-hover:text-slate-800">없음</span>
+                        </label>
+                      </div>
+                    </td>
+                    
+                    {/* 3. 재질 옵션들 */}
+                    <td className={`px-4 py-4 border-r border-slate-200 align-top transition-opacity duration-200 ${!filters.material.master && Object.values(filters.material.options).every(v => !v) ? 'opacity-40' : 'opacity-100'}`}>
+                      <div className="flex flex-col gap-2.5">
+                        <label className="flex items-center gap-2 cursor-pointer select-none group">
+                          <input 
+                            type="checkbox" 
+                            checked={filters.material.options.natural} 
+                            onChange={() => toggleOption('material', 'natural')} 
+                            className="w-4 h-4 rounded text-orange-500 border-slate-300 focus:ring-orange-400 cursor-pointer transition-colors"
+                          />
+                          <span className="text-[13px] font-bold text-slate-600 group-hover:text-slate-800">천연가죽</span>
+                        </label>
+                        <label className="flex items-center gap-2 cursor-pointer select-none group">
+                          <input 
+                            type="checkbox" 
+                            checked={filters.material.options.pu} 
+                            onChange={() => toggleOption('material', 'pu')} 
+                            className="w-4 h-4 rounded text-orange-500 border-slate-300 focus:ring-orange-400 cursor-pointer transition-colors"
+                          />
+                          <span className="text-[13px] font-bold text-slate-600 group-hover:text-slate-800">인조가죽(PU)</span>
+                        </label>
+                        <label className="flex items-center gap-2 cursor-pointer select-none group">
+                          <input 
+                            type="checkbox" 
+                            checked={filters.material.options.other} 
+                            onChange={() => toggleOption('material', 'other')} 
+                            className="w-4 h-4 rounded text-orange-500 border-slate-300 focus:ring-orange-400 cursor-pointer transition-colors"
+                          />
+                          <span className="text-[13px] font-bold text-slate-600 group-hover:text-slate-800">기타</span>
+                        </label>
+                      </div>
+                    </td>
+                    
+                    {/* 4. 크기/휴대성 옵션들 */}
+                    <td className={`px-4 py-4 border-r border-slate-200 align-top transition-opacity duration-200 ${!filters.portability.master && Object.values(filters.portability.options).every(v => !v) ? 'opacity-40' : 'opacity-100'}`}>
+                      <div className="flex flex-col gap-2.5">
+                        <label className="flex items-center gap-2 cursor-pointer select-none group">
+                          <input 
+                            type="checkbox" 
+                            checked={filters.portability.options.small} 
+                            onChange={() => toggleOption('portability', 'small')} 
+                            className="w-4 h-4 rounded text-orange-500 border-slate-300 focus:ring-orange-400 cursor-pointer transition-colors"
+                          />
+                          <span className="text-[13px] font-bold text-slate-600 group-hover:text-slate-800">소(미니/특소)</span>
+                        </label>
+                        <label className="flex items-center gap-2 cursor-pointer select-none group">
+                          <input 
+                            type="checkbox" 
+                            checked={filters.portability.options.medium} 
+                            onChange={() => toggleOption('portability', 'medium')} 
+                            className="w-4 h-4 rounded text-orange-500 border-slate-300 focus:ring-orange-400 cursor-pointer transition-colors"
+                          />
+                          <span className="text-[13px] font-bold text-slate-600 group-hover:text-slate-800">중</span>
+                        </label>
+                        <label className="flex items-center gap-2 cursor-pointer select-none group">
+                          <input 
+                            type="checkbox" 
+                            checked={filters.portability.options.large} 
+                            onChange={() => toggleOption('portability', 'large')} 
+                            className="w-4 h-4 rounded text-orange-500 border-slate-300 focus:ring-orange-400 cursor-pointer transition-colors"
+                          />
+                          <span className="text-[13px] font-bold text-slate-600 group-hover:text-slate-800">대(대/특대)</span>
+                        </label>
+                        <label className="flex items-center gap-2 cursor-pointer select-none group">
+                          <input 
+                            type="checkbox" 
+                            checked={filters.portability.options.pulpit} 
+                            onChange={() => toggleOption('portability', 'pulpit')} 
+                            className="w-4 h-4 rounded text-orange-500 border-slate-300 focus:ring-orange-400 cursor-pointer transition-colors"
+                          />
+                          <span className="text-[13px] font-bold text-slate-600 group-hover:text-slate-800">강대용</span>
+                        </label>
+                      </div>
+                    </td>
+                    
+                    {/* 5. 글씨크기 옵션들 */}
+                    <td className={`px-4 py-4 align-top transition-opacity duration-200 ${!filters.fontSize.master && Object.values(filters.fontSize.options).every(v => !v) ? 'opacity-40' : 'opacity-100'}`}>
+                      <div className="flex flex-col gap-2.5">
+                        <label className="flex items-center gap-2 cursor-pointer select-none group">
+                          <input 
+                            type="checkbox" 
+                            checked={filters.fontSize.options.small} 
+                            onChange={() => toggleOption('fontSize', 'small')} 
+                            className="w-4 h-4 rounded text-orange-500 border-slate-300 focus:ring-orange-400 cursor-pointer transition-colors"
+                          />
+                          <span className="text-[13px] font-bold text-slate-600 group-hover:text-slate-800">작은글씨</span>
+                        </label>
+                        <label className="flex items-center gap-2 cursor-pointer select-none group">
+                          <input 
+                            type="checkbox" 
+                            checked={filters.fontSize.options.medium} 
+                            onChange={() => toggleOption('fontSize', 'medium')} 
+                            className="w-4 h-4 rounded text-orange-500 border-slate-300 focus:ring-orange-400 cursor-pointer transition-colors"
+                          />
+                          <span className="text-[13px] font-bold text-slate-600 group-hover:text-slate-800">중간글씨</span>
+                        </label>
+                        <label className="flex items-center gap-2 cursor-pointer select-none group">
+                          <input 
+                            type="checkbox" 
+                            checked={filters.fontSize.options.senior} 
+                            onChange={() => toggleOption('fontSize', 'senior')} 
+                            className="w-4 h-4 rounded text-orange-500 border-slate-300 focus:ring-orange-400 cursor-pointer transition-colors"
+                          />
+                          <span className="text-[13px] font-bold text-slate-600 group-hover:text-slate-800">어르신용(큰글씨)</span>
+                        </label>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            
+            {/* 모바일 가로스크롤 안내 */}
+            <div className="block md:hidden mt-2 text-center text-[10px] md:text-xs font-bold text-slate-400 select-none">
+              ↔ 표를 좌우로 밀어서 모든 필터를 확인해 보세요.
+            </div>
           </div>
         </div>
 
@@ -4042,7 +4280,15 @@ const App = () => {
             </thead>
             <tbody className="divide-y divide-white">
               {filteredItems.length === 0 ? (
-                <tr><td colSpan={4} className="py-12 bg-white text-center text-slate-400 font-medium italic border-b border-slate-100">{selectedType === 'study' ? '준비 중인 데이터입니다.' : '해당 모델을 준비 중입니다.'}</td></tr>
+                <tr>
+                  <td colSpan={4} className="py-16 bg-white text-center text-slate-400 border-b border-slate-100">
+                    <div className="flex flex-col items-center justify-center space-y-3">
+                      <AlertCircle size={40} className="text-slate-300" />
+                      <p className="text-sm md:text-base font-black text-slate-700">선택하신 조건에 매칭되는 성경 제품이 없습니다.</p>
+                      <p className="text-[11px] md:text-xs font-bold text-slate-400">필터 조건들을 조금 더 넓히거나 오른쪽 상단의 '필터 초기화'를 클릭해 주세요.</p>
+                    </div>
+                  </td>
+                </tr>
               ) : (
                 filteredItems.map((item, idx) => (
                   <tr 
@@ -4062,7 +4308,19 @@ const App = () => {
                       onMouseLeave={handleMouseLeave}
                     >
                       <div className="flex flex-col">
-                        <span className="text-[length:var(--font-list-model)] md:text-[length:var(--font-list-model-md)] font-black text-slate-800 whitespace-nowrap">{item.model}</span>
+                        <span className="text-[length:var(--font-list-model)] md:text-[length:var(--font-list-model-md)] font-black text-slate-800 whitespace-nowrap flex items-center">
+                          <span className={`inline-block mr-2 px-1.5 py-0.5 rounded text-[10px] font-black tracking-tight leading-none ${
+                            item.publisherKey === 'A' ? 'bg-purple-100 text-purple-700' :
+                            item.publisherKey === 'W' ? 'bg-emerald-100 text-emerald-700' :
+                            item.publisherKey === 'S' ? 'bg-sky-100 text-sky-700' :
+                            item.publisherKey === 'C' ? 'bg-amber-100 text-amber-700' :
+                            item.publisherKey === 'D' ? 'bg-rose-100 text-rose-700' :
+                            'bg-indigo-100 text-indigo-700'
+                          }`}>
+                            {item.publisherName}
+                          </span>
+                          {item.model}
+                        </span>
                         <div className="inline-flex items-center w-fit mt-1 px-1.5 py-0.5 bg-orange-100 rounded text-orange-700 text-[length:var(--font-tag)] font-black tracking-tighter transition-all"><span>상품보기</span></div>
                       </div>
                     </td>
@@ -4216,9 +4474,9 @@ const App = () => {
               </div>
               
               <div className="p-4 md:p-8 max-h-[70vh] overflow-y-auto pretty-scrollbar">
-                {(selectedItem.variants || fetchedVariants[selectedItem.model] || []).length > 0 ? (
+                {getFilteredVariants(selectedItem).length > 0 ? (
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-6">
-                    {(selectedItem.variants || fetchedVariants[selectedItem.model]).map((v, vIdx) => (
+                    {getFilteredVariants(selectedItem).map((v, vIdx) => (
                       <a key={vIdx} href={v.url} target="_blank" rel="noopener noreferrer" className="group flex flex-col space-y-2 md:space-y-3 transition-transform duration-300 ease-out hover:-translate-y-1">
                         <div className="aspect-square w-full rounded-xl md:rounded-2xl overflow-hidden border-2 border-slate-100 shadow-sm transition-shadow duration-300 ease-out hover:shadow-[0_22px_60px_rgba(15,23,42,0.12)] group-hover:border-orange-200 relative">
                           <img src={v.img} alt={v.label} className="w-full h-full object-cover transition-transform duration-300 ease-out hover:scale-[1.02]" />
@@ -4276,10 +4534,10 @@ const App = () => {
               </div>
               
               <div className="space-y-3 overflow-y-auto max-h-[calc(100vh-160px)] pretty-scrollbar pr-2">
-                {(hoverItem.variants || fetchedVariants[hoverItem.model] || []).length > 0 ? (
+                {getFilteredVariants(hoverItem).length > 0 ? (
                   <div className="max-h-[500px] overflow-y-auto pretty-scrollbar pr-2">
                     <div className="grid grid-cols-2 gap-4">
-                      {(hoverItem.variants || fetchedVariants[hoverItem.model]).map((v, vIdx) => (
+                      {getFilteredVariants(hoverItem).map((v, vIdx) => (
                         <a key={vIdx} href={v.url} target="_blank" rel="noopener noreferrer" className="flex flex-col space-y-1 group/item">
                           <div className="aspect-square w-full rounded-xl overflow-hidden border border-slate-100 bg-white shadow-sm transition-shadow duration-300 ease-out group-hover/item:border-orange-200 group-hover/item:shadow-[0_22px_60px_rgba(15,23,42,0.12)]">
                             <img src={v.img} alt="" className="w-full h-full object-cover transition-transform duration-300 ease-out group-hover/item:scale-[1.02]" />
