@@ -43,6 +43,71 @@ const App = () => {
   const showTimeoutRef = useRef(null);
   const [isHoverActive, setIsHoverActive] = useState(false);
 
+  // 장바구니 및 알림 관련 상태
+  const [cartItems, setCartItems] = useState(() => {
+    try {
+      const saved = localStorage.getItem('biblezoom_cart');
+      return saved ? JSON.parse(saved) : [];
+    } catch (e) {
+      return [];
+    }
+  });
+  const [toastMessage, setToastMessage] = useState(null);
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  const toastTimeoutRef = useRef(null);
+
+  // 로컬스토리지 자동 저장 동기화
+  useEffect(() => {
+    localStorage.setItem('biblezoom_cart', JSON.stringify(cartItems));
+  }, [cartItems]);
+
+  // 토스트 메시지 팝업 트리거
+  const showToast = (msg) => {
+    if (toastTimeoutRef.current) clearTimeout(toastTimeoutRef.current);
+    setToastMessage(msg);
+    toastTimeoutRef.current = setTimeout(() => {
+      setToastMessage(null);
+    }, 2200);
+  };
+
+  // 장바구니 담기 핸들러
+  const addToCart = (variant, item) => {
+    const uniqueId = `${item.publisherKey}_${item.model}_${variant.label}`;
+    setCartItems(prev => {
+      const exists = prev.find(i => i.uniqueId === uniqueId);
+      if (exists) {
+        showToast('🛒 이미 장바구니에 담겨 있는 상품입니다.');
+        return prev;
+      }
+      showToast('🛒 장바구니에 상품을 담았습니다!');
+      return [...prev, {
+        uniqueId,
+        publisherKey: item.publisherKey,
+        publisherName: item.publisherName,
+        model: item.model,
+        size: item.size,
+        variantLabel: variant.label,
+        variantImg: variant.img,
+        variantUrl: variant.url,
+        originalPrice: variant.originalPrice,
+        salePrice: variant.salePrice,
+        quantity: 1
+      }];
+    });
+  };
+
+  // 장바구니 상품 삭제 핸들러
+  const removeFromCart = (uniqueId) => {
+    setCartItems(prev => prev.filter(i => i.uniqueId !== uniqueId));
+    showToast('🗑️ 장바구니에서 상품을 삭제했습니다.');
+  };
+
+  // 장바구니 전체 비우기 핸들러
+  const clearCart = () => {
+    setCartItems([]);
+    showToast('🧹 장바구니를 모두 비웠습니다.');
+  };
+
   // 6대 실시간 필터 상태 정의
   const [filters, setFilters] = useState({
     hymn: { master: true, options: { yes: true, no: true } },
@@ -4569,31 +4634,48 @@ const App = () => {
                 {getFilteredVariants(selectedItem).length > 0 ? (
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-6">
                     {getFilteredVariants(selectedItem).map((v, vIdx) => (
-                      <a key={vIdx} href={v.url} target="_blank" rel="noopener noreferrer" className="group flex flex-col space-y-2 md:space-y-3 transition-transform duration-300 ease-out hover:-translate-y-1">
-                        <div className="aspect-square w-full rounded-xl md:rounded-2xl overflow-hidden border-2 border-slate-100 shadow-sm transition-shadow duration-300 ease-out hover:shadow-[0_22px_60px_rgba(15,23,42,0.12)] group-hover:border-orange-200 relative">
-                          <img src={v.img} alt={v.label} className="w-full h-full object-cover transition-transform duration-300 ease-out hover:scale-[1.02]" />
-                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors"></div>
-                        </div>
-                        <div className="space-y-0">
-                          <p className="text-[length:var(--font-modal-product)] md:text-[length:var(--font-modal-product-md)] font-black text-slate-800 leading-tight line-clamp-2 min-h-[28px] md:min-h-[34px]">{v.label}</p>
-                          <div className="flex flex-row items-baseline gap-x-2 flex-nowrap whitespace-nowrap">
-                            {v.salePrice && v.originalPrice && v.salePrice < v.originalPrice ? (
-                              <>
-                                <div className="flex items-center gap-1.5 leading-none">
-                                  <span className="text-[length:var(--font-price-orig)] md:text-[length:var(--font-price-orig-md)] text-slate-400 line-through">{formatPrice(v.originalPrice)}</span>
-                                  <span className="text-[length:var(--font-price-orig)] md:text-[length:var(--font-price-orig-md)] text-red-500 font-black">{Math.round((v.originalPrice - v.salePrice) / v.originalPrice * 100)}% ↓</span>
-                                </div>
-                                <span className="text-[length:var(--font-price-sale)] md:text-[length:var(--font-price-sale-md)] text-orange-600 font-black">{formatPrice(v.salePrice)}</span>
-                              </>
-                            ) : (
-                              <span className="text-[length:var(--font-price-sale)] md:text-[length:var(--font-price-sale-md)] text-orange-600 font-black">{formatPrice(v.salePrice || v.originalPrice)}</span>
-                            )}
+                      <div key={vIdx} className="group flex flex-col space-y-2 md:space-y-3 transition-transform duration-300 ease-out hover:-translate-y-1">
+                        <a href={v.url} target="_blank" rel="noopener noreferrer" className="flex flex-col space-y-2 md:space-y-3">
+                          <div className="aspect-square w-full rounded-xl md:rounded-2xl overflow-hidden border-2 border-slate-100 shadow-sm transition-shadow duration-300 ease-out hover:shadow-[0_22px_60px_rgba(15,23,42,0.12)] group-hover:border-orange-200 relative">
+                            <img src={v.img} alt={v.label} className="w-full h-full object-cover transition-transform duration-300 ease-out hover:scale-[1.02]" />
+                            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors"></div>
                           </div>
+                          <div className="space-y-0">
+                            <p className="text-[length:var(--font-modal-product)] md:text-[length:var(--font-modal-product-md)] font-black text-slate-800 leading-tight line-clamp-2 min-h-[28px] md:min-h-[34px]">{v.label}</p>
+                            <div className="flex flex-row items-baseline gap-x-2 flex-nowrap whitespace-nowrap">
+                              {v.salePrice && v.originalPrice && v.salePrice < v.originalPrice ? (
+                                <>
+                                  <div className="flex items-center gap-1.5 leading-none">
+                                    <span className="text-[length:var(--font-price-orig)] md:text-[length:var(--font-price-orig-md)] text-slate-400 line-through">{formatPrice(v.originalPrice)}</span>
+                                    <span className="text-[length:var(--font-price-orig)] md:text-[length:var(--font-price-orig-md)] text-red-500 font-black">{Math.round((v.originalPrice - v.salePrice) / v.originalPrice * 100)}% ↓</span>
+                                  </div>
+                                  <span className="text-[length:var(--font-price-sale)] md:text-[length:var(--font-price-sale-md)] text-orange-600 font-black">{formatPrice(v.salePrice)}</span>
+                                </>
+                              ) : (
+                                <span className="text-[length:var(--font-price-sale)] md:text-[length:var(--font-price-sale-md)] text-orange-600 font-black">{formatPrice(v.salePrice || v.originalPrice)}</span>
+                              )}
+                            </div>
+                          </div>
+                        </a>
+                        
+                        <div className="grid grid-cols-2 gap-2 mt-auto pt-1">
+                          <button 
+                            onClick={() => addToCart(v, selectedItem)}
+                            className="flex items-center justify-center gap-1.5 bg-white border border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-slate-700 font-black py-2 md:py-2.5 rounded-lg md:rounded-xl text-center text-[11px] md:text-xs transition-all shadow-xs cursor-pointer"
+                          >
+                            <ShoppingBag size={13} />
+                            담기
+                          </button>
+                          <a 
+                            href={v.url} 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="flex items-center justify-center bg-orange-500 hover:bg-orange-600 text-white font-black py-2 md:py-2.5 rounded-lg md:rounded-xl text-center text-[11px] md:text-xs transition-all shadow-xs cursor-pointer"
+                          >
+                            바로구매
+                          </a>
                         </div>
-                        <div className="bg-slate-100 text-slate-500 text-[length:var(--font-modal-btn)] md:text-[length:var(--font-modal-btn-md)] font-black py-2 md:py-3 rounded-lg md:rounded-xl text-center group-hover:bg-orange-600 group-hover:text-white transition-all">
-                          상품 보러 가기
-                        </div>
-                      </a>
+                      </div>
                     ))}
                   </div>
                 ) : (
@@ -4630,25 +4712,45 @@ const App = () => {
                   <div className="max-h-[500px] overflow-y-auto pretty-scrollbar pr-2">
                     <div className="grid grid-cols-2 gap-4">
                       {getFilteredVariants(hoverItem).map((v, vIdx) => (
-                        <a key={vIdx} href={v.url} target="_blank" rel="noopener noreferrer" className="flex flex-col space-y-1 group/item">
-                          <div className="aspect-square w-full rounded-xl overflow-hidden border border-slate-100 bg-white shadow-sm transition-shadow duration-300 ease-out group-hover/item:border-orange-200 group-hover/item:shadow-[0_22px_60px_rgba(15,23,42,0.12)]">
-                            <img src={v.img} alt="" className="w-full h-full object-cover transition-transform duration-300 ease-out group-hover/item:scale-[1.02]" />
+                        <div key={vIdx} className="flex flex-col space-y-1.5 group/item">
+                          <a href={v.url} target="_blank" rel="noopener noreferrer" className="flex flex-col space-y-1">
+                            <div className="aspect-square w-full rounded-xl overflow-hidden border border-slate-100 bg-white shadow-sm transition-shadow duration-300 ease-out group-hover/item:border-orange-200 group-hover/item:shadow-[0_22px_60px_rgba(15,23,42,0.12)]">
+                              <img src={v.img} alt="" className="w-full h-full object-cover transition-transform duration-300 ease-out group-hover/item:scale-[1.02]" />
+                            </div>
+                            <p className="text-[length:var(--font-hover-product)] md:text-[length:var(--font-hover-product-md)] font-bold text-slate-600 line-clamp-2 leading-[1.2] mt-1 group-hover/item:text-orange-600 transition-colors">{v.label}</p>
+                            <div className="flex flex-row items-baseline gap-x-2 whitespace-nowrap mt-0.5">
+                              {v.salePrice && v.originalPrice && v.salePrice < v.originalPrice ? (
+                                <>
+                                  <div className="flex items-center gap-1 leading-none">
+                                    <span className="text-[10px] md:text-[11px] text-slate-400 line-through">{formatPrice(v.originalPrice)}</span>
+                                    <span className="text-[10px] md:text-[11px] text-red-500 font-bold">{Math.round((v.originalPrice - v.salePrice) / v.originalPrice * 100)}% ↓</span>
+                                  </div>
+                                  <p className="text-[14px] md:text-[16px] font-black text-orange-600 leading-none">{formatPrice(v.salePrice)}</p>
+                                </>
+                              ) : (
+                                <p className="text-[14px] md:text-[16px] font-black text-orange-600 leading-none">{formatPrice(v.salePrice || v.originalPrice)}</p>
+                              )}
+                            </div>
+                          </a>
+                          
+                          <div className="grid grid-cols-2 gap-1.5 mt-auto pt-1">
+                            <button 
+                              onClick={() => addToCart(v, hoverItem)}
+                              className="flex items-center justify-center gap-1 bg-white border border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-slate-700 font-bold py-1.5 rounded-lg text-[10px] md:text-[11px] transition-all cursor-pointer"
+                            >
+                              <ShoppingBag size={12} />
+                              담기
+                            </button>
+                            <a 
+                              href={v.url} 
+                              target="_blank" 
+                              rel="noopener noreferrer" 
+                              className="flex items-center justify-center bg-orange-500 hover:bg-orange-600 text-white font-bold py-1.5 rounded-lg text-center text-[10px] md:text-[11px] transition-all cursor-pointer"
+                            >
+                              바로구매
+                            </a>
                           </div>
-                          <p className="text-[length:var(--font-hover-product)] md:text-[length:var(--font-hover-product-md)] font-bold text-slate-600 line-clamp-2 leading-[1.2] mt-1 group-hover/item:text-orange-600 transition-colors">{v.label}</p>
-                          <div className="flex flex-row items-baseline gap-x-2 whitespace-nowrap mt-0.5">
-                            {v.salePrice && v.originalPrice && v.salePrice < v.originalPrice ? (
-                              <>
-                                <div className="flex items-center gap-1 leading-none">
-                                  <span className="text-[10px] md:text-[11px] text-slate-400 line-through">{formatPrice(v.originalPrice)}</span>
-                                  <span className="text-[10px] md:text-[11px] text-red-500 font-bold">{Math.round((v.originalPrice - v.salePrice) / v.originalPrice * 100)}% ↓</span>
-                                </div>
-                                <p className="text-[14px] md:text-[16px] font-black text-orange-600 leading-none">{formatPrice(v.salePrice)}</p>
-                              </>
-                            ) : (
-                              <p className="text-[14px] md:text-[16px] font-black text-orange-600 leading-none">{formatPrice(v.salePrice || v.originalPrice)}</p>
-                            )}
-                          </div>
-                        </a>
+                        </div>
                       ))}
                     </div>
                   </div>
@@ -4662,6 +4764,121 @@ const App = () => {
                   </div>
                 )}
               </div>
+            </div>
+          </div>
+        )}
+
+        {/* 1. 토스트 피드백 알림 */}
+        {toastMessage && (
+          <div className="fixed bottom-24 left-1/2 -translate-x-1/2 z-[10000] bg-slate-900/90 text-white font-black text-xs md:text-sm px-6 py-3 rounded-full shadow-2xl flex items-center gap-2 border border-slate-700 backdrop-blur-sm animate-toast-slide">
+            <span>{toastMessage}</span>
+          </div>
+        )}
+
+        {/* 2. 우측 하단 고품격 플로팅 장바구니 버튼 */}
+        {cartItems.length > 0 && (
+          <button 
+            onClick={() => setIsCartOpen(true)}
+            className="fixed bottom-6 right-6 z-[4900] bg-orange-500 hover:bg-orange-600 text-white p-4 rounded-full shadow-[0_8px_30px_rgba(249,115,22,0.4)] transition-all hover:scale-105 duration-300 ease-out flex items-center justify-center cursor-pointer group hover:rotate-2"
+          >
+            <ShoppingCart size={24} className="group-hover:scale-110 transition-transform duration-300" />
+            <span className="absolute -top-1.5 -right-1.5 bg-red-500 text-white font-black text-[10px] w-5 h-5 rounded-full flex items-center justify-center border-2 border-white shadow-sm animate-pulse-badge">
+              {cartItems.length}
+            </span>
+          </button>
+        )}
+
+        {/* 3. 우측 슬라이딩 장바구니 Drawer (서랍) */}
+        {isCartOpen && (
+          <div className="fixed inset-0 z-[6000] flex justify-end bg-slate-900/40 backdrop-blur-xs animate-fade-in" onClick={() => setIsCartOpen(false)}>
+            <div 
+              className="bg-white w-full max-w-[420px] h-full shadow-2xl flex flex-col animate-slide-in-right"
+              onClick={e => e.stopPropagation()}
+            >
+              {/* Drawer Header */}
+              <div className="px-6 py-5 border-b border-slate-100 flex justify-between items-center bg-slate-50/50">
+                <div className="flex items-center gap-2">
+                  <ShoppingCart className="text-orange-500" size={22} />
+                  <h3 className="text-base md:text-lg font-black text-slate-800">관심 성경 바구니</h3>
+                  <span className="bg-orange-100 text-orange-600 text-xs font-black px-2 py-0.5 rounded-full">{cartItems.length}</span>
+                </div>
+                <button onClick={() => setIsCartOpen(false)} className="p-1.5 hover:bg-slate-100 rounded-full transition-colors text-slate-400 hover:text-slate-600 cursor-pointer">
+                  <X size={20} />
+                </button>
+              </div>
+
+              {/* Drawer Content */}
+              <div className="flex-1 overflow-y-auto pr-2 pl-6 py-6 pretty-scrollbar space-y-4">
+                {cartItems.length > 0 ? (
+                  cartItems.map((item) => (
+                    <div key={item.uniqueId} className="flex gap-4 border border-slate-100 p-4 rounded-2xl bg-white shadow-xs relative hover:border-slate-200 transition-colors">
+                      <div className="w-16 h-16 rounded-xl overflow-hidden border border-slate-100 flex-shrink-0 bg-slate-50">
+                        <img src={item.variantImg} alt="" className="w-full h-full object-cover" />
+                      </div>
+                      <div className="flex-1 min-w-0 pr-6">
+                        <span className="text-[9px] font-black text-orange-500 bg-orange-50 px-1.5 py-0.5 rounded uppercase tracking-wider">{item.publisherName}</span>
+                        <h4 className="text-xs md:text-sm font-black text-slate-800 truncate mt-1">{item.model}</h4>
+                        <p className="text-[10px] md:text-xs font-bold text-slate-500 mt-0.5 leading-none">{item.variantLabel} / {item.size}</p>
+                        <div className="flex items-baseline gap-2 mt-2">
+                          <span className="text-xs md:text-sm font-black text-slate-800">{formatPrice(item.salePrice || item.originalPrice)}</span>
+                          {item.salePrice < item.originalPrice && (
+                            <span className="text-[10px] text-slate-400 line-through">{formatPrice(item.originalPrice)}</span>
+                          )}
+                        </div>
+                      </div>
+                      <button 
+                        onClick={() => removeFromCart(item.uniqueId)}
+                        className="absolute top-3 right-3 text-slate-300 hover:text-red-500 p-1 rounded-full transition-colors cursor-pointer"
+                        title="삭제"
+                      >
+                        <X size={16} />
+                      </button>
+                    </div>
+                  ))
+                ) : (
+                  <div className="h-full flex flex-col items-center justify-center text-slate-400 py-20 pr-4">
+                    <ShoppingCart size={48} className="mb-4 opacity-20" />
+                    <p className="text-sm font-bold">장바구니가 비어 있습니다.</p>
+                    <p className="text-xs text-slate-400 mt-1">마음에 드는 성경을 담아보세요!</p>
+                  </div>
+                )}
+              </div>
+
+              {/* Drawer Footer */}
+              {cartItems.length > 0 && (
+                <div className="p-6 border-t border-slate-100 bg-slate-50/50 space-y-4">
+                  <div className="flex justify-between items-baseline">
+                    <span className="text-xs font-bold text-slate-500">선택한 성경 총 합계</span>
+                    <div className="text-right">
+                      <span className="text-xl font-black text-orange-600">
+                        {formatPrice(cartItems.reduce((acc, curr) => acc + (curr.salePrice || curr.originalPrice), 0))}
+                      </span>
+                    </div>
+                  </div>
+                  
+                  <div className="grid grid-cols-3 gap-2">
+                    <button 
+                      onClick={clearCart}
+                      className="bg-white border border-slate-200 hover:border-slate-300 text-slate-600 font-bold py-3 rounded-xl text-center text-xs transition-colors cursor-pointer"
+                    >
+                      전체 비우기
+                    </button>
+                    <button 
+                      onClick={() => {
+                        cartItems.forEach((item, idx) => {
+                          setTimeout(() => {
+                            window.open(item.variantUrl, '_blank');
+                          }, idx * 250);
+                        });
+                        setIsCartOpen(false);
+                      }}
+                      className="col-span-2 bg-orange-500 hover:bg-orange-600 text-white font-black py-3 rounded-xl text-center text-xs transition-all shadow-md shadow-orange-500/10 cursor-pointer"
+                    >
+                      선택 상품 바로구매 🚀
+                    </button>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         )}

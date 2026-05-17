@@ -262,3 +262,58 @@ input[type="checkbox"] {
   accent-color: #ea580c; /* orange-600 */
   cursor: pointer;
 }
+
+/* Premium micro-animations for In-app Cart & Toast alerts */
+@keyframes toast-slide {
+  0% {
+    transform: translate(-50%, 12px);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}
+
+.animate-toast-slide {
+  animation: toast-slide 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slide-in-right {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.25s ease-out forwards;
+}
+
+@keyframes pulse-badge {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+.animate-pulse-badge {
+  animation: pulse-badge 2s infinite ease-in-out;
+}
