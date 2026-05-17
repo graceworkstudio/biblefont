@@ -56,6 +56,37 @@ const App = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const toastTimeoutRef = useRef(null);
 
+  // 장바구니 선택 항목 관리 상태
+  const [selectedCartIds, setSelectedCartIds] = useState([]);
+
+  // 장바구니 변경 시 선택 목록 동기화 (새로운 추가 상품은 자동 선택)
+  useEffect(() => {
+    setSelectedCartIds(prev => {
+      const newIds = cartItems.map(i => i.uniqueId);
+      const kept = prev.filter(id => newIds.includes(id));
+      const added = newIds.filter(id => !prev.includes(id));
+      return [...kept, ...added];
+    });
+  }, [cartItems]);
+
+  // 개별 상품 선택/해제 토글
+  const toggleSelectCartItem = (uniqueId) => {
+    setSelectedCartIds(prev =>
+      prev.includes(uniqueId)
+        ? prev.filter(id => id !== uniqueId)
+        : [...prev, uniqueId]
+    );
+  };
+
+  // 전체 상품 선택/해제 토글
+  const toggleSelectAllCart = () => {
+    if (selectedCartIds.length === cartItems.length) {
+      setSelectedCartIds([]);
+    } else {
+      setSelectedCartIds(cartItems.map(i => i.uniqueId));
+    }
+  };
+
   // 로컬스토리지 자동 저장 동기화
   useEffect(() => {
     localStorage.setItem('biblezoom_cart', JSON.stringify(cartItems));
@@ -4810,31 +4841,79 @@ const App = () => {
               {/* Drawer Content */}
               <div className="flex-1 overflow-y-auto pr-2 pl-6 py-6 pretty-scrollbar space-y-4">
                 {cartItems.length > 0 ? (
-                  cartItems.map((item) => (
-                    <div key={item.uniqueId} className="flex gap-4 border border-slate-100 p-4 rounded-2xl bg-white shadow-xs relative hover:border-slate-200 transition-colors">
-                      <div className="w-16 h-16 rounded-xl overflow-hidden border border-slate-100 flex-shrink-0 bg-slate-50">
-                        <img src={item.variantImg} alt="" className="w-full h-full object-cover" />
-                      </div>
-                      <div className="flex-1 min-w-0 pr-6">
-                        <span className="text-[9px] font-black text-orange-500 bg-orange-50 px-1.5 py-0.5 rounded uppercase tracking-wider">{item.publisherName}</span>
-                        <h4 className="text-xs md:text-sm font-black text-slate-800 truncate mt-1">{item.model}</h4>
-                        <p className="text-[10px] md:text-xs font-bold text-slate-500 mt-0.5 leading-none">{item.variantLabel} / {item.size}</p>
-                        <div className="flex items-baseline gap-2 mt-2">
-                          <span className="text-xs md:text-sm font-black text-slate-800">{formatPrice(item.salePrice || item.originalPrice)}</span>
-                          {item.salePrice < item.originalPrice && (
-                            <span className="text-[10px] text-slate-400 line-through">{formatPrice(item.originalPrice)}</span>
-                          )}
-                        </div>
-                      </div>
-                      <button 
-                        onClick={() => removeFromCart(item.uniqueId)}
-                        className="absolute top-3 right-3 text-slate-300 hover:text-red-500 p-1 rounded-full transition-colors cursor-pointer"
-                        title="삭제"
-                      >
-                        <X size={16} />
-                      </button>
+                  <>
+                    {/* 전체 선택 바 */}
+                    <div className="flex justify-between items-center pb-2 border-b border-slate-100 pr-4">
+                      <label className="flex items-center gap-2 text-xs font-black text-slate-600 cursor-pointer select-none">
+                        <input 
+                          type="checkbox"
+                          checked={cartItems.length > 0 && selectedCartIds.length === cartItems.length}
+                          onChange={toggleSelectAllCart}
+                          className="w-4 h-4 rounded border-slate-300 text-orange-600 focus:ring-orange-500 cursor-pointer"
+                        />
+                        전체 선택 ({selectedCartIds.length}/{cartItems.length})
+                      </label>
+                      {selectedCartIds.length > 0 && (
+                        <button 
+                          onClick={() => {
+                            setCartItems(prev => prev.filter(i => !selectedCartIds.includes(i.uniqueId)));
+                            showToast('🗑️ 선택한 상품들을 삭제했습니다.');
+                          }}
+                          className="text-[11px] font-black text-red-500 hover:text-red-600 transition-colors"
+                        >
+                          선택 삭제
+                        </button>
+                      )}
                     </div>
-                  ))
+
+                    <div className="space-y-4">
+                      {cartItems.map((item) => (
+                        <div key={item.uniqueId} className="flex items-center gap-3 border border-slate-100 p-4 rounded-2xl bg-white shadow-xs relative hover:border-slate-200 transition-all">
+                          {/* 개별 선택 체크박스 */}
+                          <div className="flex-shrink-0 flex items-center justify-center">
+                            <input 
+                              type="checkbox"
+                              checked={selectedCartIds.includes(item.uniqueId)}
+                              onChange={() => toggleSelectCartItem(item.uniqueId)}
+                              className="w-4 h-4 rounded border-slate-300 text-orange-600 focus:ring-orange-500 cursor-pointer"
+                            />
+                          </div>
+
+                          {/* 상품 클릭 영역 (쇼핑몰 상세페이지 연결) */}
+                          <a 
+                            href={item.variantUrl} 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="flex-1 flex gap-3 min-w-0 pr-6 group/item cursor-pointer"
+                          >
+                            <div className="w-14 h-14 rounded-xl overflow-hidden border border-slate-100 flex-shrink-0 bg-slate-50 group-hover/item:border-orange-200 transition-colors">
+                              <img src={item.variantImg} alt="" className="w-full h-full object-cover group-hover/item:scale-[1.03] transition-transform duration-300" />
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <span className="text-[8px] md:text-[9px] font-black text-orange-500 bg-orange-50 px-1.5 py-0.5 rounded uppercase tracking-wider">{item.publisherName}</span>
+                              <h4 className="text-xs md:text-[13px] font-black text-slate-800 truncate mt-0.5 group-hover/item:text-orange-600 transition-colors">{item.model}</h4>
+                              <p className="text-[10px] font-bold text-slate-400 mt-0.5 leading-none">{item.variantLabel} / {item.size}</p>
+                              <div className="flex items-baseline gap-1.5 mt-1.5">
+                                <span className="text-xs font-black text-slate-800">{formatPrice(item.salePrice || item.originalPrice)}</span>
+                                {item.salePrice < item.originalPrice && (
+                                  <span className="text-[9px] text-slate-400 line-through">{formatPrice(item.originalPrice)}</span>
+                                )}
+                              </div>
+                            </div>
+                          </a>
+
+                          {/* 개별 삭제 버튼 */}
+                          <button 
+                            onClick={() => removeFromCart(item.uniqueId)}
+                            className="text-slate-300 hover:text-red-500 p-1 rounded-full transition-colors cursor-pointer flex-shrink-0"
+                            title="삭제"
+                          >
+                            <X size={16} />
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                  </>
                 ) : (
                   <div className="h-full flex flex-col items-center justify-center text-slate-400 py-20 pr-4">
                     <ShoppingCart size={48} className="mb-4 opacity-20" />
@@ -4851,7 +4930,7 @@ const App = () => {
                     <span className="text-xs font-bold text-slate-500">선택한 성경 총 합계</span>
                     <div className="text-right">
                       <span className="text-xl font-black text-orange-600">
-                        {formatPrice(cartItems.reduce((acc, curr) => acc + (curr.salePrice || curr.originalPrice), 0))}
+                        {formatPrice(cartItems.filter(item => selectedCartIds.includes(item.uniqueId)).reduce((acc, curr) => acc + (curr.salePrice || curr.originalPrice), 0))}
                       </span>
                     </div>
                   </div>
@@ -4865,7 +4944,12 @@ const App = () => {
                     </button>
                     <button 
                       onClick={() => {
-                        cartItems.forEach((item, idx) => {
+                        const selectedItems = cartItems.filter(item => selectedCartIds.includes(item.uniqueId));
+                        if (selectedItems.length === 0) {
+                          showToast('⚠️ 구매할 상품을 먼저 선택해 주세요.');
+                          return;
+                        }
+                        selectedItems.forEach((item, idx) => {
                           setTimeout(() => {
                             window.open(item.variantUrl, '_blank');
                           }, idx * 250);
