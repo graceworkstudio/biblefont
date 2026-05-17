@@ -43,6 +43,57 @@ const App = () => {
   const showTimeoutRef = useRef(null);
   const [isHoverActive, setIsHoverActive] = useState(false);
 
+  // 5대 실시간 필터 상태 정의
+  const [filters, setFilters] = useState({
+    hymn: { master: true, options: { yes: true, no: true } },
+    commentary: { master: true, options: { yes: true, no: true } },
+    material: { master: true, options: { natural: true, pu: true, other: true } },
+    portability: { master: true, options: { small: true, medium: true, large: true, pulpit: true } },
+    fontSize: { master: true, options: { small: true, medium: true, senior: true } }
+  });
+
+  // 필터 초기화 함수
+  const resetFilters = () => {
+    setFilters({
+      hymn: { master: true, options: { yes: true, no: true } },
+      commentary: { master: true, options: { yes: true, no: true } },
+      material: { master: true, options: { natural: true, pu: true, other: true } },
+      portability: { master: true, options: { small: true, medium: true, large: true, pulpit: true } },
+      fontSize: { master: true, options: { small: true, medium: true, senior: true } }
+    });
+  };
+
+  // 마스터 체크박스 변경 토글러
+  const toggleMaster = (category) => {
+    setFilters(prev => {
+      const nextCategory = { ...prev[category] };
+      const nextMaster = !nextCategory.master;
+      nextCategory.master = nextMaster;
+      
+      const nextOptions = { ...nextCategory.options };
+      Object.keys(nextOptions).forEach(key => {
+        nextOptions[key] = nextMaster;
+      });
+      nextCategory.options = nextOptions;
+      
+      return { ...prev, [category]: nextCategory };
+    });
+  };
+
+  // 개별 옵션 체크박스 변경 토글러
+  const toggleOption = (category, optionKey) => {
+    setFilters(prev => {
+      const nextCategory = { ...prev[category] };
+      const nextOptions = { ...nextCategory.options, [optionKey]: !nextCategory.options[optionKey] };
+      nextCategory.options = nextOptions;
+      
+      const allChecked = Object.values(nextOptions).every(val => val === true);
+      nextCategory.master = allChecked;
+      
+      return { ...prev, [category]: nextCategory };
+    });
+  };
+
   const handleMouseEnter = (item, e) => {
     if (hideTimeoutRef.current) clearTimeout(hideTimeoutRef.current);
     if (showTimeoutRef.current) clearTimeout(showTimeoutRef.current);
@@ -189,6 +240,28 @@ const App = () => {
     } finally {
       setIsLoadingVariants(prev => ({ ...prev, [modelName]: false }));
     }
+  };
+
+  const getFilteredVariants = (item) => {
+    if (!item) return [];
+    const sourceVariants = item.variants || fetchedVariants[item.model] || [];
+    return sourceVariants.filter(variant => {
+      const label = variant.label || variant.name || '';
+      
+      const hasHymn = label.includes('합본') || !label.includes('단본');
+      const hymnMatch = hasHymn ? filters.hymn.options.yes : filters.hymn.options.no;
+      
+      const isNatural = label.includes('천연') || label.includes('가죽') && !label.includes('PU') && !label.includes('인조');
+      const isPU = label.includes('PU') || label.includes('인조') || label.includes('레자') || label.includes('레더');
+      const isOther = !isNatural && !isPU;
+      
+      let materialMatch = false;
+      if (isNatural && filters.material.options.natural) materialMatch = true;
+      if (isPU && filters.material.options.pu) materialMatch = true;
+      if (isOther && filters.material.options.other) materialMatch = true;
+      
+      return hymnMatch && materialMatch;
+    });
   };
 
   const handleItemClick = (item) => { setSelectedItem(item); handleFetchVariants(item); };
@@ -3549,37 +3622,66 @@ const App = () => {
     return match ? parseInt(match[1], 10) : 0;
   };
 
-  const filteredItems = [...bibleData[activeTab].items].filter(item => selectedType === 'all' || item.type === selectedType).sort((a, b) => {
-    if (selectedType === 'study') {
-      const orderA = getModelOrderIndex(activeTab, a.model || '');
-      const orderB = getModelOrderIndex(activeTab, b.model || '');
-      if (orderA !== orderB) return orderA - orderB;
-      if (a.model !== b.model) return (a.model || '').localeCompare(b.model || '');
-      return b.mm - a.mm; // Largest font size first for same model
-    } else if (selectedType === 'standard') {
-      // NKR 번호(앞 두 자리) 내림차순: 82 > 73 > 72 > 63 > 62 > 42
-      const nkrA = getNKRSortKey(a.model);
-      const nkrB = getNKRSortKey(b.model);
-      if (nkrA !== nkrB) return nkrB - nkrA;
-      // 같은 번호면 mm 내림차순
-      return b.mm - a.mm;
-    } else {
-      // 'all' type: study는 먼저, standard는 NKR 번호 내림차순 → mm 내림차순
-      if (a.type !== b.type) return a.type === 'study' ? -1 : 1;
-      if (a.type === 'standard') {
-        const nkrA = getNKRSortKey(a.model);
-        const nkrB = getNKRSortKey(b.model);
-        if (nkrA !== nkrB) return nkrB - nkrA;
-        // 같은 번호면 mm 내림차순 (아래에서 b.mm - a.mm 공통 처리)
-      } else {
-        const orderA = getModelOrderIndex(activeTab, a.model || '');
-        const orderB = getModelOrderIndex(activeTab, b.model || '');
-        if (orderA !== orderB) return orderA - orderB;
-        if (a.model !== b.model) return (a.model || '').localeCompare(b.model || '');
-      }
-      return b.mm - a.mm;
+  const filteredItems = Object.entries(bibleData).flatMap(([pubKey, pubValue]) => 
+    pubValue.items.map(item => ({
+      ...item,
+      publisherKey: pubKey,
+      publisherName: pubValue.name
+    }))
+  ).filter(item => {
+    // 1. Commentary filter (해설유무)
+    const matchesComm = (item.type === 'study' && filters.commentary.options.yes) || 
+                        (item.type === 'standard' && filters.commentary.options.no);
+    if (!matchesComm) return false;
+    
+    // 2. Portability filter (크기/휴대성)
+    const sz = item.size || '';
+    let matchesPort = false;
+    if (['소', '미니', '특소', '특미니', '초미니', '특초미니'].includes(sz)) {
+      matchesPort = filters.portability.options.small;
+    } else if (['중', '특중'].includes(sz)) {
+      matchesPort = filters.portability.options.medium;
+    } else if (sz === '대') {
+      matchesPort = filters.portability.options.large;
+    } else if (sz === '특대') {
+      matchesPort = filters.portability.options.pulpit;
     }
-  });
+    if (!matchesPort) return false;
+    
+    // 3. Font Size filter (글씨크기)
+    const mm = item.mm || 0;
+    let matchesFont = false;
+    if (mm < 3.0) {
+      matchesFont = filters.fontSize.options.small;
+    } else if (mm >= 3.0 && mm < 4.0) {
+      matchesFont = filters.fontSize.options.medium;
+    } else if (mm >= 4.0) {
+      matchesFont = filters.fontSize.options.senior;
+    }
+    if (!matchesFont) return false;
+    
+    // 4. Hymn & Material filters (찬송가 & 재질)
+    const matchedVariants = (item.variants || []).filter(variant => {
+      const label = variant.label || '';
+      
+      const hasHymn = label.includes('합본') || !label.includes('단본');
+      const hymnMatch = hasHymn ? filters.hymn.options.yes : filters.hymn.options.no;
+      
+      const isNatural = label.includes('천연') || label.includes('가죽') && !label.includes('PU') && !label.includes('인조');
+      const isPU = label.includes('PU') || label.includes('인조') || label.includes('레자') || label.includes('레더');
+      const isOther = !isNatural && !isPU;
+      
+      let materialMatch = false;
+      if (isNatural && filters.material.options.natural) materialMatch = true;
+      if (isPU && filters.material.options.pu) materialMatch = true;
+      if (isOther && filters.material.options.other) materialMatch = true;
+      
+      return hymnMatch && materialMatch;
+    });
+    
+    item.filteredVariants = matchedVariants;
+    return matchedVariants.length > 0;
+  }).sort((a, b) => b.mm - a.mm);
 
   return (
     <div className={`min-h-screen bg-slate-50 p-1 md:p-8 text-slate-900 font-sans ui-font-zoom-${uiSize}`}>
