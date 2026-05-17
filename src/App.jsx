@@ -43,13 +43,14 @@ const App = () => {
   const showTimeoutRef = useRef(null);
   const [isHoverActive, setIsHoverActive] = useState(false);
 
-  // 5대 실시간 필터 상태 정의
+  // 6대 실시간 필터 상태 정의
   const [filters, setFilters] = useState({
     hymn: { master: true, options: { yes: true, no: true } },
     commentary: { master: true, options: { yes: true, no: true } },
     material: { master: true, options: { natural: true, pu: true, other: true } },
     portability: { master: true, options: { small: true, medium: true, large: true, pulpit: true } },
-    fontSize: { master: true, options: { small: true, medium: true, senior: true } }
+    fontSize: { master: true, options: { small: true, medium: true, senior: true } },
+    publisher: { master: true, options: { agape: true, words: true, seong: true, christian: true, duranno: true, other: true } }
   });
 
   // 필터 초기화 함수
@@ -59,7 +60,8 @@ const App = () => {
       commentary: { master: true, options: { yes: true, no: true } },
       material: { master: true, options: { natural: true, pu: true, other: true } },
       portability: { master: true, options: { small: true, medium: true, large: true, pulpit: true } },
-      fontSize: { master: true, options: { small: true, medium: true, senior: true } }
+      fontSize: { master: true, options: { small: true, medium: true, senior: true } },
+      publisher: { master: true, options: { agape: true, words: true, seong: true, christian: true, duranno: true, other: true } }
     });
   };
 
@@ -3641,9 +3643,9 @@ const App = () => {
       matchesPort = filters.portability.options.small;
     } else if (['중', '특중'].includes(sz)) {
       matchesPort = filters.portability.options.medium;
-    } else if (sz === '대') {
+    } else if (['대', '특대'].includes(sz)) {
       matchesPort = filters.portability.options.large;
-    } else if (sz === '특대') {
+    } else if (sz === '강대용') {
       matchesPort = filters.portability.options.pulpit;
     }
     if (!matchesPort) return false;
@@ -3659,6 +3661,24 @@ const App = () => {
       matchesFont = filters.fontSize.options.senior;
     }
     if (!matchesFont) return false;
+
+    // 4. Publisher filter (출판사)
+    const pub = item.publisherKey;
+    let matchesPub = false;
+    if (pub === 'A') {
+      matchesPub = filters.publisher.options.agape;
+    } else if (pub === 'W') {
+      matchesPub = filters.publisher.options.words;
+    } else if (pub === 'S') {
+      matchesPub = filters.publisher.options.seong;
+    } else if (pub === 'C') {
+      matchesPub = filters.publisher.options.christian;
+    } else if (pub === 'D') {
+      matchesPub = filters.publisher.options.duranno;
+    } else {
+      matchesPub = filters.publisher.options.other;
+    }
+    if (!matchesPub) return false;
     
     // 4. Hymn & Material filters (찬송가 & 재질)
     const matchedVariants = (item.variants || []).filter(variant => {
@@ -4034,11 +4054,11 @@ const App = () => {
             
             {/* 가로형 격자 표 필터 (모바일 스크롤 지원) */}
             <div className="overflow-x-auto rounded-2xl border border-slate-200 shadow-sm bg-white pretty-scrollbar">
-              <table className="w-full border-collapse text-left min-w-[760px] table-fixed">
+              <table className="w-full border-collapse text-left min-w-[900px] table-fixed">
                 <thead>
                   <tr className="bg-[#ebf2f7] border-b border-slate-200">
                     {/* 1. 찬송가유무 */}
-                    <th className="px-4 py-3 border-r border-slate-200 w-1/5 select-none">
+                    <th className="px-4 py-3 border-r border-slate-200 w-1/6 select-none">
                       <label className="flex items-center gap-2 cursor-pointer">
                         <input 
                           type="checkbox" 
@@ -4050,7 +4070,7 @@ const App = () => {
                       </label>
                     </th>
                     {/* 2. 해설유무 */}
-                    <th className="px-4 py-3 border-r border-slate-200 w-1/5 select-none">
+                    <th className="px-4 py-3 border-r border-slate-200 w-1/6 select-none">
                       <label className="flex items-center gap-2 cursor-pointer">
                         <input 
                           type="checkbox" 
@@ -4062,7 +4082,7 @@ const App = () => {
                       </label>
                     </th>
                     {/* 3. 재질 */}
-                    <th className="px-4 py-3 border-r border-slate-200 w-1/5 select-none">
+                    <th className="px-4 py-3 border-r border-slate-200 w-1/6 select-none">
                       <label className="flex items-center gap-2 cursor-pointer">
                         <input 
                           type="checkbox" 
@@ -4074,7 +4094,7 @@ const App = () => {
                       </label>
                     </th>
                     {/* 4. 크기/휴대성 */}
-                    <th className="px-4 py-3 border-r border-slate-200 w-1/5 select-none">
+                    <th className="px-4 py-3 border-r border-slate-200 w-1/6 select-none">
                       <label className="flex items-center gap-2 cursor-pointer">
                         <input 
                           type="checkbox" 
@@ -4086,7 +4106,7 @@ const App = () => {
                       </label>
                     </th>
                     {/* 5. 글씨크기 */}
-                    <th className="px-4 py-3 w-1/5 select-none">
+                    <th className="px-4 py-3 border-r border-slate-200 w-1/6 select-none">
                       <label className="flex items-center gap-2 cursor-pointer">
                         <input 
                           type="checkbox" 
@@ -4095,6 +4115,18 @@ const App = () => {
                           className="w-4 h-4 rounded text-orange-500 border-slate-300 focus:ring-orange-400 cursor-pointer"
                         />
                         <span className="text-sm font-black text-slate-700">5. 글씨크기</span>
+                      </label>
+                    </th>
+                    {/* 6. 출판사 */}
+                    <th className="px-4 py-3 w-1/6 select-none">
+                      <label className="flex items-center gap-2 cursor-pointer">
+                        <input 
+                          type="checkbox" 
+                          checked={filters.publisher.master} 
+                          onChange={() => toggleMaster('publisher')} 
+                          className="w-4 h-4 rounded text-orange-500 border-slate-300 focus:ring-orange-400 cursor-pointer"
+                        />
+                        <span className="text-sm font-black text-slate-700">6. 출판사</span>
                       </label>
                     </th>
                   </tr>
@@ -4225,7 +4257,7 @@ const App = () => {
                     </td>
                     
                     {/* 5. 글씨크기 옵션들 */}
-                    <td className={`px-4 py-4 align-top transition-opacity duration-200 ${!filters.fontSize.master && Object.values(filters.fontSize.options).every(v => !v) ? 'opacity-40' : 'opacity-100'}`}>
+                    <td className={`px-4 py-4 border-r border-slate-200 align-top transition-opacity duration-200 ${!filters.fontSize.master && Object.values(filters.fontSize.options).every(v => !v) ? 'opacity-40' : 'opacity-100'}`}>
                       <div className="flex flex-col gap-2.5">
                         <label className="flex items-center gap-2 cursor-pointer select-none group">
                           <input 
@@ -4253,6 +4285,66 @@ const App = () => {
                             className="w-4 h-4 rounded text-orange-500 border-slate-300 focus:ring-orange-400 cursor-pointer transition-colors"
                           />
                           <span className="text-[13px] font-bold text-slate-600 group-hover:text-slate-800">어르신용(큰글씨)</span>
+                        </label>
+                      </div>
+                    </td>
+
+                    {/* 6. 출판사 옵션들 */}
+                    <td className={`px-4 py-4 align-top transition-opacity duration-200 ${!filters.publisher.master && Object.values(filters.publisher.options).every(v => !v) ? 'opacity-40' : 'opacity-100'}`}>
+                      <div className="flex flex-col gap-2.5">
+                        <label className="flex items-center gap-2 cursor-pointer select-none group">
+                          <input 
+                            type="checkbox" 
+                            checked={filters.publisher.options.agape} 
+                            onChange={() => toggleOption('publisher', 'agape')} 
+                            className="w-4 h-4 rounded text-orange-500 border-slate-300 focus:ring-orange-400 cursor-pointer transition-colors"
+                          />
+                          <span className="text-[13px] font-bold text-slate-600 group-hover:text-slate-800">아가페</span>
+                        </label>
+                        <label className="flex items-center gap-2 cursor-pointer select-none group">
+                          <input 
+                            type="checkbox" 
+                            checked={filters.publisher.options.words} 
+                            onChange={() => toggleOption('publisher', 'words')} 
+                            className="w-4 h-4 rounded text-orange-500 border-slate-300 focus:ring-orange-400 cursor-pointer transition-colors"
+                          />
+                          <span className="text-[13px] font-bold text-slate-600 group-hover:text-slate-800">생명의말씀사</span>
+                        </label>
+                        <label className="flex items-center gap-2 cursor-pointer select-none group">
+                          <input 
+                            type="checkbox" 
+                            checked={filters.publisher.options.seong} 
+                            onChange={() => toggleOption('publisher', 'seong')} 
+                            className="w-4 h-4 rounded text-orange-500 border-slate-300 focus:ring-orange-400 cursor-pointer transition-colors"
+                          />
+                          <span className="text-[13px] font-bold text-slate-600 group-hover:text-slate-800">성서원</span>
+                        </label>
+                        <label className="flex items-center gap-2 cursor-pointer select-none group">
+                          <input 
+                            type="checkbox" 
+                            checked={filters.publisher.options.christian} 
+                            onChange={() => toggleOption('publisher', 'christian')} 
+                            className="w-4 h-4 rounded text-orange-500 border-slate-300 focus:ring-orange-400 cursor-pointer transition-colors"
+                          />
+                          <span className="text-[13px] font-bold text-slate-600 group-hover:text-slate-800">대한기독교서회</span>
+                        </label>
+                        <label className="flex items-center gap-2 cursor-pointer select-none group">
+                          <input 
+                            type="checkbox" 
+                            checked={filters.publisher.options.duranno} 
+                            onChange={() => toggleOption('publisher', 'duranno')} 
+                            className="w-4 h-4 rounded text-orange-500 border-slate-300 focus:ring-orange-400 cursor-pointer transition-colors"
+                          />
+                          <span className="text-[13px] font-bold text-slate-600 group-hover:text-slate-800">두란노</span>
+                        </label>
+                        <label className="flex items-center gap-2 cursor-pointer select-none group">
+                          <input 
+                            type="checkbox" 
+                            checked={filters.publisher.options.other} 
+                            onChange={() => toggleOption('publisher', 'other')} 
+                            className="w-4 h-4 rounded text-orange-500 border-slate-300 focus:ring-orange-400 cursor-pointer transition-colors"
+                          />
+                          <span className="text-[13px] font-bold text-slate-600 group-hover:text-slate-800">기타</span>
                         </label>
                       </div>
                     </td>
