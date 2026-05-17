@@ -43,6 +43,7 @@
   --font-share-title: 16px;
   --font-share-desc: 12px;
   --spacing-section-subtitle: 0.4rem;
+  --font-instruction-body: 13px;
 }
 
 .ui-font-zoom-medium {
@@ -80,6 +81,7 @@
   --font-share-title: 18px;
   --font-share-desc: 14px;
   --spacing-section-subtitle: 0.45rem;
+  --font-instruction-body: 14px;
 }
 
 .ui-font-zoom-large {
@@ -117,6 +119,7 @@
   --font-share-title: 21px;
   --font-share-desc: 16px;
   --spacing-section-subtitle: 0.5rem;
+  --font-instruction-body: 16px;
 }
 
 /* [!] 중요: 이 앱은 실제 사이즈를 재현하므로 화면 줌 등에 의해 레이아웃이 변하지 않도록 줄간격을 강제 고정합니다. */

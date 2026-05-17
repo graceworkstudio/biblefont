@@ -3823,7 +3823,7 @@ const App = () => {
                     </div>
                 </div>
 
-                <p className="text-sm text-gray-700 mb-6 font-bold instruction-text leading-adaptive-empathy">
+                <p className="text-gray-700 mb-6 font-bold instruction-text leading-adaptive-empathy" style={{ fontSize: 'var(--font-instruction-body)' }}>
                     지갑 속 카드를 우측(또는 아래) 측정 영역의 좌측 상단 모서리에 바짝 붙여 올려놓으세요. 슬라이더를 움직여 화면의 네모칸과 실제 카드의 크기를 똑같이 맞춰주세요.
                 </p>
 
@@ -4037,7 +4037,7 @@ const App = () => {
           <div className="max-w-7xl mx-auto">
             {/* 필터 안내 헤더 */}
             <div className="flex justify-between items-center mb-4 px-1">
-              <span className="text-[13px] md:text-base font-black text-slate-800 flex items-center gap-2">
+              <span className="font-black text-slate-800 flex items-center gap-2" style={{ fontSize: 'var(--font-section-title)' }}>
                 <span className="w-2.5 h-2.5 rounded-full bg-orange-500"></span>
                 실시간 맞춤 필터 
                 <span className="hidden sm:inline text-[11px] md:text-xs font-bold text-slate-400">
@@ -4066,7 +4066,7 @@ const App = () => {
                           onChange={() => toggleMaster('hymn')} 
                           className="w-4 h-4 rounded text-orange-500 border-slate-300 focus:ring-orange-400 cursor-pointer"
                         />
-                        <span className="text-sm font-black text-slate-700">1. 찬송가유무</span>
+                        <span className="font-black text-slate-700" style={{ fontSize: 'var(--font-instruction-body)' }}>1. 찬송가유무</span>
                       </label>
                     </th>
                     {/* 2. 해설유무 */}
@@ -4078,7 +4078,7 @@ const App = () => {
                           onChange={() => toggleMaster('commentary')} 
                           className="w-4 h-4 rounded text-orange-500 border-slate-300 focus:ring-orange-400 cursor-pointer"
                         />
-                        <span className="text-sm font-black text-slate-700">2. 해설유무</span>
+                        <span className="font-black text-slate-700" style={{ fontSize: 'var(--font-instruction-body)' }}>2. 해설유무</span>
                       </label>
                     </th>
                     {/* 3. 재질 */}
@@ -4090,7 +4090,7 @@ const App = () => {
                           onChange={() => toggleMaster('material')} 
                           className="w-4 h-4 rounded text-orange-500 border-slate-300 focus:ring-orange-400 cursor-pointer"
                         />
-                        <span className="text-sm font-black text-slate-700">3. 재질</span>
+                        <span className="font-black text-slate-700" style={{ fontSize: 'var(--font-instruction-body)' }}>3. 재질</span>
                       </label>
                     </th>
                     {/* 4. 크기/휴대성 */}
@@ -4102,7 +4102,7 @@ const App = () => {
                           onChange={() => toggleMaster('portability')} 
                           className="w-4 h-4 rounded text-orange-500 border-slate-300 focus:ring-orange-400 cursor-pointer"
                         />
-                        <span className="text-sm font-black text-slate-700">4. 크기/휴대성</span>
+                        <span className="font-black text-slate-700" style={{ fontSize: 'var(--font-instruction-body)' }}>4. 크기/휴대성</span>
                       </label>
                     </th>
                     {/* 5. 글씨크기 */}
@@ -4114,7 +4114,7 @@ const App = () => {
                           onChange={() => toggleMaster('fontSize')} 
                           className="w-4 h-4 rounded text-orange-500 border-slate-300 focus:ring-orange-400 cursor-pointer"
                         />
-                        <span className="text-sm font-black text-slate-700">5. 글씨크기</span>
+                        <span className="font-black text-slate-700" style={{ fontSize: 'var(--font-instruction-body)' }}>5. 글씨크기</span>
                       </label>
                     </th>
                     {/* 6. 출판사 */}
@@ -4126,7 +4126,7 @@ const App = () => {
                           onChange={() => toggleMaster('publisher')} 
                           className="w-4 h-4 rounded text-orange-500 border-slate-300 focus:ring-orange-400 cursor-pointer"
                         />
-                        <span className="text-sm font-black text-slate-700">6. 출판사</span>
+                        <span className="font-black text-slate-700" style={{ fontSize: 'var(--font-instruction-body)' }}>6. 출판사</span>
                       </label>
                     </th>
                   </tr>
@@ -4143,7 +4143,7 @@ const App = () => {
                             onChange={() => toggleOption('hymn', 'yes')} 
                             className="w-4 h-4 rounded text-orange-500 border-slate-300 focus:ring-orange-400 cursor-pointer transition-colors"
                           />
-                          <span className="text-[13px] font-bold text-slate-600 group-hover:text-slate-800">있음</span>
+                          <span className="font-bold text-slate-600 group-hover:text-slate-800" style={{ fontSize: 'var(--font-hero-bullets)' }}>있음</span>
                         </label>
                         <label className="flex items-center gap-2 cursor-pointer select-none group">
                           <input 
@@ -4152,7 +4152,7 @@ const App = () => {
                             onChange={() => toggleOption('hymn', 'no')} 
                             className="w-4 h-4 rounded text-orange-500 border-slate-300 focus:ring-orange-400 cursor-pointer transition-colors"
                           />
-                          <span className="text-[13px] font-bold text-slate-600 group-hover:text-slate-800">없음</span>
+                          <span className="font-bold text-slate-600 group-hover:text-slate-800" style={{ fontSize: 'var(--font-hero-bullets)' }}>없음</span>
                         </label>
                       </div>
                     </td>
@@ -4167,7 +4167,7 @@ const App = () => {
                             onChange={() => toggleOption('commentary', 'yes')} 
                             className="w-4 h-4 rounded text-orange-500 border-slate-300 focus:ring-orange-400 cursor-pointer transition-colors"
                           />
-                          <span className="text-[13px] font-bold text-slate-600 group-hover:text-slate-800">있음</span>
+                          <span className="font-bold text-slate-600 group-hover:text-slate-800" style={{ fontSize: 'var(--font-hero-bullets)' }}>있음</span>
                         </label>
                         <label className="flex items-center gap-2 cursor-pointer select-none group">
                           <input 
@@ -4176,7 +4176,7 @@ const App = () => {
                             onChange={() => toggleOption('commentary', 'no')} 
                             className="w-4 h-4 rounded text-orange-500 border-slate-300 focus:ring-orange-400 cursor-pointer transition-colors"
                           />
-                          <span className="text-[13px] font-bold text-slate-600 group-hover:text-slate-800">없음</span>
+                          <span className="font-bold text-slate-600 group-hover:text-slate-800" style={{ fontSize: 'var(--font-hero-bullets)' }}>없음</span>
                         </label>
                       </div>
                     </td>
@@ -4191,7 +4191,7 @@ const App = () => {
                             onChange={() => toggleOption('material', 'natural')} 
                             className="w-4 h-4 rounded text-orange-500 border-slate-300 focus:ring-orange-400 cursor-pointer transition-colors"
                           />
-                          <span className="text-[13px] font-bold text-slate-600 group-hover:text-slate-800">천연가죽</span>
+                          <span className="font-bold text-slate-600 group-hover:text-slate-800" style={{ fontSize: 'var(--font-hero-bullets)' }}>천연가죽</span>
                         </label>
                         <label className="flex items-center gap-2 cursor-pointer select-none group">
                           <input 
@@ -4200,7 +4200,7 @@ const App = () => {
                             onChange={() => toggleOption('material', 'pu')} 
                             className="w-4 h-4 rounded text-orange-500 border-slate-300 focus:ring-orange-400 cursor-pointer transition-colors"
                           />
-                          <span className="text-[13px] font-bold text-slate-600 group-hover:text-slate-800">인조가죽(PU)</span>
+                          <span className="font-bold text-slate-600 group-hover:text-slate-800" style={{ fontSize: 'var(--font-hero-bullets)' }}>인조가죽(PU)</span>
                         </label>
                         <label className="flex items-center gap-2 cursor-pointer select-none group">
                           <input 
@@ -4209,7 +4209,7 @@ const App = () => {
                             onChange={() => toggleOption('material', 'other')} 
                             className="w-4 h-4 rounded text-orange-500 border-slate-300 focus:ring-orange-400 cursor-pointer transition-colors"
                           />
-                          <span className="text-[13px] font-bold text-slate-600 group-hover:text-slate-800">기타</span>
+                          <span className="font-bold text-slate-600 group-hover:text-slate-800" style={{ fontSize: 'var(--font-hero-bullets)' }}>기타</span>
                         </label>
                       </div>
                     </td>
@@ -4224,7 +4224,7 @@ const App = () => {
                             onChange={() => toggleOption('portability', 'small')} 
                             className="w-4 h-4 rounded text-orange-500 border-slate-300 focus:ring-orange-400 cursor-pointer transition-colors"
                           />
-                          <span className="text-[13px] font-bold text-slate-600 group-hover:text-slate-800">소(미니/특소)</span>
+                          <span className="font-bold text-slate-600 group-hover:text-slate-800" style={{ fontSize: 'var(--font-hero-bullets)' }}>소(미니/특소)</span>
                         </label>
                         <label className="flex items-center gap-2 cursor-pointer select-none group">
                           <input 
@@ -4233,7 +4233,7 @@ const App = () => {
                             onChange={() => toggleOption('portability', 'medium')} 
                             className="w-4 h-4 rounded text-orange-500 border-slate-300 focus:ring-orange-400 cursor-pointer transition-colors"
                           />
-                          <span className="text-[13px] font-bold text-slate-600 group-hover:text-slate-800">중</span>
+                          <span className="font-bold text-slate-600 group-hover:text-slate-800" style={{ fontSize: 'var(--font-hero-bullets)' }}>중</span>
                         </label>
                         <label className="flex items-center gap-2 cursor-pointer select-none group">
                           <input 
@@ -4242,7 +4242,7 @@ const App = () => {
                             onChange={() => toggleOption('portability', 'large')} 
                             className="w-4 h-4 rounded text-orange-500 border-slate-300 focus:ring-orange-400 cursor-pointer transition-colors"
                           />
-                          <span className="text-[13px] font-bold text-slate-600 group-hover:text-slate-800">대(대/특대)</span>
+                          <span className="font-bold text-slate-600 group-hover:text-slate-800" style={{ fontSize: 'var(--font-hero-bullets)' }}>대(대/특대)</span>
                         </label>
                         <label className="flex items-center gap-2 cursor-pointer select-none group">
                           <input 
@@ -4251,7 +4251,7 @@ const App = () => {
                             onChange={() => toggleOption('portability', 'pulpit')} 
                             className="w-4 h-4 rounded text-orange-500 border-slate-300 focus:ring-orange-400 cursor-pointer transition-colors"
                           />
-                          <span className="text-[13px] font-bold text-slate-600 group-hover:text-slate-800">강대용</span>
+                          <span className="font-bold text-slate-600 group-hover:text-slate-800" style={{ fontSize: 'var(--font-hero-bullets)' }}>강대용</span>
                         </label>
                       </div>
                     </td>
@@ -4266,7 +4266,7 @@ const App = () => {
                             onChange={() => toggleOption('fontSize', 'small')} 
                             className="w-4 h-4 rounded text-orange-500 border-slate-300 focus:ring-orange-400 cursor-pointer transition-colors"
                           />
-                          <span className="text-[13px] font-bold text-slate-600 group-hover:text-slate-800">작은글씨</span>
+                          <span className="font-bold text-slate-600 group-hover:text-slate-800" style={{ fontSize: 'var(--font-hero-bullets)' }}>작은글씨</span>
                         </label>
                         <label className="flex items-center gap-2 cursor-pointer select-none group">
                           <input 
@@ -4275,7 +4275,7 @@ const App = () => {
                             onChange={() => toggleOption('fontSize', 'medium')} 
                             className="w-4 h-4 rounded text-orange-500 border-slate-300 focus:ring-orange-400 cursor-pointer transition-colors"
                           />
-                          <span className="text-[13px] font-bold text-slate-600 group-hover:text-slate-800">중간글씨</span>
+                          <span className="font-bold text-slate-600 group-hover:text-slate-800" style={{ fontSize: 'var(--font-hero-bullets)' }}>중간글씨</span>
                         </label>
                         <label className="flex items-center gap-2 cursor-pointer select-none group">
                           <input 
@@ -4284,7 +4284,7 @@ const App = () => {
                             onChange={() => toggleOption('fontSize', 'senior')} 
                             className="w-4 h-4 rounded text-orange-500 border-slate-300 focus:ring-orange-400 cursor-pointer transition-colors"
                           />
-                          <span className="text-[13px] font-bold text-slate-600 group-hover:text-slate-800">어르신용(큰글씨)</span>
+                          <span className="font-bold text-slate-600 group-hover:text-slate-800" style={{ fontSize: 'var(--font-hero-bullets)' }}>어르신용(큰글씨)</span>
                         </label>
                       </div>
                     </td>
@@ -4299,7 +4299,7 @@ const App = () => {
                             onChange={() => toggleOption('publisher', 'agape')} 
                             className="w-4 h-4 rounded text-orange-500 border-slate-300 focus:ring-orange-400 cursor-pointer transition-colors"
                           />
-                          <span className="text-[13px] font-bold text-slate-600 group-hover:text-slate-800">아가페</span>
+                          <span className="font-bold text-slate-600 group-hover:text-slate-800" style={{ fontSize: 'var(--font-hero-bullets)' }}>아가페</span>
                         </label>
                         <label className="flex items-center gap-2 cursor-pointer select-none group">
                           <input 
@@ -4308,7 +4308,7 @@ const App = () => {
                             onChange={() => toggleOption('publisher', 'words')} 
                             className="w-4 h-4 rounded text-orange-500 border-slate-300 focus:ring-orange-400 cursor-pointer transition-colors"
                           />
-                          <span className="text-[13px] font-bold text-slate-600 group-hover:text-slate-800">생명의말씀사</span>
+                          <span className="font-bold text-slate-600 group-hover:text-slate-800" style={{ fontSize: 'var(--font-hero-bullets)' }}>생명의말씀사</span>
                         </label>
                         <label className="flex items-center gap-2 cursor-pointer select-none group">
                           <input 
@@ -4317,7 +4317,7 @@ const App = () => {
                             onChange={() => toggleOption('publisher', 'seong')} 
                             className="w-4 h-4 rounded text-orange-500 border-slate-300 focus:ring-orange-400 cursor-pointer transition-colors"
                           />
-                          <span className="text-[13px] font-bold text-slate-600 group-hover:text-slate-800">성서원</span>
+                          <span className="font-bold text-slate-600 group-hover:text-slate-800" style={{ fontSize: 'var(--font-hero-bullets)' }}>성서원</span>
                         </label>
                         <label className="flex items-center gap-2 cursor-pointer select-none group">
                           <input 
@@ -4326,7 +4326,7 @@ const App = () => {
                             onChange={() => toggleOption('publisher', 'christian')} 
                             className="w-4 h-4 rounded text-orange-500 border-slate-300 focus:ring-orange-400 cursor-pointer transition-colors"
                           />
-                          <span className="text-[13px] font-bold text-slate-600 group-hover:text-slate-800">대한기독교서회</span>
+                          <span className="font-bold text-slate-600 group-hover:text-slate-800" style={{ fontSize: 'var(--font-hero-bullets)' }}>대한기독교서회</span>
                         </label>
                         <label className="flex items-center gap-2 cursor-pointer select-none group">
                           <input 
@@ -4335,7 +4335,7 @@ const App = () => {
                             onChange={() => toggleOption('publisher', 'duranno')} 
                             className="w-4 h-4 rounded text-orange-500 border-slate-300 focus:ring-orange-400 cursor-pointer transition-colors"
                           />
-                          <span className="text-[13px] font-bold text-slate-600 group-hover:text-slate-800">두란노</span>
+                          <span className="font-bold text-slate-600 group-hover:text-slate-800" style={{ fontSize: 'var(--font-hero-bullets)' }}>두란노</span>
                         </label>
                         <label className="flex items-center gap-2 cursor-pointer select-none group">
                           <input 
@@ -4344,7 +4344,7 @@ const App = () => {
                             onChange={() => toggleOption('publisher', 'other')} 
                             className="w-4 h-4 rounded text-orange-500 border-slate-300 focus:ring-orange-400 cursor-pointer transition-colors"
                           />
-                          <span className="text-[13px] font-bold text-slate-600 group-hover:text-slate-800">기타</span>
+                          <span className="font-bold text-slate-600 group-hover:text-slate-800" style={{ fontSize: 'var(--font-hero-bullets)' }}>기타</span>
                         </label>
                       </div>
                     </td>
