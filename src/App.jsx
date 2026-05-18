@@ -5293,56 +5293,61 @@ const App = () => {
               <div className="flex-1 overflow-y-auto p-4 md:p-6 space-y-4 bg-slate-50/30">
                 {cartItems
                   .filter(item => selectedCartIds.includes(item.uniqueId))
-                  .map(item => (
-                    <div 
-                      key={item.uniqueId} 
-                      className="flex flex-col md:flex-row md:items-center gap-4 p-4 rounded-2xl border border-slate-200/60 bg-white shadow-sm transition-all hover:shadow-md"
-                    >
-                      {/* 성경 기본 정보 메타 영역 */}
-                      <div className="md:w-1/3 shrink-0 flex flex-col gap-1">
-                        <div className="flex items-center gap-1.5">
-                          <span className={`inline-block px-1.5 py-0.5 rounded text-[10px] font-black ${
-                            item.publisherKey === 'A' ? 'bg-purple-100 text-purple-700' :
-                            item.publisherKey === 'W' ? 'bg-emerald-100 text-emerald-700' :
-                            item.publisherKey === 'S' ? 'bg-sky-100 text-sky-700' :
-                            item.publisherKey === 'C' ? 'bg-amber-100 text-amber-700' :
-                            'bg-rose-100 text-rose-700'
-                          }`}>
-                            {item.publisherName}
-                          </span>
-                          <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-black ${
-                            item.size === '특대' ? 'bg-purple-50 text-purple-600' : 
-                            item.size === '대' ? 'bg-blue-50 text-blue-600' : 
-                            item.size === '중' ? 'bg-green-50 text-green-600' : 
-                            'bg-orange-50 text-orange-600'
-                          }`}>
-                            {item.size}
-                          </span>
+                  .map(item => {
+                    const originalBibleItem = bibleData[item.publisherKey]?.items.find(i => i.model === item.model);
+                    const mm = originalBibleItem ? originalBibleItem.mm : 3.0;
+                    
+                    return (
+                      <div 
+                        key={item.uniqueId} 
+                        className="flex flex-col md:flex-row md:items-center gap-4 p-4 rounded-2xl border border-slate-200/60 bg-white shadow-sm transition-all hover:shadow-md"
+                      >
+                        {/* 성경 기본 정보 메타 영역 */}
+                        <div className="md:w-1/3 shrink-0 flex flex-col gap-1">
+                          <div className="flex items-center gap-1.5">
+                            <span className={`inline-block px-1.5 py-0.5 rounded text-[10px] font-black ${
+                              item.publisherKey === 'A' ? 'bg-purple-100 text-purple-700' :
+                              item.publisherKey === 'W' ? 'bg-emerald-100 text-emerald-700' :
+                              item.publisherKey === 'S' ? 'bg-sky-100 text-sky-700' :
+                              item.publisherKey === 'C' ? 'bg-amber-100 text-amber-700' :
+                              'bg-rose-100 text-rose-700'
+                            }`}>
+                              {item.publisherName}
+                            </span>
+                            <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-black ${
+                              item.size === '특대' ? 'bg-purple-50 text-purple-600' : 
+                              item.size === '대' ? 'bg-blue-50 text-blue-600' : 
+                              item.size === '중' ? 'bg-green-50 text-green-600' : 
+                              'bg-orange-50 text-orange-600'
+                            }`}>
+                              {item.size}
+                            </span>
+                          </div>
+                          <div className="text-xs md:text-sm font-black text-slate-800 mt-1">{item.model}</div>
+                          <div className="text-[10px] md:text-xs text-slate-400 truncate font-medium">{item.variantLabel}</div>
+                          <div className="flex items-baseline gap-1.5 mt-1">
+                            <span className="text-xs font-black text-orange-500">{mm}mm</span>
+                            <span className="text-[10px] text-slate-400 font-bold">({formatPt(mm)}pt)</span>
+                          </div>
                         </div>
-                        <div className="text-xs md:text-sm font-black text-slate-800 mt-1">{item.model}</div>
-                        <div className="text-[10px] md:text-xs text-slate-400 truncate font-medium">{item.variantLabel}</div>
-                        <div className="flex items-baseline gap-1.5 mt-1">
-                          <span className="text-xs font-black text-orange-500">{item.mm}mm</span>
-                          <span className="text-[10px] text-slate-400 font-bold">({formatPt(item.mm)}pt)</span>
-                        </div>
-                      </div>
 
-                      {/* 실물 폰트 크기 인쇄 시뮬레이터 */}
-                      <div className="flex-1 bg-slate-50/75 rounded-2xl p-4 overflow-x-auto flex items-center min-h-[90px] border border-dashed border-slate-200">
-                        <div 
-                          style={{ 
-                            fontFamily: 'Nanum Myeongjo, serif', 
-                            fontSize: `${(item.mm / 0.3528) * globalScale}pt`, 
-                            fontWeight: item.mm > 4 ? '800' : '700',
-                            whiteSpace: 'nowrap'
-                          }} 
-                          className="text-slate-900 leading-none pl-2 tracking-normal select-none"
-                        >
-                          태초에 하나님이 천지를 창조하시니라
+                        {/* 실물 폰트 크기 인쇄 시뮬레이터 */}
+                        <div className="flex-1 bg-slate-50/75 rounded-2xl p-4 overflow-x-auto flex items-center min-h-[90px] border border-dashed border-slate-200">
+                          <div 
+                            style={{ 
+                              fontFamily: 'Nanum Myeongjo, serif', 
+                              fontSize: `${(mm / 0.3528) * globalScale}pt`, 
+                              fontWeight: mm > 4 ? '800' : '700',
+                              whiteSpace: 'nowrap'
+                            }} 
+                            className="text-slate-900 leading-none pl-2 tracking-normal select-none"
+                          >
+                            태초에 하나님이 천지를 창조하시니라
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  ))
+                    );
+                  })
                 }
               </div>
 
