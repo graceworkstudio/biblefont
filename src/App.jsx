@@ -195,6 +195,9 @@ const App = () => {
 
       // 관심 목록 드로어 닫기
       setIsCartOpen(false);
+
+      // 장바구니 담기 진행률 모달 비활성화 (일괄 구매 버튼을 눌러 들어온 경우 스피너 닫기)
+      setIsCartSubmitting(false);
     }
   };
 
