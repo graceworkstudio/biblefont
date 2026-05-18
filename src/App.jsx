@@ -5327,7 +5327,7 @@ const App = () => {
                   </div>
                   
                   <div className="space-y-2">
-                    {selectedCartIds.length >= 2 && (
+                    {selectedCartIds.length >= 1 && (
                       <button 
                         onClick={() => setIsCompareOpen(true)}
                         className="w-full h-12 bg-slate-900 hover:bg-black text-white font-black rounded-xl text-xs transition-all flex items-center justify-center gap-1.5 shadow-sm cursor-pointer border-0 mb-1"
