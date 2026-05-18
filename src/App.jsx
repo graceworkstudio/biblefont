@@ -159,6 +159,18 @@ const App = () => {
     showToast('🧹 관심상품을 모두 비웠습니다.');
   };
 
+  // 화면 배율 조정 슬라이더 영역으로 스무스 스크롤 이동
+  const scrollToCalibration = () => {
+    setIsCompareOpen(false);
+    setIsCartOpen(false);
+    setTimeout(() => {
+      const element = document.getElementById('calibration-section');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }, 300);
+  };
+
   // 개별 상품 바로구매 (SameSite 보안 이슈 회피용 Cafe24 surl/O 단일 바로구매 리다이렉트)
   const handleIndividualCheckout = (item) => {
     const matchProductNo = item.variantUrl.match(/[?&]product_no=(\d+)/);
@@ -4242,7 +4254,7 @@ const App = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-start">
+          <div id="calibration-section" className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-start">
             {/* 좌측 영역: 설명 및 조절 슬라이더 */}
             <div className="lg:col-span-1 flex flex-col">
                 <div className="flex justify-between items-start mb-6">
@@ -5393,6 +5405,25 @@ const App = () => {
 
               {/* 모달 바디 (스크롤 영역) */}
               <div className="flex-1 overflow-y-auto p-4 md:p-6 space-y-4 bg-slate-50/30">
+                
+                {/* 캘리브레이션/화면조정 권장 안내 배너 */}
+                <div className="bg-orange-50 border border-orange-100 rounded-2xl p-4 flex flex-col md:flex-row gap-3 items-start md:items-center justify-between shadow-xs">
+                  <div className="flex gap-3 items-start">
+                    <span className="text-xl shrink-0">💡</span>
+                    <div className="text-xs text-slate-600 leading-normal font-bold">
+                      <span className="font-black text-orange-600">[실물 크기 측정 안내] 기기마다 화면 크기가 달라 실제 폰트 크기가 약간 다르게 보일 수 있습니다.</span>
+                      <br />
+                      신용카드로 화면 비율을 한 번만 설정해주시면 실제 인쇄된 성경책과 100% 동일한 글씨 크기로 오차없이 완벽하게 비교하실 수 있습니다!
+                    </div>
+                  </div>
+                  <button 
+                    onClick={scrollToCalibration}
+                    className="shrink-0 text-[10px] md:text-xs font-black bg-orange-500 hover:bg-orange-600 text-white px-3 py-1.5 rounded-lg border-0 cursor-pointer transition-colors shadow-xs"
+                  >
+                    지금 화면 비율 조절하기 📏
+                  </button>
+                </div>
+
                 {cartItems
                   .filter(item => selectedCartIds.includes(item.uniqueId))
                   .map(item => {
