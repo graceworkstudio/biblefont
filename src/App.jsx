@@ -522,6 +522,38 @@ const App = () => {
   };
   const getBaseSize = (sizeStr) => sizeStr.replace(/\(슬림\)/, "").trim();
 
+  const getWishlistItemNameStyles = (sizeStr) => {
+    const baseSize = sizeStr.replace(/\(슬림\)/, "").trim();
+    if (baseSize === '강대용') {
+      return {
+        model: 'text-[17px] md:text-[19px]',
+        variant: 'text-[14px] md:text-[15px]'
+      };
+    }
+    if (baseSize === '특대') {
+      return {
+        model: 'text-[15px] md:text-[17px]',
+        variant: 'text-[13px] md:text-[14px]'
+      };
+    }
+    if (baseSize === '대') {
+      return {
+        model: 'text-[14px] md:text-[15px]',
+        variant: 'text-[12px] md:text-[13px]'
+      };
+    }
+    if (baseSize === '중' || baseSize === '특중') {
+      return {
+        model: 'text-[13px] md:text-[14px]',
+        variant: 'text-[11px] md:text-[12px]'
+      };
+    }
+    return {
+      model: 'text-xs md:text-[13px]',
+      variant: 'text-[10px] md:text-[11px]'
+    };
+  };
+
   const getHoverPopupStyle = () => {
     if (typeof window === 'undefined') {
       return { display: 'none' };
@@ -5181,8 +5213,8 @@ const App = () => {
                             </div>
                             <div className="flex-1 min-w-0">
                               <span className="text-[8px] md:text-[9px] font-black text-orange-500 bg-orange-50 px-1.5 py-0.5 rounded uppercase tracking-wider">{item.publisherName}</span>
-                              <h4 className="text-xs md:text-[13px] font-black text-slate-800 truncate mt-0.5 group-hover/item:text-orange-600 transition-colors">{item.model}</h4>
-                              <p className="text-[10px] font-bold text-slate-400 mt-0.5 leading-none">{item.variantLabel} / {item.size}</p>
+                              <h4 className={`font-black text-slate-800 truncate mt-0.5 group-hover/item:text-orange-600 transition-colors ${getWishlistItemNameStyles(item.size).model}`}>{item.model}</h4>
+                              <p className={`font-bold text-slate-400 mt-0.5 leading-none ${getWishlistItemNameStyles(item.size).variant}`}>{item.variantLabel} / {item.size}</p>
                               <div className="flex items-baseline gap-1.5 mt-1.5">
                                 <span className="text-xs font-black text-slate-800">{formatPrice(item.salePrice || item.originalPrice)}</span>
                                 {item.salePrice < item.originalPrice && (
@@ -5324,8 +5356,8 @@ const App = () => {
                               {item.size}
                             </span>
                           </div>
-                          <div className="text-[11px] md:text-sm font-black text-slate-800 mt-0.5 leading-tight truncate">{item.model}</div>
-                          <div className="text-[9px] md:text-xs text-slate-400 truncate font-medium leading-none mt-0.5">{item.variantLabel}</div>
+                          <div className={`font-black text-slate-800 mt-0.5 leading-tight truncate ${getWishlistItemNameStyles(item.size).model}`}>{item.model}</div>
+                          <div className={`text-slate-400 truncate font-medium leading-none mt-0.5 ${getWishlistItemNameStyles(item.size).variant}`}>{item.variantLabel}</div>
                           <div className="flex items-baseline gap-1 mt-0.5">
                             <span className="text-[10px] md:text-xs font-black text-orange-500">{mm}mm</span>
                             <span className="text-[8px] md:text-[10px] text-slate-400 font-bold">({formatPt(mm)}pt)</span>
