@@ -101,16 +101,16 @@ const App = () => {
     }, 2200);
   };
 
-  // 장바구니 담기 핸들러
+  // 관심상품 담기 핸들러
   const addToCart = (variant, item) => {
     const uniqueId = `${item.publisherKey}_${item.model}_${variant.label}`;
     setCartItems(prev => {
       const exists = prev.find(i => i.uniqueId === uniqueId);
       if (exists) {
-        showToast('🛒 이미 장바구니에 담겨 있는 상품입니다.');
+        showToast('🛒 이미 관심상품에 담겨 있는 상품입니다.');
         return prev;
       }
-      showToast('🛒 장바구니에 상품을 담았습니다!');
+      showToast('🛒 관심상품에 상품을 담았습니다!');
       return [...prev, {
         uniqueId,
         publisherKey: item.publisherKey,
@@ -127,16 +127,16 @@ const App = () => {
     });
   };
 
-  // 장바구니 상품 삭제 핸들러
+  // 관심상품 삭제 핸들러
   const removeFromCart = (uniqueId) => {
     setCartItems(prev => prev.filter(i => i.uniqueId !== uniqueId));
-    showToast('🗑️ 장바구니에서 상품을 삭제했습니다.');
+    showToast('🗑️ 관심상품에서 상품을 삭제했습니다.');
   };
 
-  // 장바구니 전체 비우기 핸들러
+  // 관심상품 전체 비우기 핸들러
   const clearCart = () => {
     setCartItems([]);
-    showToast('🧹 장바구니를 모두 비웠습니다.');
+    showToast('🧹 관심상품을 모두 비웠습니다.');
   };
 
   // 6대 실시간 필터 상태 정의
@@ -4692,10 +4692,10 @@ const App = () => {
                         <div className="grid grid-cols-2 gap-2 mt-auto pt-1">
                           <button 
                             onClick={() => addToCart(v, selectedItem)}
-                            className="flex items-center justify-center gap-1.5 bg-white border border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-slate-700 font-black py-2 md:py-2.5 rounded-lg md:rounded-xl text-center text-[11px] md:text-xs transition-all shadow-xs cursor-pointer"
+                            className="flex items-center justify-center gap-1 bg-white border border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-slate-700 font-black py-2 md:py-2.5 rounded-lg md:rounded-xl text-center text-[10px] md:text-xs transition-all shadow-xs cursor-pointer px-1 md:px-2.5"
                           >
-                            <ShoppingBag size={13} />
-                            담기
+                            <ShoppingBag size={12} className="shrink-0" />
+                            관심상품담기
                           </button>
                           <a 
                             href={v.url} 
@@ -4767,10 +4767,10 @@ const App = () => {
                           <div className="grid grid-cols-2 gap-1.5 mt-auto pt-1">
                             <button 
                               onClick={() => addToCart(v, hoverItem)}
-                              className="flex items-center justify-center gap-1 bg-white border border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-slate-700 font-bold py-1.5 rounded-lg text-[10px] md:text-[11px] transition-all cursor-pointer"
+                              className="flex items-center justify-center gap-1 bg-white border border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-slate-700 font-bold py-1.5 rounded-lg text-[9px] md:text-[11px] transition-all cursor-pointer px-1 md:px-2"
                             >
-                              <ShoppingBag size={12} />
-                              담기
+                              <ShoppingBag size={12} className="shrink-0" />
+                              관심상품담기
                             </button>
                             <a 
                               href={v.url} 
@@ -4830,7 +4830,7 @@ const App = () => {
               <div className="px-6 py-5 border-b border-slate-100 flex justify-between items-center bg-slate-50/50">
                 <div className="flex items-center gap-2">
                   <ShoppingCart className="text-orange-500" size={22} />
-                  <h3 className="text-base md:text-lg font-black text-slate-800">관심 성경 바구니</h3>
+                  <h3 className="text-base md:text-lg font-black text-slate-800">관심 성경 목록</h3>
                   <span className="bg-orange-100 text-orange-600 text-xs font-black px-2 py-0.5 rounded-full">{cartItems.length}</span>
                 </div>
                 <button onClick={() => setIsCartOpen(false)} className="p-1.5 hover:bg-slate-100 rounded-full transition-colors text-slate-400 hover:text-slate-600 cursor-pointer">
@@ -4917,8 +4917,8 @@ const App = () => {
                 ) : (
                   <div className="h-full flex flex-col items-center justify-center text-slate-400 py-20 pr-4">
                     <ShoppingCart size={48} className="mb-4 opacity-20" />
-                    <p className="text-sm font-bold">장바구니가 비어 있습니다.</p>
-                    <p className="text-xs text-slate-400 mt-1">마음에 드는 성경을 담아보세요!</p>
+                    <p className="text-sm font-bold">관심상품이 비어 있습니다.</p>
+                    <p className="text-xs text-slate-400 mt-1">마음에 드는 성경을 관심상품에 담아보세요!</p>
                   </div>
                 )}
               </div>
