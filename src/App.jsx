@@ -5228,7 +5228,7 @@ const App = () => {
                     {selectedCartIds.length >= 2 && (
                       <button 
                         onClick={() => setIsCompareOpen(true)}
-                        className="w-full bg-slate-900 hover:bg-black text-white font-black py-3.5 rounded-xl text-center text-xs transition-all flex items-center justify-center gap-1.5 shadow-sm cursor-pointer border-0 mb-1"
+                        className="w-full h-12 bg-slate-900 hover:bg-black text-white font-black rounded-xl text-xs transition-all flex items-center justify-center gap-1.5 shadow-sm cursor-pointer border-0 mb-1"
                       >
                         <Ruler className="w-4 h-4 text-orange-500 animate-pulse" />
                         선택상품 실물 폰트 크기 비교 🔍
@@ -5236,7 +5236,7 @@ const App = () => {
                     )}
                     <button 
                       onClick={handleKakaoCartShare}
-                      className="w-full bg-[#FEE500] hover:bg-[#FDD835] text-[#191919] font-black py-3.5 rounded-xl text-center text-xs transition-all flex items-center justify-center gap-2 shadow-sm cursor-pointer border-0"
+                      className="w-full h-12 bg-[#FEE500] hover:bg-[#FDD835] text-[#191919] font-black rounded-xl text-xs transition-all flex items-center justify-center gap-2 shadow-sm cursor-pointer border-0"
                     >
                       <svg className="w-4 h-4 fill-current text-[#191919]" viewBox="0 0 24 24">
                         <path d="M12 3c-4.97 0-9 3.185-9 7.112 0 2.53 1.69 4.743 4.25 5.922-.16.59-.58 2.147-.66 2.476-.11.417.14.41.3.3.12-.08 1.94-1.32 2.71-1.854.78.217 1.62.336 2.4.336 4.97 0 9-3.185 9-7.112 0-3.927-4.03-7.112-9-7.112z"/>
@@ -5247,13 +5247,13 @@ const App = () => {
                     <div className="grid grid-cols-3 gap-2">
                       <button 
                         onClick={clearCart}
-                        className="bg-white border border-slate-200 hover:border-slate-300 text-slate-600 font-bold py-3.5 rounded-xl text-center text-xs transition-colors cursor-pointer"
+                        className="h-12 bg-white border border-slate-200 hover:border-slate-300 text-slate-600 font-bold rounded-xl text-xs transition-colors cursor-pointer flex items-center justify-center"
                       >
                         전체 비우기
                       </button>
                       <button 
                         onClick={handleBatchCheckout}
-                        className="col-span-2 bg-orange-500 hover:bg-orange-600 text-white font-black py-3.5 rounded-xl text-center text-xs transition-all shadow-md shadow-orange-500/10 cursor-pointer"
+                        className="col-span-2 h-12 bg-orange-500 hover:bg-orange-600 text-white font-black rounded-xl text-xs transition-all shadow-md shadow-orange-500/10 cursor-pointer flex items-center justify-center gap-1.5"
                       >
                         선택 상품 바로구매 🚀
                       </button>
@@ -5363,7 +5363,7 @@ const App = () => {
                       setIsCompareOpen(false);
                       handleKakaoCartShare();
                     }}
-                    className="flex-1 sm:flex-initial bg-[#FEE500] hover:bg-[#FDD835] text-[#191919] font-black px-4 py-3.5 rounded-xl text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer border-0 shadow-sm"
+                    className="flex-1 sm:flex-initial h-12 bg-[#FEE500] hover:bg-[#FDD835] text-[#191919] font-black px-4 rounded-xl text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer border-0 shadow-sm"
                   >
                     목록 카톡 공유 💬
                   </button>
@@ -5372,7 +5372,7 @@ const App = () => {
                       setIsCompareOpen(false);
                       handleBatchCheckout();
                     }}
-                    className="flex-1 sm:flex-initial bg-orange-500 hover:bg-orange-600 text-white font-black px-6 py-3.5 rounded-xl text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-md shadow-orange-500/10"
+                    className="flex-1 sm:flex-initial h-12 bg-orange-500 hover:bg-orange-600 text-white font-black px-6 rounded-xl text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-md shadow-orange-500/10"
                   >
                     선택 상품 바로구매 🚀
                   </button>
