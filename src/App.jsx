@@ -4818,7 +4818,8 @@ const App = () => {
                       <div style={{ 
                         fontFamily: "'Noto Serif KR', 'Batang', '바탕체', serif", 
                         fontSize: `${(item.mm / 0.3528) * globalScale}pt`, 
-                        fontWeight: '600' 
+                        fontWeight: '600',
+                        letterSpacing: '-0.08em'
                       }} className="text-slate-900 border-l-4 border-slate-200 pl-3 md:pl-5 py-1 leading-none whitespace-nowrap bible-preview-text">
                         태초에 하나님이 천지를 창조하시니라
                       </div>
@@ -5338,9 +5339,10 @@ const App = () => {
                               fontFamily: "'Noto Serif KR', 'Batang', '바탕체', serif", 
                               fontSize: `${(mm / 0.3528) * globalScale}pt`, 
                               fontWeight: '600',
+                              letterSpacing: '-0.08em',
                               whiteSpace: 'nowrap'
                             }} 
-                            className="text-slate-900 leading-none pl-1 md:pl-2 tracking-normal select-none"
+                            className="text-slate-900 leading-none pl-1 md:pl-2 select-none"
                           >
                             태초에 하나님이 천지를 창조하시니라
                           </div>
