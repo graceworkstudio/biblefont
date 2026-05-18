@@ -71,6 +71,7 @@ const App = () => {
   });
   const [toastMessage, setToastMessage] = useState(null);
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isCompareOpen, setIsCompareOpen] = useState(false);
   const toastTimeoutRef = useRef(null);
 
   // 장바구니 선택 항목 관리 상태
@@ -5224,6 +5225,15 @@ const App = () => {
                   </div>
                   
                   <div className="space-y-2">
+                    {selectedCartIds.length >= 2 && (
+                      <button 
+                        onClick={() => setIsCompareOpen(true)}
+                        className="w-full bg-slate-900 hover:bg-black text-white font-black py-3 rounded-xl text-center text-xs transition-all flex items-center justify-center gap-1.5 shadow-sm cursor-pointer border-0 mb-1"
+                      >
+                        <Ruler className="w-4 h-4 text-orange-500 animate-pulse" />
+                        선택상품 실물 폰트 크기 비교 🔍
+                      </button>
+                    )}
                     <button 
                       onClick={handleKakaoCartShare}
                       className="w-full bg-[#FEE500] hover:bg-[#FDD835] text-[#191919] font-black py-3.5 rounded-xl text-center text-xs transition-all flex items-center justify-center gap-2 shadow-sm cursor-pointer border-0"
@@ -5251,6 +5261,119 @@ const App = () => {
                   </div>
                 </div>
               )}
+            </div>
+          </div>
+        )}
+
+        {/* 선택상품 실물 폰트 크기 비교 모달 */}
+        {isCompareOpen && (
+          <div className="fixed inset-0 z-[6000] bg-slate-900/60 backdrop-blur-md flex items-center justify-center p-2 md:p-6 animate-in fade-in duration-200">
+            <div className="bg-white rounded-3xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col border border-slate-100 animate-in zoom-in-95 duration-200">
+              
+              {/* 모달 헤더 */}
+              <div className="p-6 border-b border-slate-100 flex items-start justify-between bg-slate-50/50">
+                <div>
+                  <h3 className="text-lg md:text-xl font-black text-slate-800 flex items-center gap-2">
+                    <Ruler className="text-orange-500 animate-bounce" size={22} />
+                    선택상품 실물 글씨 크기 비교 🔍
+                  </h3>
+                  <p className="text-xs text-slate-500 mt-1 font-medium">
+                    현재 스마트폰/PC 화면 비율이 적용된 실제 글자 크기입니다. 화면에 직접 대고 비교해 보세요!
+                  </p>
+                </div>
+                <button 
+                  onClick={() => setIsCompareOpen(false)}
+                  className="p-2 rounded-full hover:bg-slate-100 text-slate-400 hover:text-slate-600 transition-colors cursor-pointer border-0 bg-transparent flex items-center justify-center"
+                >
+                  <X size={20} />
+                </button>
+              </div>
+
+              {/* 모달 바디 (스크롤 영역) */}
+              <div className="flex-1 overflow-y-auto p-4 md:p-6 space-y-4 bg-slate-50/30">
+                {cartItems
+                  .filter(item => selectedCartIds.includes(item.uniqueId))
+                  .map(item => (
+                    <div 
+                      key={item.uniqueId} 
+                      className="flex flex-col md:flex-row md:items-center gap-4 p-4 rounded-2xl border border-slate-200/60 bg-white shadow-sm transition-all hover:shadow-md"
+                    >
+                      {/* 성경 기본 정보 메타 영역 */}
+                      <div className="md:w-1/3 shrink-0 flex flex-col gap-1">
+                        <div className="flex items-center gap-1.5">
+                          <span className={`inline-block px-1.5 py-0.5 rounded text-[10px] font-black ${
+                            item.publisherKey === 'A' ? 'bg-purple-100 text-purple-700' :
+                            item.publisherKey === 'W' ? 'bg-emerald-100 text-emerald-700' :
+                            item.publisherKey === 'S' ? 'bg-sky-100 text-sky-700' :
+                            item.publisherKey === 'C' ? 'bg-amber-100 text-amber-700' :
+                            'bg-rose-100 text-rose-700'
+                          }`}>
+                            {item.publisherName}
+                          </span>
+                          <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-black ${
+                            item.size === '특대' ? 'bg-purple-50 text-purple-600' : 
+                            item.size === '대' ? 'bg-blue-50 text-blue-600' : 
+                            item.size === '중' ? 'bg-green-50 text-green-600' : 
+                            'bg-orange-50 text-orange-600'
+                          }`}>
+                            {item.size}
+                          </span>
+                        </div>
+                        <div className="text-xs md:text-sm font-black text-slate-800 mt-1">{item.model}</div>
+                        <div className="text-[10px] md:text-xs text-slate-400 truncate font-medium">{item.variantLabel}</div>
+                        <div className="flex items-baseline gap-1.5 mt-1">
+                          <span className="text-xs font-black text-orange-500">{item.mm}mm</span>
+                          <span className="text-[10px] text-slate-400 font-bold">({formatPt(item.mm)}pt)</span>
+                        </div>
+                      </div>
+
+                      {/* 실물 폰트 크기 인쇄 시뮬레이터 */}
+                      <div className="flex-1 bg-slate-50/75 rounded-2xl p-4 overflow-x-auto flex items-center min-h-[90px] border border-dashed border-slate-200">
+                        <div 
+                          style={{ 
+                            fontFamily: 'Nanum Myeongjo, serif', 
+                            fontSize: `${(item.mm / 0.3528) * globalScale}pt`, 
+                            fontWeight: item.mm > 4 ? '800' : '700',
+                            whiteSpace: 'nowrap'
+                          }} 
+                          className="text-slate-900 leading-none pl-2 tracking-normal select-none"
+                        >
+                          태초에 하나님이 천지를 창조하시니라
+                        </div>
+                      </div>
+                    </div>
+                  ))
+                }
+              </div>
+
+              {/* 모달 푸터 (구매 및 공유 버튼그룹) */}
+              <div className="p-4 md:p-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4 bg-slate-50/50">
+                <div className="text-xs text-slate-500 font-medium text-center sm:text-left">
+                  비교 대상: <span className="font-black text-slate-700">{cartItems.filter(item => selectedCartIds.includes(item.uniqueId)).length}개</span>의 성경
+                </div>
+                
+                <div className="flex w-full sm:w-auto items-center gap-2">
+                  <button 
+                    onClick={() => {
+                      setIsCompareOpen(false);
+                      handleKakaoCartShare();
+                    }}
+                    className="flex-1 sm:flex-initial bg-[#FEE500] hover:bg-[#FDD835] text-[#191919] font-black px-4 py-3 rounded-xl text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer border-0 shadow-sm"
+                  >
+                    목록 카톡 공유 💬
+                  </button>
+                  <button 
+                    onClick={() => {
+                      setIsCompareOpen(false);
+                      handleBatchCheckout();
+                    }}
+                    className="flex-1 sm:flex-initial bg-orange-500 hover:bg-orange-600 text-white font-black px-6 py-3 rounded-xl text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-md shadow-orange-500/10"
+                  >
+                    선택 상품 바로구매 🚀
+                  </button>
+                </div>
+              </div>
+
             </div>
           </div>
         )}
