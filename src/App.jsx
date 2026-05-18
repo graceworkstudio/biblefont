@@ -159,12 +159,10 @@ const App = () => {
     showToast('🧹 관심상품을 모두 비웠습니다.');
   };
 
-  // 개별 상품 바로구매 (SameSite 보안 이슈 회피용 최상위 폼 전송)
+  // 개별 상품 바로구매 (SameSite 보안 이슈 회피용 Cafe24 surl/O 단일 바로구매 리다이렉트)
   const handleIndividualCheckout = (item) => {
     const matchProductNo = item.variantUrl.match(/[?&]product_no=(\d+)/);
-    const matchCateNo = item.variantUrl.match(/[?&]cate_no=(\d+)/);
     const productNo = matchProductNo ? matchProductNo[1] : null;
-    const cateNo = matchCateNo ? matchCateNo[1] : null;
 
     if (productNo) {
       let domain = 'https://chhouse.cafe24.com';
@@ -175,48 +173,19 @@ const App = () => {
         // fallback
       }
 
-      showToast('🛒 장바구니에 성경을 담고 있습니다. 잠시만 기다려 주세요...');
+      showToast('🛒 주문서 페이지로 이동하고 있습니다. 잠시만 기다려 주세요...');
 
-      // 동적 Form 생성 및 최상위 window 전송 설정
-      const form = document.createElement('form');
-      form.method = 'POST';
-      form.action = `${domain}/exec/front/order/basket/`;
-      
-      // 아이프레임 내부에 포함되어 있으면 부모 창(_parent)을, 독립 페이지면 현재 창(_self)을 타겟으로 지정
-      if (window.parent && window.parent !== window) {
-        form.target = '_parent';
-      } else {
-        form.target = '_self';
-      }
-
-      // product_no
-      const inputProductNo = document.createElement('input');
-      inputProductNo.type = 'hidden';
-      inputProductNo.name = 'product_no';
-      inputProductNo.value = productNo;
-      form.appendChild(inputProductNo);
-
-      // cate_no
-      if (cateNo) {
-        const inputCateNo = document.createElement('input');
-        inputCateNo.type = 'hidden';
-        inputCateNo.name = 'cate_no';
-        inputCateNo.value = cateNo;
-        form.appendChild(inputCateNo);
-      }
-
-      // quantity
-      const inputQuantity = document.createElement('input');
-      inputQuantity.type = 'hidden';
-      inputQuantity.name = 'quantity';
-      inputQuantity.value = '1';
-      form.appendChild(inputQuantity);
-
-      document.body.appendChild(form);
+      // Cafe24 공식 바로구매(surl/O/상품번호) 고유 URL 생성
+      const buyUrl = `${domain}/surl/O/${productNo}`;
 
       setTimeout(() => {
         setIsCartOpen(false);
-        form.submit();
+        // 아이프레임 내부에 포함되어 있으면 부모 창(_parent)을, 독립 페이지면 현재 창(_self)을 리다이렉트
+        if (window.parent && window.parent !== window) {
+          window.parent.location.href = buyUrl;
+        } else {
+          window.location.href = buyUrl;
+        }
       }, 800);
     }
   };
