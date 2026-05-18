@@ -170,12 +170,81 @@ const App = () => {
     setIsCartSubmitting(true);
     setSubmitProgress({ current: 0, total: selectedItems.length });
 
-    // 1. 순차적으로 Cafe24 장바구니에 POST 전송 (CORS 우회를 위해 iframe + form 방식 채택)
+    // 1. 단일 상품 바로구매 케이스 (95%+ 주 사용 시나리오)
+    // 최상위 창(Top-level / Parent)에서 직접 폼 전송을 실행하여 SameSite=Lax 세션 쿠키가 온전히 실려 전송되도록 처리합니다.
+    if (selectedItems.length === 1) {
+      const item = selectedItems[0];
+      setSubmitProgress({ current: 1, total: 1 });
+
+      const matchProductNo = item.variantUrl.match(/[?&]product_no=(\d+)/);
+      const matchCateNo = item.variantUrl.match(/[?&]cate_no=(\d+)/);
+      const productNo = matchProductNo ? matchProductNo[1] : null;
+      const cateNo = matchCateNo ? matchCateNo[1] : null;
+
+      if (productNo) {
+        let domain = 'https://chhouse.cafe24.com';
+        try {
+          const parsed = new URL(item.variantUrl);
+          domain = `${parsed.protocol}//${parsed.host}`;
+        } catch (e) {
+          // fallback
+        }
+
+        showToast('🛒 장바구니에 성경을 담고 있습니다. 잠시만 기다려 주세요...');
+
+        // 동적 Form 생성 및 최상위 window 전송 설정
+        const form = document.createElement('form');
+        form.method = 'POST';
+        form.action = `${domain}/exec/front/order/basket/`;
+        
+        // 아이프레임 내부에 포함되어 있으면 부모 창(_parent)을, 독립 페이지면 현재 창(_self)을 타겟으로 지정
+        if (window.parent && window.parent !== window) {
+          form.target = '_parent';
+        } else {
+          form.target = '_self';
+        }
+
+        // product_no
+        const inputProductNo = document.createElement('input');
+        inputProductNo.type = 'hidden';
+        inputProductNo.name = 'product_no';
+        inputProductNo.value = productNo;
+        form.appendChild(inputProductNo);
+
+        // cate_no
+        if (cateNo) {
+          const inputCateNo = document.createElement('input');
+          inputCateNo.type = 'hidden';
+          inputCateNo.name = 'cate_no';
+          inputCateNo.value = cateNo;
+          form.appendChild(inputCateNo);
+        }
+
+        // quantity
+        const inputQuantity = document.createElement('input');
+        inputQuantity.type = 'hidden';
+        inputQuantity.name = 'quantity';
+        inputQuantity.value = '1';
+        form.appendChild(inputQuantity);
+
+        document.body.appendChild(form);
+
+        setTimeout(() => {
+          setIsCartSubmitting(false);
+          setIsCartOpen(false);
+          form.submit();
+          // 브라우저가 최상위 창을 장바구니(/order/basket.html)로 자동 리다이렉트 처리함
+        }, 800);
+        return;
+      }
+    }
+
+    // 2. 다중 상품 일괄 장바구니 담기 케이스 (순차 비동기 iframe 전송)
+    // ※ 다중 상품의 경우 완벽한 담기를 위해서 쇼핑몰과 빌드된 앱이 동일 도메인(Same-origin, e.g. chhouse.cafe24.com/biblezoom/)에 호스팅되는 것을 권장합니다.
     for (let i = 0; i < selectedItems.length; i++) {
       const item = selectedItems[i];
       setSubmitProgress(prev => ({ ...prev, current: i + 1 }));
 
-      // URL에서 product_no 및 cate_no 추출
       const matchProductNo = item.variantUrl.match(/[?&]product_no=(\d+)/);
       const matchCateNo = item.variantUrl.match(/[?&]cate_no=(\d+)/);
       const productNo = matchProductNo ? matchProductNo[1] : null;
@@ -191,7 +260,6 @@ const App = () => {
         }
 
         await new Promise((resolve) => {
-          // unique iframe ID 생성
           const iframeId = `cart-iframe-${productNo}-${Date.now()}`;
           const iframe = document.createElement('iframe');
           iframe.name = iframeId;
@@ -199,20 +267,17 @@ const App = () => {
           iframe.style.display = 'none';
           document.body.appendChild(iframe);
 
-          // Form 생성
           const form = document.createElement('form');
           form.method = 'POST';
           form.action = `${domain}/exec/front/order/basket/`;
           form.target = iframeId;
 
-          // product_no
           const inputProductNo = document.createElement('input');
           inputProductNo.type = 'hidden';
           inputProductNo.name = 'product_no';
           inputProductNo.value = productNo;
           form.appendChild(inputProductNo);
 
-          // cate_no
           if (cateNo) {
             const inputCateNo = document.createElement('input');
             inputCateNo.type = 'hidden';
@@ -221,7 +286,6 @@ const App = () => {
             form.appendChild(inputCateNo);
           }
 
-          // quantity
           const inputQuantity = document.createElement('input');
           inputQuantity.type = 'hidden';
           inputQuantity.name = 'quantity';
@@ -231,7 +295,6 @@ const App = () => {
           document.body.appendChild(form);
           form.submit();
 
-          // 브라우저가 form을 전송하고 쿠키를 세팅할 시간을 확보하기 위해 대기
           setTimeout(() => {
             document.body.removeChild(form);
             document.body.removeChild(iframe);
@@ -241,7 +304,7 @@ const App = () => {
       }
     }
 
-    // 2. 전송 완료 후 Cafe24 장바구니로 리다이렉트
+    // 전송 완료 후 Cafe24 장바구니로 리다이렉트
     let finalDomain = 'https://chhouse.cafe24.com';
     try {
       const parsed = new URL(selectedItems[0].variantUrl);
@@ -252,7 +315,6 @@ const App = () => {
 
     showToast('🛒 선택하신 상품들이 장바구니에 모두 담겼습니다! 이동합니다.');
     
-    // 약간의 딜레이를 줘서 토스트가 눈에 띄게 한 후 리다이렉트
     setTimeout(() => {
       setIsCartSubmitting(false);
       setIsCartOpen(false);
