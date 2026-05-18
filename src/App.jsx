@@ -14,6 +14,23 @@ const UPDATE_NOTES = [
 
 const ENABLE_UI_UPDATE_MODAL = false;
 
+// Base64 공유 데이터 인코딩/디코딩 헬퍼 함수
+const encodeSharedItems = (items) => {
+  const ids = items.map(item => item.uniqueId);
+  const jsonStr = JSON.stringify(ids);
+  return btoa(encodeURIComponent(jsonStr));
+};
+
+const decodeSharedItems = (encodedStr) => {
+  try {
+    const decodedJson = decodeURIComponent(atob(encodedStr));
+    return JSON.parse(decodedJson);
+  } catch (e) {
+    console.error('Failed to decode shared items:', e);
+    return [];
+  }
+};
+
 /** 첫 화면 공감 카피(B안): 기능 설명 전 스크롤 상단 노출 */
 const EMPATHY_PARENT_HEADLINE = '부모님 성경 선물 전에 꼭 확인해 보세요.';
 const EMPATHY_BULLETS = [
@@ -246,6 +263,143 @@ const App = () => {
         window.location.href = cartUrl;
       }
     }, 1000);
+  };
+
+  // 딥링크 기반 장바구니/관심상품 자동 복구 및 드로어 연동
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const sharedParam = urlParams.get('share');
+    if (sharedParam) {
+      const sharedIds = decodeSharedItems(sharedParam);
+      if (sharedIds.length > 0) {
+        const loadedItems = [];
+        sharedIds.forEach(id => {
+          const parts = id.split('_');
+          if (parts.length < 3) return;
+          const publisherKey = parts[0];
+          const model = parts[1];
+          const label = parts.slice(2).join('_');
+
+          const publisher = bibleData[publisherKey];
+          if (!publisher) return;
+          const item = publisher.items.find(i => i.model === model);
+          if (!item) return;
+          const variant = item.variants.find(v => v.label === label);
+          if (!variant) return;
+
+          loadedItems.push({
+            uniqueId: id,
+            publisherKey,
+            publisherName: publisher.name,
+            model: item.model,
+            size: item.size,
+            variantLabel: variant.label,
+            variantImg: variant.img,
+            variantUrl: variant.url,
+            originalPrice: variant.originalPrice,
+            salePrice: variant.salePrice,
+            quantity: 1
+          });
+        });
+
+        if (loadedItems.length > 0) {
+          setCartItems(prev => {
+            const merged = [...prev];
+            loadedItems.forEach(item => {
+              if (!merged.some(i => i.uniqueId === item.uniqueId)) {
+                merged.push(item);
+              }
+            });
+            return merged;
+          });
+
+          // 복원된 상품들을 자동 체크 활성화
+          setSelectedCartIds(prev => {
+            const addedIds = loadedItems.map(i => i.uniqueId);
+            return Array.from(new Set([...prev, ...addedIds]));
+          });
+
+          // 관심목록 드로어 오픈 및 토스트 웰컴 팝업
+          setIsCartOpen(true);
+          showToast(`🎁 추천받은 성경 ${loadedItems.length}개가 관심상품에 추가되었습니다!`);
+
+          // 주소창을 깔끔하게 정리하여 새로고침 시 중복 방지
+          window.history.replaceState({}, document.title, window.location.pathname);
+        }
+      }
+    }
+  }, [bibleData]);
+
+  // 카카오톡 선택 상품 공유하기 기능 구현
+  const handleKakaoCartShare = () => {
+    if (!window.Kakao || !window.Kakao.isInitialized()) {
+      alert('카카오톡 공유 기능을 불러오는 중입니다. 잠시 후 다시 시도해주세요.');
+      return;
+    }
+
+    const selectedItems = cartItems.filter(item => selectedCartIds.includes(item.uniqueId));
+    if (selectedItems.length === 0) {
+      showToast('⚠️ 공유할 상품을 먼저 선택해 주세요.');
+      return;
+    }
+
+    try {
+      const shareCode = encodeSharedItems(selectedItems);
+      const shareUrl = `https://biblezoom.co.kr/?share=${shareCode}`;
+
+      let title = '';
+      let description = '';
+      let imageUrl = '';
+
+      if (selectedItems.length === 1) {
+        const item = selectedItems[0];
+        title = `🎁 [바이블줌] 추천 성경 선물`;
+        description = `[${item.publisherName}] ${item.model} (${item.variantLabel})\n가격: ${item.salePrice.toLocaleString()}원\n\n지인이 정성껏 고른 큰 글자 성경을 지금 확인해 보세요!`;
+        imageUrl = item.variantImg;
+      } else {
+        title = `🎁 [바이블줌] 추천 성경 선물 목록 (${selectedItems.length}개)`;
+        
+        // 목록 정보 텍스트 빌드
+        const lines = selectedItems.slice(0, 3).map((item, idx) => 
+          `${idx + 1}. [${item.publisherName}] ${item.model} (${item.variantLabel})`
+        );
+        let listText = lines.join('\n');
+        if (selectedItems.length > 3) {
+          listText += `\n외 ${selectedItems.length - 3}개의 성경`;
+        }
+        description = listText + `\n\n지인이 고른 맞춤형 성경 목록을 바로 확인해 보세요!`;
+        imageUrl = 'https://biblefont.web.app/biblezoom-kakao-share2.png';
+      }
+
+      window.Kakao.Share.sendDefault({
+        objectType: 'feed',
+        content: {
+          title: title,
+          description: description,
+          imageUrl: imageUrl,
+          link: {
+            mobileWebUrl: shareUrl,
+            webUrl: shareUrl,
+          },
+        },
+        buttons: [
+          {
+            title: '성경 목록 바로 확인하기 🔍',
+            link: {
+              mobileWebUrl: shareUrl,
+              webUrl: shareUrl,
+            },
+          },
+        ],
+      });
+
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'share', { method: 'KakaoTalk', content_type: 'cart_items' });
+      }
+    } catch (e) {
+      console.error('Kakao cart share error:', e);
+      alert('카카오톡 공유 중 오류가 발생했습니다: ' + e.message);
+    }
   };
 
   // 6대 실시간 필터 상태 정의
@@ -5068,19 +5222,31 @@ const App = () => {
                     </div>
                   </div>
                   
-                  <div className="grid grid-cols-3 gap-2">
+                  <div className="space-y-2">
                     <button 
-                      onClick={clearCart}
-                      className="bg-white border border-slate-200 hover:border-slate-300 text-slate-600 font-bold py-3 rounded-xl text-center text-xs transition-colors cursor-pointer"
+                      onClick={handleKakaoCartShare}
+                      className="w-full bg-[#FEE500] hover:bg-[#FDD835] text-[#191919] font-black py-3.5 rounded-xl text-center text-xs transition-all flex items-center justify-center gap-2 shadow-sm cursor-pointer border-0"
                     >
-                      전체 비우기
+                      <svg className="w-4 h-4 fill-current text-[#191919]" viewBox="0 0 24 24">
+                        <path d="M12 3c-4.97 0-9 3.185-9 7.112 0 2.53 1.69 4.743 4.25 5.922-.16.59-.58 2.147-.66 2.476-.11.417.14.41.3.3.12-.08 1.94-1.32 2.71-1.854.78.217 1.62.336 2.4.336 4.97 0 9-3.185 9-7.112 0-3.927-4.03-7.112-9-7.112z"/>
+                      </svg>
+                      선택 상품 카톡으로 공유하기 💬
                     </button>
-                    <button 
-                      onClick={handleBatchCheckout}
-                      className="col-span-2 bg-orange-500 hover:bg-orange-600 text-white font-black py-3 rounded-xl text-center text-xs transition-all shadow-md shadow-orange-500/10 cursor-pointer"
-                    >
-                      선택 상품 바로구매 🚀
-                    </button>
+                    
+                    <div className="grid grid-cols-3 gap-2">
+                      <button 
+                        onClick={clearCart}
+                        className="bg-white border border-slate-200 hover:border-slate-300 text-slate-600 font-bold py-3 rounded-xl text-center text-xs transition-colors cursor-pointer"
+                      >
+                        전체 비우기
+                      </button>
+                      <button 
+                        onClick={handleBatchCheckout}
+                        className="col-span-2 bg-orange-500 hover:bg-orange-600 text-white font-black py-3 rounded-xl text-center text-xs transition-all shadow-md shadow-orange-500/10 cursor-pointer"
+                      >
+                        선택 상품 바로구매 🚀
+                      </button>
+                    </div>
                   </div>
                 </div>
               )}
