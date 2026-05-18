@@ -159,11 +159,79 @@ const App = () => {
     showToast('🧹 관심상품을 모두 비웠습니다.');
   };
 
+  // 개별 상품 바로구매 (SameSite 보안 이슈 회피용 최상위 폼 전송)
+  const handleIndividualCheckout = (item) => {
+    const matchProductNo = item.variantUrl.match(/[?&]product_no=(\d+)/);
+    const matchCateNo = item.variantUrl.match(/[?&]cate_no=(\d+)/);
+    const productNo = matchProductNo ? matchProductNo[1] : null;
+    const cateNo = matchCateNo ? matchCateNo[1] : null;
+
+    if (productNo) {
+      let domain = 'https://chhouse.cafe24.com';
+      try {
+        const parsed = new URL(item.variantUrl);
+        domain = `${parsed.protocol}//${parsed.host}`;
+      } catch (e) {
+        // fallback
+      }
+
+      showToast('🛒 장바구니에 성경을 담고 있습니다. 잠시만 기다려 주세요...');
+
+      // 동적 Form 생성 및 최상위 window 전송 설정
+      const form = document.createElement('form');
+      form.method = 'POST';
+      form.action = `${domain}/exec/front/order/basket/`;
+      
+      // 아이프레임 내부에 포함되어 있으면 부모 창(_parent)을, 독립 페이지면 현재 창(_self)을 타겟으로 지정
+      if (window.parent && window.parent !== window) {
+        form.target = '_parent';
+      } else {
+        form.target = '_self';
+      }
+
+      // product_no
+      const inputProductNo = document.createElement('input');
+      inputProductNo.type = 'hidden';
+      inputProductNo.name = 'product_no';
+      inputProductNo.value = productNo;
+      form.appendChild(inputProductNo);
+
+      // cate_no
+      if (cateNo) {
+        const inputCateNo = document.createElement('input');
+        inputCateNo.type = 'hidden';
+        inputCateNo.name = 'cate_no';
+        inputCateNo.value = cateNo;
+        form.appendChild(inputCateNo);
+      }
+
+      // quantity
+      const inputQuantity = document.createElement('input');
+      inputQuantity.type = 'hidden';
+      inputQuantity.name = 'quantity';
+      inputQuantity.value = '1';
+      form.appendChild(inputQuantity);
+
+      document.body.appendChild(form);
+
+      setTimeout(() => {
+        setIsCartOpen(false);
+        form.submit();
+      }, 800);
+    }
+  };
+
   // 선택 상품 일괄 바로구매 & Cafe24 장바구니 연동 로직
   const handleBatchCheckout = async () => {
     const selectedItems = cartItems.filter(item => selectedCartIds.includes(item.uniqueId));
     if (selectedItems.length === 0) {
       showToast('⚠️ 구매할 상품을 먼저 선택해 주세요.');
+      return;
+    }
+
+    // 쇼핑몰 보안 정책(SameSite=Lax)으로 인해 여러 개의 상품을 백그라운드로 전송 시 쿠키가 누락되어 장바구니가 비는 현상 방지
+    if (selectedItems.length > 1) {
+      alert("⚠️ 쇼핑몰 보안 정책(SameSite)으로 인해 여러 개의 상품을 한 번에 장바구니에 담는 것이 제한됩니다.\n\n불편하시겠지만 관심 목록 내 개별 상품 오른쪽에 있는 [바로구매 🚀] 버튼을 사용하여 구매하실 상품을 하나씩 담아주시기 바랍니다!");
       return;
     }
 
@@ -175,68 +243,8 @@ const App = () => {
     if (selectedItems.length === 1) {
       const item = selectedItems[0];
       setSubmitProgress({ current: 1, total: 1 });
-
-      const matchProductNo = item.variantUrl.match(/[?&]product_no=(\d+)/);
-      const matchCateNo = item.variantUrl.match(/[?&]cate_no=(\d+)/);
-      const productNo = matchProductNo ? matchProductNo[1] : null;
-      const cateNo = matchCateNo ? matchCateNo[1] : null;
-
-      if (productNo) {
-        let domain = 'https://chhouse.cafe24.com';
-        try {
-          const parsed = new URL(item.variantUrl);
-          domain = `${parsed.protocol}//${parsed.host}`;
-        } catch (e) {
-          // fallback
-        }
-
-        showToast('🛒 장바구니에 성경을 담고 있습니다. 잠시만 기다려 주세요...');
-
-        // 동적 Form 생성 및 최상위 window 전송 설정
-        const form = document.createElement('form');
-        form.method = 'POST';
-        form.action = `${domain}/exec/front/order/basket/`;
-        
-        // 아이프레임 내부에 포함되어 있으면 부모 창(_parent)을, 독립 페이지면 현재 창(_self)을 타겟으로 지정
-        if (window.parent && window.parent !== window) {
-          form.target = '_parent';
-        } else {
-          form.target = '_self';
-        }
-
-        // product_no
-        const inputProductNo = document.createElement('input');
-        inputProductNo.type = 'hidden';
-        inputProductNo.name = 'product_no';
-        inputProductNo.value = productNo;
-        form.appendChild(inputProductNo);
-
-        // cate_no
-        if (cateNo) {
-          const inputCateNo = document.createElement('input');
-          inputCateNo.type = 'hidden';
-          inputCateNo.name = 'cate_no';
-          inputCateNo.value = cateNo;
-          form.appendChild(inputCateNo);
-        }
-
-        // quantity
-        const inputQuantity = document.createElement('input');
-        inputQuantity.type = 'hidden';
-        inputQuantity.name = 'quantity';
-        inputQuantity.value = '1';
-        form.appendChild(inputQuantity);
-
-        document.body.appendChild(form);
-
-        setTimeout(() => {
-          setIsCartSubmitting(false);
-          setIsCartOpen(false);
-          form.submit();
-          // 브라우저가 최상위 창을 장바구니(/order/basket.html)로 자동 리다이렉트 처리함
-        }, 800);
-        return;
-      }
+      handleIndividualCheckout(item);
+      return;
     }
 
     // 2. 다중 상품 일괄 장바구니 담기 케이스 (순차 비동기 iframe 전송)
@@ -5289,6 +5297,19 @@ const App = () => {
                               </div>
                             </div>
                           </a>
+
+                          {/* 개별 바로구매 버튼 */}
+                          <button 
+                            onClick={() => handleIndividualCheckout(item)}
+                            className={`bg-orange-500 hover:bg-orange-600 text-white font-black rounded-lg transition-all flex items-center shrink-0 cursor-pointer border-0 shadow-xs shadow-orange-500/10 ${
+                              uiSize === 'small' ? 'px-2 py-1 text-[9px] md:text-[10px]' :
+                              uiSize === 'large' ? 'px-3 py-2 text-[11px] md:text-[13px]' :
+                              'px-2.5 py-1.5 text-[10px] md:text-[11px]'
+                            }`}
+                            title="바로구매"
+                          >
+                            바로구매 🚀
+                          </button>
 
                           {/* 개별 삭제 버튼 */}
                           <button 
