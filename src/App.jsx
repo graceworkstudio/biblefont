@@ -5176,7 +5176,11 @@ const App = () => {
                             rel="noopener noreferrer" 
                             className="flex-1 flex gap-3 min-w-0 pr-6 group/item cursor-pointer"
                           >
-                            <div className="w-14 h-14 rounded-xl overflow-hidden border border-slate-100 flex-shrink-0 bg-slate-50 group-hover/item:border-orange-200 transition-colors">
+                            <div className={`rounded-xl overflow-hidden border border-slate-100 flex-shrink-0 bg-slate-50 group-hover/item:border-orange-200 transition-all duration-200 ${
+                              uiSize === 'small' ? 'w-14 h-14' :
+                              uiSize === 'large' ? 'w-20 h-20' :
+                              'w-16 h-16'
+                            }`}>
                               <img src={item.variantImg} alt="" className="w-full h-full object-cover group-hover/item:scale-[1.03] transition-transform duration-300" />
                             </div>
                             <div className="flex-1 min-w-0">
