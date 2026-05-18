@@ -1,0 +1,33 @@
+[debug] [2026-05-18T13:33:35.950Z] ----------------------------------------------------------------------
+[debug] [2026-05-18T13:33:35.952Z] Command:       /usr/local/bin/node /Users/azkara/.gemini/antigravity/scratch/bible-font-comparison/node_modules/.bin/firebase deploy --only hosting
+[debug] [2026-05-18T13:33:35.952Z] CLI Version:   10.9.2
+[debug] [2026-05-18T13:33:35.953Z] Platform:      darwin
+[debug] [2026-05-18T13:33:35.953Z] Node Version:  v24.15.0
+[debug] [2026-05-18T13:33:35.953Z] Time:          Mon May 18 2026 22:33:35 GMT+0900 (Korean Standard Time)
+[debug] [2026-05-18T13:33:35.953Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-05-18T13:33:36.003Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-05-18T13:33:36.003Z] > authorizing via signed-in user (izzixa@gmail.com)
+[debug] [2026-05-18T13:33:36.003Z] [iam] checking project biblefont for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2026-05-18T13:33:36.005Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/biblefont:testIamPermissions [none]
+[debug] [2026-05-18T13:33:36.005Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/biblefont:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-05-18T13:33:36.417Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/biblefont:testIamPermissions 200
+[debug] [2026-05-18T13:33:36.417Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/biblefont:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-05-18T13:33:36.418Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/biblefont [none]
+[debug] [2026-05-18T13:33:36.868Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/biblefont 200
+[debug] [2026-05-18T13:33:36.868Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/biblefont {"projectId":"biblefont","projectNumber":"1081445343543","displayName":"biblefont","name":"projects/biblefont","resources":{"hostingSite":"biblefont"},"state":"ACTIVE","etag":"1_55db719a-df6a-4ac3-bbd3-d9d4a15345be"}
+[info] 
+[info] === Deploying to 'biblefont'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2026-05-18T13:33:36.870Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/biblefont [none]
+[debug] [2026-05-18T13:33:37.249Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/biblefont 200
+[debug] [2026-05-18T13:33:37.249Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/biblefont {"projectId":"biblefont","projectNumber":"1081445343543","displayName":"biblefont","name":"projects/biblefont","resources":{"hostingSite":"biblefont"},"state":"ACTIVE","etag":"1_55db719a-df6a-4ac3-bbd3-d9d4a15345be"}
+[debug] [2026-05-18T13:33:37.251Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/biblefont/locations/-/functions [none]
+[debug] [2026-05-18T13:33:37.926Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/biblefont/locations/-/functions 200
+[debug] [2026-05-18T13:33:37.926Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/biblefont/locations/-/functions {}
+[debug] [2026-05-18T13:33:37.926Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2alpha/projects/biblefont/locations/-/functions [none]
+[debug] [2026-05-18T13:33:39.262Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2alpha/projects/biblefont/locations/-/functions 200
+[debug] [2026-05-18T13:33:39.262Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2alpha/projects/biblefont/locations/-/functions {}
+[debug] [2026-05-18T13:33:39.262Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/1081445343543/sites/biblefont/versions [none]
+[debug] [2026-05-18T13:33:39.262Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/1081445343543/sites/biblefont/versions {"config":{"rewrites":[{"glob":"/api/cafe24Products","function":"cafe24ProductsTest","functionRegion":"us-central1"},{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}

@@ -4805,7 +4805,7 @@ const App = () => {
                       <p className="text-sm md:text-base font-black text-slate-700">선택하신 조건에 매칭되는 성경 제품이 없습니다.</p>
                       <p className="text-[11px] md:text-xs font-bold text-slate-400">필터 조건들을 조금 더 넓히거나 오른쪽 상단의 '필터 초기화'를 클릭해 주세요.</p>
                       <a 
-                        href="https://pf.kakao.com/_xlxgwxfG/chat" 
+                        href="https://pf.kakao.com/_cxdzxin/chat" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         onClick={() => {
