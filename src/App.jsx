@@ -4816,9 +4816,9 @@ const App = () => {
                     </td>
                     <td className="px-2 md:px-4 py-4">
                       <div style={{ 
-                        fontFamily: 'Nanum Myeongjo, serif', 
+                        fontFamily: "'Noto Serif KR', 'Batang', '바탕체', serif", 
                         fontSize: `${(item.mm / 0.3528) * globalScale}pt`, 
-                        fontWeight: item.mm > 4 ? '800' : '700' 
+                        fontWeight: '600' 
                       }} className="text-slate-900 border-l-4 border-slate-200 pl-3 md:pl-5 py-1 leading-none whitespace-nowrap bible-preview-text">
                         태초에 하나님이 천지를 창조하시니라
                       </div>
@@ -5335,9 +5335,9 @@ const App = () => {
                         <div className="flex-1 bg-slate-50/75 rounded-xl md:rounded-2xl p-2 md:p-4 overflow-x-auto flex items-center min-h-[72px] md:min-h-[90px] border border-dashed border-slate-200 overflow-y-hidden">
                           <div 
                             style={{ 
-                              fontFamily: 'Nanum Myeongjo, serif', 
+                              fontFamily: "'Noto Serif KR', 'Batang', '바탕체', serif", 
                               fontSize: `${(mm / 0.3528) * globalScale}pt`, 
-                              fontWeight: mm > 4 ? '800' : '700',
+                              fontWeight: '600',
                               whiteSpace: 'nowrap'
                             }} 
                             className="text-slate-900 leading-none pl-1 md:pl-2 tracking-normal select-none"
