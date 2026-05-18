@@ -171,7 +171,7 @@ const App = () => {
     }, 300);
   };
 
-  // 개별 상품 바로구매 (SameSite 보안 이슈 회피용 Cafe24 surl/O 단일 바로구매 리다이렉트)
+  // 개별 상품 바로구매 (SameSite 보안 이슈 회피용 Cafe24 surl/O 단일 바로구매 리다이렉트 - 새창 열기)
   const handleIndividualCheckout = (item) => {
     const matchProductNo = item.variantUrl.match(/[?&]product_no=(\d+)/);
     const productNo = matchProductNo ? matchProductNo[1] : null;
@@ -190,15 +190,11 @@ const App = () => {
       // Cafe24 공식 바로구매(surl/O/상품번호) 고유 URL 생성
       const buyUrl = `${domain}/surl/O/${productNo}`;
 
-      setTimeout(() => {
-        setIsCartOpen(false);
-        // 아이프레임 내부에 포함되어 있으면 부모 창(_parent)을, 독립 페이지면 현재 창(_self)을 리다이렉트
-        if (window.parent && window.parent !== window) {
-          window.parent.location.href = buyUrl;
-        } else {
-          window.location.href = buyUrl;
-        }
-      }, 800);
+      // 새창(_blank)으로 즉시 열기 (팝업 차단 회피를 위해 동기 실행)
+      window.open(buyUrl, '_blank');
+
+      // 관심 목록 드로어 닫기
+      setIsCartOpen(false);
     }
   };
 

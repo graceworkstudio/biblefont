@@ -1,0 +1,42 @@
+[debug] [2026-05-18T15:30:17.710Z] ----------------------------------------------------------------------
+[debug] [2026-05-18T15:30:17.712Z] Command:       /usr/local/bin/node /Users/azkara/.gemini/antigravity/scratch/bible-font-comparison/node_modules/.bin/firebase deploy --only hosting
+[debug] [2026-05-18T15:30:17.713Z] CLI Version:   10.9.2
+[debug] [2026-05-18T15:30:17.713Z] Platform:      darwin
+[debug] [2026-05-18T15:30:17.713Z] Node Version:  v24.15.0
+[debug] [2026-05-18T15:30:17.713Z] Time:          Tue May 19 2026 00:30:17 GMT+0900 (Korean Standard Time)
+[debug] [2026-05-18T15:30:17.713Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-05-18T15:30:17.766Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-05-18T15:30:17.767Z] > authorizing via signed-in user (izzixa@gmail.com)
+[debug] [2026-05-18T15:30:17.767Z] [iam] checking project biblefont for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2026-05-18T15:30:17.769Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/biblefont:testIamPermissions [none]
+[debug] [2026-05-18T15:30:17.769Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/biblefont:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-05-18T15:30:18.098Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/biblefont:testIamPermissions 200
+[debug] [2026-05-18T15:30:18.098Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/biblefont:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-05-18T15:30:18.099Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/biblefont [none]
+[debug] [2026-05-18T15:30:18.640Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/biblefont 200
+[debug] [2026-05-18T15:30:18.641Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/biblefont {"projectId":"biblefont","projectNumber":"1081445343543","displayName":"biblefont","name":"projects/biblefont","resources":{"hostingSite":"biblefont"},"state":"ACTIVE","etag":"1_55db719a-df6a-4ac3-bbd3-d9d4a15345be"}
+[info] 
+[info] === Deploying to 'biblefont'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2026-05-18T15:30:18.642Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/biblefont [none]
+[debug] [2026-05-18T15:30:18.971Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/biblefont 200
+[debug] [2026-05-18T15:30:18.971Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/biblefont {"projectId":"biblefont","projectNumber":"1081445343543","displayName":"biblefont","name":"projects/biblefont","resources":{"hostingSite":"biblefont"},"state":"ACTIVE","etag":"1_55db719a-df6a-4ac3-bbd3-d9d4a15345be"}
+[debug] [2026-05-18T15:30:18.973Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/biblefont/locations/-/functions [none]
+[debug] [2026-05-18T15:30:19.934Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/biblefont/locations/-/functions 200
+[debug] [2026-05-18T15:30:19.934Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/biblefont/locations/-/functions {}
+[debug] [2026-05-18T15:30:19.934Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2alpha/projects/biblefont/locations/-/functions [none]
+[debug] [2026-05-18T15:30:21.246Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2alpha/projects/biblefont/locations/-/functions 200
+[debug] [2026-05-18T15:30:21.246Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2alpha/projects/biblefont/locations/-/functions {}
+[debug] [2026-05-18T15:30:21.246Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/1081445343543/sites/biblefont/versions [none]
+[debug] [2026-05-18T15:30:21.246Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/1081445343543/sites/biblefont/versions {"config":{"rewrites":[{"glob":"/api/cafe24Products","function":"cafe24ProductsTest","functionRegion":"us-central1"},{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2026-05-18T15:30:22.481Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/1081445343543/sites/biblefont/versions 200
+[debug] [2026-05-18T15:30:22.481Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/1081445343543/sites/biblefont/versions {"name":"projects/1081445343543/sites/biblefont/versions/46f6e67eb9042592","status":"CREATED","config":{"rewrites":[{"functionRegion":"us-central1","glob":"/api/cafe24Products","function":"cafe24ProductsTest"},{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[biblefont]: beginning deploy... 
+[info] i  hosting[biblefont]: found 15 files in dist 
+[debug] [2026-05-18T15:30:22.487Z] [hosting] uploading with 200 concurrency
+[debug] [2026-05-18T15:30:23.193Z] [hosting] hash cache [ZGlzdA] stored for 15 files
+[debug] [2026-05-18T15:30:23.194Z] [hosting][hash queue][FINAL] {"max":702,"min":5,"avg":136.6,"active":0,"complete":15,"success":15,"errored":0,"retried":0,"total":15,"elapsed":706}
+[debug] [2026-05-18T15:30:23.194Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/1081445343543/sites/biblefont/versions/46f6e67eb9042592:populateFiles [none]
+[debug] [2026-05-18T15:30:23.194Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/1081445343543/sites/biblefont/versions/46f6e67eb9042592:populateFiles {"files":{"/index.html":"df6c5311a2f08b7e71fc701115ae3b9ffa11bf6314c83e8820e0c62966f8db1a","/manifest.json":"3f157533f827833e2a6c764aa97dfd1ee48e9a8ead366b5c9740964c8a5623cd","/sw.js":"284991c41fd0258586145e1fa2c275afa0e46d4a95c6cc46b1379b156bd25fb0","/assets/index.1e97d19b.css":"f85e45fc907da2a9742262f8361185c95afec6a9719a9a800d1979be9044d858","/icon-192.png":"7a7728f57c1f53204cc9b397b46246df9f72ea118f193365ca01eb12873415b3","/chhouse-logo.png":"6ddcf8dbf606f632c1aab2d8711d0ca7791030706fb58fc39486206c10aa7c25","/assets/index.c3cded37.js":"344bc44e599de61ec6591d062f1eef96e4321a13cd5a6e76c88f202e4efbc2df","/kakao-share.jpg":"48b05e885a8482602c02674e25591becad30e8becc35c73efcf9e3e5fff937eb","/biblezoom-kakao-share.png":"7cd6a19c99b02fdef4fe04572539f5f03ced973d9c111a456a6bc9e381a78bae","/biblezoom-kakao-share2.png":"98d7c2f2d8c7f667b4e7bad5674d0a43f4d51b43e2331798547ef034d957781e","/icon-512.png":"1e8fa4d914a4435edf89e17f25f32f12673865f5c8ef270c5309605eeb2fa6c5","/biblezoom-icon.png":"1e8fa4d914a4435edf89e17f25f32f12673865f5c8ef270c5309605eeb2fa6c5","/gifs/tutorial-step3.gif":"d55664350824882c9f228844f71a47da1551f5a08d9e4250adbf8113350e4af6","/gifs/tutorial-step2.gif":"4314c33407b3e15974c8b8b90f72f9d021244cf04060d0483ac9d1138970f46c","/gifs/tutorial-step1.gif":"33cf73100badd62df858ef6832747e1fd6a6549d82479c2ce2f23609489f111e"}}
