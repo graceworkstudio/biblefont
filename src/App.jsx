@@ -4765,6 +4765,22 @@ const App = () => {
                       <AlertCircle size={40} className="text-slate-300" />
                       <p className="text-sm md:text-base font-black text-slate-700">선택하신 조건에 매칭되는 성경 제품이 없습니다.</p>
                       <p className="text-[11px] md:text-xs font-bold text-slate-400">필터 조건들을 조금 더 넓히거나 오른쪽 상단의 '필터 초기화'를 클릭해 주세요.</p>
+                      <a 
+                        href="https://pf.kakao.com/_xlxgwxfG/chat" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        onClick={() => {
+                          if (window.gtag) {
+                            window.gtag('event', 'click_consultation', { method: 'KakaoTalk', channel: '크리스챤하우스' });
+                          }
+                        }}
+                        className="inline-flex items-center gap-2 px-6 py-3 bg-[#FEE500] hover:bg-[#FEE500]/90 text-[#191919] font-black text-xs md:text-sm rounded-xl shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer border-0 mt-1.5"
+                      >
+                        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M12 3c-4.97 0-9 3.185-9 7.11 0 2.502 1.637 4.708 4.148 5.922-.164.568-.595 2.054-.68 2.37-.107.4-.356 1.408.156 1.05.4-.28 1.833-1.258 2.56-1.782.89.248 1.83.38 2.816.38 4.97 0 9-3.185 9-7.11S16.97 3 12 3z"/>
+                        </svg>
+                        맞춤 성경 1:1 상담하기
+                      </a>
                     </div>
                   </td>
                 </tr>
