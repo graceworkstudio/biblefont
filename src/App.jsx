@@ -5134,7 +5134,11 @@ const App = () => {
                   <>
                     {/* 전체 선택 바 */}
                     <div className="flex justify-between items-center pb-2 border-b border-slate-100 pr-4">
-                      <label className="flex items-center gap-2 text-xs font-black text-slate-600 cursor-pointer select-none">
+                      <label className={`flex items-center gap-2 font-black text-slate-600 cursor-pointer select-none transition-all duration-200 ${
+                        uiSize === 'small' ? 'text-xs md:text-[13px]' :
+                        uiSize === 'large' ? 'text-[14px] md:text-[15px]' :
+                        'text-[13px] md:text-[14px]'
+                      }`}>
                         <input 
                           type="checkbox"
                           checked={cartItems.length > 0 && selectedCartIds.length === cartItems.length}
@@ -5149,7 +5153,11 @@ const App = () => {
                             setCartItems(prev => prev.filter(i => !selectedCartIds.includes(i.uniqueId)));
                             showToast('🗑️ 선택한 상품들을 삭제했습니다.');
                           }}
-                          className="text-[11px] font-black text-red-500 hover:text-red-600 transition-colors"
+                          className={`font-black text-red-500 hover:text-red-600 transition-all duration-200 ${
+                            uiSize === 'small' ? 'text-[11px] md:text-[12px]' :
+                            uiSize === 'large' ? 'text-[13px] md:text-[14px]' :
+                            'text-[12px] md:text-[13px]'
+                          }`}
                         >
                           선택 삭제
                         </button>
