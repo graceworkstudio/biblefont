@@ -4058,10 +4058,23 @@ const App = () => {
         description = `[${item.publisherName}] ${item.model} (${item.variantLabel})\n가격: ${item.salePrice.toLocaleString()}원\n\n지인이 정성껏 고른 큰 글자 성경을 지금 확인해 보세요!`;
         imageUrl = item.variantImg;
       } else {
+        const sizeOrder = { '초대': 4, '대': 3, '중': 2, '소': 1 };
+        const getScore = (sizeStr) => {
+          if (!sizeStr) return 0;
+          for (const key of Object.keys(sizeOrder)) {
+            if (sizeStr.includes(key)) return sizeOrder[key];
+          }
+          return 0;
+        };
+
+        // 글씨 크기가 가장 큰 대표 상품 순으로 정렬하여 첫 번째 상품의 이미지를 대표 이미지로 선정
+        const sortedItems = [...selectedItems].sort((a, b) => getScore(b.size) - getScore(a.size));
+        const repItem = sortedItems[0];
+
         title = `🎁 [바이블줌] 추천 성경 선물 목록 (${selectedItems.length}개)`;
         
-        // 목록 정보 텍스트 빌드
-        const lines = selectedItems.slice(0, 3).map((item, idx) => 
+        // 목록 정보 텍스트 빌드 (대표 상품이 가장 처음에 나오도록 정렬된 리스트 사용)
+        const lines = sortedItems.slice(0, 3).map((item, idx) => 
           `${idx + 1}. [${item.publisherName}] ${item.model} (${item.variantLabel})`
         );
         let listText = lines.join('\n');
@@ -4069,7 +4082,7 @@ const App = () => {
           listText += `\n외 ${selectedItems.length - 3}개의 성경`;
         }
         description = listText + `\n\n지인이 고른 맞춤형 성경 목록을 바로 확인해 보세요!`;
-        imageUrl = 'https://biblefont.web.app/biblezoom-kakao-share2.png';
+        imageUrl = repItem.variantImg;
       }
 
       window.Kakao.Share.sendDefault({
