@@ -265,142 +265,6 @@ const App = () => {
     }, 1000);
   };
 
-  // 딥링크 기반 장바구니/관심상품 자동 복구 및 드로어 연동
-  useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const sharedParam = urlParams.get('share');
-    if (sharedParam) {
-      const sharedIds = decodeSharedItems(sharedParam);
-      if (sharedIds.length > 0) {
-        const loadedItems = [];
-        sharedIds.forEach(id => {
-          const parts = id.split('_');
-          if (parts.length < 3) return;
-          const publisherKey = parts[0];
-          const model = parts[1];
-          const label = parts.slice(2).join('_');
-
-          const publisher = bibleData[publisherKey];
-          if (!publisher) return;
-          const item = publisher.items.find(i => i.model === model);
-          if (!item) return;
-          const variant = item.variants.find(v => v.label === label);
-          if (!variant) return;
-
-          loadedItems.push({
-            uniqueId: id,
-            publisherKey,
-            publisherName: publisher.name,
-            model: item.model,
-            size: item.size,
-            variantLabel: variant.label,
-            variantImg: variant.img,
-            variantUrl: variant.url,
-            originalPrice: variant.originalPrice,
-            salePrice: variant.salePrice,
-            quantity: 1
-          });
-        });
-
-        if (loadedItems.length > 0) {
-          setCartItems(prev => {
-            const merged = [...prev];
-            loadedItems.forEach(item => {
-              if (!merged.some(i => i.uniqueId === item.uniqueId)) {
-                merged.push(item);
-              }
-            });
-            return merged;
-          });
-
-          // 복원된 상품들을 자동 체크 활성화
-          setSelectedCartIds(prev => {
-            const addedIds = loadedItems.map(i => i.uniqueId);
-            return Array.from(new Set([...prev, ...addedIds]));
-          });
-
-          // 관심목록 드로어 오픈 및 토스트 웰컴 팝업
-          setIsCartOpen(true);
-          showToast(`🎁 추천받은 성경 ${loadedItems.length}개가 관심상품에 추가되었습니다!`);
-
-          // 주소창을 깔끔하게 정리하여 새로고침 시 중복 방지
-          window.history.replaceState({}, document.title, window.location.pathname);
-        }
-      }
-    }
-  }, [bibleData]);
-
-  // 카카오톡 선택 상품 공유하기 기능 구현
-  const handleKakaoCartShare = () => {
-    if (!window.Kakao || !window.Kakao.isInitialized()) {
-      alert('카카오톡 공유 기능을 불러오는 중입니다. 잠시 후 다시 시도해주세요.');
-      return;
-    }
-
-    const selectedItems = cartItems.filter(item => selectedCartIds.includes(item.uniqueId));
-    if (selectedItems.length === 0) {
-      showToast('⚠️ 공유할 상품을 먼저 선택해 주세요.');
-      return;
-    }
-
-    try {
-      const shareCode = encodeSharedItems(selectedItems);
-      const shareUrl = `https://biblezoom.co.kr/?share=${shareCode}`;
-
-      let title = '';
-      let description = '';
-      let imageUrl = '';
-
-      if (selectedItems.length === 1) {
-        const item = selectedItems[0];
-        title = `🎁 [바이블줌] 추천 성경 선물`;
-        description = `[${item.publisherName}] ${item.model} (${item.variantLabel})\n가격: ${item.salePrice.toLocaleString()}원\n\n지인이 정성껏 고른 큰 글자 성경을 지금 확인해 보세요!`;
-        imageUrl = item.variantImg;
-      } else {
-        title = `🎁 [바이블줌] 추천 성경 선물 목록 (${selectedItems.length}개)`;
-        
-        // 목록 정보 텍스트 빌드
-        const lines = selectedItems.slice(0, 3).map((item, idx) => 
-          `${idx + 1}. [${item.publisherName}] ${item.model} (${item.variantLabel})`
-        );
-        let listText = lines.join('\n');
-        if (selectedItems.length > 3) {
-          listText += `\n외 ${selectedItems.length - 3}개의 성경`;
-        }
-        description = listText + `\n\n지인이 고른 맞춤형 성경 목록을 바로 확인해 보세요!`;
-        imageUrl = 'https://biblefont.web.app/biblezoom-kakao-share2.png';
-      }
-
-      window.Kakao.Share.sendDefault({
-        objectType: 'feed',
-        content: {
-          title: title,
-          description: description,
-          imageUrl: imageUrl,
-          link: {
-            mobileWebUrl: shareUrl,
-            webUrl: shareUrl,
-          },
-        },
-        buttons: [
-          {
-            title: '성경 목록 바로 확인하기 🔍',
-            link: {
-              mobileWebUrl: shareUrl,
-              webUrl: shareUrl,
-            },
-          },
-        ],
-      });
-
-      if (typeof window.gtag === 'function') {
-        window.gtag('event', 'share', { method: 'KakaoTalk', content_type: 'cart_items' });
-      }
-    } catch (e) {
-      console.error('Kakao cart share error:', e);
-      alert('카카오톡 공유 중 오류가 발생했습니다: ' + e.message);
-    }
-  };
 
   // 6대 실시간 필터 상태 정의
   const [filters, setFilters] = useState({
@@ -4061,6 +3925,143 @@ const App = () => {
     item.filteredVariants = matchedVariants;
     return matchedVariants.length > 0;
   }).sort((a, b) => b.mm - a.mm);
+
+  // 딥링크 기반 장바구니/관심상품 자동 복구 및 드로어 연동
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const sharedParam = urlParams.get('share');
+    if (sharedParam) {
+      const sharedIds = decodeSharedItems(sharedParam);
+      if (sharedIds.length > 0) {
+        const loadedItems = [];
+        sharedIds.forEach(id => {
+          const parts = id.split('_');
+          if (parts.length < 3) return;
+          const publisherKey = parts[0];
+          const model = parts[1];
+          const label = parts.slice(2).join('_');
+
+          const publisher = bibleData[publisherKey];
+          if (!publisher) return;
+          const item = publisher.items.find(i => i.model === model);
+          if (!item) return;
+          const variant = item.variants.find(v => v.label === label);
+          if (!variant) return;
+
+          loadedItems.push({
+            uniqueId: id,
+            publisherKey,
+            publisherName: publisher.name,
+            model: item.model,
+            size: item.size,
+            variantLabel: variant.label,
+            variantImg: variant.img,
+            variantUrl: variant.url,
+            originalPrice: variant.originalPrice,
+            salePrice: variant.salePrice,
+            quantity: 1
+          });
+        });
+
+        if (loadedItems.length > 0) {
+          setCartItems(prev => {
+            const merged = [...prev];
+            loadedItems.forEach(item => {
+              if (!merged.some(i => i.uniqueId === item.uniqueId)) {
+                merged.push(item);
+              }
+            });
+            return merged;
+          });
+
+          // 복원된 상품들을 자동 체크 활성화
+          setSelectedCartIds(prev => {
+            const addedIds = loadedItems.map(i => i.uniqueId);
+            return Array.from(new Set([...prev, ...addedIds]));
+          });
+
+          // 관심목록 드로어 오픈 및 토스트 웰컴 팝업
+          setIsCartOpen(true);
+          showToast(`🎁 추천받은 성경 ${loadedItems.length}개가 관심상품에 추가되었습니다!`);
+
+          // 주소창을 깔끔하게 정리하여 새로고침 시 중복 방지
+          window.history.replaceState({}, document.title, window.location.pathname);
+        }
+      }
+    }
+  }, [bibleData]);
+
+  // 카카오톡 선택 상품 공유하기 기능 구현
+  const handleKakaoCartShare = () => {
+    if (!window.Kakao || !window.Kakao.isInitialized()) {
+      alert('카카오톡 공유 기능을 불러오는 중입니다. 잠시 후 다시 시도해주세요.');
+      return;
+    }
+
+    const selectedItems = cartItems.filter(item => selectedCartIds.includes(item.uniqueId));
+    if (selectedItems.length === 0) {
+      showToast('⚠️ 공유할 상품을 먼저 선택해 주세요.');
+      return;
+    }
+
+    try {
+      const shareCode = encodeSharedItems(selectedItems);
+      const shareUrl = `https://biblezoom.co.kr/?share=${shareCode}`;
+
+      let title = '';
+      let description = '';
+      let imageUrl = '';
+
+      if (selectedItems.length === 1) {
+        const item = selectedItems[0];
+        title = `🎁 [바이블줌] 추천 성경 선물`;
+        description = `[${item.publisherName}] ${item.model} (${item.variantLabel})\n가격: ${item.salePrice.toLocaleString()}원\n\n지인이 정성껏 고른 큰 글자 성경을 지금 확인해 보세요!`;
+        imageUrl = item.variantImg;
+      } else {
+        title = `🎁 [바이블줌] 추천 성경 선물 목록 (${selectedItems.length}개)`;
+        
+        // 목록 정보 텍스트 빌드
+        const lines = selectedItems.slice(0, 3).map((item, idx) => 
+          `${idx + 1}. [${item.publisherName}] ${item.model} (${item.variantLabel})`
+        );
+        let listText = lines.join('\n');
+        if (selectedItems.length > 3) {
+          listText += `\n외 ${selectedItems.length - 3}개의 성경`;
+        }
+        description = listText + `\n\n지인이 고른 맞춤형 성경 목록을 바로 확인해 보세요!`;
+        imageUrl = 'https://biblefont.web.app/biblezoom-kakao-share2.png';
+      }
+
+      window.Kakao.Share.sendDefault({
+        objectType: 'feed',
+        content: {
+          title: title,
+          description: description,
+          imageUrl: imageUrl,
+          link: {
+            mobileWebUrl: shareUrl,
+            webUrl: shareUrl,
+          },
+        },
+        buttons: [
+          {
+            title: '성경 목록 바로 확인하기 🔍',
+            link: {
+              mobileWebUrl: shareUrl,
+              webUrl: shareUrl,
+            },
+          },
+        ],
+      });
+
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'share', { method: 'KakaoTalk', content_type: 'cart_items' });
+      }
+    } catch (e) {
+      console.error('Kakao cart share error:', e);
+      alert('카카오톡 공유 중 오류가 발생했습니다: ' + e.message);
+    }
+  };
 
   return (
     <div className={`min-h-screen bg-slate-50 p-1 md:p-8 text-slate-900 font-sans ui-font-zoom-${uiSize}`}>
