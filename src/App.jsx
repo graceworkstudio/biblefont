@@ -5228,7 +5228,7 @@ const App = () => {
                     {selectedCartIds.length >= 2 && (
                       <button 
                         onClick={() => setIsCompareOpen(true)}
-                        className="w-full bg-slate-900 hover:bg-black text-white font-black py-3 rounded-xl text-center text-xs transition-all flex items-center justify-center gap-1.5 shadow-sm cursor-pointer border-0 mb-1"
+                        className="w-full bg-slate-900 hover:bg-black text-white font-black py-3.5 rounded-xl text-center text-xs transition-all flex items-center justify-center gap-1.5 shadow-sm cursor-pointer border-0 mb-1"
                       >
                         <Ruler className="w-4 h-4 text-orange-500 animate-pulse" />
                         선택상품 실물 폰트 크기 비교 🔍
@@ -5247,13 +5247,13 @@ const App = () => {
                     <div className="grid grid-cols-3 gap-2">
                       <button 
                         onClick={clearCart}
-                        className="bg-white border border-slate-200 hover:border-slate-300 text-slate-600 font-bold py-3 rounded-xl text-center text-xs transition-colors cursor-pointer"
+                        className="bg-white border border-slate-200 hover:border-slate-300 text-slate-600 font-bold py-3.5 rounded-xl text-center text-xs transition-colors cursor-pointer"
                       >
                         전체 비우기
                       </button>
                       <button 
                         onClick={handleBatchCheckout}
-                        className="col-span-2 bg-orange-500 hover:bg-orange-600 text-white font-black py-3 rounded-xl text-center text-xs transition-all shadow-md shadow-orange-500/10 cursor-pointer"
+                        className="col-span-2 bg-orange-500 hover:bg-orange-600 text-white font-black py-3.5 rounded-xl text-center text-xs transition-all shadow-md shadow-orange-500/10 cursor-pointer"
                       >
                         선택 상품 바로구매 🚀
                       </button>
@@ -5300,12 +5300,12 @@ const App = () => {
                     return (
                       <div 
                         key={item.uniqueId} 
-                        className="flex flex-col md:flex-row md:items-center gap-4 p-4 rounded-2xl border border-slate-200/60 bg-white shadow-sm transition-all hover:shadow-md"
+                        className="flex flex-row items-center gap-2 md:gap-4 p-2.5 md:p-4 rounded-2xl border border-slate-200/60 bg-white shadow-sm transition-all hover:shadow-md w-full overflow-hidden"
                       >
-                        {/* 성경 기본 정보 메타 영역 */}
-                        <div className="md:w-1/3 shrink-0 flex flex-col gap-1">
-                          <div className="flex items-center gap-1.5">
-                            <span className={`inline-block px-1.5 py-0.5 rounded text-[10px] font-black ${
+                        {/* 성경 기본 정보 메타 영역 (모바일 고정 가로폭 좌우 배치) */}
+                        <div className="w-[105px] md:w-[170px] shrink-0 flex flex-col gap-0.5 border-r border-slate-100 pr-1 md:pr-3">
+                          <div className="flex items-center gap-1">
+                            <span className={`inline-block px-1 py-0.5 rounded text-[8px] md:text-[10px] font-black ${
                               item.publisherKey === 'A' ? 'bg-purple-100 text-purple-700' :
                               item.publisherKey === 'W' ? 'bg-emerald-100 text-emerald-700' :
                               item.publisherKey === 'S' ? 'bg-sky-100 text-sky-700' :
@@ -5314,7 +5314,7 @@ const App = () => {
                             }`}>
                               {item.publisherName}
                             </span>
-                            <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-black ${
+                            <span className={`inline-flex items-center px-1.5 py-0.5 rounded-full text-[8px] md:text-[10px] font-black ${
                               item.size === '특대' ? 'bg-purple-50 text-purple-600' : 
                               item.size === '대' ? 'bg-blue-50 text-blue-600' : 
                               item.size === '중' ? 'bg-green-50 text-green-600' : 
@@ -5323,16 +5323,16 @@ const App = () => {
                               {item.size}
                             </span>
                           </div>
-                          <div className="text-xs md:text-sm font-black text-slate-800 mt-1">{item.model}</div>
-                          <div className="text-[10px] md:text-xs text-slate-400 truncate font-medium">{item.variantLabel}</div>
-                          <div className="flex items-baseline gap-1.5 mt-1">
-                            <span className="text-xs font-black text-orange-500">{mm}mm</span>
-                            <span className="text-[10px] text-slate-400 font-bold">({formatPt(mm)}pt)</span>
+                          <div className="text-[11px] md:text-sm font-black text-slate-800 mt-0.5 leading-tight truncate">{item.model}</div>
+                          <div className="text-[9px] md:text-xs text-slate-400 truncate font-medium leading-none mt-0.5">{item.variantLabel}</div>
+                          <div className="flex items-baseline gap-1 mt-0.5">
+                            <span className="text-[10px] md:text-xs font-black text-orange-500">{mm}mm</span>
+                            <span className="text-[8px] md:text-[10px] text-slate-400 font-bold">({formatPt(mm)}pt)</span>
                           </div>
                         </div>
 
-                        {/* 실물 폰트 크기 인쇄 시뮬레이터 */}
-                        <div className="flex-1 bg-slate-50/75 rounded-2xl p-4 overflow-x-auto flex items-center min-h-[90px] border border-dashed border-slate-200">
+                        {/* 실물 폰트 크기 인쇄 시뮬레이터 (1단 가로 배치) */}
+                        <div className="flex-1 bg-slate-50/75 rounded-xl md:rounded-2xl p-2 md:p-4 overflow-x-auto flex items-center min-h-[72px] md:min-h-[90px] border border-dashed border-slate-200 overflow-y-hidden">
                           <div 
                             style={{ 
                               fontFamily: 'Nanum Myeongjo, serif', 
@@ -5340,7 +5340,7 @@ const App = () => {
                               fontWeight: mm > 4 ? '800' : '700',
                               whiteSpace: 'nowrap'
                             }} 
-                            className="text-slate-900 leading-none pl-2 tracking-normal select-none"
+                            className="text-slate-900 leading-none pl-1 md:pl-2 tracking-normal select-none"
                           >
                             태초에 하나님이 천지를 창조하시니라
                           </div>
@@ -5363,7 +5363,7 @@ const App = () => {
                       setIsCompareOpen(false);
                       handleKakaoCartShare();
                     }}
-                    className="flex-1 sm:flex-initial bg-[#FEE500] hover:bg-[#FDD835] text-[#191919] font-black px-4 py-3 rounded-xl text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer border-0 shadow-sm"
+                    className="flex-1 sm:flex-initial bg-[#FEE500] hover:bg-[#FDD835] text-[#191919] font-black px-4 py-3.5 rounded-xl text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer border-0 shadow-sm"
                   >
                     목록 카톡 공유 💬
                   </button>
@@ -5372,7 +5372,7 @@ const App = () => {
                       setIsCompareOpen(false);
                       handleBatchCheckout();
                     }}
-                    className="flex-1 sm:flex-initial bg-orange-500 hover:bg-orange-600 text-white font-black px-6 py-3 rounded-xl text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-md shadow-orange-500/10"
+                    className="flex-1 sm:flex-initial bg-orange-500 hover:bg-orange-600 text-white font-black px-6 py-3.5 rounded-xl text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-md shadow-orange-500/10"
                   >
                     선택 상품 바로구매 🚀
                   </button>
