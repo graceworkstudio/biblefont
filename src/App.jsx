@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Ruler, BookOpen, AlertCircle, X, Bell, ExternalLink, ShoppingCart, ShoppingBag, ChevronDown, ChevronRight, MessageCircle, Play, Gift } from 'lucide-react';
+import { Ruler, BookOpen, AlertCircle, X, Bell, ExternalLink, ShoppingCart, ShoppingBag, ChevronDown, ChevronRight, MessageCircle, Play, Gift, Share2 } from 'lucide-react';
 import BannerComponent from './BannerComponent';
 import { bibleData } from './data/bibleData';
 import { APP_VERSION, UPDATE_NOTES, ENABLE_UI_UPDATE_MODAL, EMPATHY_PARENT_HEADLINE, EMPATHY_BULLETS } from './constants/uiConstants';
@@ -858,6 +858,45 @@ const App = () => {
     } catch (e) {
       console.error('Kakao cart share error:', e);
       alert('카카오톡 공유 중 오류가 발생했습니다: ' + e.message);
+    }
+  };
+
+  const handleCopyAppUrl = async () => {
+    try {
+      await navigator.clipboard.writeText('https://biblezoom.co.kr');
+      if (typeof window.showToast === 'function') {
+        window.showToast('🔗 앱 링크가 복사되었습니다.');
+      } else {
+        alert('🔗 앱 링크가 복사되었습니다.');
+      }
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'share', { method: 'CopyLink', content_type: 'app' });
+      }
+    } catch (e) {
+      alert('링크 복사에 실패했습니다.');
+    }
+  };
+
+  const handleCopyCartLink = async () => {
+    const selectedItems = cartItems.filter(item => selectedCartIds.includes(item.uniqueId));
+    if (selectedItems.length === 0) {
+      alert('⚠️ 공유할 상품을 먼저 선택해 주세요.');
+      return;
+    }
+    try {
+      const shareCode = encodeSharedItems(selectedItems);
+      const shareUrl = `https://biblezoom.co.kr/?share=${shareCode}`;
+      await navigator.clipboard.writeText(shareUrl);
+      if (typeof window.showToast === 'function') {
+        window.showToast('🔗 선택한 성경 목록 링크가 복사되었습니다.');
+      } else {
+        alert('🔗 선택한 성경 목록 링크가 복사되었습니다.');
+      }
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'share', { method: 'CopyLink', content_type: 'cart_items' });
+      }
+    } catch (e) {
+      alert('링크 복사에 실패했습니다.');
     }
   };
 
@@ -2081,15 +2120,24 @@ const App = () => {
                         선택상품 실물 폰트 크기 비교 🔍
                       </button>
                     )}
-                    <button 
-                      onClick={handleKakaoCartShare}
-                      className="w-full h-12 bg-[#FEE500] hover:bg-[#FDD835] text-[#191919] font-black rounded-xl text-xs transition-all flex items-center justify-center gap-2 shadow-sm cursor-pointer border-0"
-                    >
-                      <svg className="w-4 h-4 fill-current text-[#191919]" viewBox="0 0 24 24">
-                        <path d="M12 3c-4.97 0-9 3.185-9 7.112 0 2.53 1.69 4.743 4.25 5.922-.16.59-.58 2.147-.66 2.476-.11.417.14.41.3.3.12-.08 1.94-1.32 2.71-1.854.78.217 1.62.336 2.4.336 4.97 0 9-3.185 9-7.112 0-3.927-4.03-7.112-9-7.112z"/>
-                      </svg>
-                      선택 상품 카톡으로 공유하기 💬
-                    </button>
+                    <div className="grid grid-cols-2 gap-2">
+                      <button 
+                        onClick={handleKakaoCartShare}
+                        className="h-12 bg-[#FEE500] hover:bg-[#FDD835] text-[#191919] font-black rounded-xl text-[11px] md:text-xs transition-all flex items-center justify-center gap-1.5 shadow-sm cursor-pointer border-0"
+                      >
+                        <svg className="w-4 h-4 fill-current text-[#191919]" viewBox="0 0 24 24">
+                          <path d="M12 3c-4.97 0-9 3.185-9 7.112 0 2.53 1.69 4.743 4.25 5.922-.16.59-.58 2.147-.66 2.476-.11.417.14.41.3.3.12-.08 1.94-1.32 2.71-1.854.78.217 1.62.336 2.4.336 4.97 0 9-3.185 9-7.112 0-3.927-4.03-7.112-9-7.112z"/>
+                        </svg>
+                        카톡 공유 💬
+                      </button>
+                      <button 
+                        onClick={handleCopyCartLink}
+                        className="h-12 bg-slate-100 hover:bg-slate-200 text-slate-700 font-black rounded-xl text-[11px] md:text-xs transition-all flex items-center justify-center gap-1.5 shadow-sm cursor-pointer border border-slate-200"
+                      >
+                        <Share2 className="w-4 h-4" />
+                        링크 복사 🔗
+                      </button>
+                    </div>
                     
                     <div className="grid grid-cols-3 gap-2">
                       <button 
@@ -2238,18 +2286,28 @@ const App = () => {
                       setIsCompareOpen(false);
                       handleKakaoCartShare();
                     }}
-                    className="flex-1 sm:flex-initial h-12 bg-[#FEE500] hover:bg-[#FDD835] text-[#191919] font-black px-4 rounded-xl text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer border-0 shadow-sm"
+                    className="flex-1 sm:flex-initial h-12 bg-[#FEE500] hover:bg-[#FDD835] text-[#191919] font-black px-3 rounded-xl text-[11px] md:text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer border-0 shadow-sm"
                   >
-                    목록 카톡 공유 💬
+                    카톡 공유 💬
+                  </button>
+                  <button 
+                    onClick={() => {
+                      setIsCompareOpen(false);
+                      handleCopyCartLink();
+                    }}
+                    className="flex-1 sm:flex-initial h-12 bg-slate-100 hover:bg-slate-200 text-slate-700 font-black px-3 rounded-xl text-[11px] md:text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer border border-slate-200 shadow-sm"
+                  >
+                    <Share2 className="w-4 h-4" />
+                    링크 복사 🔗
                   </button>
                   <button 
                     onClick={() => {
                       setIsCompareOpen(false);
                       handleBatchCheckout();
                     }}
-                    className="flex-1 sm:flex-initial h-12 bg-orange-500 hover:bg-orange-600 text-white font-black px-6 rounded-xl text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-md shadow-orange-500/10"
+                    className="flex-[1.5] sm:flex-initial h-12 bg-orange-500 hover:bg-orange-600 text-white font-black px-4 rounded-xl text-xs md:text-sm transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-md shadow-orange-500/10"
                   >
-                    선택 상품 바로구매 🚀
+                    바로구매 🚀
                   </button>
                 </div>
               </div>
