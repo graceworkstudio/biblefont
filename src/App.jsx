@@ -5060,10 +5060,10 @@ const App = () => {
                           </div>
                         </a>
                         
-                        <div className="grid grid-cols-2 gap-2 mt-auto pt-1">
+                        <div className="grid grid-cols-2 gap-1.5 mt-auto pt-1">
                           <button 
                             onClick={() => addToCart(v, selectedItem)}
-                            className="flex items-center justify-center bg-white border border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-slate-700 font-black py-2 md:py-2.5 rounded-lg md:rounded-xl text-center text-[11px] md:text-xs transition-all shadow-xs cursor-pointer px-2"
+                            className="flex items-center justify-center bg-white border border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-slate-700 font-black py-2 md:py-2.5 rounded-lg md:rounded-xl text-center text-[10px] md:text-xs px-0.5 md:px-2 whitespace-nowrap tracking-tighter transition-all shadow-xs cursor-pointer w-full"
                           >
                             관심상품담기
                           </button>
@@ -5071,7 +5071,7 @@ const App = () => {
                             href={v.url} 
                             target="_blank" 
                             rel="noopener noreferrer" 
-                            className="flex items-center justify-center bg-orange-500 hover:bg-orange-600 text-white font-black py-2 md:py-2.5 rounded-lg md:rounded-xl text-center text-[11px] md:text-xs transition-all shadow-xs cursor-pointer"
+                            className="flex items-center justify-center bg-orange-500 hover:bg-orange-600 text-white font-black py-2 md:py-2.5 rounded-lg md:rounded-xl text-center text-[10px] md:text-xs px-0.5 md:px-2 whitespace-nowrap tracking-tighter transition-all shadow-xs cursor-pointer w-full"
                           >
                             바로구매
                           </a>
@@ -5137,7 +5137,7 @@ const App = () => {
                           <div className="grid grid-cols-2 gap-1.5 mt-auto pt-1">
                             <button 
                               onClick={() => addToCart(v, hoverItem)}
-                              className="flex items-center justify-center bg-white border border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-slate-700 font-bold py-1.5 rounded-lg text-[10px] md:text-[11px] transition-all cursor-pointer px-2"
+                              className="flex items-center justify-center bg-white border border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-slate-700 font-bold py-1.5 rounded-lg text-[9px] md:text-[11px] px-0.5 md:px-2 whitespace-nowrap tracking-tighter transition-all cursor-pointer w-full"
                             >
                               관심상품담기
                             </button>
@@ -5145,7 +5145,7 @@ const App = () => {
                               href={v.url} 
                               target="_blank" 
                               rel="noopener noreferrer" 
-                              className="flex items-center justify-center bg-orange-500 hover:bg-orange-600 text-white font-bold py-1.5 rounded-lg text-center text-[10px] md:text-[11px] transition-all cursor-pointer"
+                              className="flex items-center justify-center bg-orange-500 hover:bg-orange-600 text-white font-bold py-1.5 rounded-lg text-center text-[9px] md:text-[11px] px-0.5 md:px-2 whitespace-nowrap tracking-tighter transition-all cursor-pointer w-full"
                             >
                               바로구매
                             </a>
