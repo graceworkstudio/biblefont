@@ -761,10 +761,19 @@ const App = () => {
 
           const publisher = bibleData[publisherKey];
           if (!publisher) return;
-          const item = publisher.items.find(i => i.model === model);
-          if (!item) return;
-          const variant = item.variants.find(v => v.label === label);
-          if (!variant) return;
+          
+          let item = null;
+          let variant = null;
+          const matchingItems = publisher.items.filter(i => i.model === model);
+          for (const mItem of matchingItems) {
+            const foundVariant = mItem.variants.find(v => v.label === label);
+            if (foundVariant) {
+              item = mItem;
+              variant = foundVariant;
+              break;
+            }
+          }
+          if (!item || !variant) return;
 
           loadedItems.push({
             uniqueId: id,
@@ -2263,7 +2272,7 @@ const App = () => {
                 {cartItems
                   .filter(item => selectedCartIds.includes(item.uniqueId))
                   .map(item => {
-                    const originalBibleItem = bibleData[item.publisherKey]?.items.find(i => i.model === item.model);
+                    const originalBibleItem = bibleData[item.publisherKey]?.items.find(i => i.model === item.model && i.size === item.size);
                     const mm = originalBibleItem ? originalBibleItem.mm : 3.0;
                     
                     return (
