@@ -863,7 +863,8 @@ const App = () => {
 
   const handleCopyAppUrl = async () => {
     try {
-      await navigator.clipboard.writeText('https://biblezoom.co.kr');
+      const text = "[바이블줌] 돋보기 없이 고르는 큰 글자 성경\n앱 설치 없이 내 폰에서 실제 글자 크기를 바로 확인해 보세요!\n\nhttps://biblezoom.co.kr";
+      await navigator.clipboard.writeText(text);
       if (typeof window.showToast === 'function') {
         window.showToast('🔗 앱 링크가 복사되었습니다.');
       } else {
@@ -886,7 +887,18 @@ const App = () => {
     try {
       const shareCode = encodeSharedItems(selectedItems);
       const shareUrl = `https://biblezoom.co.kr/?share=${shareCode}`;
-      await navigator.clipboard.writeText(shareUrl);
+      
+      let text = `🎁 [바이블줌] 추천 성경 목록\n\n`;
+      const lines = selectedItems.slice(0, 3).map((item, idx) => 
+        `${idx + 1}. [${item.publisherName}] ${item.model} (${item.variantLabel})`
+      );
+      text += lines.join('\n');
+      if (selectedItems.length > 3) {
+        text += `\n외 ${selectedItems.length - 3}개의 성경`;
+      }
+      text += `\n\n지인이 고른 맞춤형 성경을 아래 링크에서 바로 확인해 보세요!\n\n${shareUrl}`;
+
+      await navigator.clipboard.writeText(text);
       if (typeof window.showToast === 'function') {
         window.showToast('🔗 선택한 성경 목록 링크가 복사되었습니다.');
       } else {
@@ -1722,6 +1734,16 @@ const App = () => {
                         <MessageCircle className="text-white" size={36} />
                     </div>
                     <span className="text-base text-gray-700 font-black mt-3">문자메시지</span>
+                </button>
+
+                <button 
+                    onClick={handleCopyAppUrl} 
+                    className="flex flex-col items-center group focus:outline-none"
+                >
+                    <div className="w-20 h-20 bg-slate-200 rounded-full flex items-center justify-center shadow-lg group-hover:bg-slate-300 transition-all transform group-hover:scale-110">
+                        <Share2 className="w-9 h-9 text-slate-700" strokeWidth={2.5} />
+                    </div>
+                    <span className="text-base text-gray-700 font-black mt-3">링크 복사</span>
                 </button>
             </div>
         </div>
