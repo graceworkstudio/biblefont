@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Ruler, BookOpen, AlertCircle, X, Bell, ExternalLink, ShoppingCart, ShoppingBag, ChevronDown, ChevronRight, MessageCircle, Play, Gift, Share2 } from 'lucide-react';
 import BannerComponent from './BannerComponent';
 import { bibleData } from './data/bibleData';
+import LZString from 'lz-string';
 import { APP_VERSION, UPDATE_NOTES, ENABLE_UI_UPDATE_MODAL, EMPATHY_PARENT_HEADLINE, EMPATHY_BULLETS } from './constants/uiConstants';
 
 
@@ -14,13 +15,23 @@ import { APP_VERSION, UPDATE_NOTES, ENABLE_UI_UPDATE_MODAL, EMPATHY_PARENT_HEADL
 const encodeSharedItems = (items) => {
   const ids = items.map(item => item.uniqueId);
   const joinedStr = ids.join('|');
-  const bytes = new TextEncoder().encode(joinedStr);
-  const binaryStr = Array.from(bytes).map(b => String.fromCharCode(b)).join('');
-  return btoa(binaryStr).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+  // Use LZString to drastically compress the repeated Korean chars and IDs
+  return LZString.compressToEncodedURIComponent(joinedStr);
 };
 
 const decodeSharedItems = (encodedStr) => {
   try {
+    // 1. Try LZString first (v3 format)
+    const decompressed = LZString.decompressFromEncodedURIComponent(encodedStr);
+    if (decompressed) {
+      if (decompressed.startsWith('[')) {
+        return JSON.parse(decompressed);
+      } else if (decompressed.includes('_')) {
+        return decompressed.split('|').filter(id => id.trim() !== '');
+      }
+    }
+
+    // 2. Try Pipe + UTF8 + Base64 (v2 format)
     let base64 = encodedStr.replace(/-/g, '+').replace(/_/g, '/');
     while (base64.length % 4) base64 += '=';
     
@@ -36,8 +47,9 @@ const decodeSharedItems = (encodedStr) => {
     } else if (decodedStr.includes('_')) {
       return decodedStr.split('|').filter(id => id.trim() !== '');
     }
-    throw new Error('Fallback to old format');
+    throw new Error('Fallback to v1');
   } catch (e) {
+    // 3. Fallback to Original JSON + URI + Base64 (v1 format)
     try {
       const decodedJson = decodeURIComponent(atob(encodedStr));
       return JSON.parse(decodedJson);
