@@ -4065,7 +4065,7 @@ const App = () => {
 
       if (selectedItems.length === 1) {
         const item = selectedItems[0];
-        title = `🎁 [바이블줌] 추천 성경 선물`;
+        title = `🎁 [바이블줌] 추천 성경`;
         description = `[${item.publisherName}] ${item.model} (${item.variantLabel})\n가격: ${item.salePrice.toLocaleString()}원\n\n지인이 정성껏 고른 큰 글자 성경을 지금 확인해 보세요!`;
         imageUrl = item.variantImg;
       } else {
@@ -4082,7 +4082,7 @@ const App = () => {
         const sortedItems = [...selectedItems].sort((a, b) => getScore(b.size) - getScore(a.size));
         const repItem = sortedItems[0];
 
-        title = `🎁 [바이블줌] 추천 성경 선물 목록 (${selectedItems.length}개)`;
+        title = `🎁 [바이블줌] 추천 성경 목록 (${selectedItems.length}개)`;
         
         // 목록 정보 텍스트 빌드 (대표 상품이 가장 처음에 나오도록 정렬된 리스트 사용)
         const lines = sortedItems.slice(0, 3).map((item, idx) => 
