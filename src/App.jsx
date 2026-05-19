@@ -5406,10 +5406,10 @@ const App = () => {
               <div className="flex-1 overflow-y-auto p-4 md:p-6 space-y-4 bg-slate-50/30">
                 
                 {/* 캘리브레이션/화면조정 권장 안내 배너 */}
-                <div className="bg-orange-50 border border-orange-100 rounded-2xl p-4 flex flex-col md:flex-row gap-3 items-start md:items-center justify-between shadow-xs">
-                  <div className="flex gap-3 items-start">
-                    <span className="text-xl shrink-0">💡</span>
-                    <div className="text-xs text-slate-600 leading-normal font-bold">
+                <div className="bg-orange-50 border border-orange-100 rounded-2xl p-4 md:p-5 flex flex-col gap-3 md:gap-4 items-center md:flex-row md:justify-between shadow-xs">
+                  <div className="flex gap-3 items-start w-full">
+                    <span className="text-xl md:text-2xl shrink-0 mt-0.5">💡</span>
+                    <div className="text-[12px] md:text-[14px] text-slate-700 leading-relaxed font-bold">
                       <span className="font-black text-orange-600">[실물 크기 측정 안내] 기기마다 화면 크기가 달라 실제 폰트 크기가 약간 다르게 보일 수 있습니다.</span>
                       <br />
                       신용카드로 화면 비율을 한 번만 설정해주시면 실제 인쇄된 성경책과 100% 동일한 글씨 크기로 오차없이 완벽하게 비교하실 수 있습니다!
@@ -5417,7 +5417,7 @@ const App = () => {
                   </div>
                   <button 
                     onClick={scrollToCalibration}
-                    className="shrink-0 text-[10px] md:text-xs font-black bg-orange-500 hover:bg-orange-600 text-white px-3 py-1.5 rounded-lg border-0 cursor-pointer transition-colors shadow-xs"
+                    className="shrink-0 w-full md:w-auto text-[13px] md:text-[14px] font-black bg-orange-500 hover:bg-orange-600 text-white px-4 md:px-5 py-2.5 rounded-xl border-0 cursor-pointer transition-colors shadow-md mt-1 md:mt-0 whitespace-nowrap"
                   >
                     지금 화면 비율 조절하기 📏
                   </button>
@@ -5434,10 +5434,10 @@ const App = () => {
                         key={item.uniqueId} 
                         className="flex flex-row items-center gap-2 md:gap-4 p-2.5 md:p-4 rounded-2xl border border-slate-200/60 bg-white shadow-sm transition-all hover:shadow-md w-full overflow-hidden"
                       >
-                        {/* 성경 기본 정보 메타 영역 (모바일 고정 가로폭 좌우 배치) */}
-                        <div className="w-[105px] md:w-[170px] shrink-0 flex flex-col gap-0.5 border-r border-slate-100 pr-1 md:pr-3">
-                          <div className="flex items-center gap-1">
-                            <span className={`inline-block px-1 py-0.5 rounded text-[8px] md:text-[10px] font-black ${
+                        {/* 성경 기본 정보 메타 영역 (모바일 고정 가로폭 우측으로 확장하여 시인성 향상) */}
+                        <div className="w-[125px] md:w-[190px] shrink-0 flex flex-col gap-1 border-r border-slate-100 pr-2 md:pr-4">
+                          <div className="flex items-center gap-1.5">
+                            <span className={`inline-block px-1.5 py-0.5 rounded text-[9px] md:text-[11px] font-black ${
                               item.publisherKey === 'A' ? 'bg-purple-100 text-purple-700' :
                               item.publisherKey === 'W' ? 'bg-emerald-100 text-emerald-700' :
                               item.publisherKey === 'S' ? 'bg-sky-100 text-sky-700' :
@@ -5446,7 +5446,7 @@ const App = () => {
                             }`}>
                               {item.publisherName}
                             </span>
-                            <span className={`inline-flex items-center px-1.5 py-0.5 rounded-full text-[8px] md:text-[10px] font-black ${
+                            <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-[9px] md:text-[11px] font-black ${
                               item.size === '특대' ? 'bg-purple-50 text-purple-600' : 
                               item.size === '대' ? 'bg-blue-50 text-blue-600' : 
                               item.size === '중' ? 'bg-green-50 text-green-600' : 
@@ -5455,19 +5455,19 @@ const App = () => {
                               {item.size}
                             </span>
                           </div>
-                          <div className={`font-black text-slate-800 mt-0.5 leading-tight truncate ${
-                            uiSize === 'small' ? 'text-xs md:text-[13px]' :
-                            uiSize === 'large' ? 'text-[14px] md:text-[16px]' :
-                            'text-[13px] md:text-[14px]'
+                          <div className={`font-black text-slate-800 leading-tight truncate ${
+                            uiSize === 'small' ? 'text-[13px] md:text-[14px]' :
+                            uiSize === 'large' ? 'text-[15px] md:text-[17px]' :
+                            'text-[14px] md:text-[15px]'
                           }`}>{item.model}</div>
-                          <div className={`text-slate-400 truncate font-medium leading-none mt-0.5 ${
-                            uiSize === 'small' ? 'text-[10px]' :
-                            uiSize === 'large' ? 'text-[12px] md:text-[13px]' :
-                            'text-[11px]'
+                          <div className={`text-slate-500 truncate font-bold leading-none ${
+                            uiSize === 'small' ? 'text-[11px]' :
+                            uiSize === 'large' ? 'text-[13px] md:text-[14px]' :
+                            'text-[12px]'
                           }`}>{item.variantLabel}</div>
                           <div className="flex items-baseline gap-1 mt-0.5">
-                            <span className="text-[10px] md:text-xs font-black text-orange-500">{mm}mm</span>
-                            <span className="text-[8px] md:text-[10px] text-slate-400 font-bold">({formatPt(mm)}pt)</span>
+                            <span className="text-[12px] md:text-[14px] font-black text-orange-500">{mm}mm</span>
+                            <span className="text-[10px] md:text-[11px] text-slate-400 font-bold">({formatPt(mm)}pt)</span>
                           </div>
                         </div>
 
