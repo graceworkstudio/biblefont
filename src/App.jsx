@@ -13,17 +13,38 @@ import { APP_VERSION, UPDATE_NOTES, ENABLE_UI_UPDATE_MODAL, EMPATHY_PARENT_HEADL
 // Base64 공유 데이터 인코딩/디코딩 헬퍼 함수
 const encodeSharedItems = (items) => {
   const ids = items.map(item => item.uniqueId);
-  const jsonStr = JSON.stringify(ids);
-  return btoa(encodeURIComponent(jsonStr));
+  const joinedStr = ids.join('|');
+  const bytes = new TextEncoder().encode(joinedStr);
+  const binaryStr = Array.from(bytes).map(b => String.fromCharCode(b)).join('');
+  return btoa(binaryStr).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
 };
 
 const decodeSharedItems = (encodedStr) => {
   try {
-    const decodedJson = decodeURIComponent(atob(encodedStr));
-    return JSON.parse(decodedJson);
+    let base64 = encodedStr.replace(/-/g, '+').replace(/_/g, '/');
+    while (base64.length % 4) base64 += '=';
+    
+    const binaryStr = atob(base64);
+    const bytes = new Uint8Array(binaryStr.length);
+    for (let i = 0; i < binaryStr.length; i++) {
+      bytes[i] = binaryStr.charCodeAt(i);
+    }
+    const decodedStr = new TextDecoder().decode(bytes);
+    
+    if (decodedStr.startsWith('[')) {
+      return JSON.parse(decodedStr);
+    } else if (decodedStr.includes('_')) {
+      return decodedStr.split('|').filter(id => id.trim() !== '');
+    }
+    throw new Error('Fallback to old format');
   } catch (e) {
-    console.error('Failed to decode shared items:', e);
-    return [];
+    try {
+      const decodedJson = decodeURIComponent(atob(encodedStr));
+      return JSON.parse(decodedJson);
+    } catch (err) {
+      console.error('Failed to decode shared items:', err);
+      return [];
+    }
   }
 };
 
