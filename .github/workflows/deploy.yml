@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - feature/api-transition
+      - ui-redesign-temp
 
 jobs:
   web-deploy:
