@@ -287,6 +287,18 @@ const App = () => {
           inputQuantity.value = '1';
           form.appendChild(inputQuantity);
 
+          const inputBasketType = document.createElement('input');
+          inputBasketType.type = 'hidden';
+          inputBasketType.name = 'basket_type';
+          inputBasketType.value = 'A0000';
+          form.appendChild(inputBasketType);
+
+          const inputDelvType = document.createElement('input');
+          inputDelvType.type = 'hidden';
+          inputDelvType.name = 'delvtype';
+          inputDelvType.value = 'A';
+          form.appendChild(inputDelvType);
+
           document.body.appendChild(form);
           form.submit();
 
