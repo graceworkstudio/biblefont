@@ -436,7 +436,7 @@ const App = () => {
 
   // 구글 애널리틱스 SPA 화면 전환 추적
   useEffect(() => {
-    if (typeof gtag !== 'function') return;
+    if (typeof window.gtag !== 'function') return;
     let pageTitle = '바이블줌 BibleZoom - 홈';
     let pagePath = '/';
 
@@ -448,7 +448,7 @@ const App = () => {
        pageTitle = `바이블줌 BibleZoom - 상세 (${selectedItem.model})`;
     }
 
-    gtag('event', 'page_view', {
+    window.gtag('event', 'page_view', {
       page_title: pageTitle,
       page_location: window.location.href,
       page_path: pagePath,

@@ -34,7 +34,9 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-45W7QGLF8X');
+      gtag('config', 'G-45W7QGLF8X', {
+        cookie_flags: 'SameSite=None;Secure'
+      });
     </script>
     <style>
       /* iOS 블랙 스크린 방지: html 요소에 배경색 즉시 적용 */
