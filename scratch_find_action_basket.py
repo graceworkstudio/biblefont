@@ -1,0 +1,28 @@
+import urllib.request
+import re
+
+url = "https://chhouse.kr/ind-script/optimizer.php?filename=vVnZVuM4EH0Hv853mD6znHklSdPDaRg4hG6eFbmcCGsbLQT3109ZNnQ2Y8nJzEMSx657S0vpVlkqDRGwVqbKDVjlDYX82ebs058ye7a_lPtPPdOEVvnzPx5M3f38mv2RXUTZw6sDIwm33Y2MKlUxGIf1hic0MgOalTIRQDgjNgWDT50yoUPaqCWitga2IA4cE5ALJUC6HOhtuHhibvX4Y0YcyQSTg2jOFmgLj3jdZ2u1YdKVvVSK-sbxlTJiqqQzinMwfdb33NtLrSeGFctej94x3vesNCr09swqjnZKnjmlzziTcLYgUvZ7boFUCaHkxzavRGLgSowRbcANMQZrB0JzHMdNU6J1fqsWjEP-sIFqW7DXxx5roQqPt-ya6Rjy0kvaDEqOdoWnLhM7IRSL23OIgZJ_a-N0E8jJj5orUkSYCu9I4-NuYcG8bA9rD0QrXpeMDwRDASXx3DVds4IYN3mPg3QlWCxZAP3_GlTgEpQWx8eOwwOxTC7HYQU4UjSSsRMp85XSWxNyFQb8K6mIyqvm-569At9fzR-ApyH-vx0I_x7ADBZ-GWn7ACUYkBSm3jS_9b1hNLpluICXytQ3zLpdyEQRU2xh8G62aO5Gslsghq4igt6RsqzfxHtwLjX3S4YK9IIJBqdQmbc5fb-RkHr2yZpQkYXdJ0UGjbEKp-ZdAdfwH7V5RWTBI5UhgRa1jOGMnZgVdc8dORBcUYJCX6k-_fzpbTgsp0glC2Ly37Lfs4u8xHSnGa2SoPzThdxpzgcrZh5WTPMA80VIHW9EkQR_wzq_YRXkE6PWSDIldAWp2OlexRCPelOUBPQDvDBYO8Kr7nKqvHQxg9wpXm6R_Fzv6l4Uinb_zkss5shIr8eBh2s_qjwqT_eTMLLdCnu2o1HvazESi587LqsExFv5tRY2w_KfVvhNnE9xeqdDIff51RkSWhD-h79zxQvl3WnIUjLrANW1IMsTUc2YxUK8ZliQH014jSRzrKk4zIFDqI9P1UiDdBNiKzjRZFx5WXTV3_FkT2JEvL1TJOvlPoE8xv-EyeII-Cy-DD4E_95m1LRQwc99u_CvZRmdHdkP-OJZAaMcJc_ST-glHd29R4WJ7bIo5pjHRxE8QFBFmxShGwm5o4kEd9b4BuII4_nEN-Uj3hQqZQQI1oe3-MKdpnGbU8UV1kFMj0J3WuPrtD6nSvLmFFGQbhR0HjLeGGS7-EZBr3BqWvgtkdhpcyRL2jjjYmANivQWPSK0KhfKWyytun2avS2d1mjTzRoWXC37WFdOYCnt0DfYPpupqbVTX6GO8EZsLWn7nWgtQCz2B30AdGcKMHQ_zAZgbcodi9OHKp4oZI_sDGCnocJNb22P2AygZqCVZam-nphdHdoviYDR3RebCJw5KC4DoFaRKqjx7bkYhQ15azqivSFOU0MGJJRsXIjekDrZ3xdDitRgufRO4TseowGMErdOjVHPHbtX2uvUReGxAhBgcEm9sPTBnbV7xXNMpxoLZpRfVDyb2vi6KSne03N6WGwRjFg-Iaz-Ys0BUT06LDv8I1kcgW7ekcZ2oC2rDpW8QzHACRNkwSHZuyZuZRSH84M7XxGub3bOOnogOlrw2_R3jql6-7SuZ8vkfk1yvSYZVQL7snvE1-PDrjNKdk_lGtvP3UHA9llQqE_wsaWGaReFabbz88um2tFAw9FZSfZz5UHolqxoPf3wgM4o7-CKveLzfwE&type=js&k=07386ae844ac993a21e4d5a53fde1e59e1eb4cb6&t=1779149242"
+req = urllib.request.Request(
+    url, 
+    headers={'User-Agent': 'Mozilla/5.0'}
+)
+
+try:
+    with urllib.request.urlopen(req) as response:
+        js_content = response.read().decode('utf-8')
+    
+    # Find action_basket
+    idx = js_content.find("function action_basket")
+    if idx != -1:
+        print("Found function action_basket:")
+        print(js_content[idx:idx+1500])
+    else:
+        # try searching action_basket in matches
+        matches = [m.start() for m in re.finditer(r'action_basket', js_content)]
+        print(f"Occurrences of 'action_basket': {len(matches)}")
+        for m in matches[:5]:
+            print(js_content[m:m+200])
+            print("-" * 20)
+            
+except Exception as e:
+    print(f"Error: {e}")

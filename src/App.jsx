@@ -240,8 +240,8 @@ const App = () => {
       return;
     }
 
-    // 2. 다중 상품 일괄 장바구니 담기 케이스 (순차 비동기 iframe 전송)
-    // ※ 다중 상품의 경우 완벽한 담기를 위해서 쇼핑몰과 빌드된 앱이 동일 도메인(Same-origin, e.g. chhouse.cafe24.com/biblezoom/)에 호스팅되는 것을 권장합니다.
+    // 2. 다중 상품 일괄 장바구니 담기 케이스 (순차 비동기 fetch 전송)
+    // ※ 동일 도메인(Same-origin) 환경이므로 iframe 대신 fetch를 사용하여 안정적으로 데이터를 전송합니다.
     for (let i = 0; i < selectedItems.length; i++) {
       const item = selectedItems[i];
       setSubmitProgress(prev => ({ ...prev, current: i + 1 }));
@@ -252,62 +252,60 @@ const App = () => {
       const cateNo = matchCateNo ? matchCateNo[1] : null;
 
       if (productNo) {
-        const domain = window.location.origin;
-
-        await new Promise((resolve) => {
-          const iframeId = `cart-iframe-${productNo}-${Date.now()}`;
-          const iframe = document.createElement('iframe');
-          iframe.name = iframeId;
-          iframe.id = iframeId;
-          iframe.style.display = 'none';
-          document.body.appendChild(iframe);
-
-          const form = document.createElement('form');
-          form.method = 'POST';
-          form.action = `${domain}/exec/front/order/basket/`;
-          form.target = iframeId;
-
-          const inputProductNo = document.createElement('input');
-          inputProductNo.type = 'hidden';
-          inputProductNo.name = 'product_no';
-          inputProductNo.value = productNo;
-          form.appendChild(inputProductNo);
-
-          if (cateNo) {
-            const inputCateNo = document.createElement('input');
-            inputCateNo.type = 'hidden';
-            inputCateNo.name = 'cate_no';
-            inputCateNo.value = cateNo;
-            form.appendChild(inputCateNo);
+        try {
+          // 1) Cafe24 상품 정보에서 item_code 또는 product_code 가져오기 (CORS 걱정 없는 동일 도메인 비동기 파싱)
+          let itemCode = null;
+          try {
+            const detailRes = await fetch(`/product/detail.html?product_no=${productNo}`);
+            if (detailRes.ok) {
+              const detailHtml = await detailRes.text();
+              
+              // var item_code = '...'; 검색
+              const itemCodeMatch = detailHtml.match(/var\s+item_code\s*=\s*['"]([^'"]+)['"]/);
+              if (itemCodeMatch && itemCodeMatch[1]) {
+                itemCode = itemCodeMatch[1];
+              } else {
+                // var product_code = '...'; 검색 후 000A 접미사
+                const productCodeMatch = detailHtml.match(/var\s+product_code\s*=\s*['"]([^'"]+)['"]/);
+                if (productCodeMatch && productCodeMatch[1]) {
+                  itemCode = productCodeMatch[1] + '000A';
+                }
+              }
+            }
+          } catch (e) {
+            console.error('Fetch detail HTML failed:', e);
           }
 
-          const inputQuantity = document.createElement('input');
-          inputQuantity.type = 'hidden';
-          inputQuantity.name = 'quantity';
-          inputQuantity.value = '1';
-          form.appendChild(inputQuantity);
+          // fallback 기본값 처리
+          if (!itemCode) {
+            itemCode = `P${productNo}000A`;
+          }
 
-          const inputBasketType = document.createElement('input');
-          inputBasketType.type = 'hidden';
-          inputBasketType.name = 'basket_type';
-          inputBasketType.value = 'A0000';
-          form.appendChild(inputBasketType);
+          // 2) Cafe24 장바구니 API에 POST 전송 (ajax와 동일한 x-www-form-urlencoded 포맷)
+          const formData = new URLSearchParams();
+          formData.append('product_no', productNo);
+          if (cateNo) {
+            formData.append('cate_no', cateNo);
+          }
+          formData.append('quantity', '1');
+          formData.append('basket_type', 'A0000');
+          formData.append('delvtype', 'A');
+          formData.append('selected_item[]', `1||${itemCode}`); // Cafe24 장바구니 핵심 필수 파라미터 (수량||품목코드)
 
-          const inputDelvType = document.createElement('input');
-          inputDelvType.type = 'hidden';
-          inputDelvType.name = 'delvtype';
-          inputDelvType.value = 'A';
-          form.appendChild(inputDelvType);
+          await fetch('/exec/front/order/basket/', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: formData.toString()
+          });
 
-          document.body.appendChild(form);
-          form.submit();
+          // 요청 전송 후 Cafe24 세션 동기화를 위한 짧은 딜레이
+          await new Promise(r => setTimeout(r, 200));
 
-          setTimeout(() => {
-            document.body.removeChild(form);
-            document.body.removeChild(iframe);
-            resolve();
-          }, 600);
-        });
+        } catch (err) {
+          console.error(`Failed to add product ${productNo} to cart:`, err);
+        }
       }
     }
 
