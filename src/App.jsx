@@ -234,12 +234,6 @@ const App = () => {
       return;
     }
 
-    // 쇼핑몰 보안 정책(SameSite=Lax)으로 인해 여러 개의 상품을 백그라운드로 전송 시 쿠키가 누락되어 장바구니가 비는 현상 방지
-    if (selectedItems.length > 1) {
-      alert("⚠️ 쇼핑몰 보안 정책(SameSite)으로 인해 여러 개의 상품을 한 번에 장바구니에 담는 것이 제한됩니다.\n\n불편하시겠지만 관심 목록 내 개별 상품 오른쪽에 있는 [바로구매 🚀] 버튼을 사용하여 구매하실 상품을 하나씩 담아주시기 바랍니다!");
-      return;
-    }
-
     setIsCartSubmitting(true);
     setSubmitProgress({ current: 0, total: selectedItems.length });
 
