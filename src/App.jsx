@@ -202,13 +202,7 @@ const App = () => {
     const productNo = matchProductNo ? matchProductNo[1] : null;
 
     if (productNo) {
-      let domain = 'https://chhouse.cafe24.com';
-      try {
-        const parsed = new URL(item.variantUrl);
-        domain = `${parsed.protocol}//${parsed.host}`;
-      } catch (e) {
-        // fallback
-      }
+      const domain = window.location.origin;
 
       showToast('🛒 주문서 페이지로 이동하고 있습니다. 잠시만 기다려 주세요...');
 
@@ -258,13 +252,7 @@ const App = () => {
       const cateNo = matchCateNo ? matchCateNo[1] : null;
 
       if (productNo) {
-        let domain = 'https://chhouse.cafe24.com';
-        try {
-          const parsed = new URL(item.variantUrl);
-          domain = `${parsed.protocol}//${parsed.host}`;
-        } catch (e) {
-          // fallback
-        }
+        const domain = window.location.origin;
 
         await new Promise((resolve) => {
           const iframeId = `cart-iframe-${productNo}-${Date.now()}`;
@@ -312,13 +300,7 @@ const App = () => {
     }
 
     // 전송 완료 후 Cafe24 장바구니로 리다이렉트
-    let finalDomain = 'https://chhouse.cafe24.com';
-    try {
-      const parsed = new URL(selectedItems[0].variantUrl);
-      finalDomain = `${parsed.protocol}//${parsed.host}`;
-    } catch (e) {
-      // fallback
-    }
+    const finalDomain = window.location.origin;
 
     showToast('🛒 선택하신 상품들이 장바구니에 모두 담겼습니다! 이동합니다.');
     
