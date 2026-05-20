@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
-  base: '/biblezoom_test/',
+  base: '/web/biblezoom_test/',
   plugins: [react()],
   server: {
     proxy: {
