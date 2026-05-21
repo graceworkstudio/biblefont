@@ -228,161 +228,138 @@ const App = () => {
     }, 300);
   };
 
-  // 공통: Cafe24 장바구니 조용히 담기 (Cafe24 네이티브 jQuery 활용 또는 순수 Fetch)
-  const quietlyAddToCart = async (productNo) => {
+  // 공통: Cafe24 장바구니 조용히 담기 (절대경로 Form 전송 + 스크립트 샌드박스)
+  // 도메인을 명시적으로 받아야 크로스도메인/파이어베이스 환경에서도 세션이 유지됩니다.
+  const quietlyAddToCart = async (productNo, domain) => {
     return new Promise((resolve) => {
-      const params = {
-        product_no: productNo,
-        quantity: '1',
-        basket_type: 'A0000', // 일반 장바구니
-        delvtype: 'A'
+      // 1. 투명 iframe 생성 (스크립트 실행을 완벽히 차단하여 부모 창 리다이렉트 방지)
+      const iframeId = `cart-iframe-${productNo}-${Date.now()}`;
+      const iframe = document.createElement('iframe');
+      iframe.id = iframeId;
+      iframe.name = iframeId;
+      iframe.style.display = 'none';
+      // 핵심: allow-scripts가 없으므로 서버가 반환하는 <script>location.href=...</script> 가 무시됨!
+      iframe.sandbox = 'allow-same-origin allow-forms'; 
+      
+      let isResolved = false;
+      iframe.onload = () => {
+        if (!isResolved) {
+          isResolved = true;
+          setTimeout(() => {
+            iframe.remove();
+            resolve();
+          }, 800); // 폼 전송 후 0.8초 대기
+        }
       };
 
-      // 1순위: 부모 창(Cafe24)의 기본 jQuery 객체 사용 (CSRF 토큰 및 쿠키 자동 포함)
-      if (window.parent && window.parent.$ && window.parent.$.ajax) {
-        window.parent.$.ajax({
-          url: '/exec/front/order/basket/',
-          type: 'POST',
-          data: params,
-          dataType: 'json', // JSON으로 받아 부모 창 리다이렉트 방지
-          success: (res) => resolve(res),
-          error: (err) => resolve(err)
-        });
-      } else {
-        // 2순위: 순수 fetch 사용 (옵션 파라미터 제외, AJAX 헤더 제외하여 서버 거절 방지)
-        const formData = new URLSearchParams();
-        Object.entries(params).forEach(([key, value]) => formData.append(key, value));
+      document.body.appendChild(iframe);
 
-        fetch('/exec/front/order/basket/', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
-          },
-          credentials: 'include',
-          body: formData.toString()
-        })
-        .then(res => res.text())
-        .then(text => resolve(text))
-        .catch(err => resolve(err));
-      }
+      // 2. 순수 HTML Form 생성 (가장 확실한 전송 방식)
+      const form = document.createElement('form');
+      form.method = 'POST';
+      // 🔥 핵심: 절대경로 도메인 사용 (상대경로 '/' 사용 시 iframe 호스팅 도메인으로 전송되어 에러/세션유실 발생)
+      form.action = `${domain}/exec/front/order/basket/`;
+      form.target = iframeId; // 결과를 iframe으로 받음
+
+      // 3. 파라미터 세팅 (옵션 없는 단일 상품들이므로 selected_item[]은 전송하면 안 됨!)
+      const inputProductNo = document.createElement('input');
+      inputProductNo.type = 'hidden';
+      inputProductNo.name = 'product_no';
+      inputProductNo.value = productNo;
+      form.appendChild(inputProductNo);
+
+      const inputQuantity = document.createElement('input');
+      inputQuantity.type = 'hidden';
+      inputQuantity.name = 'quantity';
+      inputQuantity.value = '1';
+      form.appendChild(inputQuantity);
+
+      const inputBasketType = document.createElement('input');
+      inputBasketType.type = 'hidden';
+      inputBasketType.name = 'basket_type';
+      inputBasketType.value = 'A0000'; // 일반 장바구니
+      form.appendChild(inputBasketType);
+
+      // 4. 전송!
+      document.body.appendChild(form);
+      form.submit();
+      form.remove(); // 전송 후 폼 찌꺼기 제거
+      form.remove();
     });
   };
 
   // 개별 상품 바로구매 (깜빡임 글리치 방지를 위해 조용히 담고 리다이렉트)
   const handleIndividualCheckout = async (item) => {
     const matchProductNo = item.variantUrl.match(/[?&]product_no=(\d+)/);
-    const matchCateNo = item.variantUrl.match(/[?&]cate_no=(\d+)/);
     const productNo = matchProductNo ? matchProductNo[1] : null;
-    const cateNo = matchCateNo ? matchCateNo[1] : null;
 
     if (productNo) {
-      showToast('🛒 장바구니에 성경을 담고 있습니다. 잠시만 기다려 주세요...');
-      setIsCartSubmitting(true);
-      
-      let itemCode = null;
+      let domain = 'https://chhouse.kr';
       try {
-        const detailRes = await fetch(`/product/detail.html?product_no=${productNo}`);
-        if (detailRes.ok) {
-          const detailHtml = await detailRes.text();
-          const itemCodeMatch = detailHtml.match(/var\s+item_code\s*=\s*['"]([^'"]+)['"]/);
-          if (itemCodeMatch && itemCodeMatch[1]) {
-            itemCode = itemCodeMatch[1];
-          } else {
-            const productCodeMatch = detailHtml.match(/var\s+product_code\s*=\s*['"]([^'"]+)['"]/);
-            if (productCodeMatch && productCodeMatch[1]) {
-              itemCode = productCodeMatch[1] + '000A';
-            }
-          }
-        }
+        const parsed = new URL(item.variantUrl);
+        domain = `${parsed.protocol}//${parsed.host}`;
       } catch (e) {}
-      if (!itemCode) itemCode = `P${productNo}000A`;
 
-      await quietlyAddToCart(productNo, cateNo, itemCode);
+      setIsCartSubmitting(true);
+      await quietlyAddToCart(productNo, domain);
       
+      // 장바구니 담기 완료 후 페이지 이동
       setIsCartSubmitting(false);
       setIsCartOpen(false);
-      
-      const cartUrl = `${window.location.origin}/order/basket.html`;
+      const cartUrl = `${domain}/order/basket.html`;
       if (window.parent && window.parent !== window) {
         window.parent.location.href = cartUrl;
       } else {
         window.location.href = cartUrl;
       }
+    } else {
+      showToast('❌ 상품 정보를 찾을 수 없습니다.');
     }
   };
 
-  // 선택 상품 일괄 장바구니 연동 로직
+  // 다중 상품 일괄 구매 (루프를 돌며 개별 폼 전송)
   const handleBatchCheckout = async () => {
     const selectedItems = cartItems.filter(item => selectedCartIds.includes(item.uniqueId));
     if (selectedItems.length === 0) {
-      alert('장바구니에 담을 상품을 선택해주세요.');
+      showToast('⚠️ 선택된 성경이 없습니다.');
       return;
     }
 
     setIsCartSubmitting(true);
-    setSubmitProgress({ current: 0, total: selectedItems.length });
+    showToast('🛒 여러 성경을 장바구니에 담고 있습니다. 잠시만 기다려 주세요...');
 
-    // 순차 비동기 전송
-    for (let i = 0; i < selectedItems.length; i++) {
-      const item = selectedItems[i];
-      setSubmitProgress({ current: i + 1, total: selectedItems.length });
+    let targetDomain = 'https://chhouse.kr';
+    try {
+      const parsed = new URL(selectedItems[0].variantUrl);
+      targetDomain = `${parsed.protocol}//${parsed.host}`;
+    } catch(e) {}
 
+    // 선택된 상품들을 순차적으로 장바구니에 담기
+    for (const item of selectedItems) {
       const matchProductNo = item.variantUrl.match(/[?&]product_no=(\d+)/);
-      const matchCateNo = item.variantUrl.match(/[?&]cate_no=(\d+)/);
       const productNo = matchProductNo ? matchProductNo[1] : null;
-      const cateNo = matchCateNo ? matchCateNo[1] : null;
 
       if (productNo) {
+        let domain = targetDomain;
         try {
-          // 1) 상품상세 HTML에서 item_code 추출
-          let itemCode = null;
-          try {
-            const detailRes = await fetch(`/product/detail.html?product_no=${productNo}`);
-            if (detailRes.ok) {
-              const detailHtml = await detailRes.text();
-              const itemCodeMatch = detailHtml.match(/var\s+item_code\s*=\s*['"]([^'"]+)['"]/);
-              if (itemCodeMatch && itemCodeMatch[1]) {
-                itemCode = itemCodeMatch[1];
-              } else {
-                const productCodeMatch = detailHtml.match(/var\s+product_code\s*=\s*['"]([^'"]+)['"]/);
-                if (productCodeMatch && productCodeMatch[1]) {
-                  itemCode = productCodeMatch[1] + '000A';
-                }
-              }
-            }
-          } catch (e) {
-            console.error('Failed to fetch item_code', e);
-          }
-          if (!itemCode) itemCode = `P${productNo}000A`;
+          const parsed = new URL(item.variantUrl);
+          domain = `${parsed.protocol}//${parsed.host}`;
+        } catch(e) {}
 
-          // 2) Cafe24 장바구니 조용히 담기
-          await quietlyAddToCart(productNo, cateNo, itemCode);
-          
-          // 약간의 딜레이
-          await new Promise(r => setTimeout(r, 200));
-
-        } catch (err) {
-          console.error(`Failed to add product ${productNo} to cart:`, err);
-        }
+        await quietlyAddToCart(productNo, domain);
       }
     }
 
-    // 전송 완료 후 Cafe24 장바구니로 리다이렉트
-    const finalDomain = window.location.origin;
+    setIsCartSubmitting(false);
+    setIsCartOpen(false);
 
-    showToast('🛒 선택하신 상품들이 장바구니에 모두 담겼습니다! 이동합니다.');
-    
-    setTimeout(() => {
-      setIsCartSubmitting(false);
-      setIsCartOpen(false);
-
-      const cartUrl = `${finalDomain}/order/basket.html`;
-      if (window.parent && window.parent !== window) {
-        window.parent.location.href = cartUrl;
-      } else {
-        window.location.href = cartUrl;
-      }
-    }, 1000);
+    // 모든 처리가 끝난 후 부모 창을 장바구니 페이지로 이동
+    const cartUrl = `${targetDomain}/order/basket.html`;
+    if (window.parent && window.parent !== window) {
+      window.parent.location.href = cartUrl;
+    } else {
+      window.location.href = cartUrl;
+    }
   };
 
 
