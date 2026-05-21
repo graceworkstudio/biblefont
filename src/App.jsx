@@ -105,6 +105,23 @@ const App = () => {
   const [submitProgress, setSubmitProgress] = useState({ current: 0, total: 0 });
 
   // 장바구니 변경 시 선택 목록 동기화 (새로운 추가 상품은 자동 선택)
+  // Auto-resize iframe logic to remove double scrollbars
+  useEffect(() => {
+    // Only run if we are inside an iframe
+    if (window.parent && window.parent !== window) {
+      const resizeObserver = new ResizeObserver(() => {
+        // Post the current body scrollHeight to the parent window
+        window.parent.postMessage({ type: 'bz-resize', height: document.body.scrollHeight }, '*');
+      });
+      resizeObserver.observe(document.body);
+      
+      // Also trigger once on load
+      window.parent.postMessage({ type: 'bz-resize', height: document.body.scrollHeight }, '*');
+      
+      return () => resizeObserver.disconnect();
+    }
+  }, []);
+
   useEffect(() => {
     setSelectedCartIds(prev => {
       const newIds = cartItems.map(i => i.uniqueId);
