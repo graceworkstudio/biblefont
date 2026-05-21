@@ -228,23 +228,18 @@ const App = () => {
     }, 300);
   };
 
-  // 공통: Cafe24 장바구니 조용히 담기 (가장 완벽한 우회 방식)
+  // 공통: Cafe24 장바구니 조용히 담기 (순수 Form 전송 + 스크립트 실행 차단 샌드박스)
   const quietlyAddToCart = async (productNo) => {
     return new Promise((resolve) => {
-      // Cafe24의 자체 공유/바로구매 링크(/surl/O/)를 활용합니다.
-      // 이 URL은 CSRF 토큰이나 복잡한 Form 데이터 없이도 서버에서 즉시 장바구니 세션에 상품을 담아줍니다.
-      // 숨겨진 iframe에서 이 URL을 로드하면, iframe 내부에서만 장바구니 처리 및 주문서 페이지로 리다이렉트가 일어나며,
-      // 부모 창(현재 화면)은 전혀 튕기거나 깜빡이지 않습니다.
+      // 1. 투명 iframe 생성 (스크립트 실행을 완벽히 차단하여 부모 창 리다이렉트 방지)
       const iframeId = `cart-iframe-${productNo}-${Date.now()}`;
       const iframe = document.createElement('iframe');
       iframe.id = iframeId;
       iframe.name = iframeId;
       iframe.style.display = 'none';
+      // 핵심: allow-scripts가 없으므로 서버가 반환하는 <script>location.href=...</script> 가 무시됨!
+      iframe.sandbox = 'allow-same-origin allow-forms'; 
       
-      // 혹시라도 iframe 내부 스크립트가 부모 창을 조작하는 것을 원천 차단 (allow-top-navigation 제외)
-      iframe.sandbox = 'allow-scripts allow-same-origin allow-forms';
-
-      // 로딩 완료 시 처리
       let isResolved = false;
       iframe.onload = () => {
         if (!isResolved) {
@@ -252,14 +247,41 @@ const App = () => {
           setTimeout(() => {
             iframe.remove();
             resolve();
-          }, 800); // 넉넉하게 0.8초 대기하여 세션 저장이 완벽히 끝나도록 보장
+          }, 500); // 폼 전송 후 0.5초 대기
         }
       };
 
       document.body.appendChild(iframe);
-      
-      // Cafe24 바로구매/장바구니 담기 단축 URL 호출
-      iframe.src = `/surl/O/${productNo}`;
+
+      // 2. 순수 HTML Form 생성 (가장 확실한 전송 방식)
+      const form = document.createElement('form');
+      form.method = 'POST';
+      form.action = '/exec/front/order/basket/';
+      form.target = iframeId; // 결과를 iframe으로 받음
+
+      // 3. 파라미터 세팅 (옵션 없는 단일 상품들이므로 selected_item[]은 전송하면 안 됨!)
+      const inputProductNo = document.createElement('input');
+      inputProductNo.type = 'hidden';
+      inputProductNo.name = 'product_no';
+      inputProductNo.value = productNo;
+      form.appendChild(inputProductNo);
+
+      const inputQuantity = document.createElement('input');
+      inputQuantity.type = 'hidden';
+      inputQuantity.name = 'quantity';
+      inputQuantity.value = '1';
+      form.appendChild(inputQuantity);
+
+      const inputBasketType = document.createElement('input');
+      inputBasketType.type = 'hidden';
+      inputBasketType.name = 'basket_type';
+      inputBasketType.value = 'A0000'; // 일반 장바구니
+      form.appendChild(inputBasketType);
+
+      // 4. 전송!
+      document.body.appendChild(form);
+      form.submit();
+      form.remove(); // 전송 후 폼 찌꺼기 제거
     });
   };
 
