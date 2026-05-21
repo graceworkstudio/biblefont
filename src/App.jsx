@@ -213,35 +213,38 @@ const App = () => {
     }, 300);
   };
 
-  // 공통: Cafe24 장바구니 조용히 담기
-  const quietlyAddToCart = async (productNo, cateNo, itemCode) => {
+  // 공통: Cafe24 장바구니 조용히 담기 (가장 완벽한 우회 방식)
+  const quietlyAddToCart = async (productNo) => {
     return new Promise((resolve) => {
-      // Cafe24는 X-Requested-With 헤더가 있으면 엄격한 AJAX CSRF 검사를 수행하여 result:0 을 반환합니다.
-      // 따라서 X-Requested-With 헤더를 빼고 순수 HTML Form 전송처럼 위장하여 fetch를 보냅니다.
-      // 이렇게 하면 서버는 정상적으로 장바구니에 담고 HTML(<script>리다이렉트</script>)을 반환하지만,
-      // fetch로 받았기 때문에 스크립트가 실행되지 않아 부모 창이 강제로 튕기지 않고 백그라운드에서 완벽히 담깁니다!
-      const formData = new URLSearchParams();
-      formData.append('product_no', productNo);
-      formData.append('quantity', '1');
-      formData.append('basket_type', 'A0000');
-      formData.append('delvtype', 'A');
-      if (cateNo) formData.append('cate_no', cateNo);
+      // Cafe24의 자체 공유/바로구매 링크(/surl/O/)를 활용합니다.
+      // 이 URL은 CSRF 토큰이나 복잡한 Form 데이터 없이도 서버에서 즉시 장바구니 세션에 상품을 담아줍니다.
+      // 숨겨진 iframe에서 이 URL을 로드하면, iframe 내부에서만 장바구니 처리 및 주문서 페이지로 리다이렉트가 일어나며,
+      // 부모 창(현재 화면)은 전혀 튕기거나 깜빡이지 않습니다.
+      const iframeId = `cart-iframe-${productNo}-${Date.now()}`;
+      const iframe = document.createElement('iframe');
+      iframe.id = iframeId;
+      iframe.name = iframeId;
+      iframe.style.display = 'none';
       
-      // 단일/다중 모두 확실히 들어가도록 옵션 파라미터도 안전하게 추가
-      formData.append('selected_item[]', `1||${itemCode}`);
+      // 혹시라도 iframe 내부 스크립트가 부모 창을 조작하는 것을 원천 차단 (allow-top-navigation 제외)
+      iframe.sandbox = 'allow-scripts allow-same-origin allow-forms';
 
-      fetch('/exec/front/order/basket/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
-          // 'X-Requested-With': 'XMLHttpRequest' // ⭐️ 절대 넣으면 안 됨!
-        },
-        credentials: 'include', // 세션 쿠키 필수
-        body: formData.toString()
-      })
-      .then(res => res.text())
-      .then(text => resolve(text))
-      .catch(err => resolve(err));
+      // 로딩 완료 시 처리
+      let isResolved = false;
+      iframe.onload = () => {
+        if (!isResolved) {
+          isResolved = true;
+          setTimeout(() => {
+            iframe.remove();
+            resolve();
+          }, 500); // 안정적으로 세션에 반영되도록 0.5초 대기
+        }
+      };
+
+      document.body.appendChild(iframe);
+      
+      // Cafe24 바로구매/장바구니 담기 단축 URL 호출
+      iframe.src = `/surl/O/${productNo}`;
     });
   };
 
