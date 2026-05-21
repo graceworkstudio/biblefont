@@ -9,7 +9,7 @@
     "redirects": [
       {
         "source": "**",
-        "destination": "https://chhouse.kr/bible.html",
+        "destination": "https://biblezoom.co.kr",
         "type": 301
       }
     ],
