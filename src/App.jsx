@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Ruler, BookOpen, AlertCircle, X, Bell, ExternalLink, ShoppingCart, ShoppingBag, ChevronDown, ChevronRight, MessageCircle, Play, Gift, Share2 } from 'lucide-react';
 import BannerComponent from './BannerComponent';
 import { bibleData } from './data/bibleData';
@@ -105,6 +105,78 @@ const App = () => {
   const [submitProgress, setSubmitProgress] = useState({ current: 0, total: 0 });
 
   // 장바구니 변경 시 선택 목록 동기화 (새로운 추가 상품은 자동 선택)
+  
+  // iframe 스크롤 추적을 위한 고성능 ref 시스템
+  const fixedRefs = useRef({ toast: null, cartBtn: null, drawer: null });
+
+  const setFixedRef = useCallback((key) => {
+    return (el) => {
+      fixedRefs.current[key] = el;
+      if (el && window.__updateIframePositions) {
+        window.__updateIframePositions();
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    if (window.parent !== window) {
+      const updatePositions = () => {
+        try {
+          const scrollY = window.parent.scrollY || window.parent.document.documentElement.scrollTop;
+          const windowHeight = window.parent.innerHeight;
+          const iframeTop = window.frameElement.getBoundingClientRect().top + scrollY;
+          
+          let topOffset = scrollY - iframeTop;
+          if (topOffset < 0) topOffset = 0;
+
+          if (fixedRefs.current.toast) {
+            fixedRefs.current.toast.style.position = 'absolute';
+            fixedRefs.current.toast.style.top = `${topOffset + windowHeight - 120}px`;
+            fixedRefs.current.toast.style.bottom = 'auto';
+          }
+          if (fixedRefs.current.cartBtn) {
+            fixedRefs.current.cartBtn.style.position = 'absolute';
+            fixedRefs.current.cartBtn.style.top = `${topOffset + windowHeight - 90}px`;
+            fixedRefs.current.cartBtn.style.bottom = 'auto';
+          }
+          if (fixedRefs.current.drawer) {
+            fixedRefs.current.drawer.style.position = 'absolute';
+            fixedRefs.current.drawer.style.top = `${topOffset}px`;
+            fixedRefs.current.drawer.style.height = `${windowHeight}px`;
+            fixedRefs.current.drawer.style.bottom = 'auto';
+          }
+        } catch(e) {}
+      };
+
+      window.__updateIframePositions = updatePositions;
+
+      let ticking = false;
+      const onScroll = () => {
+        if (!ticking) {
+          window.requestAnimationFrame(() => {
+            updatePositions();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      };
+
+      window.parent.addEventListener('scroll', onScroll, { passive: true });
+      window.parent.addEventListener('resize', updatePositions);
+      
+      setTimeout(updatePositions, 100);
+      setTimeout(updatePositions, 500);
+
+      return () => {
+        try {
+          window.parent.removeEventListener('scroll', onScroll);
+          window.parent.removeEventListener('resize', updatePositions);
+        } catch(e) {}
+        delete window.__updateIframePositions;
+      };
+    }
+  }, []);
+
   // Auto-resize iframe logic to remove double scrollbars & fix parent logo link
   useEffect(() => {
     // Only run if we are inside an iframe
@@ -2028,7 +2100,10 @@ const App = () => {
 
         {/* 1. 토스트 피드백 알림 */}
         {toastMessage && (
-          <div className="fixed bottom-24 left-1/2 -translate-x-1/2 z-[10000] bg-slate-900/90 text-white font-black text-xs md:text-sm px-6 py-3 rounded-full shadow-2xl flex items-center gap-2 border border-slate-700 backdrop-blur-sm animate-toast-slide">
+          <div 
+            ref={setFixedRef('toast')}
+            className="fixed bottom-24 left-1/2 -translate-x-1/2 z-[10000] bg-slate-900/90 text-white font-black text-xs md:text-sm px-6 py-3 rounded-full shadow-2xl flex items-center gap-2 border border-slate-700 backdrop-blur-sm animate-toast-slide"
+          >
             <span>{toastMessage}</span>
           </div>
         )}
@@ -2036,6 +2111,7 @@ const App = () => {
         {/* 2. 우측 하단 고품격 플로팅 장바구니 버튼 */}
         {cartItems.length > 0 && (
           <button 
+            ref={setFixedRef('cartBtn')}
             onClick={() => setIsCartOpen(true)}
             className="fixed bottom-6 right-6 z-[4900] bg-orange-500 hover:bg-orange-600 text-white p-4 rounded-full shadow-[0_8px_30px_rgba(249,115,22,0.4)] transition-all hover:scale-105 duration-300 ease-out flex items-center justify-center cursor-pointer group hover:rotate-2"
           >
@@ -2048,7 +2124,11 @@ const App = () => {
 
         {/* 3. 우측 슬라이딩 장바구니 Drawer (서랍) */}
         {isCartOpen && (
-          <div className="fixed inset-0 z-[6000] flex justify-end bg-slate-900/40 backdrop-blur-xs animate-fade-in" onClick={() => setIsCartOpen(false)}>
+          <div 
+            ref={setFixedRef('drawer')}
+            className="fixed inset-0 z-[6000] flex justify-end bg-slate-900/40 backdrop-blur-xs animate-fade-in" 
+            onClick={() => setIsCartOpen(false)}
+          >
             <div 
               className="bg-white w-full max-w-[420px] h-full shadow-2xl flex flex-col animate-slide-in-right"
               onClick={e => e.stopPropagation()}
