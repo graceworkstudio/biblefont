@@ -294,63 +294,56 @@ const App = () => {
     }, 300);
   };
 
-  // 공통: Cafe24 장바구니 조용히 담기 (절대경로 Form 전송 + 스크립트 샌드박스)
-  // 도메인을 명시적으로 받아야 크로스도메인/파이어베이스 환경에서도 세션이 유지됩니다.
+  // 공통: Cafe24 장바구니 조용히 담기 (부모 창의 네이티브 AJAX/Fetch 사용)
   const quietlyAddToCart = async (productNo, domain) => {
     return new Promise((resolve) => {
-      // 1. 투명 iframe 생성 (스크립트 실행을 완벽히 차단하여 부모 창 리다이렉트 방지)
-      const iframeId = `cart-iframe-${productNo}-${Date.now()}`;
-      const iframe = document.createElement('iframe');
-      iframe.id = iframeId;
-      iframe.name = iframeId;
-      iframe.style.display = 'none';
-      // 핵심: allow-scripts가 없으므로 서버가 반환하는 <script>location.href=...</script> 가 무시됨!
-      iframe.sandbox = 'allow-same-origin allow-forms'; 
-      
-      let isResolved = false;
-      iframe.onload = () => {
-        if (!isResolved) {
-          isResolved = true;
-          setTimeout(() => {
-            iframe.remove();
-            resolve();
-          }, 800); // 폼 전송 후 0.8초 대기
-        }
+      const url = `${domain}/exec/front/order/basket/`;
+      const data = {
+        product_no: productNo,
+        quantity: 1,
+        basket_type: 'A0000'
       };
 
-      document.body.appendChild(iframe);
+      try {
+        // 1순위: 부모 창의 jQuery AJAX 사용 (Cafe24 완벽 호환, 쿠키 100% 유지)
+        if (window.parent && window.parent.$ && window.parent.$.ajax) {
+          window.parent.$.ajax({
+            url: url,
+            type: 'POST',
+            data: data,
+            success: function() { resolve(); },
+            error: function() { resolve(); }
+          });
+          return;
+        }
+      } catch(e) {}
 
-      // 2. 순수 HTML Form 생성 (가장 확실한 전송 방식)
-      const form = document.createElement('form');
-      form.method = 'POST';
-      // 🔥 핵심: 절대경로 도메인 사용 (상대경로 '/' 사용 시 iframe 호스팅 도메인으로 전송되어 에러/세션유실 발생)
-      form.action = `${domain}/exec/front/order/basket/`;
-      form.target = iframeId; // 결과를 iframe으로 받음
+      try {
+        // 2순위: 부모 창의 fetch 사용
+        const body = new URLSearchParams(data);
+        if (window.parent && window.parent.fetch) {
+          window.parent.fetch(url, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: body.toString(),
+            credentials: 'include'
+          }).then(() => resolve()).catch(() => resolve());
+          return;
+        }
+      } catch(e) {}
 
-      // 3. 파라미터 세팅 (옵션 없는 단일 상품들이므로 selected_item[]은 전송하면 안 됨!)
-      const inputProductNo = document.createElement('input');
-      inputProductNo.type = 'hidden';
-      inputProductNo.name = 'product_no';
-      inputProductNo.value = productNo;
-      form.appendChild(inputProductNo);
-
-      const inputQuantity = document.createElement('input');
-      inputQuantity.type = 'hidden';
-      inputQuantity.name = 'quantity';
-      inputQuantity.value = '1';
-      form.appendChild(inputQuantity);
-
-      const inputBasketType = document.createElement('input');
-      inputBasketType.type = 'hidden';
-      inputBasketType.name = 'basket_type';
-      inputBasketType.value = 'A0000'; // 일반 장바구니
-      form.appendChild(inputBasketType);
-
-      // 4. 전송!
-      document.body.appendChild(form);
-      form.submit();
-      form.remove(); // 전송 후 폼 찌꺼기 제거
-      form.remove();
+      // 3순위: 순수 fetch 사용 (현재 아이프레임)
+      try {
+        const body = new URLSearchParams(data);
+        fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: body.toString(),
+          credentials: 'include'
+        }).then(() => resolve()).catch(() => resolve());
+      } catch(e) {
+        resolve();
+      }
     });
   };
 
