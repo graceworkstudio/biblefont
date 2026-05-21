@@ -248,14 +248,8 @@ const App = () => {
     setIsCartSubmitting(true);
     setSubmitProgress({ current: 0, total: selectedItems.length });
 
-    // 1. 단일 상품 바로구매 케이스 (95%+ 주 사용 시나리오)
-    // 최상위 창(Top-level / Parent)에서 직접 폼 전송을 실행하여 SameSite=Lax 세션 쿠키가 온전히 실려 전송되도록 처리합니다.
-    if (selectedItems.length === 1) {
-      const item = selectedItems[0];
-      setSubmitProgress({ current: 1, total: 1 });
-      handleIndividualCheckout(item);
-      return;
-    }
+    // 단일 상품이든 다중 상품이든 모두 동일하게 Iframe 순차 전송 로직을 타게 하여 UX를 통일하고
+    // Cafe24의 surl/O 단일 바로구매 시 발생하는 장바구니 이미지 중복 깜빡임(Glitch) 현상을 제거합니다.
 
     // 2. 다중 상품 일괄 장바구니 담기 케이스 (순차 비동기 fetch 전송)
     // ※ 동일 도메인(Same-origin) 환경이므로 iframe 대신 fetch를 사용하여 안정적으로 데이터를 전송합니다.
@@ -307,6 +301,9 @@ const App = () => {
             iframe.id = iframeId;
             iframe.name = iframeId;
             iframe.style.display = 'none';
+            // ⭐️ 핵심: sandbox 속성을 사용하여 Cafe24의 기본 alert 팝업과 부모 창 강제 리다이렉션을 차단합니다.
+            // allow-modals와 allow-top-navigation을 제외함으로써 조용히 백그라운드에서만 처리됩니다.
+            iframe.sandbox = 'allow-scripts allow-same-origin allow-forms';
             
             let isResolved = false;
             const finish = () => {
