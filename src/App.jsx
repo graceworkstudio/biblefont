@@ -120,13 +120,19 @@ const App = () => {
 
   useEffect(() => {
     if (window.parent !== window) {
+      let isRunning = true;
+
       const updatePositions = () => {
         try {
-          const scrollY = window.parent.scrollY || window.parent.document.documentElement.scrollTop;
-          const windowHeight = window.parent.innerHeight;
-          const iframeTop = window.frameElement.getBoundingClientRect().top + scrollY;
+          const frame = window.frameElement;
+          if (!frame) return;
+
+          const iframeRect = frame.getBoundingClientRect();
+          const windowHeight = window.parent.innerHeight || window.innerHeight;
           
-          let topOffset = scrollY - iframeTop;
+          // iframeRect.top 은 부모 뷰포트 상단 대비 iframe 상단의 위치 (스크롤 내릴수록 음수)
+          // 뷰포트의 상단이 iframe 내에서 어디쯤인지 계산 (-iframeRect.top)
+          let topOffset = -iframeRect.top;
           if (topOffset < 0) topOffset = 0;
 
           if (fixedRefs.current.toast) {
@@ -150,28 +156,16 @@ const App = () => {
 
       window.__updateIframePositions = updatePositions;
 
-      let ticking = false;
-      const onScroll = () => {
-        if (!ticking) {
-          window.requestAnimationFrame(() => {
-            updatePositions();
-            ticking = false;
-          });
-          ticking = true;
-        }
+      // scroll 이벤트에 의존하지 않고 항상 프레임 단위로 추적 (어떤 부모 엘리먼트가 스크롤되든 완벽히 작동)
+      const loop = () => {
+        if (!isRunning) return;
+        updatePositions();
+        window.requestAnimationFrame(loop);
       };
-
-      window.parent.addEventListener('scroll', onScroll, { passive: true });
-      window.parent.addEventListener('resize', updatePositions);
-      
-      setTimeout(updatePositions, 100);
-      setTimeout(updatePositions, 500);
+      window.requestAnimationFrame(loop);
 
       return () => {
-        try {
-          window.parent.removeEventListener('scroll', onScroll);
-          window.parent.removeEventListener('resize', updatePositions);
-        } catch(e) {}
+        isRunning = false;
         delete window.__updateIframePositions;
       };
     }
