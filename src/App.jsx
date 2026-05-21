@@ -309,16 +309,54 @@ const App = () => {
           formData.append('delvtype', 'A');
           formData.append('selected_item[]', `1||${itemCode}`); // Cafe24 장바구니 핵심 필수 파라미터 (수량||품목코드)
 
-          await fetch('/exec/front/order/basket/', {
+          const res = await fetch('/exec/front/order/basket/', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/x-www-form-urlencoded',
+              'X-Requested-With': 'XMLHttpRequest'
             },
+            credentials: 'include',
             body: formData.toString()
           });
+          
+          const text = await res.text();
+          if (text.includes('"result":0')) {
+            console.warn(`Cafe24 rejected cart add for product ${productNo}. Response:`, text);
+            // Fallback: Use a hidden form submission directly to basket endpoint for robust session handling
+            let hiddenIframe = document.getElementById('hidden-cart-iframe');
+            if (!hiddenIframe) {
+              hiddenIframe = document.createElement('iframe');
+              hiddenIframe.id = 'hidden-cart-iframe';
+              hiddenIframe.name = 'hidden-cart-iframe';
+              hiddenIframe.style.display = 'none';
+              document.body.appendChild(hiddenIframe);
+            }
+            
+            const form = document.createElement('form');
+            form.method = 'POST';
+            form.action = '/exec/front/order/basket/';
+            form.target = 'hidden-cart-iframe'; // requires an invisible iframe in the document
+            
+            ['product_no', 'quantity', 'basket_type', 'delvtype'].forEach(key => {
+              const input = document.createElement('input');
+              input.type = 'hidden';
+              input.name = key;
+              input.value = formData.get(key);
+              form.appendChild(input);
+            });
+            const selectedItemInput = document.createElement('input');
+            selectedItemInput.type = 'hidden';
+            selectedItemInput.name = 'selected_item[]';
+            selectedItemInput.value = `1||${itemCode}`;
+            form.appendChild(selectedItemInput);
+            
+            document.body.appendChild(form);
+            form.submit();
+            setTimeout(() => document.body.removeChild(form), 500);
+          }
 
           // 요청 전송 후 Cafe24 세션 동기화를 위한 짧은 딜레이
-          await new Promise(r => setTimeout(r, 200));
+          await new Promise(r => setTimeout(r, 400)); // increased delay for form fallback safety
 
         } catch (err) {
           console.error(`Failed to add product ${productNo} to cart:`, err);
