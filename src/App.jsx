@@ -294,7 +294,7 @@ const App = () => {
     }, 300);
   };
 
-  // 공통: Cafe24 장바구니 조용히 담기 (부모 창의 숨겨진 Form 전송 + 동적 item_code 추출)
+  // 공통: Cafe24 장바구니 조용히 담기 (부모 창의 숨겨진 Form 전송 + Firebase 프록시로 item_code 추출)
   const quietlyAddToCart = async (item) => {
     return new Promise(async (resolve) => {
       const matchProductNo = item.variantUrl.match(/[?&]product_no=(\d+)/);
@@ -308,16 +308,24 @@ const App = () => {
       } catch (e) {}
 
       // Cafe24 장바구니 필수 파라미터인 item_code 추출
+      // ⚠️ 브라우저 iframe에서 직접 chhouse.kr fetch 시 CORS 차단 → Firebase Functions 프록시 사용
       let itemCode = null;
       try {
-        const res = await fetch(item.variantUrl);
-        const html = await res.text();
-        const match = html.match(/item_code\s*[:=]\s*['"]([^'"]+)['"]/);
-        if (match) {
-          itemCode = match[1];
+        const proxyUrl = `https://biblefont.web.app/api/getItemCode?url=${encodeURIComponent(item.variantUrl)}`;
+        const res = await fetch(proxyUrl);
+        if (res.ok) {
+          const json = await res.json();
+          if (json.itemCode) {
+            itemCode = json.itemCode;
+          }
         }
       } catch (e) {
-        console.error('Failed to fetch item_code', e);
+        console.error('Failed to fetch item_code via proxy', e);
+      }
+
+      // item_code를 못 가져온 경우 로그 출력 (장바구니 담기 실패 원인이 될 수 있음)
+      if (!itemCode) {
+        console.warn(`[BibleZoom] item_code not found for product_no=${productNo}, URL=${item.variantUrl}`);
       }
 
       try {

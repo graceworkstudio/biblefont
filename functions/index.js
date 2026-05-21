@@ -33,6 +33,66 @@ export const cafe24OAuthCallbackTest = functions.https.onRequest(async (req, res
   res.json(tokenData);
 });
 
+// item_code 추출 프록시 (CORS 우회를 위해 서버에서 chhouse.kr 페이지를 직접 fetching)
+export const getItemCode = functions.https.onRequest(async (req, res) => {
+  res.set('Access-Control-Allow-Origin', '*');
+  res.set('Access-Control-Allow-Methods', 'GET,OPTIONS');
+  res.set('Access-Control-Allow-Headers', 'Content-Type');
+
+  if (req.method === 'OPTIONS') {
+    res.status(204).send('');
+    return;
+  }
+
+  const productUrl = req.query.url;
+  if (!productUrl) {
+    return res.status(400).json({ error: "url parameter is required" });
+  }
+
+  // 안전하게 chhouse.kr 도메인만 허용
+  let parsedUrl;
+  try {
+    parsedUrl = new URL(productUrl);
+    if (!parsedUrl.hostname.endsWith('chhouse.kr') && !parsedUrl.hostname.endsWith('chhouse.cafe24.com')) {
+      return res.status(403).json({ error: "Only chhouse.kr URLs are allowed" });
+    }
+  } catch(e) {
+    return res.status(400).json({ error: "Invalid URL" });
+  }
+
+  try {
+    const response = await fetch(productUrl, {
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml',
+        'Accept-Language': 'ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7'
+      }
+    });
+
+    if (!response.ok) {
+      return res.status(response.status).json({ error: `Product page fetch failed: ${response.status}` });
+    }
+
+    const html = await response.text();
+
+    // item_code 추출: P000XXXX000A 형태
+    const match = html.match(/item_code\s*[:=]\s*['"]([^'"]+)['"]/);
+    if (match) {
+      return res.json({ itemCode: match[1] });
+    } else {
+      // 대체 패턴 시도
+      const altMatch = html.match(/['"]item_code['"]\s*:\s*['"]([^'"]+)['"]/);
+      if (altMatch) {
+        return res.json({ itemCode: altMatch[1] });
+      }
+      return res.json({ itemCode: null, message: "item_code not found in page" });
+    }
+  } catch (error) {
+    console.error("getItemCode error:", error);
+    return res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
 // Product search proxy endpoint (Test)
 export const cafe24ProductsTest = functions.https.onRequest(async (req, res) => {
   // Enable CORS for local development

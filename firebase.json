@@ -19,6 +19,10 @@
         "function": "cafe24ProductsTest"
       },
       {
+        "source": "/api/getItemCode",
+        "function": "getItemCode"
+      },
+      {
         "source": "**",
         "destination": "/index.html"
       }
