@@ -109,14 +109,19 @@ const App = () => {
   useEffect(() => {
     // Only run if we are inside an iframe
     if (window.parent && window.parent !== window) {
-      const resizeObserver = new ResizeObserver(() => {
-        // Post the current body scrollHeight to the parent window
-        window.parent.postMessage({ type: 'bz-resize', height: document.body.scrollHeight }, '*');
+      const container = document.getElementById('bz-main-container');
+      if (!container) return;
+
+      const resizeObserver = new ResizeObserver((entries) => {
+        // Measure the actual container's scrollHeight/offsetHeight instead of document.body
+        // This prevents the infinite resizing feedback loop
+        const height = entries[0].target.offsetHeight;
+        window.parent.postMessage({ type: 'bz-resize', height: height + 50 }, '*');
       });
-      resizeObserver.observe(document.body);
+      resizeObserver.observe(container);
       
       // Also trigger once on load
-      window.parent.postMessage({ type: 'bz-resize', height: document.body.scrollHeight }, '*');
+      window.parent.postMessage({ type: 'bz-resize', height: container.offsetHeight + 50 }, '*');
       
       return () => resizeObserver.disconnect();
     }
@@ -237,7 +242,7 @@ const App = () => {
           setTimeout(() => {
             iframe.remove();
             resolve();
-          }, 500); // 안정적으로 세션에 반영되도록 0.5초 대기
+          }, 800); // 넉넉하게 0.8초 대기하여 세션 저장이 완벽히 끝나도록 보장
         }
       };
 
@@ -979,7 +984,7 @@ const App = () => {
   };
 
   return (
-    <div className={`min-h-screen bg-slate-50 p-1 md:p-8 text-slate-900 font-sans ui-font-zoom-${uiSize}`}>
+    <div id="bz-main-container" className={`bg-slate-50 p-1 md:p-8 text-slate-900 font-sans ui-font-zoom-${uiSize}`}>
       <div className="max-w-7xl mx-auto bg-white rounded-2xl shadow-xl border border-slate-200 relative">
         {showUpdateNotice && (
           <div className="fixed inset-0 z-[5000] bg-slate-900/60 backdrop-blur-sm flex items-start justify-center p-2 pt-4 md:pt-10">
