@@ -105,7 +105,7 @@ const App = () => {
   const [submitProgress, setSubmitProgress] = useState({ current: 0, total: 0 });
 
   // 장바구니 변경 시 선택 목록 동기화 (새로운 추가 상품은 자동 선택)
-  // Auto-resize iframe logic to remove double scrollbars
+  // Auto-resize iframe logic to remove double scrollbars & fix parent logo link
   useEffect(() => {
     // Only run if we are inside an iframe
     if (window.parent && window.parent !== window) {
@@ -123,6 +123,16 @@ const App = () => {
       // Also trigger once on load
       window.parent.postMessage({ type: 'bz-resize', height: container.offsetHeight + 50 }, '*');
       
+      // [FIX] 부모 창의 쇼핑몰 로고(좌측 상단)가 현재 도메인(biblezoom.co.kr)으로 이동하는 문제 해결
+      try {
+        const parentLogo = window.parent.document.querySelector('.sidebar_logo a');
+        if (parentLogo) {
+          parentLogo.href = 'https://chhouse.kr/';
+        }
+      } catch (e) {
+        // Cross-origin 등 접근 불가 시 조용히 무시
+      }
+
       return () => resizeObserver.disconnect();
     }
   }, []);
