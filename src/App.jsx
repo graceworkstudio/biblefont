@@ -559,7 +559,7 @@ const App = () => {
     if (item.variants || fetchedVariants[modelName] || isLoadingVariants[modelName]) return;
     setIsLoadingVariants(prev => ({ ...prev, [modelName]: true }));
     try {
-      const res = await fetch(`/api/cafe24Products?keyword=${encodeURIComponent(modelName)}`);
+      const res = await fetch(`https://biblefont.web.app/api/cafe24Products?keyword=${encodeURIComponent(modelName)}`);
       if (!res.ok) throw new Error('API Error');
       const data = await res.json();
       setFetchedVariants(prev => ({ ...prev, [modelName]: data.products || [] }));
