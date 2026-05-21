@@ -31,7 +31,7 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
-          server-dir: /web/biblezoom_test/
+          server-dir: /web/biblezoom/
           dangerous-clean-slate: false
           exclude: |
             **/.ftp-deploy-sync-state.json
