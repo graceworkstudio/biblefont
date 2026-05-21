@@ -294,11 +294,21 @@ const App = () => {
     }, 300);
   };
 
-  // 공통: Cafe24 장바구니 조용히 담기 (부모 창의 숨겨진 Form 전송 + Firebase 프록시로 item_code 추출)
+  // URL에서 product_no 추출 (쿼리파라미터형 및 슬러그형 모두 지원)
+  const extractProductNo = (url) => {
+    // 1. 쿼리파라미터형: ?product_no=12345
+    const qMatch = url.match(/[?&]product_no=(\d+)/);
+    if (qMatch) return qMatch[1];
+    // 2. 슬러그형: /product/상품명/12345/category/xxx/
+    const sMatch = url.match(/\/product\/[^/]+\/(\d+)\/(?:category|display)\//);
+    if (sMatch) return sMatch[1];
+    return null;
+  };
+
+  // 공통: Cafe24 장바구니 조용히 담기 (부모 창의 숨겨진 Form 전송 + item_code 추출)
   const quietlyAddToCart = async (item) => {
     return new Promise(async (resolve) => {
-      const matchProductNo = item.variantUrl.match(/[?&]product_no=(\d+)/);
-      const productNo = matchProductNo ? matchProductNo[1] : null;
+      const productNo = extractProductNo(item.variantUrl);
       if (!productNo) return resolve();
 
       let domain = 'https://chhouse.kr';
@@ -312,14 +322,15 @@ const App = () => {
       // 2차 시도: Firebase Functions 프록시 (CORS 이슈 발생 시 우회)
       let itemCode = null;
       try {
-        const res = await fetch(item.variantUrl, { mode: 'same-origin' });
+        // 일반 fetch 시도 (same-origin 및 CORS 허용 환경 모두)
+        const res = await fetch(item.variantUrl, { credentials: 'include' });
         if (res.ok) {
           const html = await res.text();
           const match = html.match(/item_code\s*[:=]\s*['"]([^'"]+)['"]/);
           if (match) itemCode = match[1];
         }
       } catch (e) {
-        // same-origin fetch 실패 시 Firebase Functions 프록시로 fallback
+        // fetch 실패 시 Firebase Functions 프록시로 fallback
       }
 
       // Fallback: Firebase Functions 프록시
@@ -398,8 +409,7 @@ const App = () => {
 
   // 개별 상품 바로구매 (깜빡임 글리치 방지를 위해 조용히 담고 리다이렉트)
   const handleIndividualCheckout = async (item) => {
-    const matchProductNo = item.variantUrl.match(/[?&]product_no=(\d+)/);
-    const productNo = matchProductNo ? matchProductNo[1] : null;
+    const productNo = extractProductNo(item.variantUrl);
 
     if (productNo) {
       let domain = 'https://chhouse.kr';
