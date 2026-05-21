@@ -213,42 +213,35 @@ const App = () => {
     }, 300);
   };
 
-  // 공통: Cafe24 장바구니 조용히 담기 (CSRF 토큰 처리를 위해 Cafe24의 내장 jQuery 활용)
+  // 공통: Cafe24 장바구니 조용히 담기
   const quietlyAddToCart = async (productNo, cateNo, itemCode) => {
     return new Promise((resolve) => {
-      const params = {
-        product_no: productNo,
-        quantity: '1',
-        basket_type: 'A0000',
-        delvtype: 'A',
-        'selected_item[]': `1||${itemCode}`
-      };
-      if (cateNo) params.cate_no = cateNo;
+      // Cafe24는 X-Requested-With 헤더가 있으면 엄격한 AJAX CSRF 검사를 수행하여 result:0 을 반환합니다.
+      // 따라서 X-Requested-With 헤더를 빼고 순수 HTML Form 전송처럼 위장하여 fetch를 보냅니다.
+      // 이렇게 하면 서버는 정상적으로 장바구니에 담고 HTML(<script>리다이렉트</script>)을 반환하지만,
+      // fetch로 받았기 때문에 스크립트가 실행되지 않아 부모 창이 강제로 튕기지 않고 백그라운드에서 완벽히 담깁니다!
+      const formData = new URLSearchParams();
+      formData.append('product_no', productNo);
+      formData.append('quantity', '1');
+      formData.append('basket_type', 'A0000');
+      formData.append('delvtype', 'A');
+      if (cateNo) formData.append('cate_no', cateNo);
+      
+      // 단일/다중 모두 확실히 들어가도록 옵션 파라미터도 안전하게 추가
+      formData.append('selected_item[]', `1||${itemCode}`);
 
-      if (window.$ && window.$.ajax) {
-        // Cafe24 환경: 내장 jQuery를 사용하면 CSRF 토큰이 자동으로 헤더에 포함되어 거절(result:0)되지 않습니다.
-        window.$.ajax({
-          url: '/exec/front/order/basket/',
-          type: 'POST',
-          data: params,
-          dataType: 'json',
-          success: (res) => resolve(res),
-          error: (err) => resolve(err) // 에러가 나도 다음 상품을 위해 진행
-        });
-      } else {
-        // 로컬 테스트용 Fallback
-        const formData = new URLSearchParams();
-        Object.entries(params).forEach(([key, value]) => formData.append(key, value));
-        fetch('/exec/front/order/basket/', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-            'X-Requested-With': 'XMLHttpRequest'
-          },
-          credentials: 'include',
-          body: formData.toString()
-        }).then(resolve).catch(resolve);
-      }
+      fetch('/exec/front/order/basket/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+          // 'X-Requested-With': 'XMLHttpRequest' // ⭐️ 절대 넣으면 안 됨!
+        },
+        credentials: 'include', // 세션 쿠키 필수
+        body: formData.toString()
+      })
+      .then(res => res.text())
+      .then(text => resolve(text))
+      .catch(err => resolve(err));
     });
   };
 
