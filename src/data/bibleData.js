@@ -10,36 +10,36 @@ export const bibleData = {
         "variants": [
           {
             "label": "특대합본/천연/자두",
-            "img": "https://chhouse.cafe24.com/web/product/big/202409/8abc83b30eec79bac9f6f0daddea0683.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=49886&cate_no=1358&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202409/8abc83b30eec79bac9f6f0daddea0683.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=49886&cate_no=1358&display_group=1",
             "originalPrice": 92000,
             "salePrice": 82800
           },
           {
             "label": "특대합본/천연/다크브라운",
-            "img": "https://chhouse.cafe24.com/web/product/big/202409/6c6a3aff7031942f4cc78ff626ddee3c.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=49887&cate_no=1358&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202409/6c6a3aff7031942f4cc78ff626ddee3c.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=49887&cate_no=1358&display_group=1",
             "originalPrice": 92000,
             "salePrice": 82800
           },
           {
             "label": "특대단본/천연/다크브라운",
-            "img": "https://chhouse.cafe24.com/web/product/big/202512/81a74ffca27cd0b8a31341415342f722.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=56150&cate_no=1358&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202512/81a74ffca27cd0b8a31341415342f722.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=56150&cate_no=1358&display_group=1",
             "originalPrice": 72000,
             "salePrice": 64800
           },
           {
             "label": "특대합본/PU/브라운",
-            "img": "https://chhouse.cafe24.com/web/product/big/202404/250f2cc92b75b7a5448c0d41cd96d379.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=18102&cate_no=1358&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202404/250f2cc92b75b7a5448c0d41cd96d379.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=18102&cate_no=1358&display_group=1",
             "originalPrice": 72000,
             "salePrice": 64800
           },
           {
             "label": "특대합본/PU/다크브라운",
-            "img": "https://chhouse.cafe24.com/web/product/big/202404/d1bc4280f5d8bbb1335538228abd31ed.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=18099&cate_no=1358&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202404/d1bc4280f5d8bbb1335538228abd31ed.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=18099&cate_no=1358&display_group=1",
             "originalPrice": 72000,
             "salePrice": 64800
           }
@@ -53,36 +53,36 @@ export const bibleData = {
         "variants": [
           {
             "label": "대합본/천연/자주",
-            "img": "https://chhouse.cafe24.com/web/product/big/202404/c00a556d3afcc3f38554f283a9d33165.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=40062&cate_no=1347&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202404/c00a556d3afcc3f38554f283a9d33165.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=40062&cate_no=1347&display_group=1",
             "originalPrice": 87000,
             "salePrice": 78300
           },
           {
             "label": "대합본/천연/다크브라운",
-            "img": "https://chhouse.cafe24.com/web/product/big/202404/4bfb2a7c70a96e00493ab8e0f84e3ba2.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=40063&cate_no=1347&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202404/4bfb2a7c70a96e00493ab8e0f84e3ba2.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=40063&cate_no=1347&display_group=1",
             "originalPrice": 87000,
             "salePrice": 78300
           },
           {
             "label": "대단본/천연/다크브라운",
-            "img": "https://chhouse.cafe24.com/web/product/big/202510/928038e08a9f46d6b8b7307207a858f0.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=55696&cate_no=1347&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202510/928038e08a9f46d6b8b7307207a858f0.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=55696&cate_no=1347&display_group=1",
             "originalPrice": 66000,
             "salePrice": 59400
           },
           {
             "label": "대합본/PU/모카브라운",
-            "img": "https://chhouse.cafe24.com/web/product/big/202404/27b7b25781c62560b26147c9d2ddd6cd.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=36028&cate_no=1347&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202404/27b7b25781c62560b26147c9d2ddd6cd.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=36028&cate_no=1347&display_group=1",
             "originalPrice": 64000,
             "salePrice": 57600
           },
           {
             "label": "대단본/PU/브라운",
-            "img": "https://chhouse.cafe24.com/web/product/big/202504/39a6fec7b021aed639759323bd894367.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=53191&cate_no=1347&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202504/39a6fec7b021aed639759323bd894367.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=53191&cate_no=1347&display_group=1",
             "originalPrice": 55000,
             "salePrice": 49500
           }
@@ -96,43 +96,43 @@ export const bibleData = {
         "variants": [
           {
             "label": "중합본/천연/브라운",
-            "img": "https://chhouse.cafe24.com/web/product/big/202509/80d5daa695f2c3b11c0a16ed82293226.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=54900&cate_no=1388&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202509/80d5daa695f2c3b11c0a16ed82293226.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=54900&cate_no=1388&display_group=1",
             "originalPrice": 79000,
             "salePrice": 71100
           },
           {
             "label": "중합본/천연/자주",
-            "img": "https://chhouse.cafe24.com/web/product/big/202410/1ef46375ece8dbc29422ae4abee8ace6.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=50939&cate_no=1388&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202410/1ef46375ece8dbc29422ae4abee8ace6.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=50939&cate_no=1388&display_group=1",
             "originalPrice": 74000,
             "salePrice": 66600
           },
           {
             "label": "중합본/천연/다크브라운",
-            "img": "https://chhouse.cafe24.com/web/product/big/202410/81bc4f3867732455b507432d6ac9d623.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=50940&cate_no=1388&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202410/81bc4f3867732455b507432d6ac9d623.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=50940&cate_no=1388&display_group=1",
             "originalPrice": 74000,
             "salePrice": 66600
           },
           {
             "label": "중단본/천연/다크브라운",
-            "img": "https://chhouse.cafe24.com/web/product/big/202508/17198400d308e8e01a049b40d8e33dd4.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=54646&cate_no=1388&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202508/17198400d308e8e01a049b40d8e33dd4.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=54646&cate_no=1388&display_group=1",
             "originalPrice": 60000,
             "salePrice": 54000
           },
           {
             "label": "중합본/PU/모카브라운",
-            "img": "https://chhouse.cafe24.com/web/product/big/202405/051e1d0e2809eb96feeaeb0e79a31bba.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=38587&cate_no=1388&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202405/051e1d0e2809eb96feeaeb0e79a31bba.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=38587&cate_no=1388&display_group=1",
             "originalPrice": 59000,
             "salePrice": 53100
           },
           {
             "label": "중합본/PU/라벤더",
-            "img": "https://chhouse.cafe24.com/web/product/big/202405/c99ba9613e71ac557fdb618d2333273f.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=38586&cate_no=1388&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202405/c99ba9613e71ac557fdb618d2333273f.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=38586&cate_no=1388&display_group=1",
             "originalPrice": 59000,
             "salePrice": 53100
           }
@@ -146,22 +146,22 @@ export const bibleData = {
         "variants": [
           {
             "label": "대합본/천연/지퍼/투톤다크브라운",
-            "img": "https://chhouse.cafe24.com/web/product/big/202404/b3590a01c90b390b1621c859f45051db.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=42355&cate_no=1347&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202404/b3590a01c90b390b1621c859f45051db.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=42355&cate_no=1347&display_group=1",
             "originalPrice": 81000,
             "salePrice": 72900
           },
           {
             "label": "대합본/천연/무지퍼/다크브라운",
-            "img": "https://chhouse.cafe24.com/web/product/big/202404/45d8cf42f57975fd93ed2bab78b9f1ec.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=47739&cate_no=1347&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202404/45d8cf42f57975fd93ed2bab78b9f1ec.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=47739&cate_no=1347&display_group=1",
             "originalPrice": 75000,
             "salePrice": 67500
           },
           {
             "label": "대합본/PU/지퍼/다크브라운",
-            "img": "https://chhouse.cafe24.com/web/product/big/202411/9ce9fde02849a52d5f3e04eb4f1abbb3.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=51203&cate_no=1347&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202411/9ce9fde02849a52d5f3e04eb4f1abbb3.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=51203&cate_no=1347&display_group=1",
             "originalPrice": 67000,
             "salePrice": 60300
           }
@@ -175,29 +175,29 @@ export const bibleData = {
         "variants": [
           {
             "label": "소합본/천연/지퍼레드",
-            "img": "https://chhouse.cafe24.com/web/product/big/202504/aae777354a6b2ba2be1ae7cf15dc0b28.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=18930&cate_no=1381&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202504/aae777354a6b2ba2be1ae7cf15dc0b28.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=18930&cate_no=1381&display_group=1",
             "originalPrice": 65000,
             "salePrice": 58500
           },
           {
             "label": "소합본/천연/지퍼/다크브라운",
-            "img": "https://chhouse.cafe24.com/web/product/big/202504/c4158fa1e1ada3f4f3549d3579f92377.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=18933&cate_no=1381&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202504/c4158fa1e1ada3f4f3549d3579f92377.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=18933&cate_no=1381&display_group=1",
             "originalPrice": 65000,
             "salePrice": 58500
           },
           {
             "label": "소합본/PU/지퍼/잉키블루",
-            "img": "https://chhouse.cafe24.com/web/product/big/202410/37ec01bb8a878c5ff3808add46a90c83.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=35922&cate_no=1381&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202410/37ec01bb8a878c5ff3808add46a90c83.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=35922&cate_no=1381&display_group=1",
             "originalPrice": 56000,
             "salePrice": 50400
           },
           {
             "label": "소합본/PU/지퍼/자주",
-            "img": "https://chhouse.cafe24.com/web/product/big/202410/119616ac045ec89f9219f04b2ec66ab3.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=50860&cate_no=1381&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202410/119616ac045ec89f9219f04b2ec66ab3.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=50860&cate_no=1381&display_group=1",
             "originalPrice": 56000,
             "salePrice": 50400
           }
@@ -226,22 +226,22 @@ export const bibleData = {
         "variants": [
           {
             "label": "특소합본/천연/지퍼/다크블루",
-            "img": "https://chhouse.cafe24.com/web/product/big/202406/f4822390a386ba36f623a825fbbac8b5.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=39067&cate_no=1464&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202406/f4822390a386ba36f623a825fbbac8b5.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=39067&cate_no=1464&display_group=1",
             "originalPrice": 59000,
             "salePrice": 53100
           },
           {
             "label": "특소합본/PU/지퍼/인디고블루",
-            "img": "https://chhouse.cafe24.com/web/product/big/202405/eca08287fd5b796966b0b751af373689.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=38515&cate_no=1464&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202405/eca08287fd5b796966b0b751af373689.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=38515&cate_no=1464&display_group=1",
             "originalPrice": 49000,
             "salePrice": 44100
           },
           {
             "label": "특소합본/PU/지퍼/인디핑크",
-            "img": "https://chhouse.cafe24.com/web/product/big/202405/a412dcd8096bd3fe3df4e961e21dde62.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=38514&cate_no=1464&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202405/a412dcd8096bd3fe3df4e961e21dde62.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=38514&cate_no=1464&display_group=1",
             "originalPrice": 47000,
             "salePrice": 42300
           }
@@ -255,15 +255,15 @@ export const bibleData = {
         "variants": [
           {
             "label": "특소합본/PU/지퍼/인디고블루",
-            "img": "https://chhouse.cafe24.com/web/product/big/202405/1147deb80d14005ac295d792b4340bda.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=18333&cate_no=1381&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202405/1147deb80d14005ac295d792b4340bda.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=18333&cate_no=1381&display_group=1",
             "originalPrice": 40000,
             "salePrice": 36000
           },
           {
             "label": "특소합본/PU/지퍼/인디핑크",
-            "img": "https://chhouse.cafe24.com/web/product/big/202405/f459d3c67e3763fdef783414cc7a782a.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=18330&cate_no=1381&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202405/f459d3c67e3763fdef783414cc7a782a.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=18330&cate_no=1381&display_group=1",
             "originalPrice": 40000,
             "salePrice": 36000
           }
@@ -665,15 +665,15 @@ export const bibleData = {
         "variants": [
           {
             "label": "소합본/천연/지퍼/레드",
-            "img": "https://chhouse.cafe24.com/web/product/big/202409/4a3fd5cb8ecfd9ec9ded41e6407ff93e.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=47800&cate_no=1381&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202409/4a3fd5cb8ecfd9ec9ded41e6407ff93e.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=47800&cate_no=1381&display_group=1",
             "originalPrice": 60000,
             "salePrice": 54000
           },
           {
             "label": "소합본/천연/지퍼/잉키블루",
-            "img": "https://chhouse.cafe24.com/web/product/big/202409/1999a4168a9c6a592cd467d88a2ccd38.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=47799&cate_no=1381&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202409/1999a4168a9c6a592cd467d88a2ccd38.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=47799&cate_no=1381&display_group=1",
             "originalPrice": 60000,
             "salePrice": 54000
           },
@@ -771,22 +771,22 @@ export const bibleData = {
         "variants": [
           {
             "label": "대합본/천연/지퍼/뉴다크브라운",
-            "img": "https://chhouse.cafe24.com/web/product/big/202504/29e03364f251595758292afd3bb0e3bb.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=53022&cate_no=1372&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202504/29e03364f251595758292afd3bb0e3bb.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=53022&cate_no=1372&display_group=1",
             "originalPrice": 68000,
             "salePrice": 61200
           },
           {
             "label": "대합본/천연/지퍼/뉴버건디",
-            "img": "https://chhouse.cafe24.com/web/product/big/202504/651a8123e2eede49bf2620f20574b6cd.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=53023&cate_no=1372&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202504/651a8123e2eede49bf2620f20574b6cd.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=53023&cate_no=1372&display_group=1",
             "originalPrice": 68000,
             "salePrice": 61200
           },
           {
             "label": "대합본/PU/지퍼/다크브라운",
-            "img": "https://chhouse.cafe24.com/web/product/big/202406/96e5787d088f897ab3d624634a395dc1.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=18492&cate_no=1372&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202406/96e5787d088f897ab3d624634a395dc1.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=18492&cate_no=1372&display_group=1",
             "originalPrice": 56000,
             "salePrice": 50400
           }
@@ -800,15 +800,15 @@ export const bibleData = {
         "variants": [
           {
             "label": "중합본/천연/지퍼/다크브라운",
-            "img": "https://chhouse.cafe24.com/web/product/big/202409/d6a0714e7ab45f3d1652e351bd24b1f0.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=50086&cate_no=1371&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202409/d6a0714e7ab45f3d1652e351bd24b1f0.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=50086&cate_no=1371&display_group=1",
             "originalPrice": 78000,
             "salePrice": 70200
           },
           {
             "label": "중합본/PU/지퍼/다크네이비",
-            "img": "https://chhouse.cafe24.com/web/product/big/202409/1ac63e48135a48688875453c9a28c929.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=50085&cate_no=1371&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202409/1ac63e48135a48688875453c9a28c929.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=50085&cate_no=1371&display_group=1",
             "originalPrice": 55000,
             "salePrice": 49500
           }
@@ -822,22 +822,22 @@ export const bibleData = {
         "variants": [
           {
             "label": "소합본/천연/지퍼/다크브라운",
-            "img": "https://chhouse.cafe24.com/web/product/big/202411/b577b20e25030f4625e462020eb08ba4.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=51317&cate_no=1345&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202411/b577b20e25030f4625e462020eb08ba4.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=51317&cate_no=1345&display_group=1",
             "originalPrice": 42000,
             "salePrice": 37800
           },
           {
             "label": "소합본/PU/밴드형/그린",
-            "img": "https://chhouse.cafe24.com/web/product/big/202404/d33088e88ae1ea84b717e7a898b1ac55.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=42796&cate_no=1345&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202404/d33088e88ae1ea84b717e7a898b1ac55.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=42796&cate_no=1345&display_group=1",
             "originalPrice": 36000,
             "salePrice": 32400
           },
           {
             "label": "소합본/PU/밴드형/네이비",
-            "img": "https://chhouse.cafe24.com/web/product/big/202404/9c0d9ca2f99d8ffef81a9b6e3b71d507.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=42795&cate_no=1345&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202404/9c0d9ca2f99d8ffef81a9b6e3b71d507.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=42795&cate_no=1345&display_group=1",
             "originalPrice": 36000,
             "salePrice": 32400
           }
@@ -851,36 +851,36 @@ export const bibleData = {
         "variants": [
           {
             "label": "대합본/천연/지퍼/다크브라운",
-            "img": "https://chhouse.cafe24.com/web/product/big/202501/5378bcf8416c0e8609f24bba6a4d42e3.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=18174&cate_no=1372&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202501/5378bcf8416c0e8609f24bba6a4d42e3.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=18174&cate_no=1372&display_group=1",
             "originalPrice": 67000,
             "salePrice": 60300
           },
           {
             "label": "대합본/천연/지퍼/다크네이비",
-            "img": "https://chhouse.cafe24.com/web/product/big/202501/55f6a0044745f3d68fd17689c271b8cf.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=52204&cate_no=1372&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202501/55f6a0044745f3d68fd17689c271b8cf.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=52204&cate_no=1372&display_group=1",
             "originalPrice": 67000,
             "salePrice": 60300
           },
           {
             "label": "대합본/PU/지퍼/블랙",
-            "img": "https://chhouse.cafe24.com/web/product/big/202405/01d65352b6e0ed2c0a0733ae09f38015.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=44462&cate_no=1372&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202405/01d65352b6e0ed2c0a0733ae09f38015.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=44462&cate_no=1372&display_group=1",
             "originalPrice": 63000,
             "salePrice": 56700
           },
           {
             "label": "대합본/PU/지퍼/다크네이비",
-            "img": "https://chhouse.cafe24.com/web/product/big/202405/8c225d754a59a3e16f85f2e63d86cc35.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=44337&cate_no=1372&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202405/8c225d754a59a3e16f85f2e63d86cc35.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=44337&cate_no=1372&display_group=1",
             "originalPrice": 51000,
             "salePrice": 45900
           },
           {
             "label": "대합본/PU/지퍼/브라운",
-            "img": "https://chhouse.cafe24.com/web/product/big/202405/fd4c68d48959eeb01077303ebc70348b.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=44336&cate_no=1372&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202405/fd4c68d48959eeb01077303ebc70348b.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=44336&cate_no=1372&display_group=1",
             "originalPrice": 51000,
             "salePrice": 45900
           }
@@ -894,29 +894,29 @@ export const bibleData = {
         "variants": [
           {
             "label": "중합본/천연/지퍼/뉴버건디",
-            "img": "https://chhouse.cafe24.com/web/product/big/202405/f6e0e890f8035c9a4cfb6a3e053f546e.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=38862&cate_no=1371&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202405/f6e0e890f8035c9a4cfb6a3e053f546e.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=38862&cate_no=1371&display_group=1",
             "originalPrice": 57000,
             "salePrice": 51300
           },
           {
             "label": "중합본/천연/지퍼/뉴다크브라운",
-            "img": "https://chhouse.cafe24.com/web/product/big/202405/b58e62b5aa0261bc589d6813e15815b9.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=38861&cate_no=1371&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202405/b58e62b5aa0261bc589d6813e15815b9.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=38861&cate_no=1371&display_group=1",
             "originalPrice": 57000,
             "salePrice": 51300
           },
           {
             "label": "중합본/PU/지퍼/뉴브라운",
-            "img": "https://chhouse.cafe24.com/web/product/big/202405/b504f15f35c8edf0ab540ae48f597e6a.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=38336&cate_no=1371&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202405/b504f15f35c8edf0ab540ae48f597e6a.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=38336&cate_no=1371&display_group=1",
             "originalPrice": 47000,
             "salePrice": 42300
           },
           {
             "label": "중합본/PU/지퍼/뉴네이비",
-            "img": "https://chhouse.cafe24.com/web/product/big/202409/ae865f4cf05ad35f7355feb7d89c2e47.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=38335&cate_no=1371&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202409/ae865f4cf05ad35f7355feb7d89c2e47.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=38335&cate_no=1371&display_group=1",
             "originalPrice": 47000,
             "salePrice": 42300
           }
@@ -930,22 +930,22 @@ export const bibleData = {
         "variants": [
           {
             "label": "초미니합본/천연/지퍼/베이지",
-            "img": "https://chhouse.cafe24.com/web/product/big/202406/3104124bc91cfde09c6280771876bd48.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=48705&cate_no=1387&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202406/3104124bc91cfde09c6280771876bd48.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=48705&cate_no=1387&display_group=1",
             "originalPrice": 38000,
             "salePrice": 34200
           },
           {
             "label": "초미니합본/PU/지퍼/뉴분홍",
-            "img": "https://chhouse.cafe24.com/web/product/big/202406/45aaf593eeafcc47968b3e8a565e2bed.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=48706&cate_no=1387&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202406/45aaf593eeafcc47968b3e8a565e2bed.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=48706&cate_no=1387&display_group=1",
             "originalPrice": 32000,
             "salePrice": 28800
           },
           {
             "label": "초미니합본/PU/지퍼/뉴베이지",
-            "img": "https://chhouse.cafe24.com/web/product/big/202406/34db1144e17138313786f36ec8178761.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=48704&cate_no=1387&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202406/34db1144e17138313786f36ec8178761.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=48704&cate_no=1387&display_group=1",
             "originalPrice": 32000,
             "salePrice": 28800
           },
@@ -1332,29 +1332,29 @@ export const bibleData = {
         "variants": [
           {
             "label": "특대합본/천연/지퍼/버건디",
-            "img": "https://chhouse.cafe24.com/web/product/big/202405/d6bc8fae620dacbe20afbe01839e2543.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=38865&cate_no=1350&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202405/d6bc8fae620dacbe20afbe01839e2543.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=38865&cate_no=1350&display_group=1",
             "originalPrice": 89000,
             "salePrice": 80100
           },
           {
             "label": "특대합본/천연/지퍼/다크브라운",
-            "img": "https://chhouse.cafe24.com/web/product/big/202405/acfa91221bd263674d64e18fee354927.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=38864&cate_no=1350&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202405/acfa91221bd263674d64e18fee354927.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=38864&cate_no=1350&display_group=1",
             "originalPrice": 89000,
             "salePrice": 80100
           },
           {
             "label": "특대합본/PU/지퍼/네이비",
-            "img": "https://chhouse.cafe24.com/web/product/big/202405/680fe50278789998616932da1157271b.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=39061&cate_no=1350&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202405/680fe50278789998616932da1157271b.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=39061&cate_no=1350&display_group=1",
             "originalPrice": 74000,
             "salePrice": 66600
           },
           {
             "label": "특대합본/PU/지퍼/브라운",
-            "img": "https://chhouse.cafe24.com/web/product/big/202405/b0484d75a0014bb47fc92975d8e0d941.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=39062&cate_no=1350&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202405/b0484d75a0014bb47fc92975d8e0d941.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=39062&cate_no=1350&display_group=1",
             "originalPrice": 74000,
             "salePrice": 66600
           }
@@ -1368,64 +1368,64 @@ export const bibleData = {
         "variants": [
           {
             "label": "대합본/천연/지퍼/다크네이비",
-            "img": "https://chhouse.cafe24.com/web/product/big/202412/19231ef6cd16657e5fd93e353ec898ac.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=51954&cate_no=1372&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202412/19231ef6cd16657e5fd93e353ec898ac.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=51954&cate_no=1372&display_group=1",
             "originalPrice": 85000,
             "salePrice": 76500
           },
           {
             "label": "대합본/천연/지퍼/다크브라운",
-            "img": "https://chhouse.cafe24.com/web/product/big/202412/a2f0ad30f7083447b82043039a939b5b.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=51953&cate_no=1372&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202412/a2f0ad30f7083447b82043039a939b5b.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=51953&cate_no=1372&display_group=1",
             "originalPrice": 85000,
             "salePrice": 76500
           },
           {
             "label": "대합본/천연/지퍼/검정",
-            "img": "https://chhouse.cafe24.com/web/product/big/202405/1af577de5972d7bf88cdc091175968c9.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=44925&cate_no=1372&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202405/1af577de5972d7bf88cdc091175968c9.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=44925&cate_no=1372&display_group=1",
             "originalPrice": 73000,
             "salePrice": 65700
           },
           {
             "label": "대합본/천연/지퍼/다크브라운",
-            "img": "https://chhouse.cafe24.com/web/product/big/202404/9cddba4546ad6345e4cabebb9c4595db.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=44924&cate_no=1372&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202404/9cddba4546ad6345e4cabebb9c4595db.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=44924&cate_no=1372&display_group=1",
             "originalPrice": 73000,
             "salePrice": 65700
           },
           {
             "label": "대합본/천연/지퍼/버건디",
-            "img": "https://chhouse.cafe24.com/web/product/big/202405/de0ac6e20221356e8cdb838df49bd789.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=38404&cate_no=1372&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202405/de0ac6e20221356e8cdb838df49bd789.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=38404&cate_no=1372&display_group=1",
             "originalPrice": 73000,
             "salePrice": 65700
           },
           {
             "label": "대합본/PU/지퍼/브라운",
-            "img": "https://chhouse.cafe24.com/web/product/big/202501/fc7eba1022f57d4fe8178fdb830e8db5.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=52168&cate_no=1372&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202501/fc7eba1022f57d4fe8178fdb830e8db5.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=52168&cate_no=1372&display_group=1",
             "originalPrice": 65000,
             "salePrice": 58500
           },
           {
             "label": "대합본/PU/지퍼/레드브라운",
-            "img": "https://chhouse.cafe24.com/web/product/big/202501/f5cad44908e08b44cd8f3f54fa779308.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=52167&cate_no=1372&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202501/f5cad44908e08b44cd8f3f54fa779308.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=52167&cate_no=1372&display_group=1",
             "originalPrice": 65000,
             "salePrice": 58500
           },
           {
             "label": "대합본/PU/무지퍼/초코브라운",
-            "img": "https://chhouse.cafe24.com/web/product/big/202412/47f775944fb7e3ebdf34921ef650632e.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=51981&cate_no=1372&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202412/47f775944fb7e3ebdf34921ef650632e.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=51981&cate_no=1372&display_group=1",
             "originalPrice": 64000,
             "salePrice": 57600
           },
           {
             "label": "대합본/PU/무지퍼/초코브라운",
-            "img": "https://chhouse.cafe24.com/web/product/big/202412/ceb6c6423390d3cff9a1d6aae8c2a583.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=51982&cate_no=1372&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202412/ceb6c6423390d3cff9a1d6aae8c2a583.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=51982&cate_no=1372&display_group=1",
             "originalPrice": 64000,
             "salePrice": 57600
           }
@@ -1866,8 +1866,8 @@ export const bibleData = {
           },
           {
             "label": "중합본/PU/무지퍼/비치용 (카페24)",
-            "img": "https://chhouse.cafe24.com/web/product/big/202406/43bf0679ab1fa44e4046f15419496b5e.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=48747&cate_no=1377&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202406/43bf0679ab1fa44e4046f15419496b5e.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=48747&cate_no=1377&display_group=1",
             "originalPrice": 40000,
             "salePrice": 36000
           }
@@ -1917,29 +1917,29 @@ export const bibleData = {
         "variants": [
           {
             "label": "대합본/천연/지퍼/버건디",
-            "img": "https://chhouse.cafe24.com/web/product/big/202512/6906dd11f8d887093e55d06478688773.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=56195&cate_no=1402&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202512/6906dd11f8d887093e55d06478688773.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=56195&cate_no=1402&display_group=1",
             "originalPrice": 71000,
             "salePrice": 63900
           },
           {
             "label": "대합본/천연/저퍼/네이비",
-            "img": "https://chhouse.cafe24.com/web/product/big/202512/804d69f7ab860ac203c741c5916ff707.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=56196&cate_no=1402&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202512/804d69f7ab860ac203c741c5916ff707.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=56196&cate_no=1402&display_group=1",
             "originalPrice": 71000,
             "salePrice": 63900
           },
           {
             "label": "대합본/PU/저퍼/그린",
-            "img": "https://chhouse.cafe24.com/web/product/big/202512/5d3bd7cdaf9fc48f741a603e04b7241a.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=56194&cate_no=1402&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202512/5d3bd7cdaf9fc48f741a603e04b7241a.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=56194&cate_no=1402&display_group=1",
             "originalPrice": 55000,
             "salePrice": 49500
           },
           {
             "label": "대합본/PU/저퍼/초코",
-            "img": "https://chhouse.cafe24.com/web/product/big/202512/46430e101a43624f9fda48aa9ce49923.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=56193&cate_no=1402&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202512/46430e101a43624f9fda48aa9ce49923.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=56193&cate_no=1402&display_group=1",
             "originalPrice": 55000,
             "salePrice": 49500
           }
@@ -1953,15 +1953,15 @@ export const bibleData = {
         "variants": [
           {
             "label": "소합본/천연/지퍼/버건디",
-            "img": "https://chhouse.cafe24.com/web/product/big/202405/a616c2831a3ab073587981625d15d108.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=45833&cate_no=1413&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202405/a616c2831a3ab073587981625d15d108.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=45833&cate_no=1413&display_group=1",
             "originalPrice": 58000,
             "salePrice": 52200
           },
           {
             "label": "소합본/천연/지퍼/네이비",
-            "img": "https://chhouse.cafe24.com/web/product/big/202405/8362aea493376ef2aee1d7c48ae9bf6e.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=45832&cate_no=1413&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202405/8362aea493376ef2aee1d7c48ae9bf6e.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=45832&cate_no=1413&display_group=1",
             "originalPrice": 58000,
             "salePrice": 52200
           }
@@ -1975,29 +1975,29 @@ export const bibleData = {
         "variants": [
           {
             "label": "대합본/천연/지퍼/초코",
-            "img": "https://chhouse.cafe24.com/web/product/big/202404/7439805c449d9b7defadb242927743e4.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=47320&cate_no=1402&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202404/7439805c449d9b7defadb242927743e4.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=47320&cate_no=1402&display_group=1",
             "originalPrice": 79000,
             "salePrice": 71100
           },
           {
             "label": "대합본/천연/지퍼/버건디",
-            "img": "https://chhouse.cafe24.com/web/product/big/202404/293873478fbe765df5801ad67ab3298a.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=47319&cate_no=1402&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202404/293873478fbe765df5801ad67ab3298a.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=47319&cate_no=1402&display_group=1",
             "originalPrice": 79000,
             "salePrice": 71100
           },
           {
             "label": "대합본/PU/지퍼/블루블랙",
-            "img": "https://chhouse.cafe24.com/web/product/big/202405/da92f9980ef3dd754a1cc23cb999f465.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=44723&cate_no=1402&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202405/da92f9980ef3dd754a1cc23cb999f465.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=44723&cate_no=1402&display_group=1",
             "originalPrice": 62000,
             "salePrice": 55800
           },
           {
             "label": "대합본/PU/지퍼/카멜브라운",
-            "img": "https://chhouse.cafe24.com/web/product/big/202405/35f99973e0236e115ebb04b77fd6cf5b.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=44722&cate_no=1402&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202405/35f99973e0236e115ebb04b77fd6cf5b.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=44722&cate_no=1402&display_group=1",
             "originalPrice": 62000,
             "salePrice": 55800
           }
@@ -2011,22 +2011,22 @@ export const bibleData = {
         "variants": [
           {
             "label": "특미니합본/PU/지퍼/민트",
-            "img": "https://chhouse.cafe24.com/web/product/big/202603/23d914ab3b8c910149dbaf7ef8afefcd.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=56934&cate_no=1400&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202603/23d914ab3b8c910149dbaf7ef8afefcd.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=56934&cate_no=1400&display_group=1",
             "originalPrice": 28000,
             "salePrice": 25200
           },
           {
             "label": "특미니합본/PU/지퍼/베이지",
-            "img": "https://chhouse.cafe24.com/web/product/big/202603/009766c938c2833fdca9ff4a0c043469.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=56933&cate_no=1400&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202603/009766c938c2833fdca9ff4a0c043469.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=56933&cate_no=1400&display_group=1",
             "originalPrice": 28000,
             "salePrice": 25200
           },
           {
             "label": "특미니합본/PU/지퍼/군인",
-            "img": "https://chhouse.cafe24.com/web/product/big/202506/99754c7b4bc27c49d84ead8d87bd24b7.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=54166&cate_no=1400&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202506/99754c7b4bc27c49d84ead8d87bd24b7.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=54166&cate_no=1400&display_group=1",
             "originalPrice": 29000,
             "salePrice": 26100
           }
@@ -2754,22 +2754,22 @@ export const bibleData = {
         "variants": [
           {
             "label": "중합본/PU/지퍼/황갈색",
-            "img": "https://chhouse.cafe24.com/web/product/big/202405/c318b200d83cb98d5f73d07f4cb4e062.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=42829&cate_no=1393&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202405/c318b200d83cb98d5f73d07f4cb4e062.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=42829&cate_no=1393&display_group=1",
             "originalPrice": 40000,
             "salePrice": 36000
           },
           {
             "label": "중합본/PU/지퍼/진갈색",
-            "img": "https://chhouse.cafe24.com/web/product/big/202405/65eda45ae5171c3f264a832dc4999afb.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=42828&cate_no=1393&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202405/65eda45ae5171c3f264a832dc4999afb.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=42828&cate_no=1393&display_group=1",
             "originalPrice": 40000,
             "salePrice": 36000
           },
           {
             "label": "중합본/PU/지퍼/진청색",
-            "img": "https://chhouse.cafe24.com/web/product/big/202405/5102004daef0073a8b7e6f39b73788ad.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=42830&cate_no=1393&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202405/5102004daef0073a8b7e6f39b73788ad.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=42830&cate_no=1393&display_group=1",
             "originalPrice": 40000,
             "salePrice": 36000
           }
@@ -2783,29 +2783,29 @@ export const bibleData = {
         "variants": [
           {
             "label": "특미니합본/PU/지퍼/모카무스",
-            "img": "https://chhouse.cafe24.com/web/product/big/202601/6d017950082a1e5fefa0272510dc4952.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=56538&cate_no=1452&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202601/6d017950082a1e5fefa0272510dc4952.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=56538&cate_no=1452&display_group=1",
             "originalPrice": 32000,
             "salePrice": 28800
           },
           {
             "label": "특미니합본/PU/지퍼/네이비",
-            "img": "https://chhouse.cafe24.com/web/product/big/202601/35fe15c583b4245561a6108244a9c818.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=56537&cate_no=1452&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202601/35fe15c583b4245561a6108244a9c818.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=56537&cate_no=1452&display_group=1",
             "originalPrice": 32000,
             "salePrice": 28800
           },
           {
             "label": "특미니합본/PU/지퍼/베이지",
-            "img": "https://chhouse.cafe24.com/web/product/big/202601/6fa323de1e49cf3d8ac20ab06ad3f153.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=56540&cate_no=1452&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202601/6fa323de1e49cf3d8ac20ab06ad3f153.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=56540&cate_no=1452&display_group=1",
             "originalPrice": 32000,
             "salePrice": 28800
           },
           {
             "label": "특미니합본/PU/지퍼/민트블루",
-            "img": "https://chhouse.cafe24.com/web/product/big/202601/417964cc2e7dfaa691e6df48e7b9a984.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=56539&cate_no=1452&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202601/417964cc2e7dfaa691e6df48e7b9a984.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=56539&cate_no=1452&display_group=1",
             "originalPrice": 32000,
             "salePrice": 28800
           }
@@ -2819,29 +2819,29 @@ export const bibleData = {
         "variants": [
           {
             "label": "초미니합본/PU/밴드형/샌드베이지",
-            "img": "https://chhouse.cafe24.com/web/product/big/202602/8e4ae1f259c5f1b1a71a1e521fc85dff.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=56767&cate_no=1392&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202602/8e4ae1f259c5f1b1a71a1e521fc85dff.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=56767&cate_no=1392&display_group=1",
             "originalPrice": 30000,
             "salePrice": 27000
           },
           {
             "label": "초미니합본/PU/밴드형/로즈핑크",
-            "img": "https://chhouse.cafe24.com/web/product/big/202602/eed9eab338e331440d34892fa6b8c8d4.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=56766&cate_no=1392&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202602/eed9eab338e331440d34892fa6b8c8d4.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=56766&cate_no=1392&display_group=1",
             "originalPrice": 30000,
             "salePrice": 27000
           },
           {
             "label": "초미니합본/PU/밴드형/라이트네이비",
-            "img": "https://chhouse.cafe24.com/web/product/big/202602/dc8e0fddfacca0968b8fb2f31e553919.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=56765&cate_no=1392&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202602/dc8e0fddfacca0968b8fb2f31e553919.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=56765&cate_no=1392&display_group=1",
             "originalPrice": 30000,
             "salePrice": 27000
           },
           {
             "label": "초미니합본/PU/밴드형/다크그레이",
-            "img": "https://chhouse.cafe24.com/web/product/big/202602/c23db938c221f219b36dc015a3025951.jpg",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=56764&cate_no=1392&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202602/c23db938c221f219b36dc015a3025951.jpg",
+            "url": "https://chhouse.kr/product/detail.html?product_no=56764&cate_no=1392&display_group=1",
             "originalPrice": 30000,
             "salePrice": 27000
           }
@@ -3226,29 +3226,29 @@ export const bibleData = {
         "variants": [
           {
             "label": "중단본/PU/지퍼/다크그레이",
-            "img": "https://chhouse.cafe24.com/web/product/big/202605/9a19b53adab63182ae0ec8e22e38ee03.png",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=57553&cate_no=2460&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202605/9a19b53adab63182ae0ec8e22e38ee03.png",
+            "url": "https://chhouse.kr/product/detail.html?product_no=57553&cate_no=2460&display_group=1",
             "originalPrice": 56000,
             "salePrice": 50400
           },
           {
             "label": "중단본/PU/지퍼/빈티지레드",
-            "img": "https://chhouse.cafe24.com/web/product/big/202605/ebe5ea249bdefee4331bfc9ee86c6137.png",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=57552&cate_no=2460&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202605/ebe5ea249bdefee4331bfc9ee86c6137.png",
+            "url": "https://chhouse.kr/product/detail.html?product_no=57552&cate_no=2460&display_group=1",
             "originalPrice": 56000,
             "salePrice": 50400
           },
           {
             "label": "중단본/PU/지퍼/네이비",
-            "img": "https://chhouse.cafe24.com/web/product/big/202605/150f5442829a672906c0c8b3d449f8c9.png",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=57551&cate_no=2460&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202605/150f5442829a672906c0c8b3d449f8c9.png",
+            "url": "https://chhouse.kr/product/detail.html?product_no=57551&cate_no=2460&display_group=1",
             "originalPrice": 56000,
             "salePrice": 50400
           },
           {
             "label": "중단본/PU/지퍼/카멜브라운",
-            "img": "https://chhouse.cafe24.com/web/product/big/202605/1c283b8c7279e7d675e4b2e248b9d2c8.png",
-            "url": "https://chhouse.cafe24.com/product/detail.html?product_no=57550&cate_no=2460&display_group=1",
+            "img": "https://chhouse.kr/web/product/big/202605/1c283b8c7279e7d675e4b2e248b9d2c8.png",
+            "url": "https://chhouse.kr/product/detail.html?product_no=57550&cate_no=2460&display_group=1",
             "originalPrice": 56000,
             "salePrice": 50400
           }

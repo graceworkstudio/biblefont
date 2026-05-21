@@ -308,22 +308,35 @@ const App = () => {
       } catch (e) {}
 
       // Cafe24 장바구니 필수 파라미터인 item_code 추출
-      // ⚠️ 브라우저 iframe에서 직접 chhouse.kr fetch 시 CORS 차단 → Firebase Functions 프록시 사용
+      // 1차 시도: same-origin 직접 fetch (chhouse.kr 내 iframe에서 실행 시 작동)
+      // 2차 시도: Firebase Functions 프록시 (CORS 이슈 발생 시 우회)
       let itemCode = null;
       try {
-        const proxyUrl = `https://biblefont.web.app/api/getItemCode?url=${encodeURIComponent(item.variantUrl)}`;
-        const res = await fetch(proxyUrl);
+        const res = await fetch(item.variantUrl, { mode: 'same-origin' });
         if (res.ok) {
-          const json = await res.json();
-          if (json.itemCode) {
-            itemCode = json.itemCode;
-          }
+          const html = await res.text();
+          const match = html.match(/item_code\s*[:=]\s*['"]([^'"]+)['"]/);
+          if (match) itemCode = match[1];
         }
       } catch (e) {
-        console.error('Failed to fetch item_code via proxy', e);
+        // same-origin fetch 실패 시 Firebase Functions 프록시로 fallback
       }
 
-      // item_code를 못 가져온 경우 로그 출력 (장바구니 담기 실패 원인이 될 수 있음)
+      // Fallback: Firebase Functions 프록시
+      if (!itemCode) {
+        try {
+          const proxyUrl = `https://biblefont.web.app/api/getItemCode?url=${encodeURIComponent(item.variantUrl)}`;
+          const res = await fetch(proxyUrl);
+          if (res.ok) {
+            const json = await res.json();
+            if (json.itemCode) itemCode = json.itemCode;
+          }
+        } catch (e) {
+          console.error('Failed to fetch item_code via proxy', e);
+        }
+      }
+
+      // item_code를 못 가져온 경우 로그 출력
       if (!itemCode) {
         console.warn(`[BibleZoom] item_code not found for product_no=${productNo}, URL=${item.variantUrl}`);
       }
