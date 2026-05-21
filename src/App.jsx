@@ -294,48 +294,64 @@ const App = () => {
     }, 300);
   };
 
-  // 공통: Cafe24 장바구니 조용히 담기 (부모 창의 네이티브 AJAX/Fetch 사용)
+  // 공통: Cafe24 장바구니 조용히 담기 (부모 창의 숨겨진 Form 전송)
   const quietlyAddToCart = async (productNo, domain) => {
     return new Promise((resolve) => {
-      const url = `${domain}/exec/front/order/basket/`;
-      const data = {
-        product_no: productNo,
-        quantity: 1,
-        basket_type: 'A0000'
-      };
-
       try {
-        // 1순위: 부모 창의 jQuery AJAX 사용 (Cafe24 완벽 호환, 쿠키 100% 유지)
-        if (window.parent && window.parent.$ && window.parent.$.ajax) {
-          window.parent.$.ajax({
-            url: url,
-            type: 'POST',
-            data: data,
-            success: function() { resolve(); },
-            error: function() { resolve(); }
-          });
+        if (window.parent && window.parent !== window && window.parent.document) {
+          const iframeId = `bz-cart-iframe-${productNo}-${Date.now()}`;
+          const iframe = window.parent.document.createElement('iframe');
+          iframe.name = iframeId;
+          iframe.style.display = 'none';
+          window.parent.document.body.appendChild(iframe);
+
+          const form = window.parent.document.createElement('form');
+          form.method = 'POST';
+          form.action = `${domain}/exec/front/order/basket/`;
+          form.target = iframeId;
+
+          const data = {
+            product_no: productNo,
+            quantity: 1,
+            basket_type: 'A0000',
+            delvtype: 'A',
+            is_individual_buy: 'F'
+          };
+
+          for (const key in data) {
+            const input = window.parent.document.createElement('input');
+            input.type = 'hidden';
+            input.name = key;
+            input.value = data[key];
+            form.appendChild(input);
+          }
+
+          window.parent.document.body.appendChild(form);
+          form.submit();
+
+          setTimeout(() => {
+            try {
+              form.remove();
+              iframe.remove();
+            } catch(e) {}
+            resolve();
+          }, 800);
           return;
         }
-      } catch(e) {}
+      } catch (e) {
+        console.error('Parent form append failed', e);
+      }
 
+      // Fallback: 아이프레임 내부에서 fetch (단, 크로스도메인일 경우 쿠키 이슈 발생 가능)
       try {
-        // 2순위: 부모 창의 fetch 사용
-        const body = new URLSearchParams(data);
-        if (window.parent && window.parent.fetch) {
-          window.parent.fetch(url, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: body.toString(),
-            credentials: 'include'
-          }).then(() => resolve()).catch(() => resolve());
-          return;
-        }
-      } catch(e) {}
-
-      // 3순위: 순수 fetch 사용 (현재 아이프레임)
-      try {
-        const body = new URLSearchParams(data);
-        fetch(url, {
+        const body = new URLSearchParams({
+            product_no: productNo,
+            quantity: 1,
+            basket_type: 'A0000',
+            delvtype: 'A',
+            is_individual_buy: 'F'
+        });
+        fetch(`${domain}/exec/front/order/basket/`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
           body: body.toString(),
@@ -1986,7 +2002,7 @@ const App = () => {
                           </button>
                           <a 
                             href={v.url} 
-                            target="_blank" 
+                            target="_parent" 
                             rel="noopener noreferrer" 
                             className="flex items-center justify-center bg-orange-500 hover:bg-orange-600 text-white font-black py-2 md:py-2.5 rounded-lg md:rounded-xl text-center text-[10px] md:text-xs px-0.5 md:px-2 whitespace-nowrap tracking-tighter transition-all shadow-xs cursor-pointer w-full"
                           >
@@ -2060,7 +2076,7 @@ const App = () => {
                             </button>
                             <a 
                               href={v.url} 
-                              target="_blank" 
+                              target="_parent" 
                               rel="noopener noreferrer" 
                               className="flex items-center justify-center bg-orange-500 hover:bg-orange-600 text-white font-bold py-1.5 rounded-lg text-center text-[9px] md:text-[11px] px-0.5 md:px-2 whitespace-nowrap tracking-tighter transition-all cursor-pointer w-full"
                             >
