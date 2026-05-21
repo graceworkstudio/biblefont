@@ -1,35 +1,32 @@
 import urllib.request
-import re
+from html.parser import HTMLParser
+
+class FormParser(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.in_form = False
+        self.inputs = []
+
+    def handle_starttag(self, tag, attrs):
+        attr_dict = dict(attrs)
+        if tag == "form" and attr_dict.get("id") == "frm_image_zoom":
+            self.in_form = True
+        elif tag == "input" and self.in_form:
+            self.inputs.append(attr_dict)
+
+    def handle_endtag(self, tag):
+        if tag == "form" and self.in_form:
+            self.in_form = False
 
 url = "https://chhouse.kr/product/detail.html?product_no=53022"
-req = urllib.request.Request(
-    url, 
-    headers={'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'}
-)
-
+req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
 try:
     with urllib.request.urlopen(req) as response:
         html = response.read().decode('utf-8')
-    
-    print("Found forms in the product detail HTML:")
-    # Look for form tags
-    forms = re.findall(r'<form[^>]*action="[^"]*basket[^"]*"[^>]*>(.*?)</form>', html, re.DOTALL)
-    if not forms:
-        forms = re.findall(r'<form[^>]*name="[Pp]rdDetailForm"[^>]*>(.*?)</form>', html, re.DOTALL)
         
-    for idx, form_content in enumerate(forms[:3]):
-        print(f"--- Form {idx+1} inputs ---")
-        inputs = re.findall(r'<input[^>]*>', form_content)
-        for inp in inputs:
-            # print only names and values
-            name = re.search(r'name="([^"]*)"', inp)
-            val = re.search(r'value="([^"]*)"', inp)
-            type_attr = re.search(r'type="([^"]*)"', inp)
-            name_str = name.group(1) if name else ""
-            val_str = val.group(1) if val else ""
-            type_str = type_attr.group(1) if type_attr else ""
-            if name_str:
-                print(f"Type: {type_str:8} | Name: {name_str:25} | Value: {val_str}")
-                
+    parser = FormParser()
+    parser.feed(html)
+    for inp in parser.inputs:
+        print(f"Name: {inp.get('name', '')}, Value: {inp.get('value', '')}")
 except Exception as e:
-    print(f"Error: {e}")
+    print(e)
