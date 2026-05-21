@@ -294,9 +294,32 @@ const App = () => {
     }, 300);
   };
 
-  // 공통: Cafe24 장바구니 조용히 담기 (부모 창의 숨겨진 Form 전송)
-  const quietlyAddToCart = async (productNo, domain) => {
-    return new Promise((resolve) => {
+  // 공통: Cafe24 장바구니 조용히 담기 (부모 창의 숨겨진 Form 전송 + 동적 item_code 추출)
+  const quietlyAddToCart = async (item) => {
+    return new Promise(async (resolve) => {
+      const matchProductNo = item.variantUrl.match(/[?&]product_no=(\d+)/);
+      const productNo = matchProductNo ? matchProductNo[1] : null;
+      if (!productNo) return resolve();
+
+      let domain = 'https://chhouse.kr';
+      try {
+        const parsed = new URL(item.variantUrl);
+        domain = `${parsed.protocol}//${parsed.host}`;
+      } catch (e) {}
+
+      // Cafe24 장바구니 필수 파라미터인 item_code 추출
+      let itemCode = null;
+      try {
+        const res = await fetch(item.variantUrl);
+        const html = await res.text();
+        const match = html.match(/item_code\s*[:=]\s*['"]([^'"]+)['"]/);
+        if (match) {
+          itemCode = match[1];
+        }
+      } catch (e) {
+        console.error('Failed to fetch item_code', e);
+      }
+
       try {
         if (window.parent && window.parent !== window && window.parent.document) {
           const iframeId = `bz-cart-iframe-${productNo}-${Date.now()}`;
@@ -317,6 +340,11 @@ const App = () => {
             delvtype: 'A',
             is_individual_buy: 'F'
           };
+
+          // 핵심: Cafe24는 단일상품이라도 item_code가 포함된 selected_item[] 배열을 요구합니다.
+          if (itemCode) {
+            data['selected_item[]'] = `1||${itemCode}`;
+          }
 
           for (const key in data) {
             const input = window.parent.document.createElement('input');
@@ -342,24 +370,8 @@ const App = () => {
         console.error('Parent form append failed', e);
       }
 
-      // Fallback: 아이프레임 내부에서 fetch (단, 크로스도메인일 경우 쿠키 이슈 발생 가능)
-      try {
-        const body = new URLSearchParams({
-            product_no: productNo,
-            quantity: 1,
-            basket_type: 'A0000',
-            delvtype: 'A',
-            is_individual_buy: 'F'
-        });
-        fetch(`${domain}/exec/front/order/basket/`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: body.toString(),
-          credentials: 'include'
-        }).then(() => resolve()).catch(() => resolve());
-      } catch(e) {
-        resolve();
-      }
+      // Fallback
+      resolve();
     });
   };
 
@@ -376,7 +388,7 @@ const App = () => {
       } catch (e) {}
 
       setIsCartSubmitting(true);
-      await quietlyAddToCart(productNo, domain);
+      await quietlyAddToCart(item);
       
       // 장바구니 담기 완료 후 페이지 이동
       setIsCartSubmitting(false);
@@ -421,7 +433,7 @@ const App = () => {
           domain = `${parsed.protocol}//${parsed.host}`;
         } catch(e) {}
 
-        await quietlyAddToCart(productNo, domain);
+        await quietlyAddToCart(item);
       }
     }
 
