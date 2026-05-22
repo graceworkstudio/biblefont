@@ -400,9 +400,10 @@ const App = () => {
   };
 
   // 개별 상품 바로구매 (결제창 직행 불가 -> 상세페이지로 이동)
-  const handleIndividualCheckout = (item) => {
-    if (item && item.variantUrl) {
-      window.open(item.variantUrl, '_blank');
+  const handleIndividualCheckout = (itemOrVariant) => {
+    const targetUrl = itemOrVariant?.variantUrl || itemOrVariant?.url;
+    if (targetUrl) {
+      window.open(targetUrl, '_blank');
     } else {
       showToast('❌ 상품 정보를 찾을 수 없습니다.');
     }
