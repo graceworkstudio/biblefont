@@ -103,6 +103,7 @@ const App = () => {
   const [selectedCartIds, setSelectedCartIds] = useState([]);
   const [isCartSubmitting, setIsCartSubmitting] = useState(false);
   const [submitProgress, setSubmitProgress] = useState({ current: 0, total: 0 });
+  const [isBatchNoticeOpen, setIsBatchNoticeOpen] = useState(false);
 
   // 장바구니 변경 시 선택 목록 동기화 (새로운 추가 상품은 자동 선택)
   
@@ -2466,6 +2467,32 @@ const App = () => {
                 </div>
               </div>
 
+            </div>
+          </div>
+        )}
+
+        {/* 일괄 구매 불가 안내 모달 */}
+        {isBatchNoticeOpen && (
+          <div className="fixed inset-0 z-[7000] bg-slate-900/60 backdrop-blur-md flex items-center justify-center p-4 animate-in fade-in duration-200">
+            <div className="bg-white rounded-2xl shadow-2xl max-w-sm w-full overflow-hidden flex flex-col border border-slate-100 animate-in zoom-in-95 duration-200">
+              <div className="p-5 text-center">
+                <div className="w-12 h-12 bg-orange-100 text-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <AlertCircle size={24} />
+                </div>
+                <h3 className="text-lg font-black text-slate-800 mb-2">일괄 구매 안내</h3>
+                <p className="text-sm text-slate-600 leading-relaxed break-keep">
+                  현재 쇼핑몰 시스템 정책상 여러 상품을 한 번에 결제할 수 없습니다.<br/><br/>
+                  번거로우시겠지만, 관심상품 목록에 있는 <strong>각 상품별 [바로구매 🚀] 버튼</strong>을 눌러 <strong>하나씩 개별 구매</strong>를 진행해 주시길 부탁드립니다.
+                </p>
+              </div>
+              <div className="p-4 bg-slate-50 border-t border-slate-100 flex gap-2">
+                <button 
+                  onClick={() => setIsBatchNoticeOpen(false)}
+                  className="flex-1 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 rounded-xl transition-colors cursor-pointer"
+                >
+                  확인
+                </button>
+              </div>
             </div>
           </div>
         )}
