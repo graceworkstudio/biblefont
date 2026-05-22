@@ -327,16 +327,6 @@ const App = () => {
 
       try {
         if (window.parent && window.parent !== window && window.parent.document) {
-          const iframeId = `bz-cart-iframe-${productNo}-${Date.now()}`;
-          const iframe = window.parent.document.createElement('iframe');
-          iframe.name = iframeId;
-          iframe.style.display = 'none';
-          window.parent.document.body.appendChild(iframe);
-
-          const form = window.parent.document.createElement('form');
-          form.method = 'POST';
-          form.action = `${domain}/exec/front/order/basket/`;
-          form.target = iframeId;
 
           const data = {
             'selected_item[]': itemCode ? `1||${itemCode}` : '',
@@ -361,33 +351,39 @@ const App = () => {
             'is_cultural_tax': 'F'
           };
 
+          // Cafe24 장바구니 서버에 AJAX로 직접 전송 (same-origin 이므로 가능)
+          const params = new URLSearchParams();
           for (const key in data) {
-            if (!data[key]) continue;
-            const input = window.parent.document.createElement('input');
-            input.type = 'hidden';
-            input.name = key;
-            input.value = data[key];
-            form.appendChild(input);
+            if (data[key] !== undefined && data[key] !== null) {
+              params.append(key, data[key]);
+            }
           }
 
-          window.parent.document.body.appendChild(form);
-          form.submit();
+          try {
+            const res = await fetch(`${domain}/exec/front/order/basket/`, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+                'X-Requested-With': 'XMLHttpRequest'
+              },
+              credentials: 'include',
+              body: params.toString()
+            });
 
-          setTimeout(() => {
-            try {
-              form.remove();
-              iframe.remove();
-            } catch(e) {}
-            resolve();
-          }, 800);
-          return;
+            const resultText = await res.text();
+            console.log('[BibleZoom] Cart Response:', resultText);
+          } catch(e) {
+            console.error('[BibleZoom] Cart Fetch Error:', e);
+          }
+          
+          resolve();
+        } else {
+          resolve();
         }
       } catch (e) {
-        console.error('Parent form append failed', e);
+        console.error('Parent cart add failed', e);
+        resolve();
       }
-
-      // Fallback
-      resolve();
     });
   };
 
