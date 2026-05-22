@@ -408,40 +408,24 @@ const App = () => {
     }
   };
 
-  // 다중 상품 일괄 구매 (루프를 돌며 개별 폼 전송)
-  const handleBatchCheckout = async () => {
+  // 다중 상품 일괄 구매 (루프를 돌며 개별 탭으로 열기)
+  const handleBatchCheckout = () => {
     const selectedItems = cartItems.filter(item => selectedCartIds.includes(item.uniqueId));
     if (selectedItems.length === 0) {
       showToast('⚠️ 선택된 성경이 없습니다.');
       return;
     }
 
-    setIsCartSubmitting(true);
-    showToast('🛒 여러 성경을 장바구니에 담고 있습니다. 잠시만 기다려 주세요...');
+    showToast('🛒 선택하신 성경의 상세페이지를 차례대로 엽니다. 팝업 차단을 해제해 주세요!');
 
-    const targetDomain = window.location.origin;
+    // 선택된 상품들을 순차적으로 새 탭으로 열기
+    selectedItems.forEach((item, idx) => {
+      setTimeout(() => {
+        window.open(item.variantUrl, '_blank');
+      }, idx * 350); // 팝업 차단 방지를 위해 약간의 시차를 둠
+    });
 
-    // 선택된 상품들을 순차적으로 장바구니에 담기
-    for (const item of selectedItems) {
-      const productNo = extractProductNo(item.variantUrl);
-
-      if (productNo) {
-        // domain is handled internally by quietlyAddToCart
-
-        await quietlyAddToCart(item);
-      }
-    }
-
-    setIsCartSubmitting(false);
     setIsCartOpen(false);
-
-    // 모든 처리가 끝난 후 부모 창을 장바구니 페이지로 이동
-    const cartUrl = `${targetDomain}/order/basket.html`;
-    if (window.parent && window.parent !== window) {
-      window.parent.location.href = cartUrl;
-    } else {
-      window.location.href = cartUrl;
-    }
   };
 
 
