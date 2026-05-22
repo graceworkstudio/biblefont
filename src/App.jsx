@@ -1992,12 +1992,14 @@ const App = () => {
                           >
                             관심상품담기
                           </button>
-                          <button 
-                            onClick={() => handleIndividualCheckout(v)}
+                          <a 
+                            href={v.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="flex items-center justify-center bg-orange-500 hover:bg-orange-600 text-white font-black py-2 md:py-2.5 rounded-lg md:rounded-xl text-center text-[10px] md:text-xs px-0.5 md:px-2 whitespace-nowrap tracking-tighter transition-all shadow-xs cursor-pointer w-full"
                           >
                             바로구매
-                          </button>
+                          </a>
                         </div>
                       </div>
                     ))}
@@ -2064,12 +2066,14 @@ const App = () => {
                             >
                               관심상품담기
                             </button>
-                            <button 
-                              onClick={() => handleIndividualCheckout(v)}
+                            <a 
+                              href={v.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
                               className="flex items-center justify-center bg-orange-500 hover:bg-orange-600 text-white font-bold py-1.5 rounded-lg text-center text-[9px] md:text-[11px] px-0.5 md:px-2 whitespace-nowrap tracking-tighter transition-all cursor-pointer w-full"
                             >
                               바로구매
-                            </button>
+                            </a>
                           </div>
                         </div>
                       ))}
@@ -2221,8 +2225,10 @@ const App = () => {
                           </a>
 
                           {/* 개별 바로구매 버튼 */}
-                          <button 
-                            onClick={() => handleIndividualCheckout(item)}
+                          <a 
+                            href={item.variantUrl || item.url || '#'}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className={`bg-orange-500 hover:bg-orange-600 text-white font-black rounded-lg transition-all flex items-center shrink-0 cursor-pointer border-0 shadow-xs shadow-orange-500/10 ${
                               uiSize === 'small' ? 'px-2 py-1 text-[9px] md:text-[10px]' :
                               uiSize === 'large' ? 'px-3 py-2 text-[11px] md:text-[13px]' :
@@ -2231,7 +2237,7 @@ const App = () => {
                             title="바로구매"
                           >
                             바로구매 🚀
-                          </button>
+                          </a>
 
                           {/* 개별 삭제 버튼 */}
                           <button 
