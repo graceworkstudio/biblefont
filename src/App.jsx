@@ -305,7 +305,6 @@ const App = () => {
     return null;
   };
 
-  // 공통: Cafe24 장바구니 조용히 담기 (부모 창의 숨겨진 Form 전송 + item_code 추출)
   const quietlyAddToCart = (item) => {
     return new Promise(async (resolve) => {
       const productNo = extractProductNo(item.variantUrl);
@@ -346,41 +345,52 @@ const App = () => {
         const iframe = document.createElement('iframe');
         iframe.name = iframeId;
         iframe.style.display = 'none';
-        document.body.appendChild(iframe);
-
-        const form = document.createElement('form');
-        form.method = 'POST';
-        form.action = `${domain}/exec/front/order/basket/`;
-        form.target = iframeId;
-
-        for (const key in data) {
-          if (data[key] !== undefined && data[key] !== null) {
-            const input = document.createElement('input');
-            input.type = 'hidden';
-            input.name = key;
-            input.value = data[key];
-            form.appendChild(input);
-          }
-        }
-
-        let resolved = false;
-        const finish = () => {
-          if (!resolved) {
-            resolved = true;
+        
+        // 1단계: 실제 상품 상세 페이지를 iframe에 로드하여 Referer를 맞춤
+        iframe.src = `${domain}/product/detail.html?product_no=${productNo}`;
+        
+        let loadCount = 0;
+        iframe.onload = () => {
+          loadCount++;
+          if (loadCount === 1) {
+            // 상세 페이지 로드 완료 -> iframe 내부에 폼을 생성하여 전송!
+            try {
+              const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+              const form = iframeDoc.createElement('form');
+              form.method = 'POST';
+              form.action = `/exec/front/order/basket/`;
+              
+              for (const key in data) {
+                if (data[key] !== undefined && data[key] !== null) {
+                  const input = iframeDoc.createElement('input');
+                  input.type = 'hidden';
+                  input.name = key;
+                  input.value = data[key];
+                  form.appendChild(input);
+                }
+              }
+              
+              iframeDoc.body.appendChild(form);
+              form.submit(); // 이 전송의 Referer는 상세 페이지가 됨 (카페24 뚫림)
+            } catch (err) {
+              console.error('Iframe CORS block. You must run this on chhouse.kr', err);
+              resolve();
+            }
+          } else if (loadCount === 2) {
+            // 장바구니 전송 응답 완료
             setTimeout(() => {
               if (iframe.parentNode) iframe.parentNode.removeChild(iframe);
-              if (form.parentNode) form.parentNode.removeChild(form);
             }, 500);
             resolve();
           }
         };
 
-        iframe.onload = finish;
-        // 최대 2.5초 대기 후 강제 완료 (네트워크 지연 대비)
-        setTimeout(finish, 2500);
-
-        document.body.appendChild(form);
-        form.submit();
+        document.body.appendChild(iframe);
+        
+        // 타임아웃 4초 (상품페이지 로드 2초 + 장바구니 처리 2초 감안)
+        setTimeout(() => {
+          resolve();
+        }, 4000);
 
       } catch (e) {
         console.error('Parent cart add failed', e);
