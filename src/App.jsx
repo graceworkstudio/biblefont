@@ -399,59 +399,13 @@ const App = () => {
     });
   };
 
-  // 개별 상품 바로구매 (바로 결제창으로 넘기기)
+  // 개별 상품 바로구매 (결제창 직행 불가 -> 상세페이지로 이동)
   const handleIndividualCheckout = (item) => {
-    const productNo = extractProductNo(item.variantUrl);
-    if (!productNo) {
+    if (item && item.variantUrl) {
+      window.open(item.variantUrl, '_blank');
+    } else {
       showToast('❌ 상품 정보를 찾을 수 없습니다.');
-      return;
     }
-
-    const domain = window.location.origin;
-    let itemCode = item.itemCode;
-
-    const data = {
-      'selected_item[]': itemCode ? `1||${itemCode}` : '',
-      'relation_product': 'yes',
-      'is_individual': 'F',
-      'product_no': productNo,
-      'product_name': `${item.model || ''} ${item.label || ''}`.trim(),
-      'main_cate_no': '0',
-      'display_group': '0',
-      'option_type': 'T',
-      'product_min': '1',
-      'command': 'order', // 장바구니 말고 바로 주문
-      'has_option': 'F',
-      'product_price': item.salePrice ? String(item.salePrice) : '0',
-      'delvType': 'A',
-      'redirect': '2',
-      'product_max_type': 'T',
-      'product_max': '9999',
-      'quantity': '1',
-      'is_direct_buy': 'T', // 직접 구매
-      'is_cultural_tax': 'F'
-    };
-
-    const form = document.createElement('form');
-    form.method = 'POST';
-    form.action = `${domain}/exec/front/order/basket/`;
-    
-    if (window.parent && window.parent !== window) {
-      form.target = '_parent';
-    }
-
-    for (const key in data) {
-      if (data[key] !== undefined && data[key] !== null) {
-        const input = document.createElement('input');
-        input.type = 'hidden';
-        input.name = key;
-        input.value = data[key];
-        form.appendChild(input);
-      }
-    }
-
-    document.body.appendChild(form);
-    form.submit();
   };
 
   // 다중 상품 일괄 구매 (루프를 돌며 개별 폼 전송)
