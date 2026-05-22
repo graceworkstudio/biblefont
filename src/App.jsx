@@ -2171,7 +2171,7 @@ const App = () => {
               onClick={e => e.stopPropagation()}
             >
               {/* Drawer Header */}
-              <div className="px-6 py-5 border-b border-slate-100 flex justify-between items-center bg-slate-50/50">
+              <div className="px-6 py-5 border-b border-slate-100 flex justify-between items-center bg-slate-50/50 shrink-0">
                 <div className="flex items-center gap-2">
                   <ShoppingCart className="text-orange-500" size={22} />
                   <h3 className="text-base md:text-lg font-black text-slate-800">관심 성경 목록</h3>
@@ -2183,7 +2183,7 @@ const App = () => {
               </div>
 
               {/* Drawer Content */}
-              <div className="flex-1 overflow-y-auto pr-2 pl-6 py-6 pretty-scrollbar space-y-4">
+              <div className="flex-1 overflow-y-auto pr-2 pl-6 py-6 pretty-scrollbar space-y-4 min-h-0">
                 {cartItems.length > 0 ? (
                   <>
                     {/* 전체 선택 바 */}
@@ -2304,7 +2304,7 @@ const App = () => {
 
               {/* Drawer Footer */}
               {cartItems.length > 0 && (
-                <div className="p-6 pb-12 border-t border-slate-100 bg-slate-50/50 space-y-4">
+                <div className="p-6 pb-12 border-t border-slate-100 bg-slate-50/50 space-y-4 shrink-0">
                   <div className="flex justify-between items-baseline">
                     <span className="text-xs font-bold text-slate-500">선택한 성경 총 합계</span>
                     <div className="text-right">
