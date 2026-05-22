@@ -409,7 +409,7 @@ const App = () => {
     }
   };
 
-  // 다중 상품 일괄 구매 (루프를 돌며 개별 탭으로 열기)
+  // 다중 상품 일괄 구매 (안내 팝업 띄우기)
   const handleBatchCheckout = () => {
     const selectedItems = cartItems.filter(item => selectedCartIds.includes(item.uniqueId));
     if (selectedItems.length === 0) {
@@ -417,16 +417,8 @@ const App = () => {
       return;
     }
 
-    showToast('🛒 선택하신 성경의 상세페이지를 차례대로 엽니다. 팝업 차단을 해제해 주세요!');
-
-    // 선택된 상품들을 순차적으로 새 탭으로 열기
-    selectedItems.forEach((item, idx) => {
-      setTimeout(() => {
-        window.open(item.variantUrl, '_blank');
-      }, idx * 350); // 팝업 차단 방지를 위해 약간의 시차를 둠
-    });
-
-    setIsCartOpen(false);
+    // 새 탭이 여러 개 열리면 불편하므로 안내 모달을 띄움
+    setIsBatchNoticeOpen(true);
   };
 
 
