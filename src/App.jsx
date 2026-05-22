@@ -106,7 +106,21 @@ const App = () => {
   const [isBatchNoticeOpen, setIsBatchNoticeOpen] = useState(false);
 
   // 장바구니 변경 시 선택 목록 동기화 (새로운 추가 상품은 자동 선택)
-  
+  useEffect(() => {
+    setSelectedCartIds(prev => {
+      const newIds = cartItems.filter(item => !prev.includes(item.uniqueId)).map(i => i.uniqueId);
+      if (newIds.length > 0) {
+        return [...prev, ...newIds];
+      }
+      // 삭제된 아이템 제거
+      const validIds = prev.filter(id => cartItems.some(i => i.uniqueId === id));
+      if (validIds.length !== prev.length) {
+        return validIds;
+      }
+      return prev;
+    });
+  }, [cartItems]);
+
   // iframe 스크롤 추적을 위한 고성능 ref 시스템
   const fixedRefs = useRef({ toast: null, cartBtn: null, drawer: null });
 
