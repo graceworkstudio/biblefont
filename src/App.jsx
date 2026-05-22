@@ -122,7 +122,15 @@ const App = () => {
   }, [cartItems]);
 
   // iframe 스크롤 추적을 위한 고성능 ref 시스템
-  const fixedRefs = useRef({ toast: null, cartBtn: null, drawer: null });
+  const fixedRefs = useRef({ 
+    toast: null, 
+    cartBtn: null, 
+    drawer: null, 
+    updateNotice: null, 
+    productDetailModal: null, 
+    compareModal: null, 
+    batchNotice: null 
+  });
 
   const setFixedRef = useCallback((key) => {
     return (el) => {
@@ -160,12 +168,21 @@ const App = () => {
             fixedRefs.current.cartBtn.style.top = `${topOffset + windowHeight - 90}px`;
             fixedRefs.current.cartBtn.style.bottom = 'auto';
           }
-          if (fixedRefs.current.drawer) {
-            fixedRefs.current.drawer.style.position = 'absolute';
-            fixedRefs.current.drawer.style.top = `${topOffset}px`;
-            fixedRefs.current.drawer.style.height = `${windowHeight}px`;
-            fixedRefs.current.drawer.style.bottom = 'auto';
-          }
+          
+          const applyModalStyle = (el) => {
+            if (el) {
+              el.style.position = 'absolute';
+              el.style.top = `${topOffset}px`;
+              el.style.height = `${windowHeight}px`;
+              el.style.bottom = 'auto';
+            }
+          };
+
+          applyModalStyle(fixedRefs.current.drawer);
+          applyModalStyle(fixedRefs.current.updateNotice);
+          applyModalStyle(fixedRefs.current.productDetailModal);
+          applyModalStyle(fixedRefs.current.compareModal);
+          applyModalStyle(fixedRefs.current.batchNotice);
         } catch(e) {}
       };
 
@@ -1064,7 +1081,7 @@ const App = () => {
     <div id="bz-main-container" className={`bg-slate-50 p-1 md:p-8 text-slate-900 font-sans ui-font-zoom-${uiSize}`}>
       <div className="max-w-7xl mx-auto bg-white rounded-2xl shadow-xl border border-slate-200 relative">
         {showUpdateNotice && (
-          <div className="fixed inset-0 z-[5000] bg-slate-900/60 backdrop-blur-sm flex items-start justify-center p-2 pt-4 md:pt-10">
+          <div ref={setFixedRef('updateNotice')} className="fixed inset-0 z-[5000] bg-slate-900/60 backdrop-blur-sm flex items-start justify-center p-2 pt-4 md:pt-10">
             <div className="bg-white rounded-3xl shadow-2xl max-w-lg w-full overflow-hidden animate-in fade-in slide-in-from-top-4 duration-300">
               <div className="bg-yellow-400 p-4 md:p-6 flex justify-between items-center">
                 <div className="flex items-center gap-3">
@@ -1964,7 +1981,7 @@ const App = () => {
         </div>
 
         {selectedItem && (
-          <div className="fixed inset-0 z-[5000] flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-in fade-in duration-300" onClick={() => setSelectedItem(null)}>
+          <div ref={setFixedRef('productDetailModal')} className="fixed inset-0 z-[5000] flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-in fade-in duration-300" onClick={() => setSelectedItem(null)}>
             <div className="bg-white w-full max-w-2xl rounded-[32px] shadow-2xl overflow-hidden animate-in zoom-in-95 duration-300" onClick={e => e.stopPropagation()}>
               <div className="px-6 md:px-8 py-5 md:py-6 flex justify-between items-center border-b border-slate-100 bg-slate-50/50">
                 <div>
@@ -2280,7 +2297,7 @@ const App = () => {
 
               {/* Drawer Footer */}
               {cartItems.length > 0 && (
-                <div className="p-6 border-t border-slate-100 bg-slate-50/50 space-y-4">
+                <div className="p-6 pb-12 border-t border-slate-100 bg-slate-50/50 space-y-4">
                   <div className="flex justify-between items-baseline">
                     <span className="text-xs font-bold text-slate-500">선택한 성경 총 합계</span>
                     <div className="text-right">
@@ -2342,7 +2359,7 @@ const App = () => {
 
         {/* 선택상품 실물 폰트 크기 비교 모달 */}
         {isCompareOpen && (
-          <div className="fixed inset-0 z-[6000] bg-slate-900/60 backdrop-blur-md flex items-center justify-center p-2 md:p-6 animate-in fade-in duration-200">
+          <div ref={setFixedRef('compareModal')} className="fixed inset-0 z-[6000] bg-slate-900/60 backdrop-blur-md flex items-center justify-center p-2 md:p-6 animate-in fade-in duration-200">
             <div className="bg-white rounded-3xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col border border-slate-100 animate-in zoom-in-95 duration-200">
               
               {/* 모달 헤더 */}
@@ -2498,7 +2515,7 @@ const App = () => {
 
         {/* 일괄 구매 불가 안내 모달 */}
         {isBatchNoticeOpen && (
-          <div className="fixed inset-0 z-[7000] bg-slate-900/60 backdrop-blur-md flex items-center justify-center p-4 animate-in fade-in duration-200">
+          <div ref={setFixedRef('batchNotice')} className="fixed inset-0 z-[7000] bg-slate-900/60 backdrop-blur-md flex items-center justify-center p-4 animate-in fade-in duration-200">
             <div className="bg-white rounded-2xl shadow-2xl max-w-sm w-full overflow-hidden flex flex-col border border-slate-100 animate-in zoom-in-95 duration-200">
               <div className="p-5 text-center">
                 <div className="w-12 h-12 bg-orange-100 text-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
