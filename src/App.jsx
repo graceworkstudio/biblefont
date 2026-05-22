@@ -339,19 +339,30 @@ const App = () => {
           form.target = iframeId;
 
           const data = {
-            product_no: productNo,
-            quantity: 1,
-            basket_type: 'A0000',
-            delvtype: 'A',
-            is_individual_buy: 'F'
+            'selected_item[]': itemCode ? `1||${itemCode}` : '',
+            'relation_product': 'yes',
+            'is_individual': 'F',
+            'product_no': productNo,
+            'product_name': `${item.model || ''} ${item.label || ''}`.trim(),
+            'main_cate_no': '0',
+            'display_group': '0',
+            'option_type': 'T',
+            'product_min': '1',
+            'command': 'add',
+            'has_option': 'F',
+            'product_price': item.salePrice ? String(item.salePrice) : '0',
+            'delvType': 'A',
+            'redirect': '2',
+            'product_max_type': 'T',
+            'product_max': '9999',
+            'basket_type': 'A0000',
+            'quantity': '1',
+            'is_direct_buy': 'F',
+            'is_cultural_tax': 'F'
           };
 
-          // 핵심: Cafe24는 단일상품이라도 item_code가 포함된 selected_item[] 배열을 요구합니다.
-          if (itemCode) {
-            data['selected_item[]'] = `1||${itemCode}`;
-          }
-
           for (const key in data) {
+            if (!data[key]) continue;
             const input = window.parent.document.createElement('input');
             input.type = 'hidden';
             input.name = key;
@@ -427,8 +438,7 @@ const App = () => {
 
     // 선택된 상품들을 순차적으로 장바구니에 담기
     for (const item of selectedItems) {
-      const matchProductNo = item.variantUrl.match(/[?&]product_no=(\d+)/);
-      const productNo = matchProductNo ? matchProductNo[1] : null;
+      const productNo = extractProductNo(item.variantUrl);
 
       if (productNo) {
         let domain = targetDomain;
