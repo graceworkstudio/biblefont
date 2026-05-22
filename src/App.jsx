@@ -153,19 +153,26 @@ const App = () => {
           const iframeRect = frame.getBoundingClientRect();
           const windowHeight = window.parent.innerHeight || window.innerHeight;
           
-          // iframeRect.top 은 부모 뷰포트 상단 대비 iframe 상단의 위치 (스크롤 내릴수록 음수)
-          // 뷰포트의 상단이 iframe 내에서 어디쯤인지 계산 (-iframeRect.top)
-          let topOffset = -iframeRect.top;
-          if (topOffset < 0) topOffset = 0;
+          // 부모 창에서 iframe이 상단 배너 등에 의해 밀려 내려가 있는 경우를 고려하여 높이 계산
+          let topOffset = 0;
+          let visibleHeight = windowHeight;
+          
+          if (iframeRect.top > 0) {
+            topOffset = 0;
+            visibleHeight = windowHeight - iframeRect.top;
+          } else {
+            topOffset = -iframeRect.top;
+            visibleHeight = windowHeight;
+          }
 
           if (fixedRefs.current.toast) {
             fixedRefs.current.toast.style.position = 'absolute';
-            fixedRefs.current.toast.style.top = `${topOffset + windowHeight - 120}px`;
+            fixedRefs.current.toast.style.top = `${topOffset + visibleHeight - 120}px`;
             fixedRefs.current.toast.style.bottom = 'auto';
           }
           if (fixedRefs.current.cartBtn) {
             fixedRefs.current.cartBtn.style.position = 'absolute';
-            fixedRefs.current.cartBtn.style.top = `${topOffset + windowHeight - 90}px`;
+            fixedRefs.current.cartBtn.style.top = `${topOffset + visibleHeight - 90}px`;
             fixedRefs.current.cartBtn.style.bottom = 'auto';
           }
           
@@ -173,7 +180,7 @@ const App = () => {
             if (el) {
               el.style.position = 'absolute';
               el.style.top = `${topOffset}px`;
-              el.style.height = `${windowHeight}px`;
+              el.style.height = `${visibleHeight}px`;
               el.style.bottom = 'auto';
             }
           };
