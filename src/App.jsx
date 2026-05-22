@@ -311,11 +311,7 @@ const App = () => {
       const productNo = extractProductNo(item.variantUrl);
       if (!productNo) return resolve();
 
-      let domain = 'https://chhouse.kr';
-      try {
-        const parsed = new URL(item.variantUrl);
-        domain = `${parsed.protocol}//${parsed.host}`;
-      } catch (e) {}
+      const domain = window.location.origin;
 
       // bibleData.js에 미리 파싱된 itemCode를 우선 사용
       let itemCode = item.itemCode;
@@ -392,11 +388,7 @@ const App = () => {
     const productNo = extractProductNo(item.variantUrl);
 
     if (productNo) {
-      let domain = 'https://chhouse.kr';
-      try {
-        const parsed = new URL(item.variantUrl);
-        domain = `${parsed.protocol}//${parsed.host}`;
-      } catch (e) {}
+      const domain = window.location.origin;
 
       setIsCartSubmitting(true);
       await quietlyAddToCart(item);
@@ -426,22 +418,14 @@ const App = () => {
     setIsCartSubmitting(true);
     showToast('🛒 여러 성경을 장바구니에 담고 있습니다. 잠시만 기다려 주세요...');
 
-    let targetDomain = 'https://chhouse.kr';
-    try {
-      const parsed = new URL(selectedItems[0].variantUrl);
-      targetDomain = `${parsed.protocol}//${parsed.host}`;
-    } catch(e) {}
+    const targetDomain = window.location.origin;
 
     // 선택된 상품들을 순차적으로 장바구니에 담기
     for (const item of selectedItems) {
       const productNo = extractProductNo(item.variantUrl);
 
       if (productNo) {
-        let domain = targetDomain;
-        try {
-          const parsed = new URL(item.variantUrl);
-          domain = `${parsed.protocol}//${parsed.host}`;
-        } catch(e) {}
+        // domain is handled internally by quietlyAddToCart
 
         await quietlyAddToCart(item);
       }
