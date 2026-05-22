@@ -418,7 +418,18 @@ const App = () => {
       return;
     }
 
-    // 새 탭이 여러 개 열리면 불편하므로 안내 모달을 띄움
+    if (selectedItems.length === 1) {
+      // 1개만 선택된 경우, 다중 결제가 아니므로 곧바로 상세페이지 오픈
+      const targetUrl = selectedItems[0].variantUrl || selectedItems[0].url;
+      if (targetUrl) {
+        window.open(targetUrl, '_blank');
+      } else {
+        showToast('❌ 상품 정보를 찾을 수 없습니다.');
+      }
+      return;
+    }
+
+    // 2개 이상일 때만 새 탭 무더기 방지를 위해 안내 모달 띄움
     setIsBatchNoticeOpen(true);
   };
 
