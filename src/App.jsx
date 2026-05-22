@@ -306,76 +306,82 @@ const App = () => {
   };
 
   // 공통: Cafe24 장바구니 조용히 담기 (부모 창의 숨겨진 Form 전송 + item_code 추출)
-  const quietlyAddToCart = async (item) => {
+  const quietlyAddToCart = (item) => {
     return new Promise(async (resolve) => {
       const productNo = extractProductNo(item.variantUrl);
       if (!productNo) return resolve();
 
       const domain = window.location.origin;
 
-      // bibleData.js에 미리 파싱된 itemCode를 우선 사용
       let itemCode = item.itemCode;
-
-      // 만약 데이터에 없다면 로그 출력
       if (!itemCode) {
         console.warn(`[BibleZoom] item_code not found for product_no=${productNo}, URL=${item.variantUrl}`);
       }
 
       try {
-        if (window.parent && window.parent !== window && window.parent.document) {
+        const data = {
+          'selected_item[]': itemCode ? `1||${itemCode}` : '',
+          'relation_product': 'yes',
+          'is_individual': 'F',
+          'product_no': productNo,
+          'product_name': `${item.model || ''} ${item.label || ''}`.trim(),
+          'main_cate_no': '0',
+          'display_group': '0',
+          'option_type': 'T',
+          'product_min': '1',
+          'command': 'add',
+          'has_option': 'F',
+          'product_price': item.salePrice ? String(item.salePrice) : '0',
+          'delvType': 'A',
+          'redirect': '2',
+          'product_max_type': 'T',
+          'product_max': '9999',
+          'basket_type': 'A0000',
+          'quantity': '1',
+          'is_direct_buy': 'F',
+          'is_cultural_tax': 'F'
+        };
 
-          const data = {
-            'selected_item[]': itemCode ? `1||${itemCode}` : '',
-            'relation_product': 'yes',
-            'is_individual': 'F',
-            'product_no': productNo,
-            'product_name': `${item.model || ''} ${item.label || ''}`.trim(),
-            'main_cate_no': '0',
-            'display_group': '0',
-            'option_type': 'T',
-            'product_min': '1',
-            'command': 'add',
-            'has_option': 'F',
-            'product_price': item.salePrice ? String(item.salePrice) : '0',
-            'delvType': 'A',
-            'redirect': '2',
-            'product_max_type': 'T',
-            'product_max': '9999',
-            'basket_type': 'A0000',
-            'quantity': '1',
-            'is_direct_buy': 'F',
-            'is_cultural_tax': 'F'
-          };
+        const iframeId = `bz-cart-iframe-${productNo}-${Date.now()}`;
+        const iframe = document.createElement('iframe');
+        iframe.name = iframeId;
+        iframe.style.display = 'none';
+        document.body.appendChild(iframe);
 
-          // Cafe24 장바구니 서버에 AJAX로 직접 전송 (same-origin 이므로 가능)
-          const params = new URLSearchParams();
-          for (const key in data) {
-            if (data[key] !== undefined && data[key] !== null) {
-              params.append(key, data[key]);
-            }
+        const form = document.createElement('form');
+        form.method = 'POST';
+        form.action = `${domain}/exec/front/order/basket/`;
+        form.target = iframeId;
+
+        for (const key in data) {
+          if (data[key] !== undefined && data[key] !== null) {
+            const input = document.createElement('input');
+            input.type = 'hidden';
+            input.name = key;
+            input.value = data[key];
+            form.appendChild(input);
           }
-
-          try {
-            const res = await fetch(`${domain}/exec/front/order/basket/`, {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
-                'X-Requested-With': 'XMLHttpRequest'
-              },
-              credentials: 'include',
-              body: params.toString()
-            });
-
-            const resultText = await res.text();
-            console.log('[BibleZoom] Cart Response:', resultText);
-          } catch(e) {
-            console.error('[BibleZoom] Cart Fetch Error:', e);
-          }
-          
-          resolve();
-        } else {
-          resolve();
         }
+
+        let resolved = false;
+        const finish = () => {
+          if (!resolved) {
+            resolved = true;
+            setTimeout(() => {
+              if (iframe.parentNode) iframe.parentNode.removeChild(iframe);
+              if (form.parentNode) form.parentNode.removeChild(form);
+            }, 500);
+            resolve();
+          }
+        };
+
+        iframe.onload = finish;
+        // 최대 2.5초 대기 후 강제 완료 (네트워크 지연 대비)
+        setTimeout(finish, 2500);
+
+        document.body.appendChild(form);
+        form.submit();
+
       } catch (e) {
         console.error('Parent cart add failed', e);
         resolve();
