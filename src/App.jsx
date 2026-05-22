@@ -68,6 +68,7 @@ const App = () => {
   const [activeTab, setActiveTab] = useState('A');
   const [selectedType, setSelectedType] = useState('all');
   const [globalScale, setGlobalScale] = useState(1.5);
+  const [hasCalibrated, setHasCalibrated] = useState(false);
   const [showUpdateNotice, setShowUpdateNotice] = useState(false);
   const [showBibleList, setShowBibleList] = useState(false);
   const [isAccordionOpen, setIsAccordionOpen] = useState(false);
@@ -1244,7 +1245,7 @@ const App = () => {
                         max="3.0" 
                         step="0.01" 
                         value={globalScale} 
-                        onChange={(e) => setGlobalScale(parseFloat(e.target.value))} 
+                        onChange={(e) => { setGlobalScale(parseFloat(e.target.value)); setHasCalibrated(true); }} 
                         className="orange-slider absolute top-0 left-0 w-full h-full opacity-0 z-20 cursor-pointer"
                     />
                     <div 
@@ -2391,7 +2392,8 @@ const App = () => {
               {/* 모달 바디 (스크롤 영역) */}
               <div className="flex-1 overflow-y-auto p-4 md:p-6 space-y-4 bg-slate-50/30">
                 
-                {/* 캘리브레이션/화면조정 권장 안내 배너 */}
+                {/* 캘리브레이션/화면조정 권장 안내 배너 (측정하지 않은 경우에만 표시) */}
+                {!hasCalibrated && (
                 <div className="bg-orange-50 border border-orange-100 rounded-2xl p-4 md:p-5 flex flex-col gap-3 md:gap-4 items-center md:flex-row md:justify-between shadow-xs">
                   <div className="flex gap-3 items-start w-full">
                     <span className="text-xl md:text-2xl shrink-0 mt-0.5">💡</span>
@@ -2408,6 +2410,7 @@ const App = () => {
                     지금 화면 비율 조절하기 📏
                   </button>
                 </div>
+                )}
 
                 {cartItems
                   .filter(item => selectedCartIds.includes(item.uniqueId))
