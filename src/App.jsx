@@ -2053,14 +2053,12 @@ const App = () => {
                           >
                             관심상품담기
                           </button>
-                          <a 
-                            href={v.url} 
-                            target="_parent" 
-                            rel="noopener noreferrer" 
+                          <button 
+                            onClick={() => handleIndividualCheckout(v)}
                             className="flex items-center justify-center bg-orange-500 hover:bg-orange-600 text-white font-black py-2 md:py-2.5 rounded-lg md:rounded-xl text-center text-[10px] md:text-xs px-0.5 md:px-2 whitespace-nowrap tracking-tighter transition-all shadow-xs cursor-pointer w-full"
                           >
                             바로구매
-                          </a>
+                          </button>
                         </div>
                       </div>
                     ))}
@@ -2127,14 +2125,12 @@ const App = () => {
                             >
                               관심상품담기
                             </button>
-                            <a 
-                              href={v.url} 
-                              target="_parent" 
-                              rel="noopener noreferrer" 
+                            <button 
+                              onClick={() => handleIndividualCheckout(v)}
                               className="flex items-center justify-center bg-orange-500 hover:bg-orange-600 text-white font-bold py-1.5 rounded-lg text-center text-[9px] md:text-[11px] px-0.5 md:px-2 whitespace-nowrap tracking-tighter transition-all cursor-pointer w-full"
                             >
                               바로구매
-                            </a>
+                            </button>
                           </div>
                         </div>
                       ))}
