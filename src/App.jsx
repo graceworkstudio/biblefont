@@ -1866,6 +1866,8 @@ const App = () => {
               )}
             </tbody>
           </table>
+        </div>
+        
         <div className="p-6 md:p-8 bg-black/5 border-t border-stone-200">
           <div className="flex items-start gap-4 text-slate-600 leading-snug">
             <AlertCircle className="mt-0.5 shrink-0 text-slate-500" size={18} />
@@ -1874,10 +1876,7 @@ const App = () => {
             </div>
           </div>
         </div>
-        
-
-            </div>
-          </div>
+      </div>
         )}
 
         <div className="p-8 bg-gray-50 border-t border-gray-100">
