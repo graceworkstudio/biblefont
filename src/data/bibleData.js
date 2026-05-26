@@ -909,7 +909,7 @@ export const bibleData = {
         "translation": "개역한글",
         "variants": [
           {
-            "label": "특대단본/우피/무지퍼/다크브라운",
+            "label": "특대단본/천연/무지퍼/다크브라운",
             "img": "https://chhouse.kr/web/product/big/202506/0718e57b0beb2748db58dfc050536953.jpg",
             "url": "https://chhouse.kr/product/%EC%B2%9C%EC%97%B0%EC%9A%B0%ED%94%BC-%EA%B0%9C%EC%97%AD%ED%95%9C%EA%B8%80-%EC%97%B4%EB%A6%B0%EB%85%B8%ED%8A%B8%EC%84%B1%EA%B2%BD-%ED%8A%B9%EB%8C%80%EB%8B%A8%EB%B3%B8-%EC%83%89%EC%9D%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EB%8B%A4%ED%81%AC%EB%B8%8C%EB%9D%BC%EC%9A%B4/54208/category/2037/display/1/",
             "itemCode": "NEW_A_열린노트성경_0",
@@ -926,7 +926,7 @@ export const bibleData = {
         "translation": "새번역",
         "variants": [
           {
-            "label": "강대용단본/우피/무지퍼/다크브라운",
+            "label": "강대용단본/천연/무지퍼/다크브라운",
             "img": "https://chhouse.kr/web/product/big/202603/2c5f695810eeedad2849875c6f006a48.jpg",
             "url": "https://chhouse.kr/product/%EC%83%88%EB%B2%88%EC%97%AD-%ED%81%B0%EA%B8%80%EC%84%B1%EA%B2%BD-%EA%B0%95%EB%8C%80%EC%9A%A9-%EB%8B%A8%EB%B3%B8-%EC%9A%B0%ED%94%BC-%EC%83%89%EC%9D%B8-%ED%88%AC%ED%86%A4%EB%B8%8C%EB%9D%BC%EC%9A%B4/57119/category/2453/display/1/",
             "itemCode": "NEW_A_새번역큰글성경_0",
@@ -959,7 +959,7 @@ export const bibleData = {
             "salePrice": 62100
           },
           {
-            "label": "특대단본/우피/무지퍼/다크브라운",
+            "label": "특대단본/천연/무지퍼/다크브라운",
             "img": "https://chhouse.kr/web/product/big/202603/edff0b28bf856a6054d1f3ed760d16db.jpg",
             "url": "https://chhouse.kr/product/%EC%83%88%EB%B2%88%EC%97%AD-%ED%81%B0%EA%B8%80%EC%84%B1%EA%B2%BD-%ED%8A%B9%EB%8C%80-%EB%8B%A8%EB%B3%B8-%EC%9A%B0%ED%94%BC-%EC%83%89%EC%9D%B8-%EB%8B%A4%ED%81%AC%EB%B8%8C%EB%9D%BC%EC%9A%B4/57145/category/2455/display/1/",
             "itemCode": "NEW_A_새번역큰글성경_3",
@@ -1292,7 +1292,7 @@ export const bibleData = {
         "translation": "개역개정",
         "variants": [
           {
-            "label": "특대단본/우피/무지퍼/투톤브라운",
+            "label": "특대단본/천연/무지퍼/투톤브라운",
             "img": "https://chhouse.kr/web/product/big/202404/743bf1c7241b74cf06583abf85df8d16.jpg",
             "url": "https://chhouse.kr/product/%EC%B2%9C%EC%97%B0%EC%9A%B0%ED%94%BC-%EB%AA%85%ED%92%88-%EC%BB%AC%EB%9F%AC%EC%84%B1%EA%B2%BD%EC%A0%84%EC%84%9C-%EA%B0%95%EB%8C%80%EC%9A%A9-%EB%8B%A8%EB%B3%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%ED%88%AC%ED%86%A4%EB%B8%8C%EB%9D%BC%EC%9A%B4/40064/category/1421/display/1/",
             "itemCode": "NEW_A_명품컬러성경전서_0",
@@ -1309,7 +1309,7 @@ export const bibleData = {
         "translation": "개역개정",
         "variants": [
           {
-            "label": "특대단본/우피/무지퍼/투톤브라운",
+            "label": "특대단본/천연/무지퍼/투톤브라운",
             "img": "https://chhouse.kr/web/product/big/202407/86e89a308880c5aa2b200ba1e85534f1.jpg",
             "url": "https://chhouse.kr/product/%EC%B2%9C%EC%97%B0%EC%9A%B0%ED%94%BC-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-%EC%BB%AC%EB%9F%AC%EB%B0%94%EC%9D%B4%EB%B8%94-%ED%8A%B9%EB%8C%80%EB%8B%A8%EB%B3%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EB%8B%A4%ED%81%AC%EB%B8%8C%EB%9D%BC%EC%9A%B4/49188/category/1358/display/1/",
             "itemCode": "NEW_A_컬러바이블_0",
@@ -1326,7 +1326,7 @@ export const bibleData = {
         "translation": "새번역",
         "variants": [
           {
-            "label": "강대용단본/우피/무지퍼/다크브라운",
+            "label": "강대용단본/천연/무지퍼/다크브라운",
             "img": "https://chhouse.kr/web/product/big/202603/2c5f695810eeedad2849875c6f006a48.jpg",
             "url": "https://chhouse.kr/product/%EC%83%88%EB%B2%88%EC%97%AD-%ED%81%B0%EA%B8%80%EC%84%B1%EA%B2%BD-%EA%B0%95%EB%8C%80%EC%9A%A9-%EB%8B%A8%EB%B3%B8-%EC%9A%B0%ED%94%BC-%EC%83%89%EC%9D%B8-%ED%88%AC%ED%86%A4%EB%B8%8C%EB%9D%BC%EC%9A%B4/57119/category/2453/display/1/",
             "itemCode": "NEW_A_새번역성경전서_0",
@@ -2624,7 +2624,7 @@ export const bibleData = {
         "translation": "현대인의성경",
         "variants": [
           {
-            "label": "대단본/우피/무지퍼/다크브라운",
+            "label": "대단본/천연/무지퍼/다크브라운",
             "img": "https://chhouse.kr/web/product/big/202405/474cb02f9d795220448732031935e38f.jpg",
             "url": "https://chhouse.kr/product/%ED%81%B0%EA%B8%80%EC%9E%90%ED%98%84%EB%8C%80%EC%9D%B8%EC%9D%98%EC%84%B1%EA%B2%BD-%EB%8C%80%EB%8B%A8%EB%B3%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EC%83%89%EC%9D%B8-%EC%B2%9C%EC%97%B0%EC%9A%B0%ED%94%BC-%EB%8B%A4%ED%81%AC%EB%B8%8C%EB%9D%BC%EC%9A%B4/35933/category/2086/display/1/",
             "itemCode": "NEW_W_현대인의성경_0",
@@ -3390,7 +3390,7 @@ export const bibleData = {
         "translation": "개역개정",
         "variants": [
           {
-            "label": "강대용단본/우피/무지퍼/블랙",
+            "label": "강대용단본/천연/무지퍼/블랙",
             "img": "https://chhouse.kr/web/product/big/202404/9e8d9bd5ef6f628551520896117a8b63.jpg",
             "url": "https://chhouse.kr/product/%EC%B2%9C%EC%97%B0%EA%B0%80%EC%A3%BD-%EB%B9%85%EC%BB%AC%EB%9F%AC%ED%9B%BC%EB%B0%80%EB%A6%AC%EC%84%B1%EA%B2%BD-%EA%B0%95%EB%8C%80%EC%83%81%EC%9A%A9-%ED%8A%B9%EB%8C%80%EB%8B%A8%EB%B3%B8-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-%EC%83%89%EC%9D%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EA%B2%80%EC%A0%95/40861/category/1458/display/1/",
             "itemCode": "NEW_S_빅컬러 훼밀리성경_0",
