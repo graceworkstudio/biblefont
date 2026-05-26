@@ -1179,6 +1179,140 @@ export const bibleData = {
             "salePrice": 27900
           }
         ]
+      },
+      {
+        "model": "그랜드성경전서(NKR98EG)",
+        "size": "강대용",
+        "mm": 6.3,
+        "type": "standard",
+        "translation": "개역개정",
+        "variants": [
+          {
+            "label": "강대용단본/천연/무지퍼/다크브라운",
+            "img": "https://chhouse.kr/web/product/big/202405/bdc39b64ab0126c8e51eefa5d59d31ce.jpg",
+            "url": "https://chhouse.kr/product/%EC%B2%9C%EC%97%B0%EC%9A%B0%ED%94%BC-%EA%B7%B8%EB%9E%9C%EB%93%9C%EC%84%B1%EA%B2%BD%EC%A0%84%EC%84%9C-nkr98eg-%EA%B0%95%EB%8C%80%EC%9A%A9-%EB%8B%A8%EB%B3%B8-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-%EC%83%89%EC%9D%B8-%EB%8B%A4%ED%81%AC%EB%B8%8C%EB%9D%BC%EC%9A%B4/42020/category/1421/display/1/",
+            "itemCode": "NEW_A_그랜드성경전서(NKR98EG)_0",
+            "originalPrice": 158000,
+            "salePrice": 142200
+          }
+        ]
+      },
+      {
+        "model": "큰글성경전서",
+        "size": "강대용",
+        "mm": 5.9,
+        "type": "standard",
+        "translation": "개역개정",
+        "variants": [
+          {
+            "label": "강대용단본/천연/무지퍼/다크브라운",
+            "img": "https://chhouse.kr/web/product/big/202405/02facb3ccadb9c528560759b279183a5.jpg",
+            "url": "https://chhouse.kr/product/%EC%B2%9C%EC%97%B0%EC%9A%B0%ED%94%BC-%ED%81%B0%EA%B8%80%EC%84%B1%EA%B2%BD%EC%A0%84%EC%84%9C-%EA%B0%95%EB%8C%80%EC%9A%A9-%EB%8B%A8%EB%B3%B8-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-%EC%83%89%EC%9D%B8-%EB%8B%A4%ED%81%AC%EB%B8%8C%EB%9D%BC%EC%9A%B4/42021/category/1421/display/1/",
+            "itemCode": "NEW_A_큰글성경전서_0",
+            "originalPrice": 135000,
+            "salePrice": 121500
+          },
+          {
+            "label": "강대용단본/PU/무지퍼/브라운",
+            "img": "https://chhouse.kr/web/product/big/202405/a3d68835d60aa9afaf718b658833d4da.jpg",
+            "url": "https://chhouse.kr/product/%ED%81%B0%EA%B8%80%EC%84%B1%EA%B2%BD%EC%A0%84%EC%84%9C-%EA%B0%95%EB%8C%80%EC%9A%A9-%EB%8B%A8%EB%B3%B8-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-%EC%83%89%EC%9D%B8-%EB%B8%8C%EB%9D%BC%EC%9A%B4/42022/category/1421/display/1/",
+            "itemCode": "NEW_A_큰글성경전서_1",
+            "originalPrice": 118000,
+            "salePrice": 106200
+          }
+        ]
+      },
+      {
+        "model": "명품컬러성경전서",
+        "size": "특대",
+        "mm": 5.6,
+        "type": "standard",
+        "translation": "개역개정",
+        "variants": [
+          {
+            "label": "특대단본/우피/무지퍼/투톤브라운",
+            "img": "https://chhouse.kr/web/product/big/202404/743bf1c7241b74cf06583abf85df8d16.jpg",
+            "url": "https://chhouse.kr/product/%EC%B2%9C%EC%97%B0%EC%9A%B0%ED%94%BC-%EB%AA%85%ED%92%88-%EC%BB%AC%EB%9F%AC%EC%84%B1%EA%B2%BD%EC%A0%84%EC%84%9C-%EA%B0%95%EB%8C%80%EC%9A%A9-%EB%8B%A8%EB%B3%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%ED%88%AC%ED%86%A4%EB%B8%8C%EB%9D%BC%EC%9A%B4/40064/category/1421/display/1/",
+            "itemCode": "NEW_A_명품컬러성경전서_0",
+            "originalPrice": 152000,
+            "salePrice": 136800
+          }
+        ]
+      },
+      {
+        "model": "컬러바이블",
+        "size": "특대",
+        "mm": 5,
+        "type": "standard",
+        "translation": "개역개정",
+        "variants": [
+          {
+            "label": "특대단본/우피/무지퍼/투톤브라운",
+            "img": "https://chhouse.kr/web/product/big/202407/86e89a308880c5aa2b200ba1e85534f1.jpg",
+            "url": "https://chhouse.kr/product/%EC%B2%9C%EC%97%B0%EC%9A%B0%ED%94%BC-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-%EC%BB%AC%EB%9F%AC%EB%B0%94%EC%9D%B4%EB%B8%94-%ED%8A%B9%EB%8C%80%EB%8B%A8%EB%B3%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EB%8B%A4%ED%81%AC%EB%B8%8C%EB%9D%BC%EC%9A%B4/49188/category/1358/display/1/",
+            "itemCode": "NEW_A_컬러바이블_0",
+            "originalPrice": 98000,
+            "salePrice": 88200
+          }
+        ]
+      },
+      {
+        "model": "새번역성경전서",
+        "size": "강대용",
+        "mm": 5.6,
+        "type": "standard",
+        "translation": "새번역",
+        "variants": [
+          {
+            "label": "강대용단본/우피/무지퍼/다크브라운",
+            "img": "https://chhouse.kr/web/product/big/202603/2c5f695810eeedad2849875c6f006a48.jpg",
+            "url": "https://chhouse.kr/product/%EC%83%88%EB%B2%88%EC%97%AD-%ED%81%B0%EA%B8%80%EC%84%B1%EA%B2%BD-%EA%B0%95%EB%8C%80%EC%9A%A9-%EB%8B%A8%EB%B3%B8-%EC%9A%B0%ED%94%BC-%EC%83%89%EC%9D%B8-%ED%88%AC%ED%86%A4%EB%B8%8C%EB%9D%BC%EC%9A%B4/57119/category/2453/display/1/",
+            "itemCode": "NEW_A_새번역성경전서_0",
+            "originalPrice": 142000,
+            "salePrice": 127800
+          }
+        ]
+      },
+      {
+        "model": "큰글자굿모닝결혼성경",
+        "size": "중",
+        "mm": 3.4,
+        "type": "standard",
+        "translation": "개역개정",
+        "variants": [
+          {
+            "label": "중합본/PU/지퍼/아이보리",
+            "img": "https://chhouse.kr/web/product/big/202405/b07bf567f897a276d88f2d1e0ed7b9c9.jpg",
+            "url": "https://chhouse.kr/product/%ED%81%B0%EA%B8%80%EC%9E%90%EA%B5%BF%EB%AA%A8%EB%8B%9D-%EA%B2%B0%ED%98%BC%EC%84%B1%EA%B2%BD-%EC%A4%91%ED%95%A9%EB%B3%B8-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-%EC%83%88%EC%B0%AC%EC%86%A1%EA%B0%80-%EC%83%89%EC%9D%B8-%EC%A7%80%ED%8D%BC-%EC%95%84%EC%9D%B4%EB%B3%B4%EB%A6%AC/48428/category/1374/display/1/",
+            "itemCode": "NEW_A_큰글자굿모닝결혼성경_0",
+            "originalPrice": 46000,
+            "salePrice": 41400
+          },
+          {
+            "label": "중합본/PU/지퍼/핑크",
+            "img": "https://chhouse.kr/web/product/big/202510/e1e1fb75354f96902dd4940e79f37135.jpg",
+            "url": "https://chhouse.kr/product/%ED%81%B0%EA%B8%80%EC%9E%90%EA%B5%BF%EB%AA%A8%EB%8B%9D-%EA%B2%B0%ED%98%BC%EC%84%B1%EA%B2%BD-%EC%A4%91%ED%95%A9%EB%B3%B8-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-%EC%83%88%EC%B0%AC%EC%86%A1%EA%B0%80-%EC%83%89%EC%9D%B8-%EC%A7%80%ED%8D%BC-%ED%95%91%ED%81%AC/55451/category/1374/display/1/",
+            "itemCode": "NEW_A_큰글자굿모닝결혼성경_1",
+            "originalPrice": 46000,
+            "salePrice": 41400
+          },
+          {
+            "label": "중합본/PU/지퍼/블루",
+            "img": "https://chhouse.kr/web/product/big/202510/0f53835bb05e60a16fa2e3fd7ec7e7b0.jpg",
+            "url": "https://chhouse.kr/product/%ED%81%B0%EA%B8%80%EC%9E%90%EA%B5%BF%EB%AA%A8%EB%8B%9D-%EA%B2%B0%ED%98%BC%EC%84%B1%EA%B2%BD-%EC%A4%91%ED%95%A9%EB%B3%B8-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-%EC%83%88%EC%B0%AC%EC%86%A1%EA%B0%80-%EC%83%89%EC%9D%B8-%EC%A7%80%ED%8D%BC-%EB%B8%94%EB%A3%A8/55450/category/1374/display/1/",
+            "itemCode": "NEW_A_큰글자굿모닝결혼성경_2",
+            "originalPrice": 46000,
+            "salePrice": 41400
+          },
+          {
+            "label": "중합본/PU/무지퍼/아이보리",
+            "img": "https://chhouse.kr/web/product/big/202405/99819d68b96aa2de8e8c212ecd0659b6.jpg",
+            "url": "https://chhouse.kr/product/%ED%81%B0%EA%B8%80%EC%9E%90%EA%B5%BF%EB%AA%A8%EB%8B%9D-%EA%B2%B0%ED%98%BC%EC%84%B1%EA%B2%BD-%EC%A4%91%ED%95%A9%EB%B3%B8-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-%EC%83%88%EC%B0%AC%EC%86%A1%EA%B0%80-%EC%83%89%EC%9D%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EC%95%84%EC%9D%B4%EB%B3%B4%EB%A6%AC/48427/category/1374/display/1/",
+            "itemCode": "NEW_A_큰글자굿모닝결혼성경_3",
+            "originalPrice": 44000,
+            "salePrice": 39600
+          }
+        ]
       }
     ]
   },
@@ -2509,6 +2643,138 @@ export const bibleData = {
             "salePrice": 19800
           }
         ]
+      },
+      {
+        "model": "큰글자성경전서(NKR92EWB)",
+        "size": "특강대용",
+        "mm": 6.2,
+        "type": "standard",
+        "translation": "개역개정",
+        "variants": [
+          {
+            "label": "특강대용단본/천연/무지퍼/다크브라운",
+            "img": "https://chhouse.kr/web/product/big/202405/67b7f1e85ef25eeef02ff6337fdaf837.jpg",
+            "url": "https://chhouse.kr/product/%ED%81%B0%EA%B8%80%EC%9E%90%EC%84%B1%EA%B2%BD%EC%A0%84%EC%84%9C-%ED%8A%B9%EA%B0%95%EB%8C%80%EC%9A%A9-%EB%8B%A8%EB%B3%B8-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-nkr92ewb-%EB%B8%8C%EB%9D%BC%EC%9A%B4/36949/category/1467/display/1/",
+            "itemCode": "NEW_W_큰글자성경전서(NKR92EWB)_0",
+            "originalPrice": 160000,
+            "salePrice": 144000
+          },
+          {
+            "label": "특강대용단본/PU/무지퍼/브라운",
+            "img": "https://chhouse.kr/web/product/big/202405/f34d19b3c61be008e4fc2f91e6c13bcc.jpg",
+            "url": "https://chhouse.kr/product/%EC%B2%9C%EC%97%B0%EC%9A%B0%ED%94%BC-%ED%81%B0%EA%B8%80%EC%9E%90%EC%84%B1%EA%B2%BD%EC%A0%84%EC%84%9C-%ED%8A%B9%EA%B0%95%EB%8C%80%EC%9A%A9-%EB%8B%A8%EB%B3%B8-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-nkr92ewb-%EB%8B%A4%ED%81%AC%EB%B8%8C%EB%9D%BC%EC%9A%B4/36948/category/1467/display/1/",
+            "itemCode": "NEW_W_큰글자성경전서(NKR92EWB)_1",
+            "originalPrice": 136000,
+            "salePrice": 122400
+          }
+        ]
+      },
+      {
+        "model": "큰글자성경전서(NKR92WB)",
+        "size": "강대용",
+        "mm": 5.7,
+        "type": "standard",
+        "translation": "개역개정",
+        "variants": [
+          {
+            "label": "강대용단본/천연/무지퍼/다크브라운",
+            "img": "https://chhouse.kr/web/product/big/202404/001806402b86be263c3ba305193f8d24.jpg",
+            "url": "https://chhouse.kr/product/%EC%B2%9C%EC%97%B0%EC%9A%B0%ED%94%BC-%ED%81%B0%EA%B8%80%EC%9E%90%EC%84%B1%EA%B2%BD%EC%A0%84%EC%84%9C-nkr92wb-%EA%B0%95%EB%8C%80%EC%9A%A9%EB%8B%A8%EB%B3%B8-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EC%83%89%EC%9D%B8-%EB%8B%A4%ED%81%AC%EB%B8%8C%EB%9D%BC%EC%9A%B4/47656/category/1467/display/1/",
+            "itemCode": "NEW_W_큰글자성경전서(NKR92WB)_0",
+            "originalPrice": 133000,
+            "salePrice": 119700
+          },
+          {
+            "label": "강대용단본/PU/무지퍼/브라운",
+            "img": "https://chhouse.kr/web/product/big/202404/e73fb74bcb6c81728629d96c1426a9a9.jpg",
+            "url": "https://chhouse.kr/product/%ED%81%B0%EA%B8%80%EC%9E%90%EC%84%B1%EA%B2%BD%EC%A0%84%EC%84%9C-nkr92wb-%EA%B0%95%EB%8C%80%EC%9A%A9%EB%8B%A8%EB%B3%B8-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EC%83%89%EC%9D%B8-%EB%B8%8C%EB%9D%BC%EC%9A%B4/41735/category/1467/display/1/",
+            "itemCode": "NEW_W_큰글자성경전서(NKR92WB)_1",
+            "originalPrice": 116000,
+            "salePrice": 104400
+          },
+          {
+            "label": "강대용단본/PU/무지퍼/그레이",
+            "img": "https://chhouse.kr/web/product/big/202404/83ef873df9959f0d9da4deb1fbd1e6bc.jpg",
+            "url": "https://chhouse.kr/product/%ED%81%B0%EA%B8%80%EC%9E%90%EC%84%B1%EA%B2%BD%EC%A0%84%EC%84%9C-nkr92wb-%EA%B0%95%EB%8C%80%EC%9A%A9%EB%8B%A8%EB%B3%B8-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EC%83%89%EC%9D%B8-%EA%B7%B8%EB%A0%88%EC%9D%B4/41736/category/1467/display/1/",
+            "itemCode": "NEW_W_큰글자성경전서(NKR92WB)_2",
+            "originalPrice": 116000,
+            "salePrice": 104400
+          }
+        ]
+      },
+      {
+        "model": "자이언트컬러성경",
+        "size": "특강대용",
+        "mm": 5.6,
+        "type": "standard",
+        "translation": "개역개정",
+        "variants": [
+          {
+            "label": "특강대용단본/천연/무지퍼/다크브라운",
+            "img": "https://chhouse.kr/web/product/big/202405/85e3cf6e4237062191b80c48c8cf2f3d.jpg",
+            "url": "https://chhouse.kr/product/%EC%B2%9C%EC%97%B0%EC%9A%B0%ED%94%BC-%EC%9E%90%EC%9D%B4%EC%96%B8%ED%8A%B8%EC%BB%AC%EB%9F%AC%EC%84%B1%EA%B2%BD-%ED%8A%B9%EA%B0%95%EB%8C%80%EC%9A%A9%EB%8B%A8%EB%B3%B8-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-%EC%83%89%EC%9D%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EB%8B%A4%ED%81%AC%EB%B8%8C%EB%9D%BC%EC%9A%B4/44922/category/1467/display/1/",
+            "itemCode": "NEW_W_자이언트컬러성경_0",
+            "originalPrice": 150000,
+            "salePrice": 135000
+          },
+          {
+            "label": "특강대용단본/PU/무지퍼/브라운",
+            "img": "https://chhouse.kr/web/product/big/202404/60f06c3affbaf67b6c75e6b7cd7836c7.jpg",
+            "url": "https://chhouse.kr/product/%EC%9E%90%EC%9D%B4%EC%96%B8%ED%8A%B8%EC%BB%AC%EB%9F%AC%EC%84%B1%EA%B2%BD-%ED%8A%B9%EA%B0%95%EB%8C%80%EC%9A%A9%EB%8B%A8%EB%B3%B8-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-%EC%83%89%EC%9D%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EB%B8%8C%EB%9D%BC%EC%9A%B4/47152/category/1467/display/1/",
+            "itemCode": "NEW_W_자이언트컬러성경_1",
+            "originalPrice": 130000,
+            "salePrice": 117000
+          }
+        ]
+      },
+      {
+        "model": "뉴웨딩커플성경",
+        "size": "중",
+        "mm": 3.5,
+        "type": "standard",
+        "translation": "개역개정",
+        "variants": [
+          {
+            "label": "중합본/천연/지퍼/화이트",
+            "img": "https://chhouse.kr/web/product/big/202405/4d39ea4863f62d0261b826db4202a2c4.jpg",
+            "url": "https://chhouse.kr/product/%ED%94%84%EB%A6%AC%EB%AF%B8%EC%97%84%EC%9B%A8%EB%94%A9%EC%BB%A4%ED%94%8C%EC%84%B1%EA%B2%BD%EC%A4%91-%ED%95%A9%EB%B3%B8-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-%EC%83%88%EC%B0%AC%EC%86%A1%EA%B0%80-%EC%B2%9C%EC%97%B0%EC%9A%B0%ED%94%BC-%ED%99%94%EC%9D%B4%ED%8A%B8/19294/category/1374/display/1/",
+            "itemCode": "NEW_W_뉴웨딩커플성경_0",
+            "originalPrice": 80000,
+            "salePrice": 72000
+          },
+          {
+            "label": "중합본/PU/지퍼/뉴핑크",
+            "img": "https://chhouse.kr/web/product/big/202405/5b8af69e727b20d851ed6846199041cf.jpg",
+            "url": "https://chhouse.kr/product/%EB%89%B4%EC%9B%A8%EB%94%A9%EC%BB%A4%ED%94%8C%EC%84%B1%EA%B2%BD-%EC%A4%91%ED%95%A9%EB%B3%B8-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-%EC%83%88%EC%B0%AC%EC%86%A1%EA%B0%80-%EC%83%89%EC%9D%B8-%EC%A7%80%ED%8D%BC-%EB%89%B4%ED%95%91%ED%81%AC/18222/category/1374/display/1/",
+            "itemCode": "NEW_W_뉴웨딩커플성경_1",
+            "originalPrice": 47000,
+            "salePrice": 42300
+          },
+          {
+            "label": "중합본/PU/지퍼/뉴아이보리",
+            "img": "https://chhouse.kr/web/product/big/202405/8ce97d20a27487cc6d391a3977233833.jpg",
+            "url": "https://chhouse.kr/product/%EB%89%B4%EC%9B%A8%EB%94%A9%EC%BB%A4%ED%94%8C%EC%84%B1%EA%B2%BD-%EC%A4%91%ED%95%A9%EB%B3%B8-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-%EC%83%88%EC%B0%AC%EC%86%A1%EA%B0%80-%EC%83%89%EC%9D%B8-%EC%A7%80%ED%8D%BC-%EB%89%B4%EC%95%84%EC%9D%B4%EB%B3%B4%EB%A6%AC/18228/category/1374/display/1/",
+            "itemCode": "NEW_W_뉴웨딩커플성경_2",
+            "originalPrice": 47000,
+            "salePrice": 42300
+          },
+          {
+            "label": "중합본/PU/지퍼/뉴네이비",
+            "img": "https://chhouse.kr/web/product/big/202405/0109af8b4fd8491d1d646ea3352d469a.jpg",
+            "url": "https://chhouse.kr/product/%EB%89%B4%EC%9B%A8%EB%94%A9%EC%BB%A4%ED%94%8C%EC%84%B1%EA%B2%BD-%EC%A4%91%ED%95%A9%EB%B3%B8-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-%EC%83%88%EC%B0%AC%EC%86%A1%EA%B0%80-%EC%83%89%EC%9D%B8-%EC%A7%80%ED%8D%BC-%EB%89%B4%EB%84%A4%EC%9D%B4%EB%B9%84/18225/category/1374/display/1/",
+            "itemCode": "NEW_W_뉴웨딩커플성경_3",
+            "originalPrice": 43000,
+            "salePrice": 38700
+          },
+          {
+            "label": "소합본/PU/지퍼/스카이블루",
+            "img": "https://chhouse.kr/web/product/big/202504/aca9f1485d3d52fc20abae309416f18d.jpg",
+            "url": "https://chhouse.kr/product/%EB%89%B4%EC%9B%A8%EB%94%A9%EC%BB%A4%ED%94%8C%EC%84%B1%EA%B2%BD-%EC%86%8C%ED%95%A9%EB%B3%B8-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-%EC%83%88%EC%B0%AC%EC%86%A1%EA%B0%80-%EC%83%89%EC%9D%B8-%EC%A7%80%ED%8D%BC-%EC%8A%A4%EC%B9%B4%EC%9D%B4%EB%B8%94%EB%A3%A8/53200/category/1462/display/1/",
+            "itemCode": "NEW_W_뉴웨딩커플성경_4",
+            "originalPrice": 43000,
+            "salePrice": 38700
+          }
+        ]
       }
     ]
   },
@@ -3024,6 +3290,80 @@ export const bibleData = {
             "itemCode": "P000DDAZ000A",
             "originalPrice": 46000,
             "salePrice": 41400
+          }
+        ]
+      },
+      {
+        "model": "빅컬러 훼밀리성경",
+        "size": "강대용",
+        "mm": 5.3,
+        "type": "standard",
+        "translation": "개역개정",
+        "variants": [
+          {
+            "label": "강대용단본/우피/무지퍼/블랙",
+            "img": "https://chhouse.kr/web/product/big/202404/9e8d9bd5ef6f628551520896117a8b63.jpg",
+            "url": "https://chhouse.kr/product/%EC%B2%9C%EC%97%B0%EA%B0%80%EC%A3%BD-%EB%B9%85%EC%BB%AC%EB%9F%AC%ED%9B%BC%EB%B0%80%EB%A6%AC%EC%84%B1%EA%B2%BD-%EA%B0%95%EB%8C%80%EC%83%81%EC%9A%A9-%ED%8A%B9%EB%8C%80%EB%8B%A8%EB%B3%B8-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-%EC%83%89%EC%9D%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EA%B2%80%EC%A0%95/40861/category/1458/display/1/",
+            "itemCode": "NEW_S_빅컬러 훼밀리성경_0",
+            "originalPrice": 155000,
+            "salePrice": 139500
+          },
+          {
+            "label": "강대용단본/PU/무지퍼/자주",
+            "img": "https://chhouse.kr/web/product/big/202405/8da6c0a047e0960b9f5c6a8ce5fb1c1e.jpg",
+            "url": "https://chhouse.kr/product/%EB%B9%85%EC%BB%AC%EB%9F%AC%ED%9B%BC%EB%B0%80%EB%A6%AC%EC%84%B1%EA%B2%BD-%EA%B0%95%EB%8C%80%EC%83%81%EC%9A%A9-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-%EB%8B%A8%EB%B3%B8-%EC%83%89%EC%9D%B8-%EA%B0%80%EC%A3%BD-%EC%9E%90%EC%84%9D-n%EC%9E%90%EC%A3%BC/39715/category/1458/display/1/",
+            "itemCode": "NEW_S_빅컬러 훼밀리성경_1",
+            "originalPrice": 145000,
+            "salePrice": 130500
+          },
+          {
+            "label": "특대단본/PU/무지퍼/초코",
+            "img": "https://chhouse.kr/web/product/big/202405/d8f18686e6574d86d3a0ab0511d37ede.jpg",
+            "url": "https://chhouse.kr/product/%EB%B9%85%EC%BB%AC%EB%9F%AC%ED%9B%BC%EB%B0%80%EB%A6%AC%EC%84%B1%EA%B2%BD-%EC%98%A4%ED%94%88%ED%98%95-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-%EB%8B%A8%EB%B3%B8-%ED%8A%B9%EB%8C%80-%EA%B0%95%EB%8C%80%EC%83%81%EC%9A%A9-%EC%83%89%EC%9D%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EC%B4%88%EC%BD%94/19699/category/1458/display/1/",
+            "itemCode": "NEW_S_빅컬러 훼밀리성경_2",
+            "originalPrice": 120000,
+            "salePrice": 108000
+          }
+        ]
+      },
+      {
+        "model": "커플성경",
+        "size": "중",
+        "mm": 3.4,
+        "type": "standard",
+        "translation": "개역개정",
+        "variants": [
+          {
+            "label": "중합본/천연/지퍼/화이트",
+            "img": "https://chhouse.kr/web/product/big/202505/2e77cfc4f920c4ecb33a4c1d1e2db48f.jpg",
+            "url": "https://chhouse.kr/product/%EC%B2%9C%EC%97%B0%EA%B0%80%EC%A3%BD-%EC%9B%A8%EB%94%A9%EC%BB%A4%ED%94%8C%EC%84%B1%EA%B2%BD-%EC%A4%91%ED%95%A9%EB%B3%B8-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-%EC%83%88%EC%B0%AC%EC%86%A1%EA%B0%80-%EC%83%89%EC%9D%B8-%EC%A7%80%ED%8D%BC-%ED%99%94%EC%9D%B4%ED%8A%B8/53657/category/1374/display/1/",
+            "itemCode": "NEW_S_커플성경_0",
+            "originalPrice": 68000,
+            "salePrice": 61200
+          },
+          {
+            "label": "중합본/천연/지퍼/베이지",
+            "img": "https://chhouse.kr/web/product/big/202505/c991a7ca7100a7e09f466aea7991d0bf.jpg",
+            "url": "https://chhouse.kr/product/%EC%B2%9C%EC%97%B0%EA%B0%80%EC%A3%BD-%EC%9B%A8%EB%94%A9%EC%BB%A4%ED%94%8C%EC%84%B1%EA%B2%BD-%EC%A4%91%ED%95%A9%EB%B3%B8-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-%EC%83%88%EC%B0%AC%EC%86%A1%EA%B0%80-%EC%83%89%EC%9D%B8-%EC%A7%80%ED%8D%BC-%EB%B2%A0%EC%9D%B4%EC%A7%80/53656/category/1374/display/1/",
+            "itemCode": "NEW_S_커플성경_1",
+            "originalPrice": 68000,
+            "salePrice": 61200
+          },
+          {
+            "label": "중합본/PU/지퍼/화이트",
+            "img": "https://chhouse.kr/web/product/big/202505/b32ecbb3a40e23a2c94aab6f6464a3c7.jpg",
+            "url": "https://chhouse.kr/product/%EC%84%B1%EC%84%9C%EC%9B%90-%EC%9B%A8%EB%94%A9%EC%BB%A4%ED%94%8C%EC%84%B1%EA%B2%BD-%EC%A4%91%ED%95%A9%EB%B3%B8-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-%EC%83%88%EC%B0%AC%EC%86%A1%EA%B0%80-%EC%83%89%EC%9D%B8-%EC%A7%80%ED%8D%BC-%ED%99%94%EC%9D%B4%ED%8A%B8/53415/category/1374/display/1/",
+            "itemCode": "NEW_S_커플성경_2",
+            "originalPrice": 51000,
+            "salePrice": 45900
+          },
+          {
+            "label": "중합본/PU/지퍼/베이지",
+            "img": "https://chhouse.kr/web/product/big/202505/47c4f0f1305938cdffda9e195eff2854.jpg",
+            "url": "https://chhouse.kr/product/%EC%84%B1%EC%84%9C%EC%9B%90-%EC%9B%A8%EB%94%A9%EC%BB%A4%ED%94%8C%EC%84%B1%EA%B2%BD-%EC%A4%91%ED%95%A9%EB%B3%B8-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-%EC%83%88%EC%B0%AC%EC%86%A1%EA%B0%80-%EC%83%89%EC%9D%B8-%EC%A7%80%ED%8D%BC-%EB%B2%A0%EC%9D%B4%EC%A7%80/53414/category/1374/display/1/",
+            "itemCode": "NEW_S_커플성경_3",
+            "originalPrice": 51000,
+            "salePrice": 45900
           }
         ]
       }
