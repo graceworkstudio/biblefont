@@ -37,6 +37,11 @@
       gtag('config', 'G-9NB0K0N2NH', {
         cookie_flags: 'SameSite=None;Secure'
       });
+      
+      // Redirect direct accesses of biblefont.web.app to the main domain
+      if (window === window.parent && (window.location.hostname === 'biblefont.web.app' || window.location.hostname === 'biblefont.firebaseapp.com')) {
+        window.location.replace('https://biblezoom.co.kr' + window.location.search + window.location.hash);
+      }
     </script>
     <style>
       /* iOS 블랙 스크린 방지: html 요소에 배경색 즉시 적용 */
