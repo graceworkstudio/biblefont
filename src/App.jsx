@@ -475,10 +475,11 @@ const App = () => {
 
   // 6대 실시간 필터 상태 정의
   const [filters, setFilters] = useState({
+    translation: { master: false, options: { revised: true, korean: false, new: false, easy: false, modern: false, woori: false } },
     hymn: { master: true, options: { yes: true, no: true } },
     commentary: { master: true, options: { yes: true, no: true } },
     material: { master: true, options: { natural: true, pu: true, other: true } },
-    portability: { master: true, options: { small: true, medium: true, large: true, pulpit: true } },
+    portability: { master: true, options: { small: true, medium: true, large: true, pulpit: true, wedding: true } },
     fontSize: { master: true, options: { small: true, medium: true, senior: true } },
     publisher: { master: true, options: { agape: true, words: true, seong: true, christian: true, duranno: true, other: true } }
   });
@@ -486,10 +487,11 @@ const App = () => {
   // 필터 초기화 함수
   const resetFilters = () => {
     setFilters({
+      translation: { master: false, options: { revised: true, korean: false, new: false, easy: false, modern: false, woori: false } },
       hymn: { master: true, options: { yes: true, no: true } },
       commentary: { master: true, options: { yes: true, no: true } },
       material: { master: true, options: { natural: true, pu: true, other: true } },
-      portability: { master: true, options: { small: true, medium: true, large: true, pulpit: true } },
+      portability: { master: true, options: { small: true, medium: true, large: true, pulpit: true, wedding: true } },
       fontSize: { master: true, options: { small: true, medium: true, senior: true } },
       publisher: { master: true, options: { agape: true, words: true, seong: true, christian: true, duranno: true, other: true } }
     });
@@ -803,12 +805,23 @@ const App = () => {
       publisherName: ['A', 'W', 'S', 'C', 'D'].includes(pubKey) ? pubValue.name : '기타'
     }))
   ).filter(item => {
+    // 0. Translation filter (성경번역본)
+    const trans = item.translation || '개역개정';
+    let matchesTrans = false;
+    if (trans === '개역개정') matchesTrans = filters.translation.options.revised;
+    else if (trans === '개역한글') matchesTrans = filters.translation.options.korean;
+    else if (trans === '새번역') matchesTrans = filters.translation.options.new;
+    else if (trans === '쉬운성경') matchesTrans = filters.translation.options.easy;
+    else if (trans === '현대인의성경') matchesTrans = filters.translation.options.modern;
+    else if (trans === '우리말성경') matchesTrans = filters.translation.options.woori;
+    if (!matchesTrans) return false;
+
     // 1. Commentary filter (해설유무)
     const matchesComm = (item.type === 'study' && filters.commentary.options.yes) || 
                         (item.type === 'standard' && filters.commentary.options.no);
     if (!matchesComm) return false;
     
-    // 2. Portability filter (크기/휴대성)
+    // 2. Portability filter (크기/용도)
     const sz = item.size || '';
     let matchesPort = false;
     if (['소', '미니', '특소', '특미니', '초미니', '특초미니'].includes(sz)) {
@@ -819,6 +832,8 @@ const App = () => {
       matchesPort = filters.portability.options.large;
     } else if (sz === '강대용') {
       matchesPort = filters.portability.options.pulpit;
+    } else if (sz === '결혼성경') {
+      matchesPort = filters.portability.options.wedding;
     }
     if (!matchesPort) return false;
     
