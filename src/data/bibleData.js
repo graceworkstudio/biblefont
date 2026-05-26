@@ -343,7 +343,15 @@ export const bibleData = {
             "itemCode": "P000DALC000A",
             "originalPrice": 43000,
             "salePrice": 38700
-          },
+          }
+        ]
+      },
+      {
+        "model": "큰글자 굿모닝성경",
+        "size": "중",
+        "mm": 3.6,
+        "type": "study",
+        "variants": [
           {
             "label": "중합본/PU/무지퍼/브라운",
             "img": "https://chhouse.kr/web/product/big/202405/a950c25b8da04cc8dceeae38556e6020.jpg",
@@ -924,7 +932,16 @@ export const bibleData = {
             "itemCode": "NEW_A_새번역큰글성경_0",
             "originalPrice": 142000,
             "salePrice": 127800
-          },
+          }
+        ]
+      },
+      {
+        "model": "새번역큰글성경",
+        "size": "특대",
+        "mm": 5.6,
+        "type": "standard",
+        "translation": "새번역",
+        "variants": [
           {
             "label": "특대합본/천연/지퍼/다크브라운",
             "img": "https://chhouse.kr/web/product/big/202501/c11083064bff7c94b101d2ba528eb998.jpg",
@@ -956,7 +973,16 @@ export const bibleData = {
             "itemCode": "NEW_A_새번역큰글성경_4",
             "originalPrice": 50000,
             "salePrice": 45000
-          },
+          }
+        ]
+      },
+      {
+        "model": "새번역큰글성경",
+        "size": "중",
+        "mm": 5.6,
+        "type": "standard",
+        "translation": "새번역",
+        "variants": [
           {
             "label": "중합본/천연/지퍼/다크브라운",
             "img": "https://chhouse.kr/web/product/big/202407/1bad6d5da0105054797c374e00d98bab.jpg",
@@ -980,7 +1006,16 @@ export const bibleData = {
             "itemCode": "NEW_A_새번역큰글성경_7",
             "originalPrice": 44000,
             "salePrice": 39600
-          },
+          }
+        ]
+      },
+      {
+        "model": "새번역큰글성경",
+        "size": "소",
+        "mm": 5.6,
+        "type": "standard",
+        "translation": "새번역",
+        "variants": [
           {
             "label": "소합본/천연/지퍼/다크브라운",
             "img": "https://chhouse.kr/web/product/big/202407/078fe3fe7306c964559572666d4d6625.jpg",
@@ -1029,7 +1064,16 @@ export const bibleData = {
             "itemCode": "NEW_A_큰글쉬운성경_0",
             "originalPrice": 47000,
             "salePrice": 42300
-          },
+          }
+        ]
+      },
+      {
+        "model": "큰글쉬운성경",
+        "size": "대",
+        "mm": 4.7,
+        "type": "standard",
+        "translation": "쉬운성경",
+        "variants": [
           {
             "label": "대합본/PU/지퍼/브라운",
             "img": "https://chhouse.kr/web/product/big/202407/ec8c305db69fbccb950381d579c26351.jpg",
@@ -1095,7 +1139,16 @@ export const bibleData = {
             "itemCode": "NEW_A_쉬운성경(고급)_1",
             "originalPrice": 29000,
             "salePrice": 26100
-          },
+          }
+        ]
+      },
+      {
+        "model": "쉬운성경(고급)",
+        "size": "특미니",
+        "mm": 2.9,
+        "type": "standard",
+        "translation": "쉬운성경",
+        "variants": [
           {
             "label": "특미니단본/PU/무지퍼/라이트블루",
             "img": "https://chhouse.kr/web/product/big/202405/5771d2a392bfcae30b5af808d0760655.jpg",
@@ -1163,20 +1216,29 @@ export const bibleData = {
             "salePrice": 29700
           },
           {
-            "label": "중단본/비닐/무지퍼",
-            "img": "https://chhouse.kr/web/product/big/202404/43775d4dc1c794c2cf4171b8010dca6d.jpg",
-            "url": "https://chhouse.kr/product/%EC%9D%BC%EB%9F%AC%EC%8A%A4%ED%8A%B8%EC%89%AC%EC%9A%B4%EC%84%B1%EA%B2%BD%EC%A4%91-%EB%8B%A8%EB%B3%B8-%EC%83%89%EC%9D%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EB%B9%84%EB%8B%90/19152/category/1382/display/1/",
-            "itemCode": "NEW_A_일러스트쉬운성경_2",
-            "originalPrice": 34000,
-            "salePrice": 30600
-          },
-          {
             "label": "소단본/비닐/무지퍼",
             "img": "https://chhouse.kr/web/product/big/202404/7c3761dc38bc94cd11adce202ade78ee.jpg",
             "url": "https://chhouse.kr/product/%EC%9D%BC%EB%9F%AC%EC%8A%A4%ED%8A%B8%EC%89%AC%EC%9A%B4%EC%84%B1%EA%B2%BD%EC%86%8C-%EB%8B%A8%EB%B3%B8-%EB%B9%84%EB%8B%90-%EC%83%89%EC%9D%B8/20271/category/1365/display/1/",
             "itemCode": "NEW_A_일러스트쉬운성경_3",
             "originalPrice": 31000,
             "salePrice": 27900
+          }
+        ]
+      },
+      {
+        "model": "일러스트쉬운성경",
+        "size": "중",
+        "mm": 2.7,
+        "type": "standard",
+        "translation": "쉬운성경",
+        "variants": [
+          {
+            "label": "중단본/비닐/무지퍼",
+            "img": "https://chhouse.kr/web/product/big/202404/43775d4dc1c794c2cf4171b8010dca6d.jpg",
+            "url": "https://chhouse.kr/product/%EC%9D%BC%EB%9F%AC%EC%8A%A4%ED%8A%B8%EC%89%AC%EC%9A%B4%EC%84%B1%EA%B2%BD%EC%A4%91-%EB%8B%A8%EB%B3%B8-%EC%83%89%EC%9D%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EB%B9%84%EB%8B%90/19152/category/1382/display/1/",
+            "itemCode": "NEW_A_일러스트쉬운성경_2",
+            "originalPrice": 34000,
+            "salePrice": 30600
           }
         ]
       },
@@ -2584,7 +2646,16 @@ export const bibleData = {
             "itemCode": "NEW_W_현대인의성경_2",
             "originalPrice": 36000,
             "salePrice": 32400
-          },
+          }
+        ]
+      },
+      {
+        "model": "현대인의성경",
+        "size": "중",
+        "mm": 4.4,
+        "type": "standard",
+        "translation": "현대인의성경",
+        "variants": [
           {
             "label": "중단본/PU/무지퍼/다크그레이",
             "img": "https://chhouse.kr/web/product/big/202404/46ca4447ea8217fd7788817e7482d686.jpg",
@@ -2600,7 +2671,16 @@ export const bibleData = {
             "itemCode": "NEW_W_현대인의성경_4",
             "originalPrice": 32000,
             "salePrice": 28800
-          },
+          }
+        ]
+      },
+      {
+        "model": "현대인의성경",
+        "size": "미니",
+        "mm": 4.4,
+        "type": "standard",
+        "translation": "현대인의성경",
+        "variants": [
           {
             "label": "미니단본/PU/무지퍼/브라운",
             "img": "https://chhouse.kr/web/product/big/202603/d97472befc9be28f91e8965650a4950c.jpg",
@@ -2765,7 +2845,16 @@ export const bibleData = {
             "itemCode": "NEW_W_뉴웨딩커플성경_3",
             "originalPrice": 43000,
             "salePrice": 38700
-          },
+          }
+        ]
+      },
+      {
+        "model": "뉴웨딩커플성경",
+        "size": "소",
+        "mm": 3.5,
+        "type": "standard",
+        "translation": "개역개정",
+        "variants": [
           {
             "label": "소합본/PU/지퍼/스카이블루",
             "img": "https://chhouse.kr/web/product/big/202504/aca9f1485d3d52fc20abae309416f18d.jpg",
@@ -2783,7 +2872,7 @@ export const bibleData = {
     "items": [
       {
         "model": "주석큰성경",
-        "size": "특대",
+        "size": "대",
         "mm": 4.5,
         "type": "study",
         "variants": [
@@ -2999,7 +3088,7 @@ export const bibleData = {
       },
       {
         "model": "좋은성경",
-        "size": "특소",
+        "size": "소",
         "mm": 2.9,
         "type": "study",
         "variants": [
@@ -3315,7 +3404,16 @@ export const bibleData = {
             "itemCode": "NEW_S_빅컬러 훼밀리성경_1",
             "originalPrice": 145000,
             "salePrice": 130500
-          },
+          }
+        ]
+      },
+      {
+        "model": "빅컬러 훼밀리성경",
+        "size": "특대",
+        "mm": 5.3,
+        "type": "standard",
+        "translation": "개역개정",
+        "variants": [
           {
             "label": "특대단본/PU/무지퍼/초코",
             "img": "https://chhouse.kr/web/product/big/202405/d8f18686e6574d86d3a0ab0511d37ede.jpg",
@@ -4455,7 +4553,16 @@ export const bibleData = {
             "itemCode": "NEW_D_큰글로읽는우리말비전성경_1",
             "originalPrice": 40000,
             "salePrice": 36000
-          },
+          }
+        ]
+      },
+      {
+        "model": "큰글로읽는우리말비전성경",
+        "size": "소",
+        "mm": 3.8,
+        "type": "standard",
+        "translation": "우리말성경",
+        "variants": [
           {
             "label": "소단본/PU/무지퍼/네이비블루",
             "img": "https://chhouse.kr/web/product/big/202502/1cb2ab154ceb44a15b5abe106da7ca8b.jpg",
