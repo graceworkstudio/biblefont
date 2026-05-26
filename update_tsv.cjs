@@ -18,7 +18,7 @@ try {
   };
 
   const newItems = {}; 
-  const translation = '개역한글';
+  const translation = '우리말성경';
 
   let lastPublisher = '';
   let lastModel = '';
