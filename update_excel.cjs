@@ -8,7 +8,6 @@ const BIBLE_DATA_PATH = path.join(__dirname, 'src', 'data', 'bibleData.js');
 try {
   const workbook = xlsx.readFile(FILE_NAME);
   
-  // Publisher mapping
   const pubMap = {
     '아가페': 'A',
     '생명의말씀사': 'W',
@@ -21,33 +20,35 @@ try {
   const newItems = {}; 
   let totalVariantsRead = 0;
 
-  // 모든 시트를 순회
   workbook.SheetNames.forEach(sheetName => {
-    console.log(`Processing sheet: ${sheetName}`);
     const worksheet = workbook.Sheets[sheetName];
     const rawData = xlsx.utils.sheet_to_json(worksheet);
 
-    let lastTranslation = sheetName; // 시트명을 기본 번역본으로 사용 (필요시)
+    let lastTranslation = sheetName; 
     let lastPublisher = '';
     let lastModel = '';
     let lastSize = '';
     let lastMm = 0;
 
     rawData.forEach((row, idx) => {
-      // Inherit from previous row if undefined
-      const translation = row['번역본'] || lastTranslation || '개역개정';
-      const publisher = row['출판사'] || lastPublisher;
-      const model = row['모델명'] || lastModel;
-      const size = row['크기'] || lastSize;
-      const variantLabel = row['모델명상세'];
-      const variantImg = row['표지이미지링크'];
-      const variantUrl = row['상세페이지링크'];
-      const originalPrice = row[' 정가 '] || row['정가'] || 0;
-      const salePrice = row[' 할인가 '] || row['할인가'] || 0;
-      const rawMm = row['폰트크기'] || row['mm'];
+      // 띄어쓰기 등 불규칙한 키를 위해 정리된 객체 생성
+      const cleanedRow = {};
+      Object.keys(row).forEach(k => {
+        cleanedRow[k.trim()] = row[k];
+      });
+
+      const translation = cleanedRow['번역본'] || lastTranslation || '개역개정';
+      const publisher = cleanedRow['출판사'] || lastPublisher;
+      const model = cleanedRow['모델명'] || lastModel;
+      const size = cleanedRow['크기'] || lastSize;
+      const variantLabel = cleanedRow['모델명상세'];
+      const variantImg = cleanedRow['표지이미지링크'];
+      const variantUrl = cleanedRow['상세페이지링크'];
+      const originalPrice = cleanedRow['정가'] || 0;
+      const salePrice = cleanedRow['할인가'] || 0;
+      const rawMm = cleanedRow['폰트크기'] || cleanedRow['mm'];
       const mm = rawMm !== undefined ? parseFloat(rawMm) : lastMm;
 
-      // Update last seen values
       lastTranslation = translation;
       lastPublisher = publisher;
       lastModel = model;
@@ -68,7 +69,7 @@ try {
           model: model,
           size: size,
           mm: mm,
-          type: 'standard', // default type
+          type: 'standard', 
           translation: translation,
           variants: []
         };
@@ -98,8 +99,6 @@ try {
     });
   });
 
-  console.log(`Total variants read from all sheets: ${totalVariantsRead}`);
-
   let bibleDataFile = fs.readFileSync(BIBLE_DATA_PATH, 'utf-8');
   
   const jsonStr = bibleDataFile.replace('export const bibleData = ', '').replace(/;\s*$/, '');
@@ -110,7 +109,7 @@ try {
     bibleData = eval('(' + jsonStr + ')');
   }
 
-  let addedCount = 0;
+  let updatedCount = 0;
 
   Object.keys(newItems).forEach(pubKey => {
     if (!bibleData[pubKey]) {
@@ -129,14 +128,18 @@ try {
         if (newItem.size) existingItem.size = newItem.size;
         
         newItem.variants.forEach(nv => {
-          if (!existingItem.variants.find(ev => ev.label === nv.label)) {
+          const ev = existingItem.variants.find(v => v.label === nv.label);
+          if (!ev) {
             existingItem.variants.push(nv);
-            addedCount++;
+          } else {
+            // Update prices if they are 0
+            if (nv.originalPrice > 0) ev.originalPrice = nv.originalPrice;
+            if (nv.salePrice > 0) ev.salePrice = nv.salePrice;
+            updatedCount++;
           }
         });
       } else {
         bibleData[pubKey].items.push(newItem);
-        addedCount += newItem.variants.length;
       }
     });
   });
@@ -144,7 +147,7 @@ try {
   const updatedFileContent = `export const bibleData = ${JSON.stringify(bibleData, null, 2)};\n`;
   fs.writeFileSync(BIBLE_DATA_PATH, updatedFileContent, 'utf-8');
 
-  console.log(`Successfully merged data. Added ${addedCount} variants into bibleData.js.`);
+  console.log(`Successfully updated data. Updated prices for ${updatedCount} variants.`);
 
 } catch (e) {
   console.error("Error updating bible data:", e);
