@@ -841,6 +841,74 @@ export const bibleData = {
             "salePrice": 25200
           }
         ]
+      },
+      {
+        "model": "H82AB",
+        "size": "특대",
+        "mm": 4.8,
+        "type": "standard",
+        "translation": "개역한글",
+        "variants": [
+          {
+            "label": "특대단본/PU/무지퍼/브라운",
+            "img": "https://chhouse.kr/web/product/big/202405/29c92b97684bd52bdfbf0a34d8926b7b.jpg",
+            "url": "https://chhouse.kr/product/%EA%B0%9C%EC%97%AD%ED%95%9C%EA%B8%80%EC%84%B1%EA%B2%BD%EC%A0%84%EC%84%9C-%ED%8A%B9%EB%8C%80%EB%8B%A8%EB%B3%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EC%83%89%EC%9D%B8-%EB%B8%8C%EB%9D%BC%EC%9A%B4-h82ab/34962/category/2037/display/1/",
+            "itemCode": "NEW_A_H82AB_0",
+            "originalPrice": 49000,
+            "salePrice": 44100
+          }
+        ]
+      },
+      {
+        "model": "H72EAB",
+        "size": "대",
+        "mm": 4.5,
+        "type": "standard",
+        "translation": "개역한글",
+        "variants": [
+          {
+            "label": "대단본/PU/무지퍼/다크브라운",
+            "img": "https://chhouse.kr/web/product/big/202405/4238ea8608d0a53cb026e92764bba90f.jpg",
+            "url": "https://chhouse.kr/product/%EA%B0%9C%EC%97%AD%ED%95%9C%EA%B8%80-%EC%84%B1%EA%B2%BD%EC%A0%84%EC%84%9C-h72eab-%EB%8C%80%EB%8B%A8%EB%B3%B8-%EC%83%89%EC%9D%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EB%8B%A4%ED%81%AC%EB%B8%8C%EB%9D%BC%EC%9A%B4/39292/category/1401/display/1/",
+            "itemCode": "NEW_A_H72EAB_0",
+            "originalPrice": 44000,
+            "salePrice": 39600
+          }
+        ]
+      },
+      {
+        "model": "H62EAM",
+        "size": "소",
+        "mm": 3,
+        "type": "standard",
+        "translation": "개역한글",
+        "variants": [
+          {
+            "label": "소단본/PU/지갑식/잉키블루",
+            "img": "https://chhouse.kr/web/product/big/202407/9bb100537e198695a5a97599127ad07c.jpg",
+            "url": "https://chhouse.kr/product/%EA%B0%9C%EC%97%AD%ED%95%9C%EA%B8%80-h62eam-%EC%A7%80%EA%B0%91%EC%8B%9D-%EC%86%8C%EB%8B%A8%EB%B3%B8-%EC%83%89%EC%9D%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EC%9E%89%ED%82%A4%EB%B8%94%EB%A3%A8/49026/category/1427/display/1/",
+            "itemCode": "NEW_A_H62EAM_0",
+            "originalPrice": 39000,
+            "salePrice": 35100
+          }
+        ]
+      },
+      {
+        "model": "열린노트성경",
+        "size": "특대",
+        "mm": 3.2,
+        "type": "standard",
+        "translation": "개역한글",
+        "variants": [
+          {
+            "label": "특대단본/우피/무지퍼/다크브라운",
+            "img": "https://chhouse.kr/web/product/big/202506/0718e57b0beb2748db58dfc050536953.jpg",
+            "url": "https://chhouse.kr/product/%EC%B2%9C%EC%97%B0%EC%9A%B0%ED%94%BC-%EA%B0%9C%EC%97%AD%ED%95%9C%EA%B8%80-%EC%97%B4%EB%A6%B0%EB%85%B8%ED%8A%B8%EC%84%B1%EA%B2%BD-%ED%8A%B9%EB%8C%80%EB%8B%A8%EB%B3%B8-%EC%83%89%EC%9D%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EB%8B%A4%ED%81%AC%EB%B8%8C%EB%9D%BC%EC%9A%B4/54208/category/2037/display/1/",
+            "itemCode": "NEW_A_열린노트성경_0",
+            "originalPrice": 56000,
+            "salePrice": 50400
+          }
+        ]
       }
     ]
   },
@@ -1939,6 +2007,31 @@ export const bibleData = {
             "itemCode": "P000COQP000A",
             "originalPrice": 44000,
             "salePrice": 39600
+          }
+        ]
+      },
+      {
+        "model": "H72EWB",
+        "size": "대",
+        "mm": 4.6,
+        "type": "standard",
+        "translation": "개역한글",
+        "variants": [
+          {
+            "label": "대단본/PU/무지퍼/다크브라운",
+            "img": "https://chhouse.kr/web/product/big/202405/e1dfa68b214cab22747005130dc56452.jpg",
+            "url": "https://chhouse.kr/product/%EA%B0%9C%EC%97%AD%ED%95%9C%EA%B8%80-%ED%81%B0%EA%B8%80%EC%9E%90%EC%84%B1%EA%B2%BD%EC%A0%84%EC%84%9C-h72ewb-%EB%8C%80%EB%8B%A8%EB%B3%B8-%EC%83%89%EC%9D%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EB%8B%A4%ED%81%AC%EB%B8%8C%EB%9D%BC%EC%9A%B4/45565/category/1401/display/1/",
+            "itemCode": "NEW_W_H72EWB_0",
+            "originalPrice": 46000,
+            "salePrice": 41400
+          },
+          {
+            "label": "대단본/PU/무지퍼/다크네이비",
+            "img": "https://chhouse.kr/web/product/big/202409/e510b79b0f6183d7871eaf4046a3ae72.jpg",
+            "url": "https://chhouse.kr/product/%EA%B0%9C%EC%97%AD%ED%95%9C%EA%B8%80-%ED%81%B0%EA%B8%80%EC%9E%90%EC%84%B1%EA%B2%BD%EC%A0%84%EC%84%9C-h72ewb-%EB%8C%80%EB%8B%A8%EB%B3%B8-%EC%83%89%EC%9D%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EB%8B%A4%ED%81%AC%EB%84%A4%EC%9D%B4%EB%B9%84/45566/category/1401/display/1/",
+            "itemCode": "NEW_W_H72EWB_1",
+            "originalPrice": 46000,
+            "salePrice": 41400
           }
         ]
       }
