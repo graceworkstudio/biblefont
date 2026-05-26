@@ -4,13 +4,14 @@ import BannerComponent from './BannerComponent';
 import { bibleData } from './data/bibleData';
 import LZString from 'lz-string';
 import { APP_VERSION, UPDATE_NOTES, ENABLE_UI_UPDATE_MODAL, EMPATHY_PARENT_HEADLINE, EMPATHY_BULLETS } from './constants/uiConstants';
-
-
-
-
-
-
-
+const SAMPLE_VERSES = {
+  '개역개정': '태초에 하나님이 천지를 창조하시니라',
+  '개역한글': '태초에 하나님이 천지를 창조하시니라',
+  '새번역': '태초에 하나님이 천지를 창조하셨다',
+  '쉬운성경': '태초에 하나님께서 하늘과 땅을 창조하셨습니다',
+  '현대인의성경': '태초에 하나님이 우주를 창조하셨다',
+  '우리말성경': '하나님께서 태초에 하늘과 땅을 창조하셨습니다'
+};
 // Base64 공유 데이터 인코딩/디코딩 헬퍼 함수
 const encodeSharedItems = (items) => {
   const ids = items.map(item => item.uniqueId);
@@ -1889,7 +1890,7 @@ const App = () => {
                         fontWeight: '800',
                         letterSpacing: '-0.1em'
                       }} className="text-slate-900 border-l-4 border-slate-200 pl-3 md:pl-5 py-1 leading-none whitespace-nowrap bible-preview-text">
-                        태초에 하나님이 천지를 창조하시니라
+                        {SAMPLE_VERSES[item.translation] || SAMPLE_VERSES['개역개정']}
                       </div>
                     </td>
                   </tr>
@@ -2502,7 +2503,7 @@ const App = () => {
                             }} 
                             className="text-slate-900 leading-none pl-1 md:pl-2 select-none"
                           >
-                            태초에 하나님이 천지를 창조하시니라
+                            {SAMPLE_VERSES[item.translation] || SAMPLE_VERSES['개역개정']}
                           </div>
                         </div>
                       </div>
