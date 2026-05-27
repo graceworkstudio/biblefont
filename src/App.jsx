@@ -1355,7 +1355,7 @@ const App = () => {
                         <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none text-center p-4">
                             <span className="text-orange-700 font-black text-lg md:text-xl leading-tight">
                                 이곳에 카드<br/>
-                                (신분증)를 대보세요
+                                (카드크기와 동일한 신분증, 교통카드 가능)를 대보세요
                             </span>
                             <span className="text-orange-600 font-bold text-base mt-3 leading-tight opacity-90">
                                 측정시 카드 테두리에<br/>
