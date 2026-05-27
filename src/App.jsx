@@ -1223,12 +1223,11 @@ const App = () => {
                 <div className="flex justify-between items-start mb-6">
                     <div>
                         <h2 
-                            className="font-black text-gray-900 leading-none tracking-tighter text-[length:var(--font-section-title)]"
-                            style={{ marginBottom: 'var(--spacing-section-subtitle)' }}
+                            className="font-black text-gray-900 leading-none tracking-tighter text-[length:var(--font-section-title)] mb-1"
                         >
-                            화면 배율 맞추기
+                            화면 크기 측정 시작
                         </h2>
-                        <p className="text-sm md:text-base text-gray-500 font-bold">사용 중인 기기에 맞게 조절하세요</p>
+                        <p className="text-gray-500 font-bold tracking-tight" style={{ fontSize: 'var(--font-instruction-body)' }}>사용 중인 기기에 맞게 조절하세요</p>
                     </div>
                     <div 
                         className="font-black text-orange-600 bg-white border-2 border-orange-400 px-2 rounded-full shadow-sm whitespace-nowrap leading-none flex items-center justify-center text-[length:var(--font-btn-circle)] pt-[3.5px] pb-[2.5px]"
