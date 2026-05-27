@@ -1794,7 +1794,7 @@ const App = () => {
             </div>
             
             {/* 모바일 가로스크롤 안내 */}
-            <div className="block md:hidden mt-2 text-center text-[10px] md:text-xs font-bold text-slate-400 select-none">
+            <div className="block md:hidden mt-2 text-center text-[12px] md:text-xs font-bold text-slate-400 select-none">
               ↔ 표를 좌우로 밀어서 모든 필터를 확인해 보세요.
             </div>
           </div>
