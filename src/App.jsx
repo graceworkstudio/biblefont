@@ -477,11 +477,11 @@ const App = () => {
   // 6대 실시간 필터 상태 정의
   const [filters, setFilters] = useState({
     translation: { master: false, options: { revised: true, korean: false, new: false, easy: false, modern: false, woori: false } },
-    hymn: { master: true, options: { yes: true, no: true } },
-    commentary: { master: true, options: { yes: true, no: true } },
-    material: { master: true, options: { natural: true, pu: true, other: true } },
-    portability: { master: true, options: { small: true, medium: true, large: true, pulpit: true, wedding: true } },
-    fontSize: { master: true, options: { small: true, medium: true, senior: true } },
+    hymn: { master: false, options: { yes: true, no: false } },
+    commentary: { master: false, options: { yes: false, no: true } },
+    material: { master: false, options: { natural: true, pu: false, other: false } },
+    portability: { master: false, options: { small: false, medium: false, large: true, pulpit: false, wedding: false } },
+    fontSize: { master: false, options: { small: false, medium: false, senior: true } },
     publisher: { master: true, options: { agape: true, words: true, seong: true, christian: true, duranno: true, other: true } }
   });
 
@@ -489,11 +489,11 @@ const App = () => {
   const resetFilters = () => {
     setFilters({
       translation: { master: false, options: { revised: true, korean: false, new: false, easy: false, modern: false, woori: false } },
-      hymn: { master: true, options: { yes: true, no: true } },
-      commentary: { master: true, options: { yes: true, no: true } },
-      material: { master: true, options: { natural: true, pu: true, other: true } },
-      portability: { master: true, options: { small: true, medium: true, large: true, pulpit: true, wedding: true } },
-      fontSize: { master: true, options: { small: true, medium: true, senior: true } },
+      hymn: { master: false, options: { yes: true, no: false } },
+      commentary: { master: false, options: { yes: false, no: true } },
+      material: { master: false, options: { natural: true, pu: false, other: false } },
+      portability: { master: false, options: { small: false, medium: false, large: true, pulpit: false, wedding: false } },
+      fontSize: { master: false, options: { small: false, medium: false, senior: true } },
       publisher: { master: true, options: { agape: true, words: true, seong: true, christian: true, duranno: true, other: true } }
     });
   };
