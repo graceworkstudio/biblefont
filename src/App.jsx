@@ -1174,26 +1174,24 @@ const App = () => {
               className="font-black text-slate-900"
               style={{ fontSize: 'clamp(22px, 4.5vw, 34px)', lineHeight: '1.2' }}
             >
-              바이블줌 <span style={{ fontSize: '0.6em', fontWeight: 700, opacity: 0.5, letterSpacing: '0.02em' }}>biblezoom</span>
+              바이블줌
             </span>
             <span 
-              className="font-bold text-yellow-900/60"
-              style={{ fontSize: 'clamp(12px, 2.5vw, 16px)', marginTop: '2px' }}
+              className="font-bold text-slate-400 opacity-60 tracking-[0.3em] uppercase"
+              style={{ fontSize: 'clamp(10px, 2vw, 14px)', marginTop: '2px' }}
             >
-              내 눈에 맞는 성경, 직접 비교해보세요.
+              BIBLEZOOM
             </span>
           </h1>
         </div>
         <div className="p-4 md:p-8">
           {/* 서비스 목적 안내 */}
           <div className="mb-10 mt-2 md:mt-4 text-center no-zoom px-4 md:px-8">
-            <div className="inline-block px-4 py-1.5 bg-slate-100 rounded-full text-slate-500 text-[length:var(--font-tag)] font-bold mb-5 uppercase tracking-widest">
-              WE SERVE
-            </div>
-            <p className="text-[length:var(--font-hero-bullets)] font-medium text-slate-700 tracking-tight leading-adaptive-purpose">
-              본 서비스는 온라인에서 가늠하기 어려웠던 <span className="text-orange-600 font-black">성경책의 실제 글자 크기</span>를 <br className="hidden md:block" />
-              내 스마트폰(PC) 화면에 그대로 재현하여, <br className="hidden md:block" />
-              내 눈에 가장 편안한 성경을 고를 수 있도록 돕는 <span className="bg-yellow-200/50 px-1 rounded-sm">맞춤형 가이드</span>입니다.
+            <h2 className="text-2xl md:text-3xl font-black text-slate-800 mb-2 tracking-tight">
+              내 눈에 맞는 성경 찾기
+            </h2>
+            <p className="text-sm md:text-base font-medium text-slate-500 tracking-tight">
+              실제 글씨 크기로 비교하세요.
             </p>
           </div>
 
