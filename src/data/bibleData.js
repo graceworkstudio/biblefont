@@ -1012,7 +1012,7 @@ export const bibleData = {
       {
         "model": "새번역큰글성경",
         "size": "소",
-        "mm": 5.6,
+        "mm": 3.2,
         "type": "standard",
         "translation": "새번역",
         "variants": [
