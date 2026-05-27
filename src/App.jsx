@@ -2072,7 +2072,7 @@ const App = () => {
                             rel="noopener noreferrer"
                             className="flex items-center justify-center bg-orange-500 hover:bg-orange-600 text-white font-black py-2 md:py-2.5 rounded-lg md:rounded-xl text-center text-[10px] md:text-xs px-0.5 md:px-2 whitespace-nowrap tracking-tighter transition-all shadow-xs cursor-pointer w-full"
                           >
-                            바로구매
+                            구매하러가기
                           </a>
                         </div>
                       </div>
@@ -2146,7 +2146,7 @@ const App = () => {
                               rel="noopener noreferrer"
                               className="flex items-center justify-center bg-orange-500 hover:bg-orange-600 text-white font-bold py-1.5 rounded-lg text-center text-[9px] md:text-[11px] px-0.5 md:px-2 whitespace-nowrap tracking-tighter transition-all cursor-pointer w-full"
                             >
-                              바로구매
+                              구매하러가기
                             </a>
                           </div>
                         </div>
@@ -2308,9 +2308,9 @@ const App = () => {
                               uiSize === 'large' ? 'px-3 py-2 text-[11px] md:text-[13px]' :
                               'px-2.5 py-1.5 text-[10px] md:text-[11px]'
                             }`}
-                            title="바로구매"
+                            title="구매하러가기"
                           >
-                            바로구매 🚀
+                            구매하러가기
                           </a>
 
                           {/* 개별 삭제 버튼 */}
@@ -2386,7 +2386,7 @@ const App = () => {
                         onClick={handleBatchCheckout}
                         className="col-span-2 h-12 bg-orange-500 hover:bg-orange-600 text-white font-black rounded-xl text-xs transition-all shadow-md shadow-orange-500/10 cursor-pointer flex items-center justify-center gap-1.5"
                       >
-                        선택 상품 바로구매 🚀
+                        선택상품 구매하러가기
                       </button>
                     </div>
                   </div>
@@ -2545,7 +2545,7 @@ const App = () => {
                     }}
                     className="flex-[1.5] sm:flex-initial h-12 bg-orange-500 hover:bg-orange-600 text-white font-black px-4 rounded-xl text-xs md:text-sm transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-md shadow-orange-500/10"
                   >
-                    바로구매 🚀
+                    구매하러가기
                   </button>
                 </div>
               </div>
@@ -2565,7 +2565,7 @@ const App = () => {
                 <h3 className="text-lg font-black text-slate-800 mb-2">일괄 구매 안내</h3>
                 <p className="text-sm text-slate-600 leading-relaxed break-keep">
                   현재 쇼핑몰 시스템 정책상 여러 상품을 한 번에 결제할 수 없습니다.<br/><br/>
-                  번거로우시겠지만, 관심상품 목록에 있는 <strong>각 상품별 [바로구매 🚀] 버튼</strong>을 눌러 <strong>하나씩 개별 구매</strong>를 진행해 주시길 부탁드립니다.
+                  번거로우시겠지만, 관심상품 목록에 있는 <strong>각 상품별 [구매하러가기] 버튼</strong>을 눌러 <strong>하나씩 개별 구매</strong>를 진행해 주시길 부탁드립니다.
                 </p>
               </div>
               <div className="p-4 bg-slate-50 border-t border-slate-100 flex gap-2">
