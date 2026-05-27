@@ -349,7 +349,7 @@ export const bibleData = {
       {
         "model": "큰글자 굿모닝성경",
         "size": "중",
-        "mm": 3.6,
+        "mm": 3.3,
         "type": "study",
         "variants": [
           {
@@ -359,15 +359,8 @@ export const bibleData = {
             "itemCode": "P000COMB000A",
             "originalPrice": 43000,
             "salePrice": 38700
-          }
-        ]
-      },
-      {
-        "model": "큰글자 굿모닝성경",
-        "size": "중",
-        "mm": 3.3,
-        "type": "study",
-        "variants": [
+          },
+
           {
             "label": "중합본/천연/지퍼/리치브라운",
             "img": "https://chhouse.kr/web/product/big/202504/0b5ed7556ad434989e9a1c73083cb111.jpg",
@@ -938,7 +931,7 @@ export const bibleData = {
       {
         "model": "새번역큰글성경",
         "size": "특대",
-        "mm": 5.6,
+        "mm": 4.4,
         "type": "standard",
         "translation": "새번역",
         "variants": [
@@ -979,7 +972,7 @@ export const bibleData = {
       {
         "model": "새번역큰글성경",
         "size": "중",
-        "mm": 5.6,
+        "mm": 3.7,
         "type": "standard",
         "translation": "새번역",
         "variants": [
