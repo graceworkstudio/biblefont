@@ -6,13 +6,7 @@
       "**/.*",
       "**/node_modules/**"
     ],
-    "redirects": [
-      {
-        "source": "**",
-        "destination": "https://biblezoom.co.kr",
-        "type": 301
-      }
-    ],
+
     "rewrites": [
       {
         "source": "/api/cafe24Products",
