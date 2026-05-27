@@ -1196,31 +1196,23 @@ const App = () => {
           </div>
 
           <div
-            className="mb-12 md:mb-16 rounded-2xl border-2 border-orange-200 bg-gradient-to-br from-orange-50 to-amber-50/90 p-4 md:p-6 shadow-sm no-zoom"
+            className="mb-12 md:mb-16 no-zoom px-2"
             role="region"
             aria-label="이 서비스가 도움이 되는 경우"
           >
-            <div className="flex items-start gap-3 md:gap-4">
-              <div className="flex-shrink-0 rounded-2xl bg-white p-2.5 md:p-3 border border-orange-200 shadow-sm">
-                <Gift className="text-orange-600" size={26} strokeWidth={2.25} aria-hidden />
-              </div>
-              <div className="min-w-0 space-y-3">
-                <p
-                  className="font-black text-gray-900 leading-snug tracking-tight text-[length:var(--font-hero-headline)]"
-                >
-                  {EMPATHY_PARENT_HEADLINE}
-                </p>
-                <ul className="space-y-0 text-gray-700 font-bold text-[length:var(--font-hero-bullets)]">
-                  {EMPATHY_BULLETS.map((line, i) => (
-                    <li 
-                      key={i} 
-                      className="flex items-start gap-2 leading-adaptive-empathy"
-                    >
-                      <span className="text-orange-500 mt-1 shrink-0 select-none" aria-hidden>•</span>
-                      <span>{line}</span>
-                    </li>
-                  ))}
-                </ul>
+            <div className="flex flex-col items-center text-center">
+              <p className="font-black text-gray-800 leading-snug tracking-tight text-[length:var(--font-hero-headline)] mb-5">
+                {EMPATHY_PARENT_HEADLINE}
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 w-full max-w-3xl">
+                {EMPATHY_BULLETS.map((line, i) => (
+                  <div 
+                    key={i} 
+                    className="flex items-center justify-center bg-white border border-gray-200 rounded-xl py-2.5 px-3 shadow-sm"
+                  >
+                    <span className="text-gray-700 font-bold text-[14px] md:text-[15px] tracking-tight">{line}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>

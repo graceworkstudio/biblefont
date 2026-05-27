@@ -12,7 +12,7 @@ export const ENABLE_UI_UPDATE_MODAL = false;
 /** 첫 화면 공감 카피(B안): 기능 설명 전 스크롤 상단 노출 */
 export const EMPATHY_PARENT_HEADLINE = '이런 분들께 특히 유용해요';
 export const EMPATHY_BULLETS = [
-  '성경 글씨가 작게 느껴질 때',
-  '부모님 성경을 선물하기 전',
-  '온라인 구매 전 실제 크기가 궁금할 때',
+  '👀 글씨가 작게 느껴질 때',
+  '🎁 부모님 성경 선물 전',
+  '🔍 실제 크기가 궁금할 때',
 ];
