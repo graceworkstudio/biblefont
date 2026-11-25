@@ -11,8 +11,8 @@ try:
     with urllib.request.urlopen(req) as response:
         js_content = response.read().decode('utf-8')
     
-    # Find setSelectedItem
-    idx = js_content.find("setSelectedItem:")
+    # Find setCommonInput
+    idx = js_content.find("setCommonInput")
     if idx != -1:
         print("Found setSelectedItem:")
         print(js_content[idx:idx+1500])

@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Ruler, BookOpen, AlertCircle, X, Bell, ExternalLink, ShoppingCart, ShoppingBag, ChevronDown, ChevronRight, MessageCircle, Play, Gift, Share2 } from 'lucide-react';
 import BannerComponent from './BannerComponent';
-import { bibleData } from './data/bibleData';
+import { bibleData as baseBibleData } from './data/bibleData';
+import { useLiveBibleData, refreshCartItems } from './data/liveStatus';
 import LZString from 'lz-string';
 import { APP_VERSION, UPDATE_NOTES, ENABLE_UI_UPDATE_MODAL, EMPATHY_PARENT_HEADLINE, EMPATHY_BULLETS } from './constants/uiConstants';
 const SAMPLE_VERSES = {
@@ -66,16 +67,31 @@ const decodeSharedItems = (encodedStr) => {
 
 
 const App = () => {
+  // 쇼핑몰 현재 가격·품절 상태가 반영된 데이터 (못 읽으면 기본 데이터 그대로)
+  const bibleData = useLiveBibleData(baseBibleData);
   const [activeTab, setActiveTab] = useState('A');
   const [selectedType, setSelectedType] = useState('all');
   const [globalScale, setGlobalScale] = useState(1.5);
   const [hasCalibrated, setHasCalibrated] = useState(false);
   const [showUpdateNotice, setShowUpdateNotice] = useState(false);
   const [showBibleList, setShowBibleList] = useState(false);
-  const [isAccordionOpen, setIsAccordionOpen] = useState(false);
   const [uiSize, setUiSize] = useState('medium'); // small (original compact), medium (baseline), large
   const [hoverItem, setHoverItem] = useState(null);
   const hoverTimeoutRef = useRef(null);
+
+  const [isSmallDevice, setIsSmallDevice] = useState(false);
+
+  useEffect(() => {
+    const checkDeviceResolution = () => {
+      if (typeof window !== 'undefined') {
+        const maxScreenDimension = Math.max(window.screen.width || 0, window.screen.height || 0);
+        setIsSmallDevice(maxScreenDimension <= 1400);
+      }
+    };
+    checkDeviceResolution();
+    window.addEventListener('resize', checkDeviceResolution);
+    return () => window.removeEventListener('resize', checkDeviceResolution);
+  }, []);
 
   const [selectedItem, setSelectedItem] = useState(null);
   const [fetchedVariants, setFetchedVariants] = useState({});
@@ -86,6 +102,24 @@ const App = () => {
   const tabsRef = useRef(null);
   const showTimeoutRef = useRef(null);
   const [isHoverActive, setIsHoverActive] = useState(false);
+  const popupRef = useRef(null);
+  const [popupHeight, setPopupHeight] = useState(520);
+
+  useEffect(() => {
+    if (!popupRef.current) return;
+    
+    const resizeObserver = new ResizeObserver((entries) => {
+      for (let entry of entries) {
+        const height = entry.target.getBoundingClientRect().height;
+        if (height > 0) {
+          setPopupHeight(height);
+        }
+      }
+    });
+    
+    resizeObserver.observe(popupRef.current);
+    return () => resizeObserver.disconnect();
+  }, [hoverItem, isHoverActive]);
 
   // 장바구니 및 알림 관련 상태
   const [cartItems, setCartItems] = useState(() => {
@@ -276,6 +310,11 @@ const App = () => {
     localStorage.setItem('biblezoom_cart', JSON.stringify(cartItems));
   }, [cartItems]);
 
+  // 관심상품에 담아 둔 책의 가격도 쇼핑몰 현재 가격으로 맞춤
+  useEffect(() => {
+    setCartItems(prev => refreshCartItems(prev, bibleData));
+  }, [bibleData]);
+
   // 토스트 메시지 팝업 트리거
   const showToast = (msg) => {
     if (toastTimeoutRef.current) clearTimeout(toastTimeoutRef.current);
@@ -306,6 +345,7 @@ const App = () => {
         variantUrl: variant.url,
         originalPrice: variant.originalPrice,
         salePrice: variant.salePrice,
+        itemCode: variant.itemCode || '',
         quantity: 1
       }];
     });
@@ -346,98 +386,103 @@ const App = () => {
     return null;
   };
 
-  const quietlyAddToCart = (item) => {
-    return new Promise(async (resolve) => {
-      const productNo = extractProductNo(item.variantUrl);
-      if (!productNo) return resolve();
-
+  // 상세페이지에서 실제 Cafe24 item_code 또는 product_code 동적 추출
+  const fetchItemCodeFromPage = async (productNo) => {
+    try {
       const domain = window.location.origin;
+      const response = await fetch(`${domain}/product/detail.html?product_no=${productNo}`);
+      if (!response.ok) {
+        throw new Error(`Failed to fetch detail page (status: ${response.status})`);
+      }
+      const html = await response.text();
+      
+      const itemCodeMatch = html.match(/item_code\s*=\s*['"]([^'"]+)['"]/);
+      if (itemCodeMatch && itemCodeMatch[1]) {
+        const parsed = itemCodeMatch[1].trim();
+        if (parsed && !parsed.startsWith('NEW_')) {
+          return parsed;
+        }
+      }
+      
+      const productCodeMatch = html.match(/product_code\s*=\s*['"]([^'"]+)['"]/);
+      if (productCodeMatch && productCodeMatch[1]) {
+        const parsed = productCodeMatch[1].trim();
+        if (parsed) {
+          return `${parsed}000A`;
+        }
+      }
+      return null;
+    } catch (e) {
+      console.error(`[BibleZoom] fetchItemCodeFromPage failed for product_no=${productNo}:`, e);
+      return null;
+    }
+  };
 
-      let itemCode = item.itemCode;
-      if (!itemCode) {
-        console.warn(`[BibleZoom] item_code not found for product_no=${productNo}, URL=${item.variantUrl}`);
+  // iframe 없이 direct fetch 및 async/await를 이용한 순차 장바구니 담기
+  const quietlyAddToCart = async (item) => {
+    const productNo = extractProductNo(item.variantUrl || item.url);
+    if (!productNo) {
+      console.error('[BibleZoom] productNo extraction failed for URL:', item.variantUrl || item.url);
+      return false;
+    }
+
+    let itemCode = item.itemCode;
+    
+    // itemCode가 비어있거나 NEW_로 시작하는 임시 코드라면 상세페이지에서 긁어오기
+    if (!itemCode || itemCode.startsWith('NEW_')) {
+      console.log(`[BibleZoom] itemCode is missing or placeholder (${itemCode}). Scraping page for product_no=${productNo}...`);
+      const scraped = await fetchItemCodeFromPage(productNo);
+      if (scraped) {
+        console.log(`[BibleZoom] Scraped itemCode successfully: ${scraped}`);
+        itemCode = scraped;
+      } else {
+        itemCode = `${productNo}000A`;
+        console.warn(`[BibleZoom] Failed to scrape itemCode. Using fallback: ${itemCode}`);
+      }
+    }
+
+    try {
+      const params = new URLSearchParams();
+      params.append('product_no', productNo);
+      params.append('quantity', '1');
+      params.append('basket_type', 'A0000');
+      params.append('delvtype', 'A');
+      params.append('command', 'add');
+      params.append('selected_item[]', `1||${itemCode}`);
+
+      console.log(`[BibleZoom] Adding to cart: product_no=${productNo}, itemCode=${itemCode}`);
+
+      const response = await fetch('/exec/front/order/basket/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+          'X-Requested-With': 'XMLHttpRequest'
+        },
+        body: params.toString()
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
 
-      try {
-        const data = {
-          'selected_item[]': itemCode ? `1||${itemCode}` : '',
-          'relation_product': 'yes',
-          'is_individual': 'F',
-          'product_no': productNo,
-          'product_name': `${item.model || ''} ${item.label || ''}`.trim(),
-          'main_cate_no': '0',
-          'display_group': '0',
-          'option_type': 'T',
-          'product_min': '1',
-          'command': 'add',
-          'has_option': 'F',
-          'product_price': item.salePrice ? String(item.salePrice) : '0',
-          'delvType': 'A',
-          'redirect': '2',
-          'product_max_type': 'T',
-          'product_max': '9999',
-          'basket_type': 'A0000',
-          'quantity': '1',
-          'is_direct_buy': 'F',
-          'is_cultural_tax': 'F'
-        };
+      const resJson = await response.json();
+      console.log(`[BibleZoom] AddToCart Response for product ${productNo}:`, resJson);
 
-        const iframeId = `bz-cart-iframe-${productNo}-${Date.now()}`;
-        const iframe = document.createElement('iframe');
-        iframe.name = iframeId;
-        iframe.style.display = 'none';
-        
-        // 1단계: 실제 상품 상세 페이지를 iframe에 로드하여 Referer를 맞춤
-        iframe.src = `${domain}/product/detail.html?product_no=${productNo}`;
-        
-        let loadCount = 0;
-        iframe.onload = () => {
-          loadCount++;
-          if (loadCount === 1) {
-            // 상세 페이지 로드 완료 -> iframe 내부에 폼을 생성하여 전송!
-            try {
-              const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-              const form = iframeDoc.createElement('form');
-              form.method = 'POST';
-              form.action = `/exec/front/order/basket/`;
-              
-              for (const key in data) {
-                if (data[key] !== undefined && data[key] !== null) {
-                  const input = iframeDoc.createElement('input');
-                  input.type = 'hidden';
-                  input.name = key;
-                  input.value = data[key];
-                  form.appendChild(input);
-                }
-              }
-              
-              iframeDoc.body.appendChild(form);
-              form.submit(); // 이 전송의 Referer는 상세 페이지가 됨 (카페24 뚫림)
-            } catch (err) {
-              console.error('Iframe CORS block. You must run this on chhouse.kr', err);
-              resolve();
-            }
-          } else if (loadCount === 2) {
-            // 장바구니 전송 응답 완료
-            setTimeout(() => {
-              if (iframe.parentNode) iframe.parentNode.removeChild(iframe);
-            }, 500);
-            resolve();
-          }
-        };
-
-        document.body.appendChild(iframe);
-        
-        // 타임아웃 4초 (상품페이지 로드 2초 + 장바구니 처리 2초 감안)
-        setTimeout(() => {
-          resolve();
-        }, 4000);
-
-      } catch (e) {
-        console.error('Parent cart add failed', e);
-        resolve();
+      const isSuccess = resJson.result === 0 || (resJson.aBasketProduct && resJson.aBasketProduct.length > 0);
+      if (isSuccess) {
+        console.log(`[BibleZoom] Add to cart success for product_no=${productNo}`);
+        return true;
+      } else {
+        const errorMsg = resJson.alertMSG || resJson.message || '장바구니 담기 권한이 없거나 품절입니다.';
+        console.error(`[BibleZoom] Add to cart failed for product_no=${productNo}:`, errorMsg);
+        showToast(`⚠️ [담기 실패] ${item.model || ''} - ${errorMsg}`);
+        return false;
       }
-    });
+    } catch (e) {
+      console.error(`[BibleZoom] quietlyAddToCart failed for product_no=${productNo}`, e);
+      showToast(`⚠️ [담기 오류] ${item.model || ''} - 네트워크 또는 시스템 오류`);
+      return false;
+    }
   };
 
   // 개별 상품 바로구매 (결제창 직행 불가 -> 상세페이지로 이동)
@@ -450,7 +495,7 @@ const App = () => {
     }
   };
 
-  // 다중 상품 일괄 구매 (안내 팝업 띄우기)
+  // 다중 상품 일괄 구매 (결제 도메인 리다이렉트 처리)
   const handleBatchCheckout = () => {
     const selectedItems = cartItems.filter(item => selectedCartIds.includes(item.uniqueId));
     if (selectedItems.length === 0) {
@@ -458,19 +503,26 @@ const App = () => {
       return;
     }
 
-    if (selectedItems.length === 1) {
-      // 1개만 선택된 경우, 다중 결제가 아니므로 곧바로 상세페이지 오픈
-      const targetUrl = selectedItems[0].variantUrl || selectedItems[0].url;
-      if (targetUrl) {
-        window.open(targetUrl, '_blank');
-      } else {
-        showToast('❌ 상품 정보를 찾을 수 없습니다.');
-      }
-      return;
+    // 1개 이상일 때: 결제 처리 전용 도메인(Same-Origin)으로 리다이렉트
+    try {
+      const serialized = JSON.stringify(selectedItems.map(item => ({
+        variantUrl: item.variantUrl,
+        itemCode: item.itemCode || '',
+        salePrice: item.salePrice || 0,
+        model: item.model || '',
+        variantLabel: item.variantLabel || ''
+      })));
+      const encoded = encodeURIComponent(btoa(encodeURIComponent(serialized)));
+      
+      const currentPath = window.location.pathname; // 운영/테스트 폴더 경로 동적 자동 감지
+      const redirectUrl = `${window.location.origin}${currentPath}?batch_order=${encoded}`;
+      
+      // 결제 도메인으로 리다이렉션
+      window.location.href = redirectUrl;
+    } catch (e) {
+      console.error("[BibleZoom] Batch checkout redirect failed", e);
+      showToast('❌ 일괄 결제 처리 중 오류가 발생했습니다.');
     }
-
-    // 2개 이상일 때만 새 탭 무더기 방지를 위해 안내 모달 띄움
-    setIsBatchNoticeOpen(true);
   };
 
 
@@ -478,11 +530,11 @@ const App = () => {
   const [filters, setFilters] = useState({
     translation: { master: false, options: { revised: true, korean: false, new: false, easy: false, modern: false, woori: false } },
     hymn: { master: false, options: { yes: true, no: false } },
-    commentary: { master: false, options: { yes: false, no: true } },
+    commentary: { master: false, options: { yes: true, no: false } },
     material: { master: false, options: { natural: true, pu: false, other: false } },
     portability: { master: false, options: { small: false, medium: false, large: true, pulpit: false, wedding: false } },
     fontSize: { master: false, options: { small: false, medium: false, senior: true } },
-    publisher: { master: true, options: { agape: true, words: true, seong: true, christian: true, duranno: true, other: true } }
+    publisher: { master: false, options: { agape: true, words: true, seong: true, christian: false, duranno: false, other: false } }
   });
 
   // 필터 초기화 함수
@@ -490,11 +542,11 @@ const App = () => {
     setFilters({
       translation: { master: false, options: { revised: true, korean: false, new: false, easy: false, modern: false, woori: false } },
       hymn: { master: false, options: { yes: true, no: false } },
-      commentary: { master: false, options: { yes: false, no: true } },
+      commentary: { master: false, options: { yes: true, no: false } },
       material: { master: false, options: { natural: true, pu: false, other: false } },
       portability: { master: false, options: { small: false, medium: false, large: true, pulpit: false, wedding: false } },
       fontSize: { master: false, options: { small: false, medium: false, senior: true } },
-      publisher: { master: true, options: { agape: true, words: true, seong: true, christian: true, duranno: true, other: true } }
+      publisher: { master: false, options: { agape: true, words: true, seong: true, christian: false, duranno: false, other: false } }
     });
   };
 
@@ -532,20 +584,17 @@ const App = () => {
   const handleMouseEnter = (item, e) => {
     if (hideTimeoutRef.current) clearTimeout(hideTimeoutRef.current);
     if (showTimeoutRef.current) clearTimeout(showTimeoutRef.current);
-    
-    // 신규 아이템으로 진입 시 기존 팝업 즉시 초기화
-    if (hoverItem && hoverItem.model !== item.model) {
-      setIsHoverActive(false);
-    }
-    
-    setHoverItem(item);
-    setMousePos({ x: e.clientX, y: e.clientY });
-    setPopupPos({ x: e.clientX, y: e.clientY });
-    handleFetchVariants(item);
+
+    const clientX = e.clientX;
+    const clientY = e.clientY;
 
     showTimeoutRef.current = setTimeout(() => {
+      setHoverItem(item);
+      setMousePos({ x: clientX, y: clientY });
+      setPopupPos({ x: clientX, y: clientY });
+      handleFetchVariants(item);
       setIsHoverActive(true);
-    }, 300);
+    }, 150); // 150ms 호버 지연 시간을 주어 다른 행을 스칠 때 팝업이 바로 꺼지는 현상 방지
   };
 
   const handleMouseLeave = () => {
@@ -602,18 +651,18 @@ const App = () => {
           content: {
             title: '🔎 돋보기 없이 고르는 큰 글자 성경',
             description: '앱 설치 없이 지금 바로 내 스마트폰에서 실제 글자 크기를 확인해 보세요!',
-            imageUrl: 'https://biblefont.web.app/biblezoom-kakao-share3.png',
+            imageUrl: 'https://biblezoom.co.kr/web/biblezoom/biblezoom-kakao-share.jpg',
             link: {
-              mobileWebUrl: 'https://biblezoom.co.kr',
-              webUrl: 'https://biblezoom.co.kr',
+              mobileWebUrl: 'https://biblezoom.co.kr/web/biblezoom/index.html',
+              webUrl: 'https://biblezoom.co.kr/web/biblezoom/index.html',
             },
           },
           buttons: [
             {
               title: '성경 폰트 크기 비교하기',
               link: {
-                mobileWebUrl: 'https://biblezoom.co.kr',
-                webUrl: 'https://biblezoom.co.kr',
+                mobileWebUrl: 'https://biblezoom.co.kr/web/biblezoom/index.html',
+                webUrl: 'https://biblezoom.co.kr/web/biblezoom/index.html',
               },
             },
           ],
@@ -633,7 +682,7 @@ const App = () => {
   const handleSmsShare = async () => {
     const title = "[바이블줌] 돋보기 없이 고르는 큰 글자 성경";
     const text = "앱 설치 없이 내 폰에서 실제 글자 크기를 바로 확인해 보세요!";
-    const url = "https://biblezoom.co.kr";
+    const url = "https://biblezoom.co.kr/web/biblezoom/index.html";
     const fullText = `${title}\n${text}\n${url}`;
 
     if (navigator.share) {
@@ -737,34 +786,31 @@ const App = () => {
     }
 
     const margin = 20; // 브라우저 창 테두리와 팝업 사이의 최소 여백
-    const cursorGap = 20; // 마우스 커서와 팝업 사이의 띄우는 간격
-    const popupWidth = 440; // 설정하신 팝업 너비
-    const popupHeight = 520; // 설정하신 팝업 높이
+    const cursorGap = 30; // 마우스 커서와 팝업 사이의 가로 간격
+    const popupWidth = 440; // 팝업 너비
+    const currentHeight = popupHeight || 520; // 동적으로 계산된 실제 팝업 높이 사용
 
-    // 1. 기본 위치: 마우스 우측 하단
+    // 1. 가로 위치: 마우스 우측 배치
     let left = popupPos.x + cursorGap;
-    let top = popupPos.y + cursorGap;
-
-    // 2. 가로 위치 조정: 우측 공간이 부족하면 마우스 좌측으로 띄움
+    // 우측 공간이 부족하면 마우스 좌측 배치
     if (left + popupWidth > window.innerWidth - margin) {
       left = popupPos.x - popupWidth - cursorGap;
-      // 좌측으로 넘겨도 화면을 벗어나면 최소 여백에 맞춤
       if (left < margin) {
         left = margin;
       }
     }
 
-    // 3. 세로 위치 조정: 하단 공간이 부족하면 마우스 상단으로 띄움 (원래 방식 복원)
-    const availableBelow = window.innerHeight - popupPos.y - cursorGap;
+    // 2. 세로 위치: 마우스 커서(popupPos.y)가 항상 팝업의 세로 범위 내(중앙 부근)에 걸쳐 있도록 조정
+    // 이로 인해 사용자가 가로로 마우스를 이동할 때 다른 행의 영역을 침범하지 않고 자연스럽게 팝업 안으로 진입할 수 있습니다.
+    let top = popupPos.y - (currentHeight / 2);
 
-    if (availableBelow < popupHeight + margin) {
-      // 아래쪽 공간이 모자라면 마우스 커서 위쪽으로 팝업을 올립니다.
-      top = popupPos.y - popupHeight - cursorGap;
-
-      // 위로 올렸을 때 화면 상단을 벗어난다면 상단 여백에 맞춥니다.
-      if (top < margin) {
-        top = margin;
-      }
+    // 상단 화면 경계를 벗어나면 최소 마진에 맞춤
+    if (top < margin) {
+      top = margin;
+    }
+    // 하단 화면 경계를 벗어나면 하단 마진에 맞춤
+    if (top + currentHeight > window.innerHeight - margin) {
+      top = window.innerHeight - currentHeight - margin;
     }
 
     return {
@@ -933,6 +979,7 @@ const App = () => {
             variantUrl: variant.url,
             originalPrice: variant.originalPrice,
             salePrice: variant.salePrice,
+            itemCode: variant.itemCode || '',
             quantity: 1
           });
         });
@@ -965,6 +1012,100 @@ const App = () => {
     }
   }, [bibleData]);
 
+  // URL에서 batch_order를 감지하여 순차적으로 카페24 장바구니에 일괄 담기 수행
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const batchOrder = urlParams.get('batch_order');
+
+    const isChhouseDomain = window.location.hostname.endsWith('chhouse.kr') || 
+                            window.location.hostname.endsWith('chhouse.cafe24.com') ||
+                            window.location.hostname.endsWith('biblezoom.co.kr') ||
+                            window.location.hostname === 'localhost' ||
+                            window.location.hostname === '127.0.0.1';
+
+    if (batchOrder && isChhouseDomain) {
+      const processBatchOrder = async () => {
+        try {
+          const decoded = decodeURIComponent(atob(batchOrder.replace(/ /g, '+')));
+          const itemsToOrder = JSON.parse(decoded);
+
+          if (itemsToOrder && itemsToOrder.length > 0) {
+            setIsCartSubmitting(true);
+            setSubmitProgress({ current: 0, total: itemsToOrder.length });
+
+            // 새로고침 시 중복 담기 방지 위해 URL 파라미터 즉시 제거
+            window.history.replaceState({}, document.title, window.location.pathname);
+
+            for (let i = 0; i < itemsToOrder.length; i++) {
+              setSubmitProgress({ current: i + 1, total: itemsToOrder.length });
+              const item = itemsToOrder[i];
+              
+              await quietlyAddToCart({
+                variantUrl: item.variantUrl,
+                itemCode: item.itemCode,
+                salePrice: item.salePrice,
+                model: item.model,
+                label: item.variantLabel
+              });
+
+              // 200ms 대기하여 쿠키 세션 동기화 및 안정성 보장
+              await new Promise(resolve => setTimeout(resolve, 200));
+            }
+
+            showToast('🛒 선택하신 모든 성경을 장바구니에 담았습니다! 결제 페이지로 이동합니다.');
+            setTimeout(async () => {
+              try {
+                // Cafe24 주문서 결제 세션 초기화 (basket_type=all_buy 로 결제 대상 지정)
+                const orderInitResponse = await fetch('/exec/front/order/order/', {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+                    'X-Requested-With': 'XMLHttpRequest'
+                  },
+                  body: 'basket_type=all_buy'
+                });
+
+                if (!orderInitResponse.ok) {
+                  throw new Error(`Order init HTTP error: ${orderInitResponse.status}`);
+                }
+
+                const orderInitJson = await orderInitResponse.json();
+                console.log('[BibleZoom] Order Init Response:', orderInitJson);
+
+                if (orderInitJson.result < 0) {
+                  showToast(`❌ 결제창 이동 실패: ${orderInitJson.alertMSG || '주문 세션 생성 오류'}`);
+                  setIsCartSubmitting(false);
+                  return;
+                }
+
+                const orderUrl = `${window.location.origin}/order/orderform.html?basket_type=all_buy&delvtype=A`;
+
+                if (orderInitJson.isLogin === 'F') {
+                  // 비회원 구매인 경우 로그인 페이지에서 noMember=1 파라미터를 통해 비회원 결제창으로 우회
+                  const loginUrl = `${window.location.origin}/member/login.html?noMember=1&returnUrl=${encodeURIComponent(orderUrl)}`;
+                  window.location.replace(loginUrl);
+                } else {
+                  // 로그인 회원인 경우 즉시 결제창으로 이동
+                  window.location.replace(orderUrl);
+                }
+              } catch (err) {
+                console.error('[BibleZoom] Order initialization failed', err);
+                // 오류 시 폴백으로 기존처럼 직접 결제창 이동 시도
+                window.location.replace(`${window.location.origin}/order/orderform.html?basket_type=all_buy&delvtype=A`);
+              }
+            }, 1000);
+          }
+        } catch (e) {
+          console.error("[BibleZoom] Batch order processing failed", e);
+          showToast('❌ 장바구니 담기 처리 중 오류가 발생했습니다.');
+          setIsCartSubmitting(false);
+        }
+      };
+
+      processBatchOrder();
+    }
+  }, []);
+
   // 카카오톡 선택 상품 공유하기 기능 구현
   const handleKakaoCartShare = () => {
     if (!window.Kakao || !window.Kakao.isInitialized()) {
@@ -980,7 +1121,7 @@ const App = () => {
 
     try {
       const shareCode = encodeSharedItems(selectedItems);
-      const shareUrl = `https://biblezoom.co.kr/?share=${shareCode}`;
+      const shareUrl = `https://biblezoom.co.kr/web/biblezoom/index.html?share=${shareCode}`;
 
       let title = '';
       let description = '';
@@ -1052,7 +1193,7 @@ const App = () => {
 
   const handleCopyAppUrl = async () => {
     try {
-      const text = "[바이블줌] 돋보기 없이 고르는 큰 글자 성경\n앱 설치 없이 내 폰에서 실제 글자 크기를 바로 확인해 보세요!\n\nhttps://biblezoom.co.kr";
+      const text = "[바이블줌] 돋보기 없이 고르는 큰 글자 성경\n앱 설치 없이 내 폰에서 실제 글자 크기를 바로 확인해 보세요!\n\nhttps://biblezoom.co.kr/web/biblezoom/index.html";
       await navigator.clipboard.writeText(text);
       if (typeof window.showToast === 'function') {
         window.showToast('🔗 앱 링크가 복사되었습니다.');
@@ -1075,7 +1216,7 @@ const App = () => {
     }
     try {
       const shareCode = encodeSharedItems(selectedItems);
-      const shareUrl = `https://biblezoom.co.kr/?share=${shareCode}`;
+      const shareUrl = `https://biblezoom.co.kr/web/biblezoom/index.html?share=${shareCode}`;
       
       let text = `🎁 [바이블줌] 추천 성경 목록\n\n`;
       const lines = selectedItems.slice(0, 3).map((item, idx) => 
@@ -1151,7 +1292,7 @@ const App = () => {
         <div 
           className="bg-yellow-400 py-6 md:py-8 text-center text-slate-900 border-b border-yellow-500 relative rounded-t-2xl no-zoom"
         >
-          <div className="absolute bottom-1 right-3 text-[11px] md:text-[13px] font-bold text-yellow-900/40 uppercase tracking-tight leading-none origin-bottom-right transform scale-[0.8] md:scale-[0.8]">Version {APP_VERSION}</div>
+          <div className="absolute bottom-1 right-3 text-[11px] md:text-[13px] font-bold text-yellow-900/40 uppercase tracking-widest leading-none origin-bottom-right transform scale-[0.8] md:scale-[0.8]">Version {APP_VERSION}</div>
           <div className="absolute top-4 right-4 flex items-center gap-2 no-zoom">
             <span className="font-black text-yellow-900/40 uppercase hidden md:inline no-zoom text-[length:var(--font-version)] md:text-[length:var(--font-version-md)] transition-all">글자 크기</span>
             <div className="flex bg-white/30 p-1 rounded-lg backdrop-blur-sm no-zoom">
@@ -1177,14 +1318,14 @@ const App = () => {
               바이블줌
             </span>
             <span 
-              className="font-bold text-slate-400 opacity-60 tracking-[0.3em] uppercase"
-              style={{ fontSize: 'clamp(10px, 2vw, 14px)', marginTop: '2px' }}
+              className="font-bold text-slate-700 tracking-[0.55em] uppercase"
+              style={{ fontSize: 'clamp(10px, 2vw, 14px)', marginTop: '2px', marginRight: '-0.55em' }}
             >
               BIBLEZOOM
             </span>
           </h1>
         </div>
-        <div className="p-4 md:p-8">
+        <div className="px-2 py-4 md:p-8">
           {/* 서비스 목적 안내 */}
           <div className="mb-10 mt-2 md:mt-4 text-center no-zoom px-4 md:px-8">
             <h2 className="text-2xl md:text-3xl font-black text-slate-800 mb-2 tracking-tight">
@@ -1217,17 +1358,19 @@ const App = () => {
             </div>
           </div>
 
-          <div id="calibration-section" className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-start">
+          <div id="calibration-section" className="grid grid-cols-1 lg:grid-cols-2 gap-3 lg:gap-12 items-start">
             {/* 좌측 영역: 설명 및 조절 슬라이더 */}
             <div className="lg:col-span-1 flex flex-col">
-                <div className="flex justify-between items-start mb-6">
+                <div className="flex justify-between items-start mb-4 lg:mb-6">
                     <div>
                         <h2 
                             className="font-black text-gray-900 leading-none tracking-tighter text-[length:var(--font-section-title)] mb-1"
                         >
                             화면 크기 측정 시작
                         </h2>
-                        <p className="text-gray-500 font-bold tracking-tight" style={{ fontSize: 'var(--font-instruction-body)' }}>사용 중인 기기에 맞게 조절하세요</p>
+                        <p className="text-gray-500 font-bold tracking-tight leading-normal" style={{ fontSize: 'var(--font-instruction-body)' }}>
+                            실제 성경 크기처럼 비교하기 위해<br className="sm:hidden" /> 먼저 화면 비율을 맞춰주세요.
+                        </p>
                     </div>
                     <div 
                         className="font-black text-orange-600 bg-white border-2 border-orange-400 px-2 rounded-full shadow-sm whitespace-nowrap leading-none flex items-center justify-center text-[length:var(--font-btn-circle)] pt-[3.5px] pb-[2.5px]"
@@ -1236,11 +1379,11 @@ const App = () => {
                     </div>
                 </div>
 
-                <p className="text-gray-700 mb-6 font-bold instruction-text leading-adaptive-empathy" style={{ fontSize: 'var(--font-instruction-body)' }}>
-                    지갑 속 카드를 우측(또는 아래) 측정 영역의 좌측 상단 모서리에 바짝 붙여 올려놓으세요. 슬라이더를 움직여 화면의 네모칸과 실제 카드의 크기를 똑같이 맞춰주세요.
+                <p className="text-gray-700 mb-4 lg:mb-6 font-bold instruction-text leading-adaptive-empathy" style={{ fontSize: 'var(--font-instruction-body)' }}>
+                    지갑 속 카드를 측정 영역의 좌측 상단 모서리에 맞춰서 올려 놓으신 다음, 슬라이더를 움직여 화면의 카드와 실제 카드의 크기를 똑같이 맞춰주세요. (신용카드와 크기가 같은 신분증, 교통카드 가능)
                 </p>
 
-                <div className="relative w-full h-14 mb-8 mt-2 flex items-center">
+                <div className="relative w-full h-14 mb-1 lg:mb-8 mt-1 lg:mt-2 flex items-center">
                     {/* 비주얼 트랙 (실제 터치 영역과 별개로 보기 좋게 얇게 유지) */}
                     <div className="absolute w-full h-4 bg-gray-200 rounded-full"></div>
                     
@@ -1263,93 +1406,86 @@ const App = () => {
                     ></div>
                 </div>
                 
-                {/* 이용 방법 아코디언 (PC 전용: 슬라이더 아래 빈 공간 활용) */}
-                <div className="hidden lg:block instruction-container mt-6">
-                    <button 
-                        onClick={() => setIsAccordionOpen(!isAccordionOpen)}
-                        className={`w-full flex items-center justify-between p-5 rounded-2xl border-2 transition-all hover:bg-orange-100 ${isAccordionOpen ? 'bg-orange-100 border-orange-300 rounded-b-none' : 'bg-orange-50 border-orange-200'}`}
-                    >
-                        <div className="flex items-center">
-                            <div className="bg-white p-2 rounded-full mr-4 shadow-sm">
-                                <AlertCircle className="text-orange-600" size={32} strokeWidth={3} />
-                            </div>
-                            <div>
-                                <h3 
-                                    className="font-black text-gray-900 leading-none tracking-tighter text-[length:var(--font-section-title)]"
-                                >
-                                    이용 방법이 궁금하신가요?
-                                </h3>
-                                <p className="text-sm font-bold text-gray-500 mt-0.5">본인 또는 부모님을 위한 측정 방법</p>
-                            </div>
-                        </div>
-                        <ChevronDown className={`text-orange-500 transition-transform duration-300 ${isAccordionOpen ? 'rotate-180' : ''}`} size={32} strokeWidth={3} />
-                    </button>
-                    
-                    <div className={`accordion-content border-x border-b border-orange-100 rounded-b-2xl bg-orange-50/30 ${isAccordionOpen ? 'open' : ''}`}>
-                        <div className="p-6 space-y-6 instruction-container">
-                            {/* 10초 이용 시범 영상 */}
-                            <div className="bg-black aspect-video rounded-2xl overflow-hidden border-4 border-white shadow-inner relative mb-6">
-                                <iframe 
-                                    className="absolute top-0 left-0 w-full h-full"
-                                    src="https://www.youtube.com/embed/5pwCf0FUXiQ?rel=0&modestbranding=1" 
-                                    title="바이블줌 이용 방법" 
-                                    frameBorder="0" 
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                                    referrerPolicy="strict-origin-when-cross-origin" 
-                                    allowFullScreen>
-                                </iframe>
-                            </div>
 
-                            <div className="flex items-start gap-3">
-                                <div className="flex-none w-6 h-6 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-xs mt-0.5 shadow-md">1</div>
-                                <div>
-                                    <p className="instruction-step-title font-black text-gray-800 text-base mb-0.5">본인의 눈에 맞게 측정할 때</p>
-                                    <p className="instruction-step-body text-gray-600 font-bold text-xs leading-relaxed">
-                                        스마트폰을 평소 성경을 보는 거리에 두고, 슬라이더를 조절하여 화면의 점선 네모칸을 실제 신용카드 크기와 똑같이 맞춰주세요.
-                                    </p>
-                                </div>
-                            </div>
-                            
-                            <div className="flex items-start gap-3">
-                                <div className="flex-none w-6 h-6 bg-orange-600 text-white rounded-full flex items-center justify-center font-black text-xs mt-0.5 shadow-md">2</div>
-                                <div>
-                                    <p className="instruction-step-title font-black text-gray-800 text-base mb-0.5">부모님 성경을 대신 골라드릴 때</p>
-                                    <p className="instruction-step-body text-gray-600 font-bold text-xs leading-relaxed">
-                                        부모님이 평소 보시는 성경책을 가져와서, 그 성경의 글자 크기와 화면에 나오는 글자 크기가 똑같아 보일 때까지 슬라이더를 조절해 보세요.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
                 </div>
             
 
             {/* 우측 영역: 카드 측정 박스 */}
             <div className="lg:col-span-1 flex flex-col">
-                <div className="flex justify-start items-center mb-2 px-1">
+                <div className="flex justify-start items-center mb-1 px-1">
                     <p className="text-sm font-black text-gray-400 uppercase">좌측 상단 고정</p>
                 </div>
-                <div className="bg-grid-pattern bg-white border-2 border-gray-200 rounded-2xl p-2 md:p-8 shadow-inner min-h-[400px] relative overflow-hidden flex items-start justify-start">
+                <div className="bg-grid-pattern bg-white border-2 border-gray-200 rounded-2xl pl-3 pr-4 pt-3 pb-12 lg:pl-8 lg:pr-8 lg:pt-8 lg:pb-12 shadow-inner min-h-[320px] lg:min-h-[400px] relative overflow-hidden flex items-start justify-start">
 
-                    <div className="credit-card-dynamic bg-orange-50 border-[3px] border-dashed border-orange-400 relative rounded-xl z-10"
+                    <div className="credit-card-dynamic flex-shrink-0 relative rounded-2xl z-10 border-[3px] border-dashed border-orange-400 shadow-[0_0_25px_rgba(251,191,36,0.15),_0_0_25px_rgba(59,130,246,0.15)]"
                          style={{ width: `${53.98 * globalScale}mm`, height: `${85.6 * globalScale}mm` }}>
                         
-                        <div className="crosshair cross-tl absolute top-0 left-0"></div>
-                        <div className="crosshair cross-tr absolute top-0 right-0"></div>
-                        <div className="crosshair cross-bl absolute bottom-0 left-0"></div>
-                        <div className="crosshair cross-br absolute bottom-0 right-0"></div>
-                        
-                        <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none text-center p-4">
-                            <span className="text-orange-700 font-black text-lg md:text-xl leading-tight">
-                                이곳에 카드<br/>
-                                (카드크기와 동일한 신분증, 교통카드 가능)를 대보세요
-                            </span>
-                            <span className="text-orange-600 font-bold text-base mt-3 leading-tight opacity-90">
-                                측정시 카드 테두리에<br/>
-                                점선이 보이도록 맞춰주세요
-                            </span>
+                        {/* Crosshairs outside the hidden overflow */}
+                        <div className="crosshair cross-tl absolute top-0 left-0 z-20"></div>
+                        <div className="crosshair cross-tr absolute top-0 right-0 z-20"></div>
+                        <div className="crosshair cross-bl absolute bottom-0 left-0 z-20"></div>
+                        <div className="crosshair cross-br absolute bottom-0 right-0 z-20"></div>
+
+                        {/* Inner Glassmorphic Card Container that clips content */}
+                        <div className="absolute inset-[1px] bg-slate-950/80 backdrop-blur-[4px] border border-white/10 rounded-xl overflow-hidden flex flex-col justify-between p-[8%]">
+                          {/* Inner soft glow/glare line */}
+                          <div className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/5 to-white/10 pointer-events-none z-10" />
+
+                          {/* Glare diagonal shine */}
+                          <div className="absolute top-[-50%] left-[-50%] w-[200%] h-[200%] bg-gradient-to-r from-transparent via-white/10 to-transparent transform -rotate-45 pointer-events-none z-10" />
+
+                          {/* Left Golden Glow and Right Blue Glow overlays inside card border */}
+                          <div className="absolute top-0 bottom-0 left-0 w-2 bg-gradient-to-r from-yellow-400/15 to-transparent blur-sm z-10 pointer-events-none" />
+                          <div className="absolute top-0 bottom-0 right-0 w-2 bg-gradient-to-l from-blue-500/15 to-transparent blur-sm z-10 pointer-events-none" />
+
+                          {/* Gold IC Chip (Vertical, aligned to center left, top 8% of card) */}
+                          <div className="absolute left-[50%] top-[8%] w-[18.5%] aspect-[0.77] bg-gradient-to-br from-yellow-200 via-amber-400 to-yellow-600 rounded-md border border-amber-600/30 shadow-md overflow-hidden z-10">
+                            <div className="absolute inset-0 grid grid-cols-3 grid-rows-3 gap-[1px] opacity-40">
+                              <div className="border-r border-b border-amber-900/50"></div>
+                              <div className="border-r border-b border-amber-900/50"></div>
+                              <div className="border-b border-amber-900/50"></div>
+                              <div className="border-r border-b border-amber-900/50"></div>
+                              <div className="border-r border-b border-amber-900/50"></div>
+                              <div className="border-b border-amber-900/50"></div>
+                              <div className="border-r border-amber-900/50"></div>
+                              <div className="border-r border-amber-900/50"></div>
+                              <div></div>
+                            </div>
+                          </div>
+
+                          {/* Center instruction text (rendered in high-contrast text on dark background) */}
+                          <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none text-center p-4 z-20">
+                              <span className="text-yellow-400 font-black text-xs md:text-sm leading-tight drop-shadow-md">
+                                  이곳에 카드를<br/>대보세요
+                              </span>
+                              <span className="text-white font-bold text-xs md:text-xs mt-3 leading-tight opacity-95 drop-shadow-sm">
+                                  측정시 카드 테두리에<br/>
+                                  점선이 보이도록 맞춰주세요
+                              </span>
+                          </div>
+
+                          {/* Bottom part: Card details (left) and Mastercard Logo (right) */}
+                          <div className="flex justify-between items-end w-full mt-auto z-10 select-none">
+                            {/* Left: Card Numbers & Holder Info */}
+                            <div className="flex flex-col text-white font-mono text-left">
+                              {!isSmallDevice && (
+                                <div className="text-[9px] md:text-xs tracking-widest font-bold opacity-80 mb-1">
+                                  4532 **** **** 5678
+                                </div>
+                              )}
+                              <div className="flex items-center text-[7px] md:text-[9px] uppercase font-bold tracking-wider opacity-60 space-x-2.5">
+                                <span>CHHOUSE</span>
+                                <span>12/29</span>
+                              </div>
+                            </div>
+
+                            {/* Right: Mastercard Logo (rotated 90 deg, vertical, scales proportionally) */}
+                            <div className="w-[15%] relative opacity-90 select-none mb-0.5 flex-shrink-0" style={{ aspectRatio: 1 / 1.6 }}>
+                              <div className="w-full aspect-square rounded-full bg-[#EB001B] absolute top-0 left-0" />
+                              <div className="w-full aspect-square rounded-full bg-[#F79E1B] mix-blend-screen absolute bottom-0 left-0" />
+                            </div>
+                          </div>
                         </div>
                     </div>
 
@@ -1358,65 +1494,7 @@ const App = () => {
 
             {/* 하단 영역: 이용 방법 및 완료 버튼 (2단 그리드 아래에 전체 너비로 배치) */}
             <div className="lg:col-span-2 mt-4 px-2 md:px-6">
-                {/* 이용 방법 아코디언 (모바일 전용: 슬라이더와 카드 영역 사이 간격 최소화 후 배치) */}
-                <div className="lg:hidden instruction-container mt-4 mb-2">
-                    <button 
-                        onClick={() => setIsAccordionOpen(!isAccordionOpen)}
-                        className={`w-full flex items-center justify-between p-5 rounded-2xl border-2 transition-all hover:bg-orange-100 ${isAccordionOpen ? 'bg-orange-100 border-orange-300 rounded-b-none' : 'bg-orange-50 border-orange-200'}`}
-                    >
-                        <div className="flex items-center">
-                            <div className="bg-white p-2 rounded-full mr-4 shadow-sm">
-                                <AlertCircle className="text-orange-600" size={32} strokeWidth={3} />
-                            </div>
-                            <div>
-                                <h3 
-                                    className="font-black text-gray-900 leading-none tracking-tighter text-[length:var(--font-section-title)]"
-                                >
-                                    이용 방법이 궁금하신가요?
-                                </h3>
-                                <p className="text-sm font-bold text-gray-500 mt-0.5">본인 또는 부모님을 위한 측정 방법</p>
-                            </div>
-                        </div>
-                        <ChevronDown className={`text-orange-500 transition-transform duration-300 ${isAccordionOpen ? 'rotate-180' : ''}`} size={32} strokeWidth={3} />
-                    </button>
-                    
-                    <div className={`accordion-content border-x border-b border-orange-100 rounded-b-2xl bg-orange-50/30 ${isAccordionOpen ? 'open' : ''}`}>
-                        <div className="p-6 space-y-6 instruction-container">
-                            {/* 10초 이용 시범 영상 */}
-                            <div className="bg-black aspect-video rounded-2xl overflow-hidden border-4 border-white shadow-inner relative mb-6">
-                                <iframe 
-                                    className="absolute top-0 left-0 w-full h-full"
-                                    src="https://www.youtube.com/embed/5pwCf0FUXiQ?rel=0&modestbranding=1" 
-                                    title="바이블줌 이용 방법" 
-                                    frameBorder="0" 
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                                    referrerPolicy="strict-origin-when-cross-origin" 
-                                    allowFullScreen>
-                                </iframe>
-                            </div>
 
-                            <div className="flex items-start gap-3">
-                                <div className="flex-none w-6 h-6 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-xs mt-0.5 shadow-md">1</div>
-                                <div>
-                                    <p className="instruction-step-title font-black text-gray-800 text-base mb-0.5">본인의 눈에 맞게 측정할 때</p>
-                                    <p className="instruction-step-body text-gray-600 font-bold text-xs leading-relaxed">
-                                        스마트폰을 평소 성경을 보는 거리에 두고, 슬라이더를 조절하여 화면의 점선 네모칸을 실제 신용카드 크기와 똑같이 맞춰주세요.
-                                    </p>
-                                </div>
-                            </div>
-                            
-                            <div className="flex items-start gap-3">
-                                <div className="flex-none w-6 h-6 bg-orange-600 text-white rounded-full flex items-center justify-center font-black text-xs mt-0.5 shadow-md">2</div>
-                                <div>
-                                    <p className="instruction-step-title font-black text-gray-800 text-base mb-0.5">부모님 성경을 대신 골라드릴 때</p>
-                                    <p className="instruction-step-body text-gray-600 font-bold text-xs leading-relaxed">
-                                        부모님이 평소 보시는 성경책을 가져와서, 그 성경의 글자 크기와 화면에 나오는 글자 크기가 똑같아 보일 때까지 슬라이더를 조절해 보세요.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
 
                 {/* 측정 완료 버튼 (이용 방법과 동일한 너비로 조정) */}
@@ -2089,8 +2167,12 @@ const App = () => {
         {/* PC 호버 팝업 (퀵 미리보기) */}
         {hoverItem && (
           <div 
+            ref={popupRef}
             className={`fixed z-[9999] transition-all duration-300 ease-out ${isHoverActive ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}`}
-            onMouseEnter={() => { if (hideTimeoutRef.current) clearTimeout(hideTimeoutRef.current); }}
+            onMouseEnter={() => { 
+              if (hideTimeoutRef.current) clearTimeout(hideTimeoutRef.current);
+              if (showTimeoutRef.current) clearTimeout(showTimeoutRef.current);
+            }}
             onMouseLeave={handleMouseLeave}
             style={getHoverPopupStyle()}
           >

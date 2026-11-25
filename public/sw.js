@@ -1,4 +1,4 @@
-const CACHE_NAME = 'biblezoom-v2.7.0'; // 버전 변경 → 강제 캐시 갱신
+const CACHE_NAME = 'biblezoom-v1.0.3'; // 버전 변경 → 강제 캐시 갱신
 const PRECACHE_ASSETS = [
   '/manifest.json',
   '/icon-192.png',

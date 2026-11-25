@@ -14,7 +14,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=49886&cate_no=1358&display_group=1",
             "itemCode": "P000CVUS000A",
             "originalPrice": 92000,
-            "salePrice": 82800
+            "salePrice": 82800,
+            "isbn": "9788953726338"
           },
           {
             "label": "특대합본/천연/다크브라운",
@@ -22,7 +23,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=49887&cate_no=1358&display_group=1",
             "itemCode": "P000CVUT000A",
             "originalPrice": 92000,
-            "salePrice": 82800
+            "salePrice": 82800,
+            "isbn": "9788953726321"
           },
           {
             "label": "특대단본/천연/다크브라운",
@@ -30,7 +32,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=56150&cate_no=1358&display_group=1",
             "itemCode": "P000DFBQ000A",
             "originalPrice": 72000,
-            "salePrice": 64800
+            "salePrice": 64800,
+            "isbn": "9788953724372"
           },
           {
             "label": "특대합본/PU/브라운",
@@ -38,7 +41,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=18102&cate_no=1358&display_group=1",
             "itemCode": "P000BAUG000A",
             "originalPrice": 72000,
-            "salePrice": 64800
+            "salePrice": 64800,
+            "isbn": "9788953723733"
           },
           {
             "label": "특대합본/PU/다크브라운",
@@ -46,7 +50,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=18099&cate_no=1358&display_group=1",
             "itemCode": "P000BAUD000A",
             "originalPrice": 72000,
-            "salePrice": 64800
+            "salePrice": 64800,
+            "isbn": "9788953723740"
           }
         ]
       },
@@ -62,7 +67,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=40062&cate_no=1347&display_group=1",
             "itemCode": "P000CHGW000A",
             "originalPrice": 87000,
-            "salePrice": 78300
+            "salePrice": 78300,
+            "isbn": "9788953720091"
           },
           {
             "label": "대합본/천연/다크브라운",
@@ -70,7 +76,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=40063&cate_no=1347&display_group=1",
             "itemCode": "P000CHGX000A",
             "originalPrice": 87000,
-            "salePrice": 78300
+            "salePrice": 78300,
+            "isbn": "9788953720107"
           },
           {
             "label": "대단본/천연/다크브라운",
@@ -78,7 +85,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=55696&cate_no=1347&display_group=1",
             "itemCode": "P000DEKE000A",
             "originalPrice": 66000,
-            "salePrice": 59400
+            "salePrice": 59400,
+            "isbn": "9788953726970"
           },
           {
             "label": "대합본/PU/모카브라운",
@@ -86,7 +94,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=36028&cate_no=1347&display_group=1",
             "itemCode": "P000CBHS000A",
             "originalPrice": 64000,
-            "salePrice": 57600
+            "salePrice": 57600,
+            "isbn": "9788953723214"
           },
           {
             "label": "대단본/PU/브라운",
@@ -94,7 +103,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=53191&cate_no=1347&display_group=1",
             "itemCode": "P000DARV000A",
             "originalPrice": 55000,
-            "salePrice": 49500
+            "salePrice": 49500,
+            "isbn": "9788953725560"
           }
         ]
       },
@@ -110,7 +120,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=54900&cate_no=1388&display_group=1",
             "itemCode": "P000DDFO000A",
             "originalPrice": 79000,
-            "salePrice": 71100
+            "salePrice": 71100,
+            "isbn": "9788953726925"
           },
           {
             "label": "중합본/천연/자주",
@@ -118,7 +129,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=50939&cate_no=1388&display_group=1",
             "itemCode": "P000CXJF000A",
             "originalPrice": 74000,
-            "salePrice": 66600
+            "salePrice": 66600,
+            "isbn": "9788953721616"
           },
           {
             "label": "중합본/천연/다크브라운",
@@ -126,7 +138,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=50940&cate_no=1388&display_group=1",
             "itemCode": "P000CXJG000A",
             "originalPrice": 74000,
-            "salePrice": 66600
+            "salePrice": 66600,
+            "isbn": "9788953721609"
           },
           {
             "label": "중단본/천연/다크브라운",
@@ -134,7 +147,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=54646&cate_no=1388&display_group=1",
             "itemCode": "P000DCVU000A",
             "originalPrice": 60000,
-            "salePrice": 54000
+            "salePrice": 54000,
+            "isbn": "9788953726932"
           },
           {
             "label": "중합본/PU/모카브라운",
@@ -142,7 +156,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=38587&cate_no=1388&display_group=1",
             "itemCode": "P000CFCD000A",
             "originalPrice": 59000,
-            "salePrice": 53100
+            "salePrice": 53100,
+            "isbn": "9788953724204"
           },
           {
             "label": "중합본/PU/라벤더",
@@ -150,7 +165,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=38586&cate_no=1388&display_group=1",
             "itemCode": "P000CFCC000A",
             "originalPrice": 59000,
-            "salePrice": 53100
+            "salePrice": 53100,
+            "isbn": "9788953724211"
           }
         ]
       },
@@ -166,7 +182,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=42355&cate_no=1347&display_group=1",
             "itemCode": "P000CKRB000A",
             "originalPrice": 81000,
-            "salePrice": 72900
+            "salePrice": 72900,
+            "isbn": "9788953725461"
           },
           {
             "label": "대합본/천연/무지퍼/다크브라운",
@@ -174,7 +191,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=47739&cate_no=1347&display_group=1",
             "itemCode": "P000CSQD000A",
             "originalPrice": 75000,
-            "salePrice": 67500
+            "salePrice": 67500,
+            "isbn": "9788953725928"
           },
           {
             "label": "대합본/PU/지퍼/다크브라운",
@@ -182,7 +200,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=51203&cate_no=1347&display_group=1",
             "itemCode": "P000CXTJ000A",
             "originalPrice": 67000,
-            "salePrice": 60300
+            "salePrice": 60300,
+            "isbn": "9788953725911"
           }
         ]
       },
@@ -197,8 +216,9 @@ export const bibleData = {
             "img": "https://chhouse.kr/web/product/big/202504/aae777354a6b2ba2be1ae7cf15dc0b28.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=18930&cate_no=1381&display_group=1",
             "itemCode": "P000BCAC000A",
-            "originalPrice": 65000,
-            "salePrice": 58500
+            "originalPrice": 67000,
+            "salePrice": 60300,
+            "isbn": "9788953722460"
           },
           {
             "label": "소합본/천연/지퍼/다크브라운",
@@ -206,23 +226,26 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=18933&cate_no=1381&display_group=1",
             "itemCode": "P000BCAF000A",
             "originalPrice": 65000,
-            "salePrice": 58500
+            "salePrice": 58500,
+            "isbn": "9788953722453"
           },
           {
             "label": "소합본/PU/지퍼/잉키블루",
             "img": "https://chhouse.kr/web/product/big/202410/37ec01bb8a878c5ff3808add46a90c83.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=35922&cate_no=1381&display_group=1",
             "itemCode": "P000CBDQ000A",
-            "originalPrice": 56000,
-            "salePrice": 50400
+            "originalPrice": 57000,
+            "salePrice": 51300,
+            "isbn": "9788953723474"
           },
           {
             "label": "소합본/PU/지퍼/자주",
             "img": "https://chhouse.kr/web/product/big/202410/119616ac045ec89f9219f04b2ec66ab3.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=50860&cate_no=1381&display_group=1",
             "itemCode": "P000CXGE000A",
-            "originalPrice": 56000,
-            "salePrice": 50400
+            "originalPrice": 57000,
+            "salePrice": 51300,
+            "isbn": "9788953726598"
           }
         ]
       },
@@ -238,7 +261,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=40149&cate_no=1388&display_group=1",
             "itemCode": "P000CHKF000A",
             "originalPrice": 58000,
-            "salePrice": 52200
+            "salePrice": 52200,
+            "isbn": "9788953725270"
           }
         ]
       },
@@ -254,7 +278,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=39067&cate_no=1464&display_group=1",
             "itemCode": "P000CFUP000A",
             "originalPrice": 59000,
-            "salePrice": 53100
+            "salePrice": 53100,
+            "isbn": "9788953724785"
           },
           {
             "label": "특소합본/PU/지퍼/인디고블루",
@@ -262,15 +287,17 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=38515&cate_no=1464&display_group=1",
             "itemCode": "P000CEZJ000A",
             "originalPrice": 49000,
-            "salePrice": 44100
+            "salePrice": 44100,
+            "isbn": "9788953723696"
           },
           {
             "label": "특소합본/PU/지퍼/인디핑크",
             "img": "https://chhouse.kr/web/product/big/202405/a412dcd8096bd3fe3df4e961e21dde62.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=38514&cate_no=1464&display_group=1",
             "itemCode": "P000CEZI000A",
-            "originalPrice": 47000,
-            "salePrice": 42300
+            "originalPrice": 49000,
+            "salePrice": 44100,
+            "isbn": "9788953723702"
           }
         ]
       },
@@ -286,15 +313,17 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=18333&cate_no=1381&display_group=1",
             "itemCode": "P000BBDD000A",
             "originalPrice": 40000,
-            "salePrice": 36000
+            "salePrice": 36000,
+            "isbn": "9788953722705"
           },
           {
             "label": "특소합본/PU/지퍼/인디핑크",
             "img": "https://chhouse.kr/web/product/big/202405/f459d3c67e3763fdef783414cc7a782a.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=18330&cate_no=1381&display_group=1",
             "itemCode": "P000BBDA000A",
-            "originalPrice": 40000,
-            "salePrice": 36000
+            "originalPrice": 38000,
+            "salePrice": 34200,
+            "isbn": "9788953722699"
           }
         ]
       },
@@ -310,7 +339,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=49455&cate_no=1347&display_group=1",
             "itemCode": "P000CVED000A",
             "originalPrice": 65000,
-            "salePrice": 58500
+            "salePrice": 58500,
+            "isbn": "9788953725423"
           },
           {
             "label": "대합본/천연/무지퍼/브라운",
@@ -318,7 +348,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=56514&cate_no=1347&display_group=1",
             "itemCode": "P000DFPQ000A",
             "originalPrice": 58000,
-            "salePrice": 52200
+            "salePrice": 52200,
+            "isbn": "9788953727175"
           },
           {
             "label": "대합본/PU/지퍼/잉키블루",
@@ -326,7 +357,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=50399&cate_no=1347&display_group=1",
             "itemCode": "P000CWOL000A",
             "originalPrice": 51000,
-            "salePrice": 45900
+            "salePrice": 45900,
+            "isbn": "9788953726574"
           },
           {
             "label": "대합본/PU/지퍼/브라운",
@@ -334,7 +366,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=49454&cate_no=1347&display_group=1",
             "itemCode": "P000CVEC000A",
             "originalPrice": 51000,
-            "salePrice": 45900
+            "salePrice": 45900,
+            "isbn": "9788953725430"
           },
           {
             "label": "대합본/PU/무지퍼/브라운",
@@ -342,7 +375,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=53016&cate_no=1347&display_group=1",
             "itemCode": "P000DALC000A",
             "originalPrice": 43000,
-            "salePrice": 38700
+            "salePrice": 38700,
+            "isbn": "9788953725980"
           }
         ]
       },
@@ -358,16 +392,17 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=44929&cate_no=1347&display_group=1",
             "itemCode": "P000COMB000A",
             "originalPrice": 43000,
-            "salePrice": 38700
+            "salePrice": 38700,
+            "isbn": "9788953725980"
           },
-
           {
             "label": "중합본/천연/지퍼/리치브라운",
             "img": "https://chhouse.kr/web/product/big/202504/0b5ed7556ad434989e9a1c73083cb111.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=53015&cate_no=1388&display_group=1",
             "itemCode": "P000DALB000A",
-            "originalPrice": 59000,
-            "salePrice": 53100
+            "originalPrice": 61000,
+            "salePrice": 54900,
+            "isbn": "9788953725447"
           },
           {
             "label": "중합본/천연/지퍼/잉키블루",
@@ -375,31 +410,35 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=47072&cate_no=1388&display_group=1",
             "itemCode": "P000CRQM000A",
             "originalPrice": 59000,
-            "salePrice": 53100
+            "salePrice": 53100,
+            "isbn": "9788953726208"
           },
           {
             "label": "중합본/PU/지퍼/브라운",
             "img": "https://chhouse.kr/web/product/big/202404/01beb8e1c410a838cc67ec3a5cf91e61.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=38512&cate_no=1388&display_group=1",
             "itemCode": "P000CEZG000A",
-            "originalPrice": 44000,
-            "salePrice": 39600
+            "originalPrice": 46000,
+            "salePrice": 41400,
+            "isbn": "9788953724631"
           },
           {
             "label": "중합본/PU/지퍼/잉키블루",
             "img": "https://chhouse.kr/web/product/big/202409/e44f9d1fe738593b0491644fa8fcebfb.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=50237&cate_no=1388&display_group=1",
             "itemCode": "P000CWIF000A",
-            "originalPrice": 44000,
-            "salePrice": 39600
+            "originalPrice": 46000,
+            "salePrice": 41400,
+            "isbn": "9788953726581"
           },
           {
             "label": "중합본/PU/무지퍼/다크브라운",
             "img": "https://chhouse.kr/web/product/big/202404/7f44b9c2fa8b01f9bdcda535d934cc3c.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=47229&cate_no=1388&display_group=1",
             "itemCode": "P000CRWN000A",
-            "originalPrice": 38000,
-            "salePrice": 34200
+            "originalPrice": 39000,
+            "salePrice": 35100,
+            "isbn": "9788953726314"
           },
           {
             "label": "중단본/PU/지펴/올리브",
@@ -407,7 +446,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=56247&cate_no=1388&display_group=1",
             "itemCode": "P000DFFJ000A",
             "originalPrice": 32000,
-            "salePrice": 28800
+            "salePrice": 28800,
+            "isbn": "9788953727182"
           },
           {
             "label": "중단본/PU/무지퍼/네이비",
@@ -415,7 +455,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=57421&cate_no=1388&display_group=1",
             "itemCode": "P000DGYN000A",
             "originalPrice": 30000,
-            "salePrice": 27000
+            "salePrice": 27000,
+            "isbn": "9788953727298"
           }
         ]
       },
@@ -431,7 +472,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=40912&cate_no=1409&display_group=1",
             "itemCode": "P000CINO000A",
             "originalPrice": 44000,
-            "salePrice": 39600
+            "salePrice": 39600,
+            "isbn": "9788953725539"
           },
           {
             "label": "특미니/천연/합본/지퍼/브라운",
@@ -439,7 +481,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=45034&cate_no=1409&display_group=1",
             "itemCode": "P000COQC000A",
             "originalPrice": 44000,
-            "salePrice": 39600
+            "salePrice": 39600,
+            "isbn": "9788953724853"
           },
           {
             "label": "특미니/PU/합본/지퍼/인디고블루",
@@ -447,7 +490,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=39290&cate_no=1409&display_group=1",
             "itemCode": "P000CGDE000A",
             "originalPrice": 33000,
-            "salePrice": 29700
+            "salePrice": 29700,
+            "isbn": "9788953724860"
           },
           {
             "label": "특미니/PU/합본/지퍼/인디핑크",
@@ -455,7 +499,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=39291&cate_no=1409&display_group=1",
             "itemCode": "P000CGDF000A",
             "originalPrice": 33000,
-            "salePrice": 29700
+            "salePrice": 29700,
+            "isbn": "9788953724877"
           }
         ]
       },
@@ -470,16 +515,18 @@ export const bibleData = {
             "img": "https://chhouse.kr/web/product/big/202602/5843b57bdeb141ab05d618b4f8b77f29.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=39570&cate_no=1420&display_group=1",
             "itemCode": "P000CGNY000A",
-            "originalPrice": 36000,
-            "salePrice": 32400
+            "originalPrice": 38000,
+            "salePrice": 34200,
+            "isbn": "9788953724846"
           },
           {
             "label": "초미니/천연/합본/지퍼/네이비",
             "img": "https://chhouse.kr/web/product/big/202602/9293dd53d22153c16b3f98a8019a6bde.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=39569&cate_no=1420&display_group=1",
             "itemCode": "P000CGNX000A",
-            "originalPrice": 36000,
-            "salePrice": 32400
+            "originalPrice": 38000,
+            "salePrice": 34200,
+            "isbn": "9788953724839"
           },
           {
             "label": "초미니/PU/합본/지퍼/민트",
@@ -487,7 +534,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=39568&cate_no=1420&display_group=1",
             "itemCode": "P000CGNW000A",
             "originalPrice": 33000,
-            "salePrice": 29700
+            "salePrice": 29700,
+            "isbn": "9788953724815"
           },
           {
             "label": "초미니/PU/합본/지퍼/모카베이지",
@@ -495,7 +543,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=39567&cate_no=1420&display_group=1",
             "itemCode": "P000CGNV000A",
             "originalPrice": 33000,
-            "salePrice": 29700
+            "salePrice": 29700,
+            "isbn": "9788953724822"
           }
         ]
       },
@@ -510,8 +559,9 @@ export const bibleData = {
             "img": "https://chhouse.kr/web/product/big/202412/f6eda7d1f66161c6b30e97ce371ef4c5.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=52061&cate_no=1347&display_group=1",
             "itemCode": "P000CZAJ000A",
-            "originalPrice": 120000,
-            "salePrice": 108000
+            "originalPrice": 124000,
+            "salePrice": 111600,
+            "isbn": "9788953726628"
           },
           {
             "label": "대합본/천연/지퍼/딥브라운",
@@ -519,7 +569,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=51837&cate_no=1347&display_group=1",
             "itemCode": "P000CYRT000A",
             "originalPrice": 98000,
-            "salePrice": 88200
+            "salePrice": 88200,
+            "isbn": "9788953726611"
           }
         ]
       },
@@ -535,7 +586,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=19408&cate_no=1388&display_group=1",
             "itemCode": "P000BCSM000A",
             "originalPrice": 72000,
-            "salePrice": 64800
+            "salePrice": 64800,
+            "isbn": "9788953721777"
           },
           {
             "label": "중합본/천연/지퍼/다크브라운",
@@ -543,7 +595,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=19411&cate_no=1388&display_group=1",
             "itemCode": "P000BCSP000A",
             "originalPrice": 72000,
-            "salePrice": 64800
+            "salePrice": 64800,
+            "isbn": "9788953721760"
           }
         ]
       },
@@ -559,7 +612,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=40859&cate_no=1347&display_group=1",
             "itemCode": "P000CILN000A",
             "originalPrice": 66000,
-            "salePrice": 59400
+            "salePrice": 59400,
+            "isbn": "9788953722781"
           },
           {
             "label": "대합본/천연/지퍼/자주",
@@ -567,7 +621,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=40860&cate_no=1347&display_group=1",
             "itemCode": "P000CILO000A",
             "originalPrice": 66000,
-            "salePrice": 59400
+            "salePrice": 59400,
+            "isbn": "9788953723016"
           },
           {
             "label": "대합본/PU/지퍼/자주",
@@ -575,7 +630,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=18495&cate_no=1347&display_group=1",
             "itemCode": "P000BBJJ000A",
             "originalPrice": 50000,
-            "salePrice": 45000
+            "salePrice": 45000,
+            "isbn": "9788953722774"
           },
           {
             "label": "대합본/PU/지퍼/브라운",
@@ -583,7 +639,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=18498&cate_no=1347&display_group=1",
             "itemCode": "P000BBJM000A",
             "originalPrice": 50000,
-            "salePrice": 45000
+            "salePrice": 45000,
+            "isbn": "9788953722767"
           }
         ]
       },
@@ -598,8 +655,9 @@ export const bibleData = {
             "img": "https://chhouse.kr/web/product/big/202410/7896cf855debbbc0ea7a1d1fd46d89a6.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=50774&cate_no=1358&display_group=1",
             "itemCode": "P000CXCW000A",
-            "originalPrice": 82000,
-            "salePrice": 73800
+            "originalPrice": 84000,
+            "salePrice": 75600,
+            "isbn": "9788953722248"
           },
           {
             "label": "특대합본/천연/지퍼/자주",
@@ -607,7 +665,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=50775&cate_no=1358&display_group=1",
             "itemCode": "P000CXCX000A",
             "originalPrice": 82000,
-            "salePrice": 73800
+            "salePrice": 73800,
+            "isbn": "9788953722255"
           },
           {
             "label": "특대합본/천연/무지퍼/다크브라운",
@@ -615,7 +674,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=53975&cate_no=1358&display_group=1",
             "itemCode": "P000DBVZ000A",
             "originalPrice": 75000,
-            "salePrice": 67500
+            "salePrice": 67500,
+            "isbn": "9788953726819"
           },
           {
             "label": "특대합본/PU/지퍼/브라운",
@@ -623,7 +683,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=32487&cate_no=1358&display_group=1",
             "itemCode": "P000BWBN000A",
             "originalPrice": 65000,
-            "salePrice": 58500
+            "salePrice": 58500,
+            "isbn": "9788953723023"
           },
           {
             "label": "특대합본/PU/지퍼/다크브라운",
@@ -631,7 +692,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=32485&cate_no=1358&display_group=1",
             "itemCode": "P000BWBL000A",
             "originalPrice": 65000,
-            "salePrice": 58500
+            "salePrice": 58500,
+            "isbn": "9788953723405"
           },
           {
             "label": "특대단본/PU/무지퍼/브라운",
@@ -639,7 +701,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=54205&cate_no=1358&display_group=1",
             "itemCode": "P000DCEV000A",
             "originalPrice": 49000,
-            "salePrice": 44100
+            "salePrice": 44100,
+            "isbn": "9788953726802"
           }
         ]
       },
@@ -655,7 +718,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=43586&cate_no=1347&display_group=1",
             "itemCode": "P000CMMK000A",
             "originalPrice": 77000,
-            "salePrice": 69300
+            "salePrice": 69300,
+            "isbn": "9788953725393"
           },
           {
             "label": "대합본/천연/지퍼/자주",
@@ -663,31 +727,35 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=45076&cate_no=1347&display_group=1",
             "itemCode": "P000CORS000A",
             "originalPrice": 77000,
-            "salePrice": 69300
+            "salePrice": 69300,
+            "isbn": "9788953725409"
           },
           {
             "label": "대합본/PU/지퍼/다크브라운",
             "img": "https://chhouse.kr/web/product/big/202604/88c5c7dd04a60bf7a3f52b21f27b705a.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=37243&cate_no=1347&display_group=1",
             "itemCode": "P000CDCL000A",
-            "originalPrice": 59000,
-            "salePrice": 53100
+            "originalPrice": 60000,
+            "salePrice": 54000,
+            "isbn": "9788953722996"
           },
           {
             "label": "대합본/PU/지퍼/브라운",
             "img": "https://chhouse.kr/web/product/big/202404/93d6cb3bcb59f5a025741d9b622255ce.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=18777&cate_no=1347&display_group=1",
             "itemCode": "P000BBUF000A",
-            "originalPrice": 59000,
-            "salePrice": 53100
+            "originalPrice": 60000,
+            "salePrice": 54000,
+            "isbn": "9788953722583"
           },
           {
             "label": "대합본/PU/무지퍼/브라운",
             "img": "https://chhouse.kr/web/product/big/202510/addd90399bb5cfd542e47ba29ff81fb2.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=55603&cate_no=1347&display_group=1",
             "itemCode": "P000DEGP000A",
-            "originalPrice": 50000,
-            "salePrice": 45000
+            "originalPrice": 51000,
+            "salePrice": 45900,
+            "isbn": "9788953726987"
           }
         ]
       },
@@ -703,7 +771,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=46703&cate_no=1388&display_group=1",
             "itemCode": "P000CRCH000A",
             "originalPrice": 67000,
-            "salePrice": 60300
+            "salePrice": 60300,
+            "isbn": "9788953724259"
           },
           {
             "label": "중합본/PU/지퍼/라벤더",
@@ -711,7 +780,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=18573&cate_no=1388&display_group=1",
             "itemCode": "P000BBMJ000A",
             "originalPrice": 55000,
-            "salePrice": 49500
+            "salePrice": 49500,
+            "isbn": "9788953722828"
           },
           {
             "label": "중합본/PU/지퍼/브라운",
@@ -719,7 +789,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=18576&cate_no=1388&display_group=1",
             "itemCode": "P000BBMM000A",
             "originalPrice": 55000,
-            "salePrice": 49500
+            "salePrice": 49500,
+            "isbn": "9788953722811"
           },
           {
             "label": "중단본/PU/무지퍼/다크브라운",
@@ -727,7 +798,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=54283&cate_no=1388&display_group=1",
             "itemCode": "P000DCHV000A",
             "originalPrice": 49000,
-            "salePrice": 44100
+            "salePrice": 44100,
+            "isbn": "9788953724266"
           }
         ]
       },
@@ -743,7 +815,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=47800&cate_no=1381&display_group=1",
             "itemCode": "P000CSSM000A",
             "originalPrice": 60000,
-            "salePrice": 54000
+            "salePrice": 54000,
+            "isbn": "9788953725546"
           },
           {
             "label": "소합본/천연/지퍼/잉키블루",
@@ -751,7 +824,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=47799&cate_no=1381&display_group=1",
             "itemCode": "P000CSSL000A",
             "originalPrice": 60000,
-            "salePrice": 54000
+            "salePrice": 54000,
+            "isbn": "9788953726000"
           },
           {
             "label": "소합본/PU/지퍼/네이비",
@@ -759,7 +833,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=37787&cate_no=1381&display_group=1",
             "itemCode": "P000CDXJ000A",
             "originalPrice": 50000,
-            "salePrice": 45000
+            "salePrice": 45000,
+            "isbn": "9788953724396"
           },
           {
             "label": "소합본/PU/지퍼/핑크베이지",
@@ -767,7 +842,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=49042&cate_no=1381&display_group=1",
             "itemCode": "P000CUOG000A",
             "originalPrice": 50000,
-            "salePrice": 45000
+            "salePrice": 45000,
+            "isbn": "9788953726062"
           },
           {
             "label": "소단본/천연/무지퍼/베이지",
@@ -775,7 +851,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=38206&cate_no=1381&display_group=1",
             "itemCode": "P000CENM000A",
             "originalPrice": 41000,
-            "salePrice": 36900
+            "salePrice": 36900,
+            "isbn": "9788953724402"
           }
         ]
       },
@@ -791,7 +868,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=55854&cate_no=1381&display_group=1",
             "itemCode": "P000DEQG000A",
             "originalPrice": 38000,
-            "salePrice": 34200
+            "salePrice": 34200,
+            "isbn": "9788953727052"
           },
           {
             "label": "소합본/PU/지퍼/올리브",
@@ -799,7 +877,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=55853&cate_no=1381&display_group=1",
             "itemCode": "P000DEQF000A",
             "originalPrice": 38000,
-            "salePrice": 34200
+            "salePrice": 34200,
+            "isbn": "9788953727045"
           },
           {
             "label": "소단본/PU/지퍼/그레이",
@@ -807,7 +886,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=55995&cate_no=1381&display_group=1",
             "itemCode": "P000DEVR000A",
             "originalPrice": 29000,
-            "salePrice": 26100
+            "salePrice": 26100,
+            "isbn": "9788953727069"
           }
         ]
       },
@@ -823,7 +903,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=53655&cate_no=1381&display_group=1",
             "itemCode": "P000DBJR000A",
             "originalPrice": 35000,
-            "salePrice": 31500
+            "salePrice": 31500,
+            "isbn": "9788953726772"
           },
           {
             "label": "소합본/PU/지퍼/네이비",
@@ -831,7 +912,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=53654&cate_no=1381&display_group=1",
             "itemCode": "P000DBJQ000A",
             "originalPrice": 35000,
-            "salePrice": 31500
+            "salePrice": 31500,
+            "isbn": "9788953726765"
           },
           {
             "label": "소단본/PU/지퍼/올리브",
@@ -839,7 +921,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=53653&cate_no=1381&display_group=1",
             "itemCode": "P000DBJP000A",
             "originalPrice": 28000,
-            "salePrice": 25200
+            "salePrice": 25200,
+            "isbn": "9788953726789"
           }
         ]
       },
@@ -854,9 +937,10 @@ export const bibleData = {
             "label": "특대단본/PU/무지퍼/브라운",
             "img": "https://chhouse.kr/web/product/big/202405/29c92b97684bd52bdfbf0a34d8926b7b.jpg",
             "url": "https://chhouse.kr/product/%EA%B0%9C%EC%97%AD%ED%95%9C%EA%B8%80%EC%84%B1%EA%B2%BD%EC%A0%84%EC%84%9C-%ED%8A%B9%EB%8C%80%EB%8B%A8%EB%B3%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EC%83%89%EC%9D%B8-%EB%B8%8C%EB%9D%BC%EC%9A%B4-h82ab/34962/category/2037/display/1/",
-            "itemCode": "NEW_A_H82AB_0",
+            "itemCode": "P000BZSS000A",
             "originalPrice": 49000,
-            "salePrice": 44100
+            "salePrice": 44100,
+            "isbn": "9788953724099"
           }
         ]
       },
@@ -871,9 +955,10 @@ export const bibleData = {
             "label": "대단본/PU/무지퍼/다크브라운",
             "img": "https://chhouse.kr/web/product/big/202405/4238ea8608d0a53cb026e92764bba90f.jpg",
             "url": "https://chhouse.kr/product/%EA%B0%9C%EC%97%AD%ED%95%9C%EA%B8%80-%EC%84%B1%EA%B2%BD%EC%A0%84%EC%84%9C-h72eab-%EB%8C%80%EB%8B%A8%EB%B3%B8-%EC%83%89%EC%9D%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EB%8B%A4%ED%81%AC%EB%B8%8C%EB%9D%BC%EC%9A%B4/39292/category/1401/display/1/",
-            "itemCode": "NEW_A_H72EAB_0",
+            "itemCode": "P000CGDG000A",
             "originalPrice": 44000,
-            "salePrice": 39600
+            "salePrice": 39600,
+            "isbn": "9788953724754"
           }
         ]
       },
@@ -888,9 +973,10 @@ export const bibleData = {
             "label": "소단본/PU/지갑식/잉키블루",
             "img": "https://chhouse.kr/web/product/big/202407/9bb100537e198695a5a97599127ad07c.jpg",
             "url": "https://chhouse.kr/product/%EA%B0%9C%EC%97%AD%ED%95%9C%EA%B8%80-h62eam-%EC%A7%80%EA%B0%91%EC%8B%9D-%EC%86%8C%EB%8B%A8%EB%B3%B8-%EC%83%89%EC%9D%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EC%9E%89%ED%82%A4%EB%B8%94%EB%A3%A8/49026/category/1427/display/1/",
-            "itemCode": "NEW_A_H62EAM_0",
+            "itemCode": "P000CUNQ000A",
             "originalPrice": 39000,
-            "salePrice": 35100
+            "salePrice": 35100,
+            "isbn": "9788953726512"
           }
         ]
       },
@@ -905,9 +991,10 @@ export const bibleData = {
             "label": "특대단본/천연/무지퍼/다크브라운",
             "img": "https://chhouse.kr/web/product/big/202506/0718e57b0beb2748db58dfc050536953.jpg",
             "url": "https://chhouse.kr/product/%EC%B2%9C%EC%97%B0%EC%9A%B0%ED%94%BC-%EA%B0%9C%EC%97%AD%ED%95%9C%EA%B8%80-%EC%97%B4%EB%A6%B0%EB%85%B8%ED%8A%B8%EC%84%B1%EA%B2%BD-%ED%8A%B9%EB%8C%80%EB%8B%A8%EB%B3%B8-%EC%83%89%EC%9D%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EB%8B%A4%ED%81%AC%EB%B8%8C%EB%9D%BC%EC%9A%B4/54208/category/2037/display/1/",
-            "itemCode": "NEW_A_열린노트성경_0",
+            "itemCode": "P000DCEY000A",
             "originalPrice": 56000,
-            "salePrice": 50400
+            "salePrice": 50400,
+            "isbn": "9788953726864"
           }
         ]
       },
@@ -922,9 +1009,10 @@ export const bibleData = {
             "label": "강대용단본/천연/무지퍼/다크브라운",
             "img": "https://chhouse.kr/web/product/big/202603/2c5f695810eeedad2849875c6f006a48.jpg",
             "url": "https://chhouse.kr/product/%EC%83%88%EB%B2%88%EC%97%AD-%ED%81%B0%EA%B8%80%EC%84%B1%EA%B2%BD-%EA%B0%95%EB%8C%80%EC%9A%A9-%EB%8B%A8%EB%B3%B8-%EC%9A%B0%ED%94%BC-%EC%83%89%EC%9D%B8-%ED%88%AC%ED%86%A4%EB%B8%8C%EB%9D%BC%EC%9A%B4/57119/category/2453/display/1/",
-            "itemCode": "NEW_A_새번역큰글성경_0",
+            "itemCode": "P000DGMX000A",
             "originalPrice": 142000,
-            "salePrice": 127800
+            "salePrice": 127800,
+            "isbn": "9788953727151"
           }
         ]
       },
@@ -939,33 +1027,37 @@ export const bibleData = {
             "label": "특대합본/천연/지퍼/다크브라운",
             "img": "https://chhouse.kr/web/product/big/202501/c11083064bff7c94b101d2ba528eb998.jpg",
             "url": "https://chhouse.kr/product/%EC%B2%9C%EC%97%B0%EC%9A%B0%ED%94%BC-%EC%83%88%EB%B2%88%EC%97%AD%ED%81%B0%EA%B8%80%EC%84%B1%EA%B2%BD-%ED%8A%B9%EB%8C%80%ED%95%A9%EB%B3%B8-%EC%83%88%EC%B0%AC%EC%86%A1%EA%B0%80-%EC%83%89%EC%9D%B8-%EC%A7%80%ED%8D%BC-%EB%8B%A4%ED%81%AC%EB%B8%8C%EB%9D%BC%EC%9A%B4/52162/category/1351/display/1/",
-            "itemCode": "NEW_A_새번역큰글성경_1",
+            "itemCode": "P000CZEG000A",
             "originalPrice": 85000,
-            "salePrice": 76500
+            "salePrice": 76500,
+            "isbn": "9788953726680"
           },
           {
             "label": "특대합본/PU/지퍼/다크네이비",
             "img": "https://chhouse.kr/web/product/big/202501/ed26bd7ad957fe10f8f2fd357014bbe5.jpg",
             "url": "https://chhouse.kr/product/%EC%B2%9C%EC%97%B0%EC%9A%B0%ED%94%BC-%EC%83%88%EB%B2%88%EC%97%AD%ED%81%B0%EA%B8%80%EC%84%B1%EA%B2%BD-%ED%8A%B9%EB%8C%80%ED%95%A9%EB%B3%B8-%EC%83%88%EC%B0%AC%EC%86%A1%EA%B0%80-%EC%83%89%EC%9D%B8-%EC%A7%80%ED%8D%BC-%EB%8B%A4%ED%81%AC%EB%84%A4%EC%9D%B4%EB%B9%84/52163/category/1351/display/1/",
-            "itemCode": "NEW_A_새번역큰글성경_2",
+            "itemCode": "P000CZEH000A",
             "originalPrice": 69000,
-            "salePrice": 62100
+            "salePrice": 62100,
+            "isbn": "9788953726673"
           },
           {
             "label": "특대단본/천연/무지퍼/다크브라운",
             "img": "https://chhouse.kr/web/product/big/202603/edff0b28bf856a6054d1f3ed760d16db.jpg",
             "url": "https://chhouse.kr/product/%EC%83%88%EB%B2%88%EC%97%AD-%ED%81%B0%EA%B8%80%EC%84%B1%EA%B2%BD-%ED%8A%B9%EB%8C%80-%EB%8B%A8%EB%B3%B8-%EC%9A%B0%ED%94%BC-%EC%83%89%EC%9D%B8-%EB%8B%A4%ED%81%AC%EB%B8%8C%EB%9D%BC%EC%9A%B4/57145/category/2455/display/1/",
-            "itemCode": "NEW_A_새번역큰글성경_3",
+            "itemCode": "P000DGNX000A",
             "originalPrice": 64000,
-            "salePrice": 57600
+            "salePrice": 57600,
+            "isbn": "9788953727281"
           },
           {
             "label": "특대단본/PU/무지퍼/다크브라운",
             "img": "https://chhouse.kr/web/product/big/202501/4095da5a1a928e522fc9269605af21ad.jpg",
             "url": "https://chhouse.kr/product/%EC%83%88%EB%B2%88%EC%97%AD%ED%81%B0%EA%B8%80%EC%84%B1%EA%B2%BD-%ED%8A%B9%EB%8C%80%EB%8B%A8%EB%B3%B8-%EC%83%88%EC%B0%AC%EC%86%A1%EA%B0%80-%EC%83%89%EC%9D%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EB%8B%A4%ED%81%AC%EB%B8%8C%EB%9D%BC%EC%9A%B4/52164/category/1351/display/1/",
-            "itemCode": "NEW_A_새번역큰글성경_4",
+            "itemCode": "P000CZEI000A",
             "originalPrice": 50000,
-            "salePrice": 45000
+            "salePrice": 45000,
+            "isbn": "9788953726697"
           }
         ]
       },
@@ -980,25 +1072,28 @@ export const bibleData = {
             "label": "중합본/천연/지퍼/다크브라운",
             "img": "https://chhouse.kr/web/product/big/202407/1bad6d5da0105054797c374e00d98bab.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=48999&cate_no=1349&display_group=1",
-            "itemCode": "NEW_A_새번역큰글성경_5",
+            "itemCode": "P000CUMP000A",
             "originalPrice": 70000,
-            "salePrice": 63000
+            "salePrice": 63000,
+            "isbn": "9788953726390"
           },
           {
             "label": "중합본/PU/지퍼/네이비",
             "img": "https://chhouse.kr/web/product/big/202407/bb3c7c275e659573acff2c5271330725.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=48998&cate_no=1349&display_group=1",
-            "itemCode": "NEW_A_새번역큰글성경_6",
+            "itemCode": "P000CUMO000A",
             "originalPrice": 58000,
-            "salePrice": 52200
+            "salePrice": 52200,
+            "isbn": "9788953726383"
           },
           {
             "label": "중단본/PU/무지퍼/베이지",
             "img": "https://chhouse.kr/web/product/big/202601/d5046e4e191d653c608d0f015128f17b.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=56678&cate_no=1349&display_group=1",
-            "itemCode": "NEW_A_새번역큰글성경_7",
+            "itemCode": "P000DFVY000A",
             "originalPrice": 44000,
-            "salePrice": 39600
+            "salePrice": 39600,
+            "isbn": "9788953726857"
           }
         ]
       },
@@ -1013,33 +1108,37 @@ export const bibleData = {
             "label": "소합본/천연/지퍼/다크브라운",
             "img": "https://chhouse.kr/web/product/big/202407/078fe3fe7306c964559572666d4d6625.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=48996&cate_no=1361&display_group=1",
-            "itemCode": "NEW_A_새번역큰글성경_8",
+            "itemCode": "P000CUMM000A",
             "originalPrice": 63000,
-            "salePrice": 56700
+            "salePrice": 56700,
+            "isbn": "9788953726420"
           },
           {
             "label": "소합본/PU/지퍼/네이비",
             "img": "https://chhouse.kr/web/product/big/202407/1c344e13f02128e467cb16a1a23dc132.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=48995&cate_no=1361&display_group=1",
-            "itemCode": "NEW_A_새번역큰글성경_9",
+            "itemCode": "P000CUML000A",
             "originalPrice": 53000,
-            "salePrice": 47700
+            "salePrice": 47700,
+            "isbn": "9788953726413"
           },
           {
             "label": "소단본/PU/무지퍼/베이지",
             "img": "https://chhouse.kr/web/product/big/202506/b580fe9cb51a8a5163af2f03a50c2dc4.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=54083&cate_no=1361&display_group=1",
-            "itemCode": "NEW_A_새번역큰글성경_10",
+            "itemCode": "P000DCAD000A",
             "originalPrice": 39000,
-            "salePrice": 35100
+            "salePrice": 35100,
+            "isbn": "9788953726833"
           },
           {
             "label": "소단본/PU/무지퍼/잉키블루",
             "img": "https://chhouse.kr/web/product/big/202407/1d085af7818f78263a79a65aa716dba3.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=48994&cate_no=1361&display_group=1",
-            "itemCode": "NEW_A_새번역큰글성경_11",
+            "itemCode": "P000CUMK000A",
             "originalPrice": 39000,
-            "salePrice": 35100
+            "salePrice": 35100,
+            "isbn": "9788953726437"
           }
         ]
       },
@@ -1054,9 +1153,10 @@ export const bibleData = {
             "label": "특대단본/PU/무지퍼/다크브라운",
             "img": "https://chhouse.kr/web/product/big/202404/78c1622358837de24e43ea1010a95a18.jpg",
             "url": "https://chhouse.kr/product/%EC%95%84%EA%B0%80%ED%8E%98%ED%81%B0%EA%B8%80%EC%89%AC%EC%9A%B4%EC%84%B1%EA%B2%BD-%ED%8A%B9%EB%8C%80%EB%8B%A8%EB%B3%B8-%EC%83%89%EC%9D%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EB%8B%A4%ED%81%AC%EB%B8%8C%EB%9D%BC%EC%9A%B4/30652/category/1483/display/1/",
-            "itemCode": "NEW_A_큰글쉬운성경_0",
+            "itemCode": "P000BTIY000A",
             "originalPrice": 47000,
-            "salePrice": 42300
+            "salePrice": 42300,
+            "isbn": "9788953723450"
           }
         ]
       },
@@ -1071,17 +1171,19 @@ export const bibleData = {
             "label": "대합본/PU/지퍼/브라운",
             "img": "https://chhouse.kr/web/product/big/202407/ec8c305db69fbccb950381d579c26351.jpg",
             "url": "https://chhouse.kr/product/%EC%95%84%EA%B0%80%ED%8E%98-%ED%81%B0%EA%B8%80%EC%89%AC%EC%9A%B4%EC%84%B1%EA%B2%BD-%EC%83%88%EC%B0%AC%EC%86%A1%EA%B0%80-%EB%8C%80%ED%95%A9%EB%B3%B8-%EC%83%89%EC%9D%B8-%EC%A7%80%ED%8D%BC-%EB%B8%8C%EB%9D%BC%EC%9A%B4/49078/category/1483/display/1/",
-            "itemCode": "NEW_A_큰글쉬운성경_1",
+            "itemCode": "P000CUPQ000A",
             "originalPrice": 58000,
-            "salePrice": 52200
+            "salePrice": 52200,
+            "isbn": "9788953726482"
           },
           {
             "label": "대단본/PU/무지퍼/브라운",
             "img": "https://chhouse.kr/web/product/big/202407/ac0831bb1fc116962ed595203baca9eb.jpg",
             "url": "https://chhouse.kr/product/%EC%95%84%EA%B0%80%ED%8E%98-%ED%81%B0%EA%B8%80%EC%89%AC%EC%9A%B4%EC%84%B1%EA%B2%BD-%EB%8C%80%EB%8B%A8%EB%B3%B8-%EC%83%89%EC%9D%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EB%B8%8C%EB%9D%BC%EC%9A%B4/49077/category/1483/display/1/",
-            "itemCode": "NEW_A_큰글쉬운성경_2",
+            "itemCode": "P000CUPP000A",
             "originalPrice": 43500,
-            "salePrice": 39150
+            "salePrice": 39150,
+            "isbn": "9788953726499"
           }
         ]
       },
@@ -1096,17 +1198,19 @@ export const bibleData = {
             "label": "중단본/PU/무지퍼/민트",
             "img": "https://chhouse.kr/web/product/big/202405/6dcb7d4ef855bebd02bdb7e7c1b0a172.jpg",
             "url": "https://chhouse.kr/product/%EC%95%84%EA%B0%80%ED%8E%98%EC%89%AC%EC%9A%B4%EC%84%B1%EA%B2%BD-%EC%A4%91%EB%8B%A8%EB%B3%B8-%EC%83%89%EC%9D%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EB%AF%BC%ED%8A%B8/38483/category/1382/display/1/",
-            "itemCode": "NEW_A_쉬운성경_0",
+            "itemCode": "P000CEYD000A",
             "originalPrice": 32000,
-            "salePrice": 28800
+            "salePrice": 28800,
+            "isbn": "9788953721036"
           },
           {
             "label": "중단본/PU/무지퍼/모카베이지",
             "img": "https://chhouse.kr/web/product/big/202405/746112a6659887852e2cb8000bcef568.jpg",
             "url": "https://chhouse.kr/product/%EC%95%84%EA%B0%80%ED%8E%98%EC%89%AC%EC%9A%B4%EC%84%B1%EA%B2%BD-%EC%A4%91%EB%8B%A8%EB%B3%B8-%EC%83%89%EC%9D%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EB%AA%A8%EC%B9%B4%EB%B2%A0%EC%9D%B4%EC%A7%80/19717/category/1382/display/1/",
-            "itemCode": "NEW_A_쉬운성경_1",
+            "itemCode": "P000BDEJ000A",
             "originalPrice": 32000,
-            "salePrice": 28800
+            "salePrice": 28800,
+            "isbn": "9788953721012"
           }
         ]
       },
@@ -1121,17 +1225,19 @@ export const bibleData = {
             "label": "소단본/PU/무지퍼/블루",
             "img": "https://chhouse.kr/web/product/big/202405/92d278964317e852e8cb24973b0a84f3.jpg",
             "url": "https://chhouse.kr/product/%EC%95%84%EA%B0%80%ED%8E%98-%EC%89%AC%EC%9A%B4%EC%84%B1%EA%B2%BD-%EC%86%8C%EB%8B%A8%EB%B3%B8-%EC%83%89%EC%9D%B8-%EA%B3%A0%EA%B8%89-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EB%B8%94%EB%A3%A8/38574/category/1365/display/1/",
-            "itemCode": "NEW_A_쉬운성경(고급)_0",
+            "itemCode": "P000CFBQ000A",
             "originalPrice": 29000,
-            "salePrice": 26100
+            "salePrice": 26100,
+            "isbn": "9788953723436"
           },
           {
             "label": "소단본/PU/무지퍼/핑크",
             "img": "https://chhouse.kr/web/product/big/202405/faec991d0c075aad96b152d5cb695d1e.jpg",
             "url": "https://chhouse.kr/product/%EC%95%84%EA%B0%80%ED%8E%98-%EC%89%AC%EC%9A%B4%EC%84%B1%EA%B2%BD-%EC%86%8C%EB%8B%A8%EB%B3%B8-%EA%B3%A0%EA%B8%89-%EC%83%89%EC%9D%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%ED%95%91%ED%81%AC/38573/category/1365/display/1/",
-            "itemCode": "NEW_A_쉬운성경(고급)_1",
+            "itemCode": "P000CFBP000A",
             "originalPrice": 29000,
-            "salePrice": 26100
+            "salePrice": 26100,
+            "isbn": "9788953723443"
           }
         ]
       },
@@ -1146,17 +1252,19 @@ export const bibleData = {
             "label": "특미니단본/PU/무지퍼/라이트블루",
             "img": "https://chhouse.kr/web/product/big/202405/5771d2a392bfcae30b5af808d0760655.jpg",
             "url": "https://chhouse.kr/product/%EC%95%84%EA%B0%80%ED%8E%98%EC%89%AC%EC%9A%B4%EC%84%B1%EA%B2%BD-%ED%8A%B9%EB%AF%B8%EB%8B%88%EB%8B%A8%EB%B3%B8-%EA%B3%A0%EA%B8%89-%EC%83%89%EC%9D%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EB%9D%BC%EC%9D%B4%ED%8A%B8%EB%B8%94%EB%A3%A8/44926/category/1453/display/1/",
-            "itemCode": "NEW_A_쉬운성경(고급)_2",
+            "itemCode": "P000COLY000A",
             "originalPrice": 26000,
-            "salePrice": 23400
+            "salePrice": 23400,
+            "isbn": "9788953725935"
           },
           {
             "label": "특미니단본/PU/무지퍼/피치핑크",
             "img": "https://chhouse.kr/web/product/big/202405/66074ad500b4f4619d6f0aa6d36db73c.jpg",
             "url": "https://chhouse.kr/product/%EC%95%84%EA%B0%80%ED%8E%98%EC%89%AC%EC%9A%B4%EC%84%B1%EA%B2%BD-%ED%8A%B9%EB%AF%B8%EB%8B%88%EB%8B%A8%EB%B3%B8-%EA%B3%A0%EA%B8%89-%EC%83%89%EC%9D%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%ED%94%BC%EC%B9%98%ED%95%91%ED%81%AC/44927/category/1453/display/1/",
-            "itemCode": "NEW_A_쉬운성경(고급)_3",
+            "itemCode": "P000COLZ000A",
             "originalPrice": 26000,
-            "salePrice": 23400
+            "salePrice": 23400,
+            "isbn": "9788953725942"
           }
         ]
       },
@@ -1171,17 +1279,19 @@ export const bibleData = {
             "label": "소단본/PU/무지퍼/로즈핑크",
             "img": "https://chhouse.kr/web/product/big/202404/0e55b26287cbe8ef31276e3b0f0fa2ed.jpg",
             "url": "https://chhouse.kr/product/%EC%95%84%EA%B0%80%ED%8E%98-%EC%8A%AC%EB%A6%BC%EC%89%AC%EC%9A%B4%EC%84%B1%EA%B2%BD-%EC%86%8C%EB%8B%A8%EB%B3%B8-%EC%83%89%EC%9D%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EB%A1%9C%EC%A6%88%ED%95%91%ED%81%AC/39221/category/1365/display/1/",
-            "itemCode": "NEW_A_슬림쉬운성경_0",
+            "itemCode": "P000CGAN000A",
             "originalPrice": 22000,
-            "salePrice": 19800
+            "salePrice": 19800,
+            "isbn": "9788953724891"
           },
           {
             "label": "소단본/PU/무지퍼/인디고블루",
             "img": "https://chhouse.kr/web/product/big/202404/97db045c71534da5bbc4cdf6e75fe66a.jpg",
             "url": "https://chhouse.kr/product/%EC%95%84%EA%B0%80%ED%8E%98-%EC%8A%AC%EB%A6%BC%EC%89%AC%EC%9A%B4%EC%84%B1%EA%B2%BD-%EC%86%8C%EB%8B%A8%EB%B3%B8-%EC%83%89%EC%9D%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EC%9D%B8%EB%94%94%EA%B3%A0%EB%B8%94%EB%A3%A8/39223/category/1365/display/1/",
-            "itemCode": "NEW_A_슬림쉬운성경_1",
+            "itemCode": "P000CGAP000A",
             "originalPrice": 22000,
-            "salePrice": 19800
+            "salePrice": 19800,
+            "isbn": "9788953724884"
           }
         ]
       },
@@ -1196,25 +1306,28 @@ export const bibleData = {
             "label": "소단본/PU/무지퍼/인디핑크",
             "img": "https://chhouse.kr/web/product/big/202404/9b092141deda2cac705dbfd7b12220cd.jpg",
             "url": "https://chhouse.kr/product/%EC%9D%BC%EB%9F%AC%EC%8A%A4%ED%8A%B8%EC%89%AC%EC%9A%B4%EC%84%B1%EA%B2%BD-%EC%86%8C%EB%8B%A8%EB%B3%B8-%EC%83%89%EC%9D%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EC%9D%B8%EB%94%94%ED%95%91%ED%81%AC/47777/category/1365/display/1/",
-            "itemCode": "NEW_A_일러스트쉬운성경_0",
+            "itemCode": "P000CSRP000A",
             "originalPrice": 33000,
-            "salePrice": 29700
+            "salePrice": 29700,
+            "isbn": "9788953725874"
           },
           {
             "label": "소단본/PU/무지퍼/인디고블루",
             "img": "https://chhouse.kr/web/product/big/202404/0f64bc8721bd4923f88136b838a9732e.jpg",
             "url": "https://chhouse.kr/product/%EC%9D%BC%EB%9F%AC%EC%8A%A4%ED%8A%B8%EC%89%AC%EC%9A%B4%EC%84%B1%EA%B2%BD-%EC%86%8C%EB%8B%A8%EB%B3%B8-%EC%83%89%EC%9D%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EC%9D%B8%EB%94%94%EA%B3%A0%EB%B8%94%EB%A3%A8/47778/category/1365/display/1/",
-            "itemCode": "NEW_A_일러스트쉬운성경_1",
+            "itemCode": "P000CSRQ000A",
             "originalPrice": 33000,
-            "salePrice": 29700
+            "salePrice": 29700,
+            "isbn": "9788953723672"
           },
           {
             "label": "소단본/비닐/무지퍼",
             "img": "https://chhouse.kr/web/product/big/202404/7c3761dc38bc94cd11adce202ade78ee.jpg",
             "url": "https://chhouse.kr/product/%EC%9D%BC%EB%9F%AC%EC%8A%A4%ED%8A%B8%EC%89%AC%EC%9A%B4%EC%84%B1%EA%B2%BD%EC%86%8C-%EB%8B%A8%EB%B3%B8-%EB%B9%84%EB%8B%90-%EC%83%89%EC%9D%B8/20271/category/1365/display/1/",
-            "itemCode": "NEW_A_일러스트쉬운성경_3",
+            "itemCode": "P000BDZR000A",
             "originalPrice": 31000,
-            "salePrice": 27900
+            "salePrice": 27900,
+            "isbn": "9788953703988"
           }
         ]
       },
@@ -1229,9 +1342,10 @@ export const bibleData = {
             "label": "중단본/비닐/무지퍼",
             "img": "https://chhouse.kr/web/product/big/202404/43775d4dc1c794c2cf4171b8010dca6d.jpg",
             "url": "https://chhouse.kr/product/%EC%9D%BC%EB%9F%AC%EC%8A%A4%ED%8A%B8%EC%89%AC%EC%9A%B4%EC%84%B1%EA%B2%BD%EC%A4%91-%EB%8B%A8%EB%B3%B8-%EC%83%89%EC%9D%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EB%B9%84%EB%8B%90/19152/category/1382/display/1/",
-            "itemCode": "NEW_A_일러스트쉬운성경_2",
-            "originalPrice": 34000,
-            "salePrice": 30600
+            "itemCode": "P000BCIQ000A",
+            "originalPrice": 35000,
+            "salePrice": 31500,
+            "isbn": "9788953702189"
           }
         ]
       },
@@ -1246,9 +1360,10 @@ export const bibleData = {
             "label": "강대용단본/천연/무지퍼/다크브라운",
             "img": "https://chhouse.kr/web/product/big/202405/bdc39b64ab0126c8e51eefa5d59d31ce.jpg",
             "url": "https://chhouse.kr/product/%EC%B2%9C%EC%97%B0%EC%9A%B0%ED%94%BC-%EA%B7%B8%EB%9E%9C%EB%93%9C%EC%84%B1%EA%B2%BD%EC%A0%84%EC%84%9C-nkr98eg-%EA%B0%95%EB%8C%80%EC%9A%A9-%EB%8B%A8%EB%B3%B8-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-%EC%83%89%EC%9D%B8-%EB%8B%A4%ED%81%AC%EB%B8%8C%EB%9D%BC%EC%9A%B4/42020/category/1421/display/1/",
-            "itemCode": "NEW_A_그랜드성경전서(NKR98EG)_0",
+            "itemCode": "P000CKEE000A",
             "originalPrice": 158000,
-            "salePrice": 142200
+            "salePrice": 142200,
+            "isbn": "9788953725492"
           }
         ]
       },
@@ -1263,17 +1378,19 @@ export const bibleData = {
             "label": "강대용단본/천연/무지퍼/다크브라운",
             "img": "https://chhouse.kr/web/product/big/202405/02facb3ccadb9c528560759b279183a5.jpg",
             "url": "https://chhouse.kr/product/%EC%B2%9C%EC%97%B0%EC%9A%B0%ED%94%BC-%ED%81%B0%EA%B8%80%EC%84%B1%EA%B2%BD%EC%A0%84%EC%84%9C-%EA%B0%95%EB%8C%80%EC%9A%A9-%EB%8B%A8%EB%B3%B8-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-%EC%83%89%EC%9D%B8-%EB%8B%A4%ED%81%AC%EB%B8%8C%EB%9D%BC%EC%9A%B4/42021/category/1421/display/1/",
-            "itemCode": "NEW_A_큰글성경전서_0",
+            "itemCode": "P000CKEF000A",
             "originalPrice": 135000,
-            "salePrice": 121500
+            "salePrice": 121500,
+            "isbn": "9788953725379"
           },
           {
             "label": "강대용단본/PU/무지퍼/브라운",
             "img": "https://chhouse.kr/web/product/big/202405/a3d68835d60aa9afaf718b658833d4da.jpg",
             "url": "https://chhouse.kr/product/%ED%81%B0%EA%B8%80%EC%84%B1%EA%B2%BD%EC%A0%84%EC%84%9C-%EA%B0%95%EB%8C%80%EC%9A%A9-%EB%8B%A8%EB%B3%B8-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-%EC%83%89%EC%9D%B8-%EB%B8%8C%EB%9D%BC%EC%9A%B4/42022/category/1421/display/1/",
-            "itemCode": "NEW_A_큰글성경전서_1",
+            "itemCode": "P000CKEG000A",
             "originalPrice": 118000,
-            "salePrice": 106200
+            "salePrice": 106200,
+            "isbn": "9788953725386"
           }
         ]
       },
@@ -1288,9 +1405,10 @@ export const bibleData = {
             "label": "특대단본/천연/무지퍼/투톤브라운",
             "img": "https://chhouse.kr/web/product/big/202404/743bf1c7241b74cf06583abf85df8d16.jpg",
             "url": "https://chhouse.kr/product/%EC%B2%9C%EC%97%B0%EC%9A%B0%ED%94%BC-%EB%AA%85%ED%92%88-%EC%BB%AC%EB%9F%AC%EC%84%B1%EA%B2%BD%EC%A0%84%EC%84%9C-%EA%B0%95%EB%8C%80%EC%9A%A9-%EB%8B%A8%EB%B3%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%ED%88%AC%ED%86%A4%EB%B8%8C%EB%9D%BC%EC%9A%B4/40064/category/1421/display/1/",
-            "itemCode": "NEW_A_명품컬러성경전서_0",
+            "itemCode": "P000CHGY000A",
             "originalPrice": 152000,
-            "salePrice": 136800
+            "salePrice": 136800,
+            "isbn": "9788953725287"
           }
         ]
       },
@@ -1305,9 +1423,10 @@ export const bibleData = {
             "label": "특대단본/천연/무지퍼/투톤브라운",
             "img": "https://chhouse.kr/web/product/big/202407/86e89a308880c5aa2b200ba1e85534f1.jpg",
             "url": "https://chhouse.kr/product/%EC%B2%9C%EC%97%B0%EC%9A%B0%ED%94%BC-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-%EC%BB%AC%EB%9F%AC%EB%B0%94%EC%9D%B4%EB%B8%94-%ED%8A%B9%EB%8C%80%EB%8B%A8%EB%B3%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EB%8B%A4%ED%81%AC%EB%B8%8C%EB%9D%BC%EC%9A%B4/49188/category/1358/display/1/",
-            "itemCode": "NEW_A_컬러바이블_0",
+            "itemCode": "P000CUTW000A",
             "originalPrice": 98000,
-            "salePrice": 88200
+            "salePrice": 88200,
+            "isbn": "9788953725683"
           }
         ]
       },
@@ -1322,9 +1441,10 @@ export const bibleData = {
             "label": "강대용단본/천연/무지퍼/다크브라운",
             "img": "https://chhouse.kr/web/product/big/202603/2c5f695810eeedad2849875c6f006a48.jpg",
             "url": "https://chhouse.kr/product/%EC%83%88%EB%B2%88%EC%97%AD-%ED%81%B0%EA%B8%80%EC%84%B1%EA%B2%BD-%EA%B0%95%EB%8C%80%EC%9A%A9-%EB%8B%A8%EB%B3%B8-%EC%9A%B0%ED%94%BC-%EC%83%89%EC%9D%B8-%ED%88%AC%ED%86%A4%EB%B8%8C%EB%9D%BC%EC%9A%B4/57119/category/2453/display/1/",
-            "itemCode": "NEW_A_새번역성경전서_0",
+            "itemCode": "P000DGMX000A",
             "originalPrice": 142000,
-            "salePrice": 127800
+            "salePrice": 127800,
+            "isbn": "9788953727151"
           }
         ]
       },
@@ -1339,33 +1459,37 @@ export const bibleData = {
             "label": "중합본/PU/지퍼/아이보리",
             "img": "https://chhouse.kr/web/product/big/202405/b07bf567f897a276d88f2d1e0ed7b9c9.jpg",
             "url": "https://chhouse.kr/product/%ED%81%B0%EA%B8%80%EC%9E%90%EA%B5%BF%EB%AA%A8%EB%8B%9D-%EA%B2%B0%ED%98%BC%EC%84%B1%EA%B2%BD-%EC%A4%91%ED%95%A9%EB%B3%B8-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-%EC%83%88%EC%B0%AC%EC%86%A1%EA%B0%80-%EC%83%89%EC%9D%B8-%EC%A7%80%ED%8D%BC-%EC%95%84%EC%9D%B4%EB%B3%B4%EB%A6%AC/48428/category/1374/display/1/",
-            "itemCode": "NEW_A_큰글자굿모닝결혼성경_0",
+            "itemCode": "P000CTQQ000A",
             "originalPrice": 46000,
-            "salePrice": 41400
+            "salePrice": 41400,
+            "isbn": "9788953726376"
           },
           {
             "label": "중합본/PU/지퍼/핑크",
             "img": "https://chhouse.kr/web/product/big/202510/e1e1fb75354f96902dd4940e79f37135.jpg",
             "url": "https://chhouse.kr/product/%ED%81%B0%EA%B8%80%EC%9E%90%EA%B5%BF%EB%AA%A8%EB%8B%9D-%EA%B2%B0%ED%98%BC%EC%84%B1%EA%B2%BD-%EC%A4%91%ED%95%A9%EB%B3%B8-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-%EC%83%88%EC%B0%AC%EC%86%A1%EA%B0%80-%EC%83%89%EC%9D%B8-%EC%A7%80%ED%8D%BC-%ED%95%91%ED%81%AC/55451/category/1374/display/1/",
-            "itemCode": "NEW_A_큰글자굿모닝결혼성경_1",
+            "itemCode": "P000DEAT000A",
             "originalPrice": 46000,
-            "salePrice": 41400
+            "salePrice": 41400,
+            "isbn": "9788953726956"
           },
           {
             "label": "중합본/PU/지퍼/블루",
             "img": "https://chhouse.kr/web/product/big/202510/0f53835bb05e60a16fa2e3fd7ec7e7b0.jpg",
             "url": "https://chhouse.kr/product/%ED%81%B0%EA%B8%80%EC%9E%90%EA%B5%BF%EB%AA%A8%EB%8B%9D-%EA%B2%B0%ED%98%BC%EC%84%B1%EA%B2%BD-%EC%A4%91%ED%95%A9%EB%B3%B8-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-%EC%83%88%EC%B0%AC%EC%86%A1%EA%B0%80-%EC%83%89%EC%9D%B8-%EC%A7%80%ED%8D%BC-%EB%B8%94%EB%A3%A8/55450/category/1374/display/1/",
-            "itemCode": "NEW_A_큰글자굿모닝결혼성경_2",
+            "itemCode": "P000DEAS000A",
             "originalPrice": 46000,
-            "salePrice": 41400
+            "salePrice": 41400,
+            "isbn": "9788953726949"
           },
           {
             "label": "중합본/PU/무지퍼/아이보리",
             "img": "https://chhouse.kr/web/product/big/202405/99819d68b96aa2de8e8c212ecd0659b6.jpg",
             "url": "https://chhouse.kr/product/%ED%81%B0%EA%B8%80%EC%9E%90%EA%B5%BF%EB%AA%A8%EB%8B%9D-%EA%B2%B0%ED%98%BC%EC%84%B1%EA%B2%BD-%EC%A4%91%ED%95%A9%EB%B3%B8-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-%EC%83%88%EC%B0%AC%EC%86%A1%EA%B0%80-%EC%83%89%EC%9D%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EC%95%84%EC%9D%B4%EB%B3%B4%EB%A6%AC/48427/category/1374/display/1/",
-            "itemCode": "NEW_A_큰글자굿모닝결혼성경_3",
+            "itemCode": "P000CTQP000A",
             "originalPrice": 44000,
-            "salePrice": 39600
+            "salePrice": 39600,
+            "isbn": "9788953726253"
           }
         ]
       }
@@ -1386,7 +1510,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=53022&cate_no=1372&display_group=1",
             "itemCode": "P000DALI000A",
             "originalPrice": 68000,
-            "salePrice": 61200
+            "salePrice": 61200,
+            "isbn": "9788904507672"
           },
           {
             "label": "대합본/천연/지퍼/뉴버건디",
@@ -1394,15 +1519,17 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=53023&cate_no=1372&display_group=1",
             "itemCode": "P000DALJ000A",
             "originalPrice": 68000,
-            "salePrice": 61200
+            "salePrice": 61200,
+            "isbn": "9788904507689"
           },
           {
             "label": "대합본/PU/지퍼/다크브라운",
             "img": "https://chhouse.kr/web/product/big/202406/96e5787d088f897ab3d624634a395dc1.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=18492&cate_no=1372&display_group=1",
             "itemCode": "P000BBJG000A",
-            "originalPrice": 56000,
-            "salePrice": 50400
+            "originalPrice": 58000,
+            "salePrice": 52200,
+            "isbn": "9788904504541"
           }
         ]
       },
@@ -1418,7 +1545,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=50086&cate_no=1371&display_group=1",
             "itemCode": "P000CWCK000A",
             "originalPrice": 78000,
-            "salePrice": 70200
+            "salePrice": 70200,
+            "isbn": "9788904507504"
           },
           {
             "label": "중합본/PU/지퍼/다크네이비",
@@ -1426,7 +1554,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=50085&cate_no=1371&display_group=1",
             "itemCode": "P000CWCJ000A",
             "originalPrice": 55000,
-            "salePrice": 49500
+            "salePrice": 49500,
+            "isbn": "9788904507498"
           }
         ]
       },
@@ -1441,8 +1570,9 @@ export const bibleData = {
             "img": "https://chhouse.kr/web/product/big/202411/b577b20e25030f4625e462020eb08ba4.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=51317&cate_no=1345&display_group=1",
             "itemCode": "P000CXXT000A",
-            "originalPrice": 42000,
-            "salePrice": 37800
+            "originalPrice": 43000,
+            "salePrice": 38700,
+            "isbn": "9788904507610"
           },
           {
             "label": "소합본/PU/밴드형/그린",
@@ -1450,7 +1580,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=42796&cate_no=1345&display_group=1",
             "itemCode": "P000CLIA000A",
             "originalPrice": 36000,
-            "salePrice": 32400
+            "salePrice": 32400,
+            "isbn": "9788904506606"
           },
           {
             "label": "소합본/PU/밴드형/네이비",
@@ -1458,7 +1589,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=42795&cate_no=1345&display_group=1",
             "itemCode": "P000CLHZ000A",
             "originalPrice": 36000,
-            "salePrice": 32400
+            "salePrice": 32400,
+            "isbn": "9788904506590"
           }
         ]
       },
@@ -1473,16 +1605,18 @@ export const bibleData = {
             "img": "https://chhouse.kr/web/product/big/202501/5378bcf8416c0e8609f24bba6a4d42e3.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=18174&cate_no=1372&display_group=1",
             "itemCode": "P000BAXA000A",
-            "originalPrice": 67000,
-            "salePrice": 60300
+            "originalPrice": 70000,
+            "salePrice": 63000,
+            "isbn": "9788904505012"
           },
           {
             "label": "대합본/천연/지퍼/다크네이비",
             "img": "https://chhouse.kr/web/product/big/202501/55f6a0044745f3d68fd17689c271b8cf.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=52204&cate_no=1372&display_group=1",
             "itemCode": "P000CZFW000A",
-            "originalPrice": 67000,
-            "salePrice": 60300
+            "originalPrice": 70000,
+            "salePrice": 63000,
+            "isbn": "9788904507641"
           },
           {
             "label": "대합본/PU/지퍼/블랙",
@@ -1490,23 +1624,26 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=44462&cate_no=1372&display_group=1",
             "itemCode": "P000CNUC000A",
             "originalPrice": 63000,
-            "salePrice": 56700
+            "salePrice": 56700,
+            "isbn": "9788904506767"
           },
           {
             "label": "대합본/PU/지퍼/다크네이비",
             "img": "https://chhouse.kr/web/product/big/202405/8c225d754a59a3e16f85f2e63d86cc35.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=44337&cate_no=1372&display_group=1",
             "itemCode": "P000CNPH000A",
-            "originalPrice": 51000,
-            "salePrice": 45900
+            "originalPrice": 55000,
+            "salePrice": 49500,
+            "isbn": "9788904506743"
           },
           {
             "label": "대합본/PU/지퍼/브라운",
             "img": "https://chhouse.kr/web/product/big/202405/fd4c68d48959eeb01077303ebc70348b.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=44336&cate_no=1372&display_group=1",
             "itemCode": "P000CNPG000A",
-            "originalPrice": 51000,
-            "salePrice": 45900
+            "originalPrice": 55000,
+            "salePrice": 49500,
+            "isbn": "9788904506750"
           }
         ]
       },
@@ -1522,31 +1659,35 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=38862&cate_no=1371&display_group=1",
             "itemCode": "P000CFMS000A",
             "originalPrice": 57000,
-            "salePrice": 51300
+            "salePrice": 51300,
+            "isbn": "9788904505784"
           },
           {
             "label": "중합본/천연/지퍼/뉴다크브라운",
             "img": "https://chhouse.kr/web/product/big/202405/b58e62b5aa0261bc589d6813e15815b9.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=38861&cate_no=1371&display_group=1",
             "itemCode": "P000CFMR000A",
-            "originalPrice": 57000,
-            "salePrice": 51300
+            "originalPrice": 60000,
+            "salePrice": 54000,
+            "isbn": "9788904505777"
           },
           {
             "label": "중합본/PU/지퍼/뉴브라운",
             "img": "https://chhouse.kr/web/product/big/202405/b504f15f35c8edf0ab540ae48f597e6a.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=38336&cate_no=1371&display_group=1",
             "itemCode": "P000CESM000A",
-            "originalPrice": 47000,
-            "salePrice": 42300
+            "originalPrice": 49000,
+            "salePrice": 44100,
+            "isbn": "9788904505760"
           },
           {
             "label": "중합본/PU/지퍼/뉴네이비",
             "img": "https://chhouse.kr/web/product/big/202409/ae865f4cf05ad35f7355feb7d89c2e47.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=38335&cate_no=1371&display_group=1",
             "itemCode": "P000CESL000A",
-            "originalPrice": 47000,
-            "salePrice": 42300
+            "originalPrice": 49000,
+            "salePrice": 44100,
+            "isbn": "9788904505753"
           }
         ]
       },
@@ -1562,7 +1703,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=48705&cate_no=1387&display_group=1",
             "itemCode": "P000CUBH000A",
             "originalPrice": 38000,
-            "salePrice": 34200
+            "salePrice": 34200,
+            "isbn": "9788904507412"
           },
           {
             "label": "초미니합본/PU/지퍼/뉴분홍",
@@ -1570,7 +1712,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=48706&cate_no=1387&display_group=1",
             "itemCode": "P000CUBI000A",
             "originalPrice": 32000,
-            "salePrice": 28800
+            "salePrice": 28800,
+            "isbn": "9788904507474"
           },
           {
             "label": "초미니합본/PU/지퍼/뉴베이지",
@@ -1578,23 +1721,26 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=48704&cate_no=1387&display_group=1",
             "itemCode": "P000CUBG000A",
             "originalPrice": 32000,
-            "salePrice": 28800
+            "salePrice": 28800,
+            "isbn": "9788904507481"
           },
           {
             "label": "초미니합본/PU/지퍼/뉴파랑",
             "img": "https://chhouse.kr/web/product/big/202406/3bedc900213eb974752f343cc216d4e3.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=48654&cate_no=1387&display_group=1",
             "itemCode": "P000CTZI000A",
-            "originalPrice": 32000,
-            "salePrice": 28800
+            "originalPrice": 33000,
+            "salePrice": 29700,
+            "isbn": "9788904507450"
           },
           {
             "label": "초미니합본/PU/지퍼/뉴하늘",
             "img": "https://chhouse.kr/web/product/big/202406/f0523e71e14e910b252777132ce5b49f.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=48655&cate_no=1387&display_group=1",
             "itemCode": "P000CTZJ000A",
-            "originalPrice": 32000,
-            "salePrice": 28800
+            "originalPrice": 33000,
+            "salePrice": 29700,
+            "isbn": "9788904507467"
           }
         ]
       },
@@ -1610,14 +1756,17 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=43362&cate_no=1372&display_group=1",
             "itemCode": "P000CMDU000A",
             "originalPrice": 76000,
-            "salePrice": 68400
+            "salePrice": 68400,
+            "isbn": "9788904506514"
           },
           {
             "label": "대합본/천연/지퍼/베이지",
             "img": "https://chhouse.kr/web/product/big/202405/e39f311d5dfa726569a3e2aae5760664.jpg",
             "url": "http://chhouse.kr/product/detail.html?product_no=43361&cate_no=1372&display_group=1",
             "originalPrice": 76000,
-            "salePrice": 68400
+            "salePrice": 68400,
+            "isbn": "9788904506521",
+            "itemCode": "P000CMDT000A"
           },
           {
             "label": "대합본/PU/지퍼/브라운",
@@ -1625,7 +1774,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=43359&cate_no=1372&display_group=1",
             "itemCode": "P000CMDR000A",
             "originalPrice": 62000,
-            "salePrice": 55800
+            "salePrice": 55800,
+            "isbn": "9788904506491"
           },
           {
             "label": "대합본/PU/지퍼/초코브라운",
@@ -1633,7 +1783,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=43360&cate_no=1372&display_group=1",
             "itemCode": "P000CMDS000A",
             "originalPrice": 62000,
-            "salePrice": 55800
+            "salePrice": 55800,
+            "isbn": "9788904506507"
           }
         ]
       },
@@ -1649,7 +1800,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=45118&cate_no=1371&display_group=1",
             "itemCode": "P000COTI000A",
             "originalPrice": 64000,
-            "salePrice": 57600
+            "salePrice": 57600,
+            "isbn": "9788904507276"
           },
           {
             "label": "중합본/천연/지퍼/다크네이비",
@@ -1657,7 +1809,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=45119&cate_no=1371&display_group=1",
             "itemCode": "P000COTJ000A",
             "originalPrice": 64000,
-            "salePrice": 57600
+            "salePrice": 57600,
+            "isbn": "9788904507283"
           },
           {
             "label": "중합본/PU/지퍼/브라운",
@@ -1665,7 +1818,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=45116&cate_no=1371&display_group=1",
             "itemCode": "P000COTG000A",
             "originalPrice": 45000,
-            "salePrice": 40500
+            "salePrice": 40500,
+            "isbn": "9788904507252"
           },
           {
             "label": "중합본/PU/지퍼/블랙",
@@ -1673,7 +1827,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=45117&cate_no=1371&display_group=1",
             "itemCode": "P000COTH000A",
             "originalPrice": 45000,
-            "salePrice": 40500
+            "salePrice": 40500,
+            "isbn": "9788904507269"
           }
         ]
       },
@@ -1689,7 +1844,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=49873&cate_no=1345&display_group=1",
             "itemCode": "P000CVUF000A",
             "originalPrice": 54000,
-            "salePrice": 48600
+            "salePrice": 48600,
+            "isbn": "9788904507405"
           },
           {
             "label": "소합본/천연/지퍼/다크네이비",
@@ -1697,7 +1853,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=49874&cate_no=1345&display_group=1",
             "itemCode": "P000CVUG000A",
             "originalPrice": 54000,
-            "salePrice": 48600
+            "salePrice": 48600,
+            "isbn": "9788904507399"
           },
           {
             "label": "소합본/PU/지퍼/브라운",
@@ -1705,7 +1862,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=49872&cate_no=1345&display_group=1",
             "itemCode": "P000CVUE000A",
             "originalPrice": 44000,
-            "salePrice": 39600
+            "salePrice": 39600,
+            "isbn": "9788904507375"
           },
           {
             "label": "소합본/PU/지퍼/블랙",
@@ -1713,7 +1871,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=49871&cate_no=1345&display_group=1",
             "itemCode": "P000CVUD000A",
             "originalPrice": 44000,
-            "salePrice": 39600
+            "salePrice": 39600,
+            "isbn": "9788904507382"
           }
         ]
       },
@@ -1729,7 +1888,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=57193&cate_no=1371&display_group=1",
             "itemCode": "P000DGPT000A",
             "originalPrice": 54000,
-            "salePrice": 48600
+            "salePrice": 48600,
+            "isbn": "9788904508198"
           },
           {
             "label": "중합본/천연/지퍼/브라운",
@@ -1737,31 +1897,35 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=54071&cate_no=1371&display_group=1",
             "itemCode": "P000DBZR000A",
             "originalPrice": 52000,
-            "salePrice": 46800
+            "salePrice": 46800,
+            "isbn": "9788904507801"
           },
           {
             "label": "중합본/PU/지퍼/그레이",
             "img": "https://chhouse.kr/web/product/big/202506/955fe9a0e44439f0859b2dede2bfab15.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=54068&cate_no=1371&display_group=1",
             "itemCode": "P000DBZO000A",
-            "originalPrice": 42000,
-            "salePrice": 37800
+            "originalPrice": 44000,
+            "salePrice": 39600,
+            "isbn": "9788904507771"
           },
           {
             "label": "중합본/PU/지퍼/네이비",
             "img": "https://chhouse.kr/web/product/big/202506/9889b58103692066fe0f204de3281c88.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=54069&cate_no=1371&display_group=1",
             "itemCode": "P000DBZP000A",
-            "originalPrice": 42000,
-            "salePrice": 37800
+            "originalPrice": 44000,
+            "salePrice": 39600,
+            "isbn": "9788904507788"
           },
           {
             "label": "중합본/PU/지퍼/베이지",
             "img": "https://chhouse.kr/web/product/big/202506/42d6312e2643ee1fe1f1678570f78d8f.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=54070&cate_no=1344&display_group=1",
             "itemCode": "P000DBZQ000A",
-            "originalPrice": 42000,
-            "salePrice": 37800
+            "originalPrice": 44000,
+            "salePrice": 39600,
+            "isbn": "9788904507795"
           },
           {
             "label": "중단본/PU/무지퍼/웜그레이",
@@ -1769,7 +1933,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=57111&cate_no=1371&display_group=1",
             "itemCode": "P000DGMP000A",
             "originalPrice": 34000,
-            "salePrice": 30600
+            "salePrice": 30600,
+            "isbn": "9788904508051"
           },
           {
             "label": "중단본/PU/무지퍼/베이지",
@@ -1777,7 +1942,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=57110&cate_no=1371&display_group=1",
             "itemCode": "P000DGMO000A",
             "originalPrice": 34000,
-            "salePrice": 30600
+            "salePrice": 30600,
+            "isbn": "9788904508044"
           }
         ]
       },
@@ -1793,7 +1959,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=55697&cate_no=1345&display_group=1",
             "itemCode": "P000DEKF000A",
             "originalPrice": 49000,
-            "salePrice": 44100
+            "salePrice": 44100,
+            "isbn": "9788904507917"
           },
           {
             "label": "소합본/천연/지퍼/스카이블루",
@@ -1801,7 +1968,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=55698&cate_no=1345&display_group=1",
             "itemCode": "P000DEKG000A",
             "originalPrice": 49000,
-            "salePrice": 44100
+            "salePrice": 44100,
+            "isbn": "9788904507924"
           },
           {
             "label": "소합본/PU/지퍼/블랙",
@@ -1809,7 +1977,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=55701&cate_no=1345&display_group=1",
             "itemCode": "P000DEKJ000A",
             "originalPrice": 39000,
-            "salePrice": 35100
+            "salePrice": 35100,
+            "isbn": "9788904507948"
           },
           {
             "label": "소합본/PU/지퍼/베이지",
@@ -1817,23 +1986,26 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=55700&cate_no=1345&display_group=1",
             "itemCode": "P000DEKI000A",
             "originalPrice": 39000,
-            "salePrice": 35100
+            "salePrice": 35100,
+            "isbn": "9788904507931"
           },
           {
             "label": "소단본/PU/지퍼/그레이",
             "img": "https://chhouse.kr/web/product/big/202510/64abe985dd05c8809066362dde89f2f8.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=55552&cate_no=1345&display_group=1",
             "itemCode": "P000DEEQ000A",
-            "originalPrice": 30000,
-            "salePrice": 27000
+            "originalPrice": 32000,
+            "salePrice": 28800,
+            "isbn": "9788904507955"
           },
           {
             "label": "소단본/PU/지퍼/브라운",
             "img": "https://chhouse.kr/web/product/big/202510/0aa1462058fc550edc23186a2544c277.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=55553&cate_no=1345&display_group=1",
             "itemCode": "P000DEER000A",
-            "originalPrice": 30000,
-            "salePrice": 27000
+            "originalPrice": 32000,
+            "salePrice": 28800,
+            "isbn": "9788904507962"
           }
         ]
       },
@@ -1849,7 +2021,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=51148&cate_no=1371&display_group=1",
             "itemCode": "P000CXRG000A",
             "originalPrice": 48000,
-            "salePrice": 43200
+            "salePrice": 43200,
+            "isbn": "9788904507528"
           },
           {
             "label": "중합본/PU/지퍼/뉴레드브라운",
@@ -1857,7 +2030,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=51316&cate_no=1371&display_group=1",
             "itemCode": "P000CXXS000A",
             "originalPrice": 38000,
-            "salePrice": 34200
+            "salePrice": 34200,
+            "isbn": "9788904507542"
           },
           {
             "label": "중합본/PU/지퍼/뉴다크올리브",
@@ -1865,7 +2039,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=51315&cate_no=1371&display_group=1",
             "itemCode": "P000CXXR000A",
             "originalPrice": 38000,
-            "salePrice": 34200
+            "salePrice": 34200,
+            "isbn": "9788904507559"
           },
           {
             "label": "중합본/PU/지퍼/뉴네이비",
@@ -1873,7 +2048,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=51314&cate_no=1371&display_group=1",
             "itemCode": "P000CXXQ000A",
             "originalPrice": 38000,
-            "salePrice": 34200
+            "salePrice": 34200,
+            "isbn": "9788904507535"
           }
         ]
       },
@@ -1889,7 +2065,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=18165&cate_no=1371&display_group=1",
             "itemCode": "P000BAWR000A",
             "originalPrice": 47000,
-            "salePrice": 42300
+            "salePrice": 42300,
+            "isbn": "9788904504961"
           }
         ]
       },
@@ -1905,7 +2082,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=42958&cate_no=1345&display_group=1",
             "itemCode": "P000CLOG000A",
             "originalPrice": 44000,
-            "salePrice": 39600
+            "salePrice": 39600,
+            "isbn": "9788904506583"
           },
           {
             "label": "소합본/PU/지퍼/다크네이비",
@@ -1913,7 +2091,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=37706&cate_no=1345&display_group=1",
             "itemCode": "P000CDUG000A",
             "originalPrice": 35000,
-            "salePrice": 31500
+            "salePrice": 31500,
+            "isbn": "9788904504985"
           },
           {
             "label": "소합본/PU/지퍼/브라운",
@@ -1921,7 +2100,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=37705&cate_no=1345&display_group=1",
             "itemCode": "P000CDUF000A",
             "originalPrice": 35000,
-            "salePrice": 31500
+            "salePrice": 31500,
+            "isbn": "9788904504978"
           },
           {
             "label": "소합본/PU/지퍼/올리브그린",
@@ -1929,7 +2109,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=37704&cate_no=1345&display_group=1",
             "itemCode": "P000CDUE000A",
             "originalPrice": 35000,
-            "salePrice": 31500
+            "salePrice": 31500,
+            "isbn": "9788904505746"
           }
         ]
       },
@@ -1944,8 +2125,9 @@ export const bibleData = {
             "img": "https://chhouse.kr/web/product/big/202602/a31f6317eaed5517661fc30c6ef7d583.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=56806&cate_no=1457&display_group=1",
             "itemCode": "P000DGAW000A",
-            "originalPrice": 37000,
-            "salePrice": 33300
+            "originalPrice": 38000,
+            "salePrice": 34200,
+            "isbn": "9788904508037"
           },
           {
             "label": "미니합본/PU/지퍼/책상",
@@ -1953,7 +2135,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=56807&cate_no=1457&display_group=1",
             "itemCode": "P000DGAX000A",
             "originalPrice": 37000,
-            "salePrice": 33300
+            "salePrice": 33300,
+            "isbn": "9788904508020"
           },
           {
             "label": "미니합본/PU/지퍼/자전거",
@@ -1961,7 +2144,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=56808&cate_no=1457&display_group=1",
             "itemCode": "P000DGAY000A",
             "originalPrice": 37000,
-            "salePrice": 33300
+            "salePrice": 33300,
+            "isbn": "9788904508013"
           },
           {
             "label": "미니합본/PU/지퍼/책",
@@ -1969,7 +2153,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=41018&cate_no=1457&display_group=1",
             "itemCode": "P000CIRQ000A",
             "originalPrice": 35000,
-            "salePrice": 31500
+            "salePrice": 31500,
+            "isbn": "9788904506576"
           },
           {
             "label": "미니합본/PU/지퍼/의자",
@@ -1977,7 +2162,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=41017&cate_no=1457&display_group=1",
             "itemCode": "P000CIRP000A",
             "originalPrice": 35000,
-            "salePrice": 31500
+            "salePrice": 31500,
+            "isbn": "9788904506569"
           },
           {
             "label": "미니합본/PU/지퍼/소년",
@@ -1985,15 +2171,17 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=41016&cate_no=1457&display_group=1",
             "itemCode": "P000CIRO000A",
             "originalPrice": 35000,
-            "salePrice": 31500
+            "salePrice": 31500,
+            "isbn": "9788904506545"
           },
           {
             "label": "미니합본/PU/지퍼/소녀",
             "img": "https://chhouse.kr/web/product/big/202408/856a0cb20f0e31b7e9f383ee5b93efaf.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=41015&cate_no=1457&display_group=1",
             "itemCode": "P000CIRN000A",
-            "originalPrice": 35000,
-            "salePrice": 31500
+            "originalPrice": 38000,
+            "salePrice": 34200,
+            "isbn": "9788904506552"
           }
         ]
       },
@@ -2008,16 +2196,18 @@ export const bibleData = {
             "img": "https://chhouse.kr/web/product/big/202405/d6bc8fae620dacbe20afbe01839e2543.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=38865&cate_no=1350&display_group=1",
             "itemCode": "P000CFMV000A",
-            "originalPrice": 89000,
-            "salePrice": 80100
+            "originalPrice": 94000,
+            "salePrice": 84600,
+            "isbn": "9788904505999"
           },
           {
             "label": "특대합본/천연/지퍼/다크브라운",
             "img": "https://chhouse.kr/web/product/big/202405/acfa91221bd263674d64e18fee354927.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=38864&cate_no=1350&display_group=1",
             "itemCode": "P000CFMU000A",
-            "originalPrice": 89000,
-            "salePrice": 80100
+            "originalPrice": 94000,
+            "salePrice": 84600,
+            "isbn": "9788904505982"
           },
           {
             "label": "특대합본/PU/지퍼/네이비",
@@ -2025,7 +2215,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=39061&cate_no=1350&display_group=1",
             "itemCode": "P000CFUJ000A",
             "originalPrice": 74000,
-            "salePrice": 66600
+            "salePrice": 66600,
+            "isbn": "9788904505975"
           },
           {
             "label": "특대합본/PU/지퍼/브라운",
@@ -2033,7 +2224,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=39062&cate_no=1350&display_group=1",
             "itemCode": "P000CFUK000A",
             "originalPrice": 74000,
-            "salePrice": 66600
+            "salePrice": 66600,
+            "isbn": "9788904505968"
           }
         ]
       },
@@ -2049,7 +2241,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=51954&cate_no=1372&display_group=1",
             "itemCode": "P000CYWG000A",
             "originalPrice": 85000,
-            "salePrice": 76500
+            "salePrice": 76500,
+            "isbn": "9788904507573"
           },
           {
             "label": "대합본/천연/지퍼/다크브라운",
@@ -2057,7 +2250,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=51953&cate_no=1372&display_group=1",
             "itemCode": "P000CYWF000A",
             "originalPrice": 85000,
-            "salePrice": 76500
+            "salePrice": 76500,
+            "isbn": "9788904507566"
           },
           {
             "label": "대합본/천연/지퍼/검정",
@@ -2065,7 +2259,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=44925&cate_no=1372&display_group=1",
             "itemCode": "P000COLX000A",
             "originalPrice": 73000,
-            "salePrice": 65700
+            "salePrice": 65700,
+            "isbn": "9788904506804"
           },
           {
             "label": "대합본/천연/지퍼/다크브라운",
@@ -2073,7 +2268,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=44924&cate_no=1372&display_group=1",
             "itemCode": "P000COLW000A",
             "originalPrice": 73000,
-            "salePrice": 65700
+            "salePrice": 65700,
+            "isbn": "9788904505852"
           },
           {
             "label": "대합본/천연/지퍼/버건디",
@@ -2081,7 +2277,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=38404&cate_no=1372&display_group=1",
             "itemCode": "P000CEVC000A",
             "originalPrice": 73000,
-            "salePrice": 65700
+            "salePrice": 65700,
+            "isbn": "9788904505869"
           },
           {
             "label": "대합본/PU/지퍼/브라운",
@@ -2089,7 +2286,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=52168&cate_no=1372&display_group=1",
             "itemCode": "P000CZEM000A",
             "originalPrice": 65000,
-            "salePrice": 58500
+            "salePrice": 58500,
+            "isbn": "9788904507603"
           },
           {
             "label": "대합본/PU/지퍼/레드브라운",
@@ -2097,7 +2295,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=52167&cate_no=1372&display_group=1",
             "itemCode": "P000CZEL000A",
             "originalPrice": 65000,
-            "salePrice": 58500
+            "salePrice": 58500,
+            "isbn": "9788904507597"
           },
           {
             "label": "대합본/PU/무지퍼/초코브라운",
@@ -2105,7 +2304,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=51981&cate_no=1372&display_group=1",
             "itemCode": "P000CYXH000A",
             "originalPrice": 64000,
-            "salePrice": 57600
+            "salePrice": 57600,
+            "isbn": "9788904507580"
           },
           {
             "label": "대합본/PU/무지퍼/초코브라운",
@@ -2113,7 +2313,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=51982&cate_no=1372&display_group=1",
             "itemCode": "P000CYXI000A",
             "originalPrice": 64000,
-            "salePrice": 57600
+            "salePrice": 57600,
+            "isbn": "9788904507726"
           }
         ]
       },
@@ -2129,7 +2330,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=46601&cate_no=1372&display_group=1",
             "itemCode": "P000CQYJ000A",
             "originalPrice": 78000,
-            "salePrice": 70200
+            "salePrice": 70200,
+            "isbn": "9788904507344"
           },
           {
             "label": "대합본/천연/지퍼/버건디",
@@ -2137,7 +2339,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=46600&cate_no=1372&display_group=1",
             "itemCode": "P000CQYI000A",
             "originalPrice": 78000,
-            "salePrice": 70200
+            "salePrice": 70200,
+            "isbn": "9788904507337"
           },
           {
             "label": "대합본/PU/지퍼/네이비",
@@ -2145,7 +2348,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=48550&cate_no=1372&display_group=1",
             "itemCode": "P000CTVI000A",
             "originalPrice": 65000,
-            "salePrice": 58500
+            "salePrice": 58500,
+            "isbn": "9788904507306"
           },
           {
             "label": "대합본/PU/지퍼/초코브라운",
@@ -2153,7 +2357,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=48181&cate_no=1372&display_group=1",
             "itemCode": "P000CTHD000A",
             "originalPrice": 65000,
-            "salePrice": 58500
+            "salePrice": 58500,
+            "isbn": "9788904507290"
           },
           {
             "label": "대합본/PU/무지퍼/검정",
@@ -2161,7 +2366,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=46312&cate_no=1372&display_group=1",
             "itemCode": "P000CQNG000A",
             "originalPrice": 62000,
-            "salePrice": 55800
+            "salePrice": 55800,
+            "isbn": "9788904507320"
           },
           {
             "label": "대합본/PU/무지퍼/브라운",
@@ -2169,7 +2375,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=46311&cate_no=1372&display_group=1",
             "itemCode": "P000CQNF000A",
             "originalPrice": 62000,
-            "salePrice": 55800
+            "salePrice": 55800,
+            "isbn": "9788904507313"
           }
         ]
       },
@@ -2185,15 +2392,17 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=36947&cate_no=1371&display_group=1",
             "itemCode": "P000CCRB000A",
             "originalPrice": 60000,
-            "salePrice": 54000
+            "salePrice": 54000,
+            "isbn": "9788904505715"
           },
           {
             "label": "중합본/천연/지퍼/다크브라운",
             "img": "https://chhouse.kr/web/product/big/202404/2cc00ba1ed7f3d166c9a129983beff1a.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=36946&cate_no=1371&display_group=1",
             "itemCode": "P000CCRA000A",
-            "originalPrice": 60000,
-            "salePrice": 54000
+            "originalPrice": 67000,
+            "salePrice": 60300,
+            "isbn": "9788904505708"
           },
           {
             "label": "중합본/PU/지퍼/뉴다크네이비",
@@ -2201,7 +2410,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=36044&cate_no=1371&display_group=1",
             "itemCode": "P000CBII000A",
             "originalPrice": 56000,
-            "salePrice": 50400
+            "salePrice": 50400,
+            "isbn": "9788904505661"
           },
           {
             "label": "중합본/PU/지퍼/뉴브라운",
@@ -2209,31 +2419,35 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=36043&cate_no=1371&display_group=1",
             "itemCode": "P000CBIH000A",
             "originalPrice": 56000,
-            "salePrice": 50400
+            "salePrice": 50400,
+            "isbn": "9788904505654"
           },
           {
             "label": "중합본/PU/지퍼/뉴그레이",
             "img": "https://chhouse.kr/web/product/big/202405/54c9f3511af3cbde7493bff682fdfa6f.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=36045&cate_no=1371&display_group=1",
             "itemCode": "P000CBIJ000A",
-            "originalPrice": 56000,
-            "salePrice": 50400
+            "originalPrice": 58000,
+            "salePrice": 52200,
+            "isbn": "9788904505678"
           },
           {
             "label": "중합본/PU/무지퍼/뉴다크브라운",
             "img": "https://chhouse.kr/web/product/big/202404/82d59828badee69deeae5b09dd4f2bdb.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=36042&cate_no=1371&display_group=1",
             "itemCode": "P000CBIG000A",
-            "originalPrice": 48000,
-            "salePrice": 43200
+            "originalPrice": 49000,
+            "salePrice": 44100,
+            "isbn": "9788904507900"
           },
           {
             "label": "중합본/PU/무지퍼/뉴다크네이비",
             "img": "https://chhouse.kr/web/product/big/202404/9ddbacc3fcd00174b666267ede0b6fe6.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=36041&cate_no=1371&display_group=1",
             "itemCode": "P000CBIF000A",
-            "originalPrice": 48000,
-            "salePrice": 43200
+            "originalPrice": 49000,
+            "salePrice": 44100,
+            "isbn": "9788904507894"
           }
         ]
       },
@@ -2249,7 +2463,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=43574&cate_no=1371&display_group=1",
             "itemCode": "P000CMLY000A",
             "originalPrice": 66000,
-            "salePrice": 59400
+            "salePrice": 59400,
+            "isbn": "9788904506477"
           },
           {
             "label": "중합본/천연/지퍼/버건디",
@@ -2257,7 +2472,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=43603&cate_no=1371&display_group=1",
             "itemCode": "P000CMNB000A",
             "originalPrice": 66000,
-            "salePrice": 59400
+            "salePrice": 59400,
+            "isbn": "9788904506484"
           },
           {
             "label": "중합본/PU/지퍼/브라운",
@@ -2265,7 +2481,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=49432&cate_no=1371&display_group=1",
             "itemCode": "P000CVDG000A",
             "originalPrice": 55000,
-            "salePrice": 49500
+            "salePrice": 49500,
+            "isbn": "9788904507245"
           },
           {
             "label": "중합본/PU/지퍼/네이비",
@@ -2273,7 +2490,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=49433&cate_no=1371&display_group=1",
             "itemCode": "P000CVDH000A",
             "originalPrice": 55000,
-            "salePrice": 49500
+            "salePrice": 49500,
+            "isbn": "9788904506460"
           }
         ]
       },
@@ -2289,7 +2507,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=54639&cate_no=1371&display_group=1",
             "itemCode": "P000DCVN000A",
             "originalPrice": 53000,
-            "salePrice": 47700
+            "salePrice": 47700,
+            "isbn": "9788904507856"
           },
           {
             "label": "지갑식/중합본/네이비",
@@ -2297,7 +2516,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=54638&cate_no=1371&display_group=1",
             "itemCode": "P000DCVM000A",
             "originalPrice": 53000,
-            "salePrice": 47700
+            "salePrice": 47700,
+            "isbn": "9788904507849"
           },
           {
             "label": "지갑식/중합본/웜그레이",
@@ -2305,7 +2525,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=54640&cate_no=1371&display_group=1",
             "itemCode": "P000DCVO000A",
             "originalPrice": 53000,
-            "salePrice": 47700
+            "salePrice": 47700,
+            "isbn": "9788904507863"
           }
         ]
       },
@@ -2321,7 +2542,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=42416&cate_no=1345&display_group=1",
             "itemCode": "P000CKTK000A",
             "originalPrice": 63000,
-            "salePrice": 56700
+            "salePrice": 56700,
+            "isbn": "9788904506736"
           },
           {
             "label": "소합본/천연/지퍼/브라운",
@@ -2329,7 +2551,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=42417&cate_no=1345&display_group=1",
             "itemCode": "P000CKTL000A",
             "originalPrice": 63000,
-            "salePrice": 56700
+            "salePrice": 56700,
+            "isbn": "9788904506729"
           },
           {
             "label": "소합본/PU/지퍼/라벤더",
@@ -2337,7 +2560,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=42420&cate_no=1345&display_group=1",
             "itemCode": "P000CKTO000A",
             "originalPrice": 53000,
-            "salePrice": 47700
+            "salePrice": 47700,
+            "isbn": "9788904506712"
           },
           {
             "label": "소합본/PU/지퍼/네이비",
@@ -2345,7 +2569,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=42419&cate_no=1345&display_group=1",
             "itemCode": "P000CKTN000A",
             "originalPrice": 53000,
-            "salePrice": 47700
+            "salePrice": 47700,
+            "isbn": "9788904506699"
           },
           {
             "label": "소합본/PU/지퍼/다크브라운",
@@ -2353,7 +2578,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=42418&cate_no=1345&display_group=1",
             "itemCode": "P000CKTM000A",
             "originalPrice": 53000,
-            "salePrice": 47700
+            "salePrice": 47700,
+            "isbn": "9788904506705"
           }
         ]
       },
@@ -2369,7 +2595,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=42903&cate_no=1345&display_group=1",
             "itemCode": "P000CLMD000A",
             "originalPrice": 54000,
-            "salePrice": 48600
+            "salePrice": 48600,
+            "isbn": "9788904506675"
           },
           {
             "label": "소합본/천연/지퍼/스카이",
@@ -2377,7 +2604,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=42904&cate_no=1345&display_group=1",
             "itemCode": "P000CLME000A",
             "originalPrice": 54000,
-            "salePrice": 48600
+            "salePrice": 48600,
+            "isbn": "9788904506682"
           },
           {
             "label": "소합본/PU/지퍼/라이트그레이",
@@ -2385,7 +2613,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=42902&cate_no=1345&display_group=1",
             "itemCode": "P000CLMC000A",
             "originalPrice": 46000,
-            "salePrice": 41400
+            "salePrice": 41400,
+            "isbn": "9788904506651"
           },
           {
             "label": "소합본/PU/지퍼/네이비",
@@ -2393,7 +2622,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=42900&cate_no=1345&display_group=1",
             "itemCode": "P000CLMA000A",
             "originalPrice": 46000,
-            "salePrice": 41400
+            "salePrice": 41400,
+            "isbn": "9788904506644"
           },
           {
             "label": "소합본/PU/지퍼/라벤더",
@@ -2401,7 +2631,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=42901&cate_no=1345&display_group=1",
             "itemCode": "P000CLMB000A",
             "originalPrice": 46000,
-            "salePrice": 41400
+            "salePrice": 41400,
+            "isbn": "9788904506668"
           }
         ]
       },
@@ -2417,7 +2648,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=54491&cate_no=1387&display_group=1",
             "itemCode": "P000DCPV000A",
             "originalPrice": 62000,
-            "salePrice": 55800
+            "salePrice": 55800,
+            "isbn": "9788904507832"
           },
           {
             "label": "미니합본/천연/지갑식/다크베이지",
@@ -2425,7 +2657,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=57323&cate_no=1387&display_group=1",
             "itemCode": "P000DGUT000A",
             "originalPrice": 62000,
-            "salePrice": 55800
+            "salePrice": 55800,
+            "isbn": "9788904508082"
           },
           {
             "label": "미니합본/PU/지갑식/버건디",
@@ -2433,7 +2666,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=54598&cate_no=1387&display_group=1",
             "itemCode": "P000DCTY000A",
             "originalPrice": 52000,
-            "salePrice": 46800
+            "salePrice": 46800,
+            "isbn": "9788904507818"
           },
           {
             "label": "미니합본/PU/지갑식/베이지",
@@ -2441,15 +2675,17 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=54599&cate_no=1387&display_group=1",
             "itemCode": "P000DCTZ000A",
             "originalPrice": 52000,
-            "salePrice": 46800
+            "salePrice": 46800,
+            "isbn": "9788904507825"
           },
           {
             "label": "미니합본/PU/지갑식/그레이",
             "img": "https://chhouse.kr/web/product/big/202604/0d92e64fe8aadde61d05ef3bde91b0c7.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=57249&cate_no=1387&display_group=1",
             "itemCode": "P000DGRX000A",
-            "originalPrice": 52000,
-            "salePrice": 46800
+            "originalPrice": 45000,
+            "salePrice": 40500,
+            "isbn": "9788904508099"
           },
           {
             "label": "미니합본/PU/지퍼/카키그레이",
@@ -2457,7 +2693,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=45048&cate_no=1387&display_group=1",
             "itemCode": "P000COQQ000A",
             "originalPrice": 44000,
-            "salePrice": 39600
+            "salePrice": 39600,
+            "isbn": "9788904507108"
           },
           {
             "label": "미니합본/PU/지퍼/블랙",
@@ -2465,7 +2702,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=45047&cate_no=1387&display_group=1",
             "itemCode": "P000COQP000A",
             "originalPrice": 44000,
-            "salePrice": 39600
+            "salePrice": 39600,
+            "isbn": "9788904507092"
           }
         ]
       },
@@ -2480,17 +2718,19 @@ export const bibleData = {
             "label": "대단본/PU/무지퍼/다크브라운",
             "img": "https://chhouse.kr/web/product/big/202405/e1dfa68b214cab22747005130dc56452.jpg",
             "url": "https://chhouse.kr/product/%EA%B0%9C%EC%97%AD%ED%95%9C%EA%B8%80-%ED%81%B0%EA%B8%80%EC%9E%90%EC%84%B1%EA%B2%BD%EC%A0%84%EC%84%9C-h72ewb-%EB%8C%80%EB%8B%A8%EB%B3%B8-%EC%83%89%EC%9D%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EB%8B%A4%ED%81%AC%EB%B8%8C%EB%9D%BC%EC%9A%B4/45565/category/1401/display/1/",
-            "itemCode": "NEW_W_H72EWB_0",
+            "itemCode": "P000CPKN000A",
             "originalPrice": 46000,
-            "salePrice": 41400
+            "salePrice": 41400,
+            "isbn": "9788904506996"
           },
           {
             "label": "대단본/PU/무지퍼/다크네이비",
             "img": "https://chhouse.kr/web/product/big/202409/e510b79b0f6183d7871eaf4046a3ae72.jpg",
             "url": "https://chhouse.kr/product/%EA%B0%9C%EC%97%AD%ED%95%9C%EA%B8%80-%ED%81%B0%EA%B8%80%EC%9E%90%EC%84%B1%EA%B2%BD%EC%A0%84%EC%84%9C-h72ewb-%EB%8C%80%EB%8B%A8%EB%B3%B8-%EC%83%89%EC%9D%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EB%8B%A4%ED%81%AC%EB%84%A4%EC%9D%B4%EB%B9%84/45566/category/1401/display/1/",
-            "itemCode": "NEW_W_H72EWB_1",
+            "itemCode": "P000CPKO000A",
             "originalPrice": 46000,
-            "salePrice": 41400
+            "salePrice": 41400,
+            "isbn": "9788904506989"
           }
         ]
       },
@@ -2505,25 +2745,28 @@ export const bibleData = {
             "label": "대단본/천연/무지퍼/브라운",
             "img": "https://chhouse.kr/web/product/big/202411/cff7b580e9c69a997821841dbdea209a.jpg",
             "url": "https://chhouse.kr/product/%EC%B2%9C%EC%97%B0%EC%9A%B0%ED%94%BC-%ED%81%B0%EA%B8%80%EC%94%A8%EC%83%88%EB%B2%88%EC%97%AD%EC%84%B1%EA%B2%BD-rn72ewf-%EB%8C%80%ED%95%A9%EB%B3%B8-%EC%83%89%EC%9D%B8-%EC%A7%80%ED%8D%BC-%EB%8B%A4%ED%81%AC%EB%B8%8C%EB%9D%BC%EC%9A%B4/51722/category/1351/display/1/",
-            "itemCode": "NEW_W_큰글씨새번역(RN72EWF)_0",
+            "itemCode": "P000CYNI000A",
             "originalPrice": 88000,
-            "salePrice": 79200
+            "salePrice": 79200,
+            "isbn": "9788904507634"
           },
           {
             "label": "대단본/PU/무지퍼/뉴다크브라운",
             "img": "https://chhouse.kr/web/product/big/202405/b1106e7ac147068b1ae81cbd5c171aa9.jpg",
             "url": "https://chhouse.kr/product/%ED%81%B0%EA%B8%80%EC%94%A8%EC%83%88%EB%B2%88%EC%97%AD%EC%84%B1%EA%B2%BD-rn72ewf-%EB%8C%80%EB%8B%A8%EB%B3%B8-%EC%83%89%EC%9D%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EB%89%B4%EB%8B%A4%ED%81%AC%EB%B8%8C%EB%9D%BC%EC%9A%B4/45561/category/1351/display/1/",
-            "itemCode": "NEW_W_큰글씨새번역(RN72EWF)_1",
+            "itemCode": "P000CPKJ000A",
             "originalPrice": 58000,
-            "salePrice": 52200
+            "salePrice": 52200,
+            "isbn": "9788904507146"
           },
           {
             "label": "대단본/PU/무지퍼/뉴다크네이비",
             "img": "https://chhouse.kr/web/product/big/202405/d3681c4e514ca25032e29e7a95fd3523.jpg",
             "url": "https://chhouse.kr/product/%ED%81%B0%EA%B8%80%EC%94%A8%EC%83%88%EB%B2%88%EC%97%AD%EC%84%B1%EA%B2%BD-rn72ewf-%EB%8C%80%EB%8B%A8%EB%B3%B8-%EC%83%89%EC%9D%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EB%89%B4%EB%8B%A4%ED%81%AC%EB%84%A4%EC%9D%B4%EB%B9%84/45562/category/1351/display/1/",
-            "itemCode": "NEW_W_큰글씨새번역(RN72EWF)_2",
+            "itemCode": "P000CPKK000A",
             "originalPrice": 58000,
-            "salePrice": 52200
+            "salePrice": 52200,
+            "isbn": "9788904507153"
           }
         ]
       },
@@ -2538,41 +2781,46 @@ export const bibleData = {
             "label": "중합본/PU/지퍼/다크네이비",
             "img": "https://chhouse.kr/web/product/big/202405/d79397118ca758c7d333c52242f526b4.jpg",
             "url": "https://chhouse.kr/product/%ED%81%B0%EA%B8%80%EC%94%A8%EC%83%88%EB%B2%88%EC%97%AD%EC%84%B1%EA%B2%BD-rn72wbu-%EC%A4%91%ED%95%A9%EB%B3%B8-%EC%83%89%EC%9D%B8-%EC%A7%80%ED%8D%BC-%EB%8B%A4%ED%81%AC%EB%84%A4%EC%9D%B4%EB%B9%84/44335/category/1349/display/1/",
-            "itemCode": "NEW_W_큰글씨새번역(RN72WBU)_0",
+            "itemCode": "P000CNPF000A",
             "originalPrice": 60000,
-            "salePrice": 54000
+            "salePrice": 54000,
+            "isbn": "9788904506941"
           },
           {
             "label": "중합본/PU/지퍼/모카브라운",
             "img": "https://chhouse.kr/web/product/big/202405/f42a94f599b108c665cfe27ace741de0.jpg",
             "url": "https://chhouse.kr/product/%ED%81%B0%EA%B8%80%EC%94%A8%EC%83%88%EB%B2%88%EC%97%AD%EC%84%B1%EA%B2%BD-rn72wbu-%EC%A4%91%ED%95%A9%EB%B3%B8-%EC%83%89%EC%9D%B8-%EC%A7%80%ED%8D%BC-%EB%AA%A8%EC%B9%B4%EB%B8%8C%EB%9D%BC%EC%9A%B4/44334/category/1349/display/1/",
-            "itemCode": "NEW_W_큰글씨새번역(RN72WBU)_1",
+            "itemCode": "P000CNPE000A",
             "originalPrice": 60000,
-            "salePrice": 54000
+            "salePrice": 54000,
+            "isbn": "9788904506934"
           },
           {
             "label": "중단본/천연/무지퍼/다크브라운",
             "img": "https://chhouse.kr/web/product/big/202405/3233dd768c808249614582acd102f733.jpg",
             "url": "https://chhouse.kr/product/%EC%B2%9C%EC%97%B0%EC%9A%B0%ED%94%BC-%ED%81%B0%EA%B8%80%EC%94%A8%EC%83%88%EB%B2%88%EC%97%AD%EC%84%B1%EA%B2%BD-rn72wbu-%EC%A4%91%EB%8B%A8%EB%B3%B8-%EC%83%89%EC%9D%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EB%8B%A4%ED%81%AC%EB%B8%8C%EB%9D%BC%EC%9A%B4/44331/category/1349/display/1/",
-            "itemCode": "NEW_W_큰글씨새번역(RN72WBU)_2",
-            "originalPrice": 55000,
-            "salePrice": 49500
+            "itemCode": "P000CNPB000A",
+            "originalPrice": 52000,
+            "salePrice": 46800,
+            "isbn": "9788904506972"
           },
           {
             "label": "중단본/PU/무지퍼/버건디",
             "img": "https://chhouse.kr/web/product/big/202405/57fe499b3499ea5ab2d964c86c0a1094.jpg",
             "url": "https://chhouse.kr/product/%ED%81%B0%EA%B8%80%EC%94%A8%EC%83%88%EB%B2%88%EC%97%AD%EC%84%B1%EA%B2%BD-rn72wbu-%EC%A4%91%EB%8B%A8%EB%B3%B8-%EC%83%89%EC%9D%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EB%B2%84%EA%B1%B4%EB%94%94/44333/category/1349/display/1/",
-            "itemCode": "NEW_W_큰글씨새번역(RN72WBU)_3",
+            "itemCode": "P000CNPD000A",
             "originalPrice": 46000,
-            "salePrice": 41400
+            "salePrice": 41400,
+            "isbn": "9788904506965"
           },
           {
             "label": "중단본/PU/무지퍼/브라운",
             "img": "https://chhouse.kr/web/product/big/202405/b6c7d81d7901ac6c4d296aa525ffb1bb.jpg",
             "url": "https://chhouse.kr/product/%ED%81%B0%EA%B8%80%EC%94%A8%EC%83%88%EB%B2%88%EC%97%AD%EC%84%B1%EA%B2%BD-rn72wbu-%EC%A4%91%EB%8B%A8%EB%B3%B8-%EC%83%89%EC%9D%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EB%B8%8C%EB%9D%BC%EC%9A%B4/44332/category/1349/display/1/",
-            "itemCode": "NEW_W_큰글씨새번역(RN72WBU)_4",
+            "itemCode": "P000CNPC000A",
             "originalPrice": 46000,
-            "salePrice": 41400
+            "salePrice": 41400,
+            "isbn": "9788904506958"
           }
         ]
       },
@@ -2587,25 +2835,28 @@ export const bibleData = {
             "label": "소단본/천연/무지퍼/다크네이비",
             "img": "https://chhouse.kr/web/product/big/202405/0cd760c200f537d4c71d3d4ab7179dc4.jpg",
             "url": "https://chhouse.kr/product/%EC%B2%9C%EC%97%B0%EC%9A%B0%ED%94%BC-%EC%83%88%EB%B2%88%EC%97%AD%EC%84%B1%EA%B2%BD-rn62ex-%EC%86%8C%EB%8B%A8%EB%B3%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EC%83%89%EC%9D%B8-%EB%8B%A4%ED%81%AC%EB%84%A4%EC%9D%B4%EB%B9%84/44258/category/1361/display/1/",
-            "itemCode": "NEW_W_RN62EX_0",
-            "originalPrice": 46000,
-            "salePrice": 41400
+            "itemCode": "P000CNMG000A",
+            "originalPrice": 48000,
+            "salePrice": 43200,
+            "isbn": "9788904507023"
           },
           {
             "label": "소단본/PU/무지퍼/그레이",
             "img": "https://chhouse.kr/web/product/big/202405/28c9e1d2b7910ad90b66a2f9ea94f58d.jpg",
             "url": "https://chhouse.kr/product/%EC%83%88%EB%B2%88%EC%97%AD%EC%84%B1%EA%B2%BD-rn62ex-%EC%86%8C%EB%8B%A8%EB%B3%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EC%83%89%EC%9D%B8-%EA%B7%B8%EB%A0%88%EC%9D%B4/44257/category/1361/display/1/",
-            "itemCode": "NEW_W_RN62EX_1",
-            "originalPrice": 36000,
-            "salePrice": 32400
+            "itemCode": "P000CNMF000A",
+            "originalPrice": 38000,
+            "salePrice": 34200,
+            "isbn": "9788904507030"
           },
           {
             "label": "소단본/PU/무지퍼/다크브라운",
             "img": "https://chhouse.kr/web/product/big/202405/912d29f780bc52369e39958a11f77a00.jpg",
             "url": "https://chhouse.kr/product/%EC%83%88%EB%B2%88%EC%97%AD%EC%84%B1%EA%B2%BD-rn62ex-%EC%86%8C%EB%8B%A8%EB%B3%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EC%83%89%EC%9D%B8-%EB%8B%A4%ED%81%AC%EB%B8%8C%EB%9D%BC%EC%9A%B4/44256/category/1361/display/1/",
-            "itemCode": "NEW_W_RN62EX_2",
+            "itemCode": "P000CNME000A",
             "originalPrice": 36000,
-            "salePrice": 32400
+            "salePrice": 32400,
+            "isbn": "9788904507047"
           }
         ]
       },
@@ -2620,25 +2871,28 @@ export const bibleData = {
             "label": "대단본/천연/무지퍼/다크브라운",
             "img": "https://chhouse.kr/web/product/big/202405/474cb02f9d795220448732031935e38f.jpg",
             "url": "https://chhouse.kr/product/%ED%81%B0%EA%B8%80%EC%9E%90%ED%98%84%EB%8C%80%EC%9D%B8%EC%9D%98%EC%84%B1%EA%B2%BD-%EB%8C%80%EB%8B%A8%EB%B3%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EC%83%89%EC%9D%B8-%EC%B2%9C%EC%97%B0%EC%9A%B0%ED%94%BC-%EB%8B%A4%ED%81%AC%EB%B8%8C%EB%9D%BC%EC%9A%B4/35933/category/2086/display/1/",
-            "itemCode": "NEW_W_현대인의성경_0",
+            "itemCode": "P000CBEB000A",
             "originalPrice": 46000,
-            "salePrice": 41400
+            "salePrice": 41400,
+            "isbn": "9788904505616"
           },
           {
             "label": "대단본/PU/무지퍼/뉴브라운",
             "img": "https://chhouse.kr/web/product/big/202503/c4553fdfba2ba266fc00742adfed8808.jpg",
             "url": "https://chhouse.kr/product/%ED%81%B0%EA%B8%80%EC%9E%90-%ED%98%84%EB%8C%80%EC%9D%B8%EC%9D%98%EC%84%B1%EA%B2%BD-%EB%8C%80%EB%8B%A8%EB%B3%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EC%83%89%EC%9D%B8-%EB%89%B4%EB%B8%8C%EB%9D%BC%EC%9A%B4/52840/category/2086/display/1/",
-            "itemCode": "NEW_W_현대인의성경_1",
+            "itemCode": "P000DAEI000A",
             "originalPrice": 36000,
-            "salePrice": 32400
+            "salePrice": 32400,
+            "isbn": "9788904507719"
           },
           {
             "label": "대단본/PU/무지퍼/뉴그레이",
             "img": "https://chhouse.kr/web/product/big/202503/aa5ff79934e7b1d047eb683203e47275.jpg",
             "url": "https://chhouse.kr/product/%ED%81%B0%EA%B8%80%EC%9E%90-%ED%98%84%EB%8C%80%EC%9D%B8%EC%9D%98%EC%84%B1%EA%B2%BD-%EB%8C%80%EB%8B%A8%EB%B3%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EC%83%89%EC%9D%B8-%EB%89%B4%EA%B7%B8%EB%A0%88%EC%9D%B4/52838/category/2086/display/1/",
-            "itemCode": "NEW_W_현대인의성경_2",
+            "itemCode": "P000DAEG000A",
             "originalPrice": 36000,
-            "salePrice": 32400
+            "salePrice": 32400,
+            "isbn": "9788904507696"
           }
         ]
       },
@@ -2653,17 +2907,19 @@ export const bibleData = {
             "label": "중단본/PU/무지퍼/다크그레이",
             "img": "https://chhouse.kr/web/product/big/202404/46ca4447ea8217fd7788817e7482d686.jpg",
             "url": "https://chhouse.kr/product/%ED%81%B0%EA%B8%80%EC%9E%90%ED%98%84%EB%8C%80%EC%9D%B8%EC%9D%98%EC%84%B1%EA%B2%BD-%EC%A4%91%EB%8B%A8%EB%B3%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EC%83%89%EC%9D%B8-%EB%8B%A4%ED%81%AC%EA%B7%B8%EB%A0%88%EC%9D%B4/18738/category/1417/display/1/",
-            "itemCode": "NEW_W_현대인의성경_3",
+            "itemCode": "P000BBSS000A",
             "originalPrice": 32000,
-            "salePrice": 28800
+            "salePrice": 28800,
+            "isbn": "9788904501168"
           },
           {
             "label": "중단본/PU/무지퍼/다크브라운",
             "img": "https://chhouse.kr/web/product/big/202404/c97570f22a9a0b1daab6b975b6a8fe17.jpg",
             "url": "https://chhouse.kr/product/%ED%81%B0%EA%B8%80%EC%9E%90%ED%98%84%EB%8C%80%EC%9D%B8%EC%9D%98%EC%84%B1%EA%B2%BD-%EC%A4%91%EB%8B%A8%EB%B3%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EC%83%89%EC%9D%B8-%EB%8B%A4%ED%81%AC%EB%B8%8C%EB%9D%BC%EC%9A%B4/18741/category/1417/display/1/",
-            "itemCode": "NEW_W_현대인의성경_4",
+            "itemCode": "P000BBSV000A",
             "originalPrice": 32000,
-            "salePrice": 28800
+            "salePrice": 28800,
+            "isbn": "9788904503995"
           }
         ]
       },
@@ -2678,17 +2934,19 @@ export const bibleData = {
             "label": "미니단본/PU/무지퍼/브라운",
             "img": "https://chhouse.kr/web/product/big/202603/d97472befc9be28f91e8965650a4950c.jpg",
             "url": "https://chhouse.kr/product/slim%ED%98%84%EB%8C%80%EC%9D%B8%EC%9D%98%EC%84%B1%EA%B2%BD%EB%AF%B8%EB%8B%88-%EB%8B%A8%EB%B3%B8-%EC%83%89%EC%9D%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EB%B8%8C%EB%9D%BC%EC%9A%B4/20147/category/1474/display/1/",
-            "itemCode": "NEW_W_현대인의성경_5",
+            "itemCode": "P000BDUX000A",
             "originalPrice": 19000,
-            "salePrice": 17100
+            "salePrice": 17100,
+            "isbn": "9788904501175"
           },
           {
             "label": "미니단본/PU/무지퍼/다크그레이",
             "img": "https://chhouse.kr/web/product/big/202603/b9c1464e3c9988fe9fb233f3b8e07211.jpg",
             "url": "https://chhouse.kr/product/slim%ED%98%84%EB%8C%80%EC%9D%B8%EC%9D%98%EC%84%B1%EA%B2%BD%EB%AF%B8%EB%8B%88-%EB%8B%A8%EB%B3%B8-%EC%83%89%EC%9D%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EB%8B%A4%ED%81%AC%EA%B7%B8%EB%A0%88%EC%9D%B4/20145/category/1474/display/1/",
-            "itemCode": "NEW_W_현대인의성경_6",
+            "itemCode": "P000BDUV000A",
             "originalPrice": 19000,
-            "salePrice": 17100
+            "salePrice": 17100,
+            "isbn": "9788904501182"
           }
         ]
       },
@@ -2703,17 +2961,19 @@ export const bibleData = {
             "label": "중단본/PU/무지퍼/다크그레이",
             "img": "https://chhouse.kr/web/product/big/202407/67b9e88e63087c466c3f362995958a9a.jpg",
             "url": "https://chhouse.kr/product/%EC%8A%AC%EB%A6%BC%ED%98%84%EB%8C%80%EC%9D%B8%EC%9D%98%EC%84%B1%EA%B2%BD-%EC%A4%91%EB%8B%A8%EB%B3%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EC%83%89%EC%9D%B8-%EB%8B%A4%ED%81%AC%EA%B7%B8%EB%A0%88%EC%9D%B4/18735/category/1417/display/1/",
-            "itemCode": "NEW_W_슬림현대인의성경_0",
+            "itemCode": "P000BBSP000A",
             "originalPrice": 22000,
-            "salePrice": 19800
+            "salePrice": 19800,
+            "isbn": "9788904501212"
           },
           {
             "label": "중단본/PU/무지퍼/다크브라운",
             "img": "https://chhouse.kr/web/product/big/202407/9de9a6e7b104d0882713da2a853ad343.jpg",
             "url": "https://chhouse.kr/product/%EC%8A%AC%EB%A6%BC%ED%98%84%EB%8C%80%EC%9D%B8%EC%9D%98%EC%84%B1%EA%B2%BD-%EC%A4%91%EB%8B%A8%EB%B3%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EC%83%89%EC%9D%B8-%EB%8B%A4%ED%81%AC%EB%B8%8C%EB%9D%BC%EC%9A%B4/18732/category/1417/display/1/",
-            "itemCode": "NEW_W_슬림현대인의성경_1",
+            "itemCode": "P000BBSM000A",
             "originalPrice": 22000,
-            "salePrice": 19800
+            "salePrice": 19800,
+            "isbn": "9788904501205"
           }
         ]
       },
@@ -2728,17 +2988,19 @@ export const bibleData = {
             "label": "특강대용단본/천연/무지퍼/다크브라운",
             "img": "https://chhouse.kr/web/product/big/202405/67b7f1e85ef25eeef02ff6337fdaf837.jpg",
             "url": "https://chhouse.kr/product/%ED%81%B0%EA%B8%80%EC%9E%90%EC%84%B1%EA%B2%BD%EC%A0%84%EC%84%9C-%ED%8A%B9%EA%B0%95%EB%8C%80%EC%9A%A9-%EB%8B%A8%EB%B3%B8-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-nkr92ewb-%EB%B8%8C%EB%9D%BC%EC%9A%B4/36949/category/1467/display/1/",
-            "itemCode": "NEW_W_큰글자성경전서(NKR92EWB)_0",
+            "itemCode": "P000CCRD000A",
             "originalPrice": 160000,
-            "salePrice": 144000
+            "salePrice": 144000,
+            "isbn": "9788904505562"
           },
           {
             "label": "특강대용단본/PU/무지퍼/브라운",
             "img": "https://chhouse.kr/web/product/big/202405/f34d19b3c61be008e4fc2f91e6c13bcc.jpg",
             "url": "https://chhouse.kr/product/%EC%B2%9C%EC%97%B0%EC%9A%B0%ED%94%BC-%ED%81%B0%EA%B8%80%EC%9E%90%EC%84%B1%EA%B2%BD%EC%A0%84%EC%84%9C-%ED%8A%B9%EA%B0%95%EB%8C%80%EC%9A%A9-%EB%8B%A8%EB%B3%B8-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-nkr92ewb-%EB%8B%A4%ED%81%AC%EB%B8%8C%EB%9D%BC%EC%9A%B4/36948/category/1467/display/1/",
-            "itemCode": "NEW_W_큰글자성경전서(NKR92EWB)_1",
-            "originalPrice": 136000,
-            "salePrice": 122400
+            "itemCode": "P000CCRC000A",
+            "originalPrice": 150000,
+            "salePrice": 135000,
+            "isbn": "9788904505579"
           }
         ]
       },
@@ -2753,25 +3015,28 @@ export const bibleData = {
             "label": "강대용단본/천연/무지퍼/다크브라운",
             "img": "https://chhouse.kr/web/product/big/202404/001806402b86be263c3ba305193f8d24.jpg",
             "url": "https://chhouse.kr/product/%EC%B2%9C%EC%97%B0%EC%9A%B0%ED%94%BC-%ED%81%B0%EA%B8%80%EC%9E%90%EC%84%B1%EA%B2%BD%EC%A0%84%EC%84%9C-nkr92wb-%EA%B0%95%EB%8C%80%EC%9A%A9%EB%8B%A8%EB%B3%B8-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EC%83%89%EC%9D%B8-%EB%8B%A4%ED%81%AC%EB%B8%8C%EB%9D%BC%EC%9A%B4/47656/category/1467/display/1/",
-            "itemCode": "NEW_W_큰글자성경전서(NKR92WB)_0",
+            "itemCode": "P000CSMY000A",
             "originalPrice": 133000,
-            "salePrice": 119700
+            "salePrice": 119700,
+            "isbn": "9788904507351"
           },
           {
             "label": "강대용단본/PU/무지퍼/브라운",
             "img": "https://chhouse.kr/web/product/big/202404/e73fb74bcb6c81728629d96c1426a9a9.jpg",
             "url": "https://chhouse.kr/product/%ED%81%B0%EA%B8%80%EC%9E%90%EC%84%B1%EA%B2%BD%EC%A0%84%EC%84%9C-nkr92wb-%EA%B0%95%EB%8C%80%EC%9A%A9%EB%8B%A8%EB%B3%B8-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EC%83%89%EC%9D%B8-%EB%B8%8C%EB%9D%BC%EC%9A%B4/41735/category/1467/display/1/",
-            "itemCode": "NEW_W_큰글자성경전서(NKR92WB)_1",
+            "itemCode": "P000CJTF000A",
             "originalPrice": 116000,
-            "salePrice": 104400
+            "salePrice": 104400,
+            "isbn": "9788904506040"
           },
           {
             "label": "강대용단본/PU/무지퍼/그레이",
             "img": "https://chhouse.kr/web/product/big/202404/83ef873df9959f0d9da4deb1fbd1e6bc.jpg",
             "url": "https://chhouse.kr/product/%ED%81%B0%EA%B8%80%EC%9E%90%EC%84%B1%EA%B2%BD%EC%A0%84%EC%84%9C-nkr92wb-%EA%B0%95%EB%8C%80%EC%9A%A9%EB%8B%A8%EB%B3%B8-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EC%83%89%EC%9D%B8-%EA%B7%B8%EB%A0%88%EC%9D%B4/41736/category/1467/display/1/",
-            "itemCode": "NEW_W_큰글자성경전서(NKR92WB)_2",
+            "itemCode": "P000CJTG000A",
             "originalPrice": 116000,
-            "salePrice": 104400
+            "salePrice": 104400,
+            "isbn": "9788904506057"
           }
         ]
       },
@@ -2786,17 +3051,19 @@ export const bibleData = {
             "label": "특강대용단본/천연/무지퍼/다크브라운",
             "img": "https://chhouse.kr/web/product/big/202405/85e3cf6e4237062191b80c48c8cf2f3d.jpg",
             "url": "https://chhouse.kr/product/%EC%B2%9C%EC%97%B0%EC%9A%B0%ED%94%BC-%EC%9E%90%EC%9D%B4%EC%96%B8%ED%8A%B8%EC%BB%AC%EB%9F%AC%EC%84%B1%EA%B2%BD-%ED%8A%B9%EA%B0%95%EB%8C%80%EC%9A%A9%EB%8B%A8%EB%B3%B8-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-%EC%83%89%EC%9D%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EB%8B%A4%ED%81%AC%EB%B8%8C%EB%9D%BC%EC%9A%B4/44922/category/1467/display/1/",
-            "itemCode": "NEW_W_자이언트컬러성경_0",
+            "itemCode": "P000COLU000A",
             "originalPrice": 150000,
-            "salePrice": 135000
+            "salePrice": 135000,
+            "isbn": "9788904506880"
           },
           {
             "label": "특강대용단본/PU/무지퍼/브라운",
             "img": "https://chhouse.kr/web/product/big/202404/60f06c3affbaf67b6c75e6b7cd7836c7.jpg",
             "url": "https://chhouse.kr/product/%EC%9E%90%EC%9D%B4%EC%96%B8%ED%8A%B8%EC%BB%AC%EB%9F%AC%EC%84%B1%EA%B2%BD-%ED%8A%B9%EA%B0%95%EB%8C%80%EC%9A%A9%EB%8B%A8%EB%B3%B8-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-%EC%83%89%EC%9D%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EB%B8%8C%EB%9D%BC%EC%9A%B4/47152/category/1467/display/1/",
-            "itemCode": "NEW_W_자이언트컬러성경_1",
+            "itemCode": "P000CRTO000A",
             "originalPrice": 130000,
-            "salePrice": 117000
+            "salePrice": 117000,
+            "isbn": "9788904506873"
           }
         ]
       },
@@ -2811,33 +3078,37 @@ export const bibleData = {
             "label": "중합본/천연/지퍼/화이트",
             "img": "https://chhouse.kr/web/product/big/202405/4d39ea4863f62d0261b826db4202a2c4.jpg",
             "url": "https://chhouse.kr/product/%ED%94%84%EB%A6%AC%EB%AF%B8%EC%97%84%EC%9B%A8%EB%94%A9%EC%BB%A4%ED%94%8C%EC%84%B1%EA%B2%BD%EC%A4%91-%ED%95%A9%EB%B3%B8-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-%EC%83%88%EC%B0%AC%EC%86%A1%EA%B0%80-%EC%B2%9C%EC%97%B0%EC%9A%B0%ED%94%BC-%ED%99%94%EC%9D%B4%ED%8A%B8/19294/category/1374/display/1/",
-            "itemCode": "NEW_W_뉴웨딩커플성경_0",
+            "itemCode": "P000BCOC000A",
             "originalPrice": 80000,
-            "salePrice": 72000
+            "salePrice": 72000,
+            "isbn": "9788904503407"
           },
           {
             "label": "중합본/PU/지퍼/뉴핑크",
             "img": "https://chhouse.kr/web/product/big/202405/5b8af69e727b20d851ed6846199041cf.jpg",
             "url": "https://chhouse.kr/product/%EB%89%B4%EC%9B%A8%EB%94%A9%EC%BB%A4%ED%94%8C%EC%84%B1%EA%B2%BD-%EC%A4%91%ED%95%A9%EB%B3%B8-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-%EC%83%88%EC%B0%AC%EC%86%A1%EA%B0%80-%EC%83%89%EC%9D%B8-%EC%A7%80%ED%8D%BC-%EB%89%B4%ED%95%91%ED%81%AC/18222/category/1374/display/1/",
-            "itemCode": "NEW_W_뉴웨딩커플성경_1",
+            "itemCode": "P000BAYW000A",
             "originalPrice": 47000,
-            "salePrice": 42300
+            "salePrice": 42300,
+            "isbn": "9788904504916"
           },
           {
             "label": "중합본/PU/지퍼/뉴아이보리",
             "img": "https://chhouse.kr/web/product/big/202405/8ce97d20a27487cc6d391a3977233833.jpg",
             "url": "https://chhouse.kr/product/%EB%89%B4%EC%9B%A8%EB%94%A9%EC%BB%A4%ED%94%8C%EC%84%B1%EA%B2%BD-%EC%A4%91%ED%95%A9%EB%B3%B8-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-%EC%83%88%EC%B0%AC%EC%86%A1%EA%B0%80-%EC%83%89%EC%9D%B8-%EC%A7%80%ED%8D%BC-%EB%89%B4%EC%95%84%EC%9D%B4%EB%B3%B4%EB%A6%AC/18228/category/1374/display/1/",
-            "itemCode": "NEW_W_뉴웨딩커플성경_2",
+            "itemCode": "P000BAZC000A",
             "originalPrice": 47000,
-            "salePrice": 42300
+            "salePrice": 42300,
+            "isbn": "9788904504893"
           },
           {
             "label": "중합본/PU/지퍼/뉴네이비",
             "img": "https://chhouse.kr/web/product/big/202405/0109af8b4fd8491d1d646ea3352d469a.jpg",
             "url": "https://chhouse.kr/product/%EB%89%B4%EC%9B%A8%EB%94%A9%EC%BB%A4%ED%94%8C%EC%84%B1%EA%B2%BD-%EC%A4%91%ED%95%A9%EB%B3%B8-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-%EC%83%88%EC%B0%AC%EC%86%A1%EA%B0%80-%EC%83%89%EC%9D%B8-%EC%A7%80%ED%8D%BC-%EB%89%B4%EB%84%A4%EC%9D%B4%EB%B9%84/18225/category/1374/display/1/",
-            "itemCode": "NEW_W_뉴웨딩커플성경_3",
-            "originalPrice": 43000,
-            "salePrice": 38700
+            "itemCode": "P000BAYZ000A",
+            "originalPrice": 47000,
+            "salePrice": 42300,
+            "isbn": "9788904504909"
           }
         ]
       },
@@ -2852,9 +3123,10 @@ export const bibleData = {
             "label": "소합본/PU/지퍼/스카이블루",
             "img": "https://chhouse.kr/web/product/big/202504/aca9f1485d3d52fc20abae309416f18d.jpg",
             "url": "https://chhouse.kr/product/%EB%89%B4%EC%9B%A8%EB%94%A9%EC%BB%A4%ED%94%8C%EC%84%B1%EA%B2%BD-%EC%86%8C%ED%95%A9%EB%B3%B8-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-%EC%83%88%EC%B0%AC%EC%86%A1%EA%B0%80-%EC%83%89%EC%9D%B8-%EC%A7%80%ED%8D%BC-%EC%8A%A4%EC%B9%B4%EC%9D%B4%EB%B8%94%EB%A3%A8/53200/category/1462/display/1/",
-            "itemCode": "NEW_W_뉴웨딩커플성경_4",
+            "itemCode": "P000DASE000A",
             "originalPrice": 43000,
-            "salePrice": 38700
+            "salePrice": 38700,
+            "isbn": "9788904507764"
           }
         ]
       }
@@ -2875,7 +3147,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=47111&cate_no=1402&display_group=1",
             "itemCode": "P000CRRZ000A",
             "originalPrice": 76000,
-            "salePrice": 68400
+            "salePrice": 68400,
+            "isbn": "9788936029715"
           },
           {
             "label": "대합본/천연/지퍼/버건디",
@@ -2883,7 +3156,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=47112&cate_no=1402&display_group=1",
             "itemCode": "P000CRSA000A",
             "originalPrice": 76000,
-            "salePrice": 68400
+            "salePrice": 68400,
+            "isbn": "9788936029722"
           },
           {
             "label": "대합본/PU/지퍼/블루블랙",
@@ -2891,7 +3165,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=45063&cate_no=1402&display_group=1",
             "itemCode": "P000CORF000A",
             "originalPrice": 57000,
-            "salePrice": 51300
+            "salePrice": 51300,
+            "isbn": "9788936029319"
           },
           {
             "label": "대합본/PU/지퍼/초코",
@@ -2899,7 +3174,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=45064&cate_no=1402&display_group=1",
             "itemCode": "P000CORG000A",
             "originalPrice": 57000,
-            "salePrice": 51300
+            "salePrice": 51300,
+            "isbn": "9788936029326"
           }
         ]
       },
@@ -2914,32 +3190,36 @@ export const bibleData = {
             "img": "https://chhouse.kr/web/product/big/202405/92c31169ae4c3738f1b56cb5800807e9.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=48502&cate_no=1377&display_group=1",
             "itemCode": "P000CTTM000A",
-            "originalPrice": 65000,
-            "salePrice": 58500
+            "originalPrice": 67000,
+            "salePrice": 60300,
+            "isbn": "9788936029968"
           },
           {
             "label": "중합본/천연/지퍼/초코",
             "img": "https://chhouse.kr/web/product/big/202405/d35ccb24baf03e84969b2f9099fa30ec.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=48503&cate_no=1377&display_group=1",
             "itemCode": "P000CTTN000A",
-            "originalPrice": 65000,
-            "salePrice": 58500
+            "originalPrice": 67000,
+            "salePrice": 60300,
+            "isbn": "9788936029951"
           },
           {
             "label": "중합본/PU/지퍼/다크블루",
             "img": "https://chhouse.kr/web/product/big/202405/0cf30474fd6b0dd594af1cb55209e8a7.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=48500&cate_no=1377&display_group=1",
             "itemCode": "P000CTTK000A",
-            "originalPrice": 51000,
-            "salePrice": 45900
+            "originalPrice": 53000,
+            "salePrice": 47700,
+            "isbn": "9788936029937"
           },
           {
             "label": "중합본/PU/지퍼/버건디",
             "img": "https://chhouse.kr/web/product/big/202405/d91dc828ac4f8186ed2adfa6e05941b4.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=48501&cate_no=1377&display_group=1",
             "itemCode": "P000CTTL000A",
-            "originalPrice": 51000,
-            "salePrice": 45900
+            "originalPrice": 53000,
+            "salePrice": 47700,
+            "isbn": "9788936029944"
           }
         ]
       },
@@ -2954,48 +3234,54 @@ export const bibleData = {
             "img": "https://chhouse.kr/web/product/big/202404/8e357521086eef083fbdd74a0fec4183.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=18912&cate_no=1377&display_group=1",
             "itemCode": "P000BBZK000A",
-            "originalPrice": 56000,
-            "salePrice": 50400
+            "originalPrice": 58000,
+            "salePrice": 52200,
+            "isbn": "9788936022952"
           },
           {
             "label": "중합본/천연/지퍼/버건디",
             "img": "https://chhouse.kr/web/product/big/202404/2911ed06d37d06c8f661e584b8e64b82.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=45793&cate_no=1377&display_group=1",
             "itemCode": "P000CPTH000A",
-            "originalPrice": 56000,
-            "salePrice": 50400
+            "originalPrice": 58000,
+            "salePrice": 52200,
+            "isbn": "9788936022389"
           },
           {
             "label": "중합본/PU/지퍼/브라운",
             "img": "https://chhouse.kr/web/product/big/202405/31732e4579b5ea9d9202324da159fe4e.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=40258&cate_no=1377&display_group=1",
             "itemCode": "P000CHOK000A",
-            "originalPrice": 45000,
-            "salePrice": 40500
+            "originalPrice": 47000,
+            "salePrice": 42300,
+            "isbn": "9788936026721"
           },
           {
             "label": "중합본/PU/지퍼/블루그린",
             "img": "https://chhouse.kr/web/product/big/202405/d9487a382233552e53fb00b9e9164f92.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=40259&cate_no=1377&display_group=1",
             "itemCode": "P000CHOL000A",
-            "originalPrice": 45000,
-            "salePrice": 40500
+            "originalPrice": 47000,
+            "salePrice": 42300,
+            "isbn": "9788936026738"
           },
           {
             "label": "중합본/PU/무지퍼/비치용",
             "img": "https://chhouse.kr/web/product/big/202406/d0a539ab1f05623d1bf3802c088683fd.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=48746&cate_no=1377&display_group=1",
             "itemCode": "P000CUCW000A",
-            "originalPrice": 40000,
-            "salePrice": 36000
+            "originalPrice": 41000,
+            "salePrice": 36900,
+            "isbn": "9788936029982"
           },
           {
             "label": "중합본/PU/무지퍼/비치용 (카페24)",
             "img": "https://chhouse.kr/web/product/big/202406/43bf0679ab1fa44e4046f15419496b5e.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=48747&cate_no=1377&display_group=1",
             "itemCode": "P000CUCX000A",
-            "originalPrice": 40000,
-            "salePrice": 36000
+            "originalPrice": 41000,
+            "salePrice": 36900,
+            "isbn": "9788936029999"
           }
         ]
       },
@@ -3011,7 +3297,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=56199&cate_no=1413&display_group=1",
             "itemCode": "P000DFDN000A",
             "originalPrice": 50000,
-            "salePrice": 45000
+            "salePrice": 45000,
+            "isbn": "9788936030681"
           },
           {
             "label": "특소합본/천연/지퍼/버건디",
@@ -3019,7 +3306,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=56199&cate_no=1413&display_group=1",
             "itemCode": "P000DFDN000A",
             "originalPrice": 50000,
-            "salePrice": 45000
+            "salePrice": 45000,
+            "isbn": "9788936030681"
           },
           {
             "label": "특소합본/PU/지퍼/네이비",
@@ -3027,7 +3315,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=42503&cate_no=1413&display_group=1",
             "itemCode": "P000CKWT000A",
             "originalPrice": 35500,
-            "salePrice": 31950
+            "salePrice": 31950,
+            "isbn": "9788936028473"
           },
           {
             "label": "특소합본/PU/지퍼/브라운",
@@ -3035,7 +3324,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=42504&cate_no=1413&display_group=1",
             "itemCode": "P000CKWU000A",
             "originalPrice": 35500,
-            "salePrice": 31950
+            "salePrice": 31950,
+            "isbn": "9788936028466"
           }
         ]
       },
@@ -3051,7 +3341,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=56195&cate_no=1402&display_group=1",
             "itemCode": "P000DFDJ000A",
             "originalPrice": 71000,
-            "salePrice": 63900
+            "salePrice": 63900,
+            "isbn": "9788936030650"
           },
           {
             "label": "대합본/천연/저퍼/네이비",
@@ -3059,7 +3350,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=56196&cate_no=1402&display_group=1",
             "itemCode": "P000DFDK000A",
             "originalPrice": 71000,
-            "salePrice": 63900
+            "salePrice": 63900,
+            "isbn": "9788936030667"
           },
           {
             "label": "대합본/PU/저퍼/그린",
@@ -3067,7 +3359,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=56194&cate_no=1402&display_group=1",
             "itemCode": "P000DFDI000A",
             "originalPrice": 55000,
-            "salePrice": 49500
+            "salePrice": 49500,
+            "isbn": "9788936030643"
           },
           {
             "label": "대합본/PU/저퍼/초코",
@@ -3075,7 +3368,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=56193&cate_no=1402&display_group=1",
             "itemCode": "P000DFDH000A",
             "originalPrice": 55000,
-            "salePrice": 49500
+            "salePrice": 49500,
+            "isbn": "9788936030636"
           }
         ]
       },
@@ -3091,7 +3385,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=45833&cate_no=1413&display_group=1",
             "itemCode": "P000CPUV000A",
             "originalPrice": 58000,
-            "salePrice": 52200
+            "salePrice": 52200,
+            "isbn": "9788936029425"
           },
           {
             "label": "소합본/천연/지퍼/네이비",
@@ -3099,7 +3394,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=45832&cate_no=1413&display_group=1",
             "itemCode": "P000CPUU000A",
             "originalPrice": 58000,
-            "salePrice": 52200
+            "salePrice": 52200,
+            "isbn": "9788936029432"
           }
         ]
       },
@@ -3115,7 +3411,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=47320&cate_no=1402&display_group=1",
             "itemCode": "P000CSAA000A",
             "originalPrice": 79000,
-            "salePrice": 71100
+            "salePrice": 71100,
+            "isbn": "9788936029777"
           },
           {
             "label": "대합본/천연/지퍼/버건디",
@@ -3123,7 +3420,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=47319&cate_no=1402&display_group=1",
             "itemCode": "P000CRZZ000A",
             "originalPrice": 79000,
-            "salePrice": 71100
+            "salePrice": 71100,
+            "isbn": "9788936029784"
           },
           {
             "label": "대합본/PU/지퍼/블루블랙",
@@ -3131,7 +3429,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=44723&cate_no=1402&display_group=1",
             "itemCode": "P000COED000A",
             "originalPrice": 62000,
-            "salePrice": 55800
+            "salePrice": 55800,
+            "isbn": "9788936029098"
           },
           {
             "label": "대합본/PU/지퍼/카멜브라운",
@@ -3139,7 +3438,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=44722&cate_no=1402&display_group=1",
             "itemCode": "P000COEC000A",
             "originalPrice": 62000,
-            "salePrice": 55800
+            "salePrice": 55800,
+            "isbn": "9788936029104"
           }
         ]
       },
@@ -3155,7 +3455,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=56934&cate_no=1400&display_group=1",
             "itemCode": "P000DGFU000A",
             "originalPrice": 28000,
-            "salePrice": 25200
+            "salePrice": 25200,
+            "isbn": "9788936030728"
           },
           {
             "label": "특미니합본/PU/지퍼/베이지",
@@ -3163,7 +3464,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=56933&cate_no=1400&display_group=1",
             "itemCode": "P000DGFT000A",
             "originalPrice": 28000,
-            "salePrice": 25200
+            "salePrice": 25200,
+            "isbn": "9788936030711"
           },
           {
             "label": "특미니합본/PU/지퍼/군인",
@@ -3171,7 +3473,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=54166&cate_no=1400&display_group=1",
             "itemCode": "P000DCDI000A",
             "originalPrice": 29000,
-            "salePrice": 26100
+            "salePrice": 26100,
+            "isbn": "9788936030476"
           }
         ]
       },
@@ -3187,7 +3490,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=49469&cate_no=1451&display_group=1",
             "itemCode": "P000CVER000A",
             "originalPrice": 88000,
-            "salePrice": 79200
+            "salePrice": 79200,
+            "isbn": "9788936029876"
           },
           {
             "label": "특대합본/천연/지퍼/초코",
@@ -3195,7 +3499,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=49468&cate_no=1451&display_group=1",
             "itemCode": "P000CVEQ000A",
             "originalPrice": 88000,
-            "salePrice": 79200
+            "salePrice": 79200,
+            "isbn": "9788936029869"
           },
           {
             "label": "특대합본/PU/지퍼/네이비",
@@ -3203,7 +3508,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=57443&cate_no=1451&display_group=1",
             "itemCode": "P000DGZJ000A",
             "originalPrice": 74000,
-            "salePrice": 66600
+            "salePrice": 66600,
+            "isbn": "9788936030780"
           },
           {
             "label": "특대합본/PU/지퍼/브라운",
@@ -3211,7 +3517,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=57444&cate_no=1451&display_group=1",
             "itemCode": "P000DGZK000A",
             "originalPrice": 74000,
-            "salePrice": 66600
+            "salePrice": 66600,
+            "isbn": "9788936030797"
           },
           {
             "label": "특대합본/PU/지퍼/버건디",
@@ -3219,7 +3526,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=49466&cate_no=1451&display_group=1",
             "itemCode": "P000CVEO000A",
             "originalPrice": 73000,
-            "salePrice": 65700
+            "salePrice": 65700,
+            "isbn": "9788936029852"
           },
           {
             "label": "특대합본/PU/지퍼/블루블랙",
@@ -3227,7 +3535,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=49467&cate_no=1451&display_group=1",
             "itemCode": "P000CVEP000A",
             "originalPrice": 73000,
-            "salePrice": 65700
+            "salePrice": 65700,
+            "isbn": "9788936029845"
           }
         ]
       },
@@ -3243,7 +3552,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=46900&cate_no=1402&display_group=1",
             "itemCode": "P000CRJW000A",
             "originalPrice": 83000,
-            "salePrice": 74700
+            "salePrice": 74700,
+            "isbn": "9788936029678"
           },
           {
             "label": "대합본/천연/지퍼/버건디",
@@ -3251,7 +3561,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=46899&cate_no=1402&display_group=1",
             "itemCode": "P000CRJV000A",
             "originalPrice": 83000,
-            "salePrice": 74700
+            "salePrice": 74700,
+            "isbn": "9788936029685"
           },
           {
             "label": "대합본/PU/지퍼/블루블랙",
@@ -3259,7 +3570,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=46898&cate_no=1402&display_group=1",
             "itemCode": "P000CRJU000A",
             "originalPrice": 68000,
-            "salePrice": 61200
+            "salePrice": 61200,
+            "isbn": "9788936029654"
           },
           {
             "label": "대합본/PU/지퍼/버건디",
@@ -3267,7 +3579,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=46897&cate_no=1402&display_group=1",
             "itemCode": "P000CRJT000A",
             "originalPrice": 68000,
-            "salePrice": 61200
+            "salePrice": 61200,
+            "isbn": "9788936029661"
           }
         ]
       },
@@ -3283,7 +3596,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=47755&cate_no=1377&display_group=1",
             "itemCode": "P000CSQT000A",
             "originalPrice": 74000,
-            "salePrice": 66600
+            "salePrice": 66600,
+            "isbn": "9788936029838"
           },
           {
             "label": "중합본/천연/지퍼/초코",
@@ -3291,7 +3605,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=47754&cate_no=1377&display_group=1",
             "itemCode": "P000CSQS000A",
             "originalPrice": 74000,
-            "salePrice": 66600
+            "salePrice": 66600,
+            "isbn": "9788936029821"
           },
           {
             "label": "중합본/천연/지퍼/버건디",
@@ -3299,7 +3614,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=45146&cate_no=1377&display_group=1",
             "itemCode": "P000COUK000A",
             "originalPrice": 69000,
-            "salePrice": 62100
+            "salePrice": 62100,
+            "isbn": "9788936029357"
           },
           {
             "label": "중합본/천연/지퍼/초코",
@@ -3307,7 +3623,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=45145&cate_no=1377&display_group=1",
             "itemCode": "P000COUJ000A",
             "originalPrice": 69000,
-            "salePrice": 62100
+            "salePrice": 62100,
+            "isbn": "9788936029340"
           },
           {
             "label": "중합본/PU/지퍼/네이비",
@@ -3315,7 +3632,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=45144&cate_no=1377&display_group=1",
             "itemCode": "P000COUI000A",
             "originalPrice": 60000,
-            "salePrice": 54000
+            "salePrice": 54000,
+            "isbn": "9788936029364"
           },
           {
             "label": "중합본/PU/지퍼/초코",
@@ -3323,7 +3641,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=45143&cate_no=1377&display_group=1",
             "itemCode": "P000COUH000A",
             "originalPrice": 60000,
-            "salePrice": 54000
+            "salePrice": 54000,
+            "isbn": "9788936029371"
           },
           {
             "label": "중합본/PU/무지퍼/초코",
@@ -3331,7 +3650,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=53411&cate_no=1377&display_group=1",
             "itemCode": "P000DBAH000A",
             "originalPrice": 56000,
-            "salePrice": 50400
+            "salePrice": 50400,
+            "isbn": "9788936030421"
           }
         ]
       },
@@ -3347,7 +3667,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=18918&cate_no=1377&display_group=1",
             "itemCode": "P000BBZQ000A",
             "originalPrice": 64000,
-            "salePrice": 57600
+            "salePrice": 57600,
+            "isbn": "9788936022938"
           },
           {
             "label": "중합본/PU/지퍼/버건디",
@@ -3355,7 +3676,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=46134&cate_no=1377&display_group=1",
             "itemCode": "P000CQGK000A",
             "originalPrice": 51000,
-            "salePrice": 45900
+            "salePrice": 45900,
+            "isbn": "9788936029531"
           },
           {
             "label": "중합본/PU/지퍼/블루블랙",
@@ -3363,7 +3685,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=46133&cate_no=1377&display_group=1",
             "itemCode": "P000CQGJ000A",
             "originalPrice": 51000,
-            "salePrice": 45900
+            "salePrice": 45900,
+            "isbn": "9788936029524"
           },
           {
             "label": "중합본/PU/무지퍼/블루블랙",
@@ -3371,7 +3694,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=54781&cate_no=1377&display_group=1",
             "itemCode": "P000DDAZ000A",
             "originalPrice": 46000,
-            "salePrice": 41400
+            "salePrice": 41400,
+            "isbn": "9788936029593"
           }
         ]
       },
@@ -3386,17 +3710,19 @@ export const bibleData = {
             "label": "강대용단본/천연/무지퍼/블랙",
             "img": "https://chhouse.kr/web/product/big/202404/9e8d9bd5ef6f628551520896117a8b63.jpg",
             "url": "https://chhouse.kr/product/%EC%B2%9C%EC%97%B0%EA%B0%80%EC%A3%BD-%EB%B9%85%EC%BB%AC%EB%9F%AC%ED%9B%BC%EB%B0%80%EB%A6%AC%EC%84%B1%EA%B2%BD-%EA%B0%95%EB%8C%80%EC%83%81%EC%9A%A9-%ED%8A%B9%EB%8C%80%EB%8B%A8%EB%B3%B8-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-%EC%83%89%EC%9D%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EA%B2%80%EC%A0%95/40861/category/1458/display/1/",
-            "itemCode": "NEW_S_빅컬러 훼밀리성경_0",
+            "itemCode": "P000CILP000A",
             "originalPrice": 155000,
-            "salePrice": 139500
+            "salePrice": 139500,
+            "isbn": "9788936028107"
           },
           {
             "label": "강대용단본/PU/무지퍼/자주",
             "img": "https://chhouse.kr/web/product/big/202405/8da6c0a047e0960b9f5c6a8ce5fb1c1e.jpg",
             "url": "https://chhouse.kr/product/%EB%B9%85%EC%BB%AC%EB%9F%AC%ED%9B%BC%EB%B0%80%EB%A6%AC%EC%84%B1%EA%B2%BD-%EA%B0%95%EB%8C%80%EC%83%81%EC%9A%A9-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-%EB%8B%A8%EB%B3%B8-%EC%83%89%EC%9D%B8-%EA%B0%80%EC%A3%BD-%EC%9E%90%EC%84%9D-n%EC%9E%90%EC%A3%BC/39715/category/1458/display/1/",
-            "itemCode": "NEW_S_빅컬러 훼밀리성경_1",
+            "itemCode": "P000CGTN000A",
             "originalPrice": 145000,
-            "salePrice": 130500
+            "salePrice": 130500,
+            "isbn": "9788936014230"
           }
         ]
       },
@@ -3411,9 +3737,10 @@ export const bibleData = {
             "label": "특대단본/PU/무지퍼/초코",
             "img": "https://chhouse.kr/web/product/big/202405/d8f18686e6574d86d3a0ab0511d37ede.jpg",
             "url": "https://chhouse.kr/product/%EB%B9%85%EC%BB%AC%EB%9F%AC%ED%9B%BC%EB%B0%80%EB%A6%AC%EC%84%B1%EA%B2%BD-%EC%98%A4%ED%94%88%ED%98%95-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-%EB%8B%A8%EB%B3%B8-%ED%8A%B9%EB%8C%80-%EA%B0%95%EB%8C%80%EC%83%81%EC%9A%A9-%EC%83%89%EC%9D%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EC%B4%88%EC%BD%94/19699/category/1458/display/1/",
-            "itemCode": "NEW_S_빅컬러 훼밀리성경_2",
+            "itemCode": "P000BDDR000A",
             "originalPrice": 120000,
-            "salePrice": 108000
+            "salePrice": 108000,
+            "isbn": "9788936021610"
           }
         ]
       },
@@ -3428,33 +3755,37 @@ export const bibleData = {
             "label": "중합본/천연/지퍼/화이트",
             "img": "https://chhouse.kr/web/product/big/202505/2e77cfc4f920c4ecb33a4c1d1e2db48f.jpg",
             "url": "https://chhouse.kr/product/%EC%B2%9C%EC%97%B0%EA%B0%80%EC%A3%BD-%EC%9B%A8%EB%94%A9%EC%BB%A4%ED%94%8C%EC%84%B1%EA%B2%BD-%EC%A4%91%ED%95%A9%EB%B3%B8-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-%EC%83%88%EC%B0%AC%EC%86%A1%EA%B0%80-%EC%83%89%EC%9D%B8-%EC%A7%80%ED%8D%BC-%ED%99%94%EC%9D%B4%ED%8A%B8/53657/category/1374/display/1/",
-            "itemCode": "NEW_S_커플성경_0",
+            "itemCode": "P000DBJT000A",
             "originalPrice": 68000,
-            "salePrice": 61200
+            "salePrice": 61200,
+            "isbn": "9788936030438"
           },
           {
             "label": "중합본/천연/지퍼/베이지",
             "img": "https://chhouse.kr/web/product/big/202505/c991a7ca7100a7e09f466aea7991d0bf.jpg",
             "url": "https://chhouse.kr/product/%EC%B2%9C%EC%97%B0%EA%B0%80%EC%A3%BD-%EC%9B%A8%EB%94%A9%EC%BB%A4%ED%94%8C%EC%84%B1%EA%B2%BD-%EC%A4%91%ED%95%A9%EB%B3%B8-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-%EC%83%88%EC%B0%AC%EC%86%A1%EA%B0%80-%EC%83%89%EC%9D%B8-%EC%A7%80%ED%8D%BC-%EB%B2%A0%EC%9D%B4%EC%A7%80/53656/category/1374/display/1/",
-            "itemCode": "NEW_S_커플성경_1",
+            "itemCode": "P000DBJS000A",
             "originalPrice": 68000,
-            "salePrice": 61200
+            "salePrice": 61200,
+            "isbn": "9788936030445"
           },
           {
             "label": "중합본/PU/지퍼/화이트",
             "img": "https://chhouse.kr/web/product/big/202505/b32ecbb3a40e23a2c94aab6f6464a3c7.jpg",
             "url": "https://chhouse.kr/product/%EC%84%B1%EC%84%9C%EC%9B%90-%EC%9B%A8%EB%94%A9%EC%BB%A4%ED%94%8C%EC%84%B1%EA%B2%BD-%EC%A4%91%ED%95%A9%EB%B3%B8-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-%EC%83%88%EC%B0%AC%EC%86%A1%EA%B0%80-%EC%83%89%EC%9D%B8-%EC%A7%80%ED%8D%BC-%ED%99%94%EC%9D%B4%ED%8A%B8/53415/category/1374/display/1/",
-            "itemCode": "NEW_S_커플성경_2",
+            "itemCode": "P000DBAL000A",
             "originalPrice": 51000,
-            "salePrice": 45900
+            "salePrice": 45900,
+            "isbn": "9788936030452"
           },
           {
             "label": "중합본/PU/지퍼/베이지",
             "img": "https://chhouse.kr/web/product/big/202505/47c4f0f1305938cdffda9e195eff2854.jpg",
             "url": "https://chhouse.kr/product/%EC%84%B1%EC%84%9C%EC%9B%90-%EC%9B%A8%EB%94%A9%EC%BB%A4%ED%94%8C%EC%84%B1%EA%B2%BD-%EC%A4%91%ED%95%A9%EB%B3%B8-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-%EC%83%88%EC%B0%AC%EC%86%A1%EA%B0%80-%EC%83%89%EC%9D%B8-%EC%A7%80%ED%8D%BC-%EB%B2%A0%EC%9D%B4%EC%A7%80/53414/category/1374/display/1/",
-            "itemCode": "NEW_S_커플성경_3",
+            "itemCode": "P000DBAK000A",
             "originalPrice": 51000,
-            "salePrice": 45900
+            "salePrice": 45900,
+            "isbn": "9788936030469"
           }
         ]
       }
@@ -3474,16 +3805,18 @@ export const bibleData = {
             "img": "https://chhouse.kr/web/product/big/202405/9b9d47f0387eb2b2e9cd8ed041abfd8e.jpg",
             "url": "https://chhouse.kr/product/%ED%94%84%EB%9D%BC%EC%9E%84%EC%A3%BC%EC%84%9D%EC%84%B1%EA%B2%BD-%EB%8C%80%ED%95%A9%EB%B3%B8-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-%EC%83%88%EC%B0%AC%EC%86%A1%EA%B0%80-%EC%A7%80%ED%8D%BC-%EC%83%89%EC%9D%B8-%EB%B2%84%EA%B1%B4%EB%94%94/57299/category/1380/display/1/",
             "itemCode": "P000DGTV000A",
-            "originalPrice": 76000,
-            "salePrice": 68400
+            "originalPrice": 58000,
+            "salePrice": 52200,
+            "isbn": "9788951162886"
           },
           {
             "label": "대합본/천연/지퍼/블루블랙",
             "img": "https://chhouse.kr/web/product/big/202405/29ec734e8f9987eeecb7f2cd5398997f.jpg",
             "url": "https://chhouse.kr/product/%ED%94%84%EB%9D%BC%EC%9E%84%EC%A3%BC%EC%84%9D%EC%84%B1%EA%B2%BD-%EB%8C%80%ED%95%A9%EB%B3%B8-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-%EC%83%88%EC%B0%AC%EC%86%A1%EA%B0%80-%EC%A7%80%ED%8D%BC-%EC%83%89%EC%9D%B8-%EB%B8%94%EB%A3%A8%EB%B8%94%EB%9E%99/57298/category/1380/display/1/",
             "itemCode": "P000DGTU000A",
-            "originalPrice": 76000,
-            "salePrice": 68400
+            "originalPrice": 58000,
+            "salePrice": 52200,
+            "isbn": "9788951162893"
           },
           {
             "label": "대합본/PU/지퍼/블루블랙",
@@ -3491,7 +3824,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=57298&cate_no=1380&display_group=1",
             "itemCode": "P000DGTU000A",
             "originalPrice": 58000,
-            "salePrice": 52200
+            "salePrice": 52200,
+            "isbn": "9788951162893"
           },
           {
             "label": "대합본/PU/지퍼/버건디",
@@ -3499,7 +3833,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=57299&cate_no=1380&display_group=1",
             "itemCode": "P000DGTV000A",
             "originalPrice": 58000,
-            "salePrice": 52200
+            "salePrice": 52200,
+            "isbn": "9788951162886"
           }
         ]
       },
@@ -3514,16 +3849,18 @@ export const bibleData = {
             "img": "https://chhouse.kr/web/product/big/202405/b70006e470d472a17cfc1c4e5ce4dce5.jpg",
             "url": "https://chhouse.kr/product/%EC%B2%9C%EC%97%B0%EC%9A%B0%ED%94%BC-%ED%94%84%EB%9D%BC%EC%9E%84%EC%A3%BC%EC%84%9D%EC%84%B1%EA%B2%BD-%EB%8C%80%ED%95%A9%EB%B3%B8-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-%EC%83%88%EC%B0%AC%EC%86%A1%EA%B0%80-%EC%A7%80%ED%8D%BC-%EC%83%89%EC%9D%B8-%EB%94%A5%EB%B2%84%EA%B1%B4%EB%94%94/40869/category/1380/display/1/",
             "itemCode": "P000CILX000A",
-            "originalPrice": 67000,
-            "salePrice": 60300
+            "originalPrice": 76000,
+            "salePrice": 68400,
+            "isbn": "9788951162022"
           },
           {
             "label": "중합본/천연/지퍼/블루블랙",
             "img": "https://chhouse.kr/web/product/big/202405/be0cf4f68f15f31dc86a87673aa1b94d.jpg",
             "url": "https://chhouse.kr/product/%EC%B2%9C%EC%97%B0%EC%9A%B0%ED%94%BC-%ED%94%84%EB%9D%BC%EC%9E%84%EC%A3%BC%EC%84%9D%EC%84%B1%EA%B2%BD-%EB%8C%80%ED%95%A9%EB%B3%B8-%EA%B0%9C%EC%97%AD%EA%B0%9C%EC%A0%95-%EC%83%88%EC%B0%AC%EC%86%A1%EA%B0%80-%EC%A7%80%ED%8D%BC-%EC%83%89%EC%9D%B8-%EB%B8%94%EB%A3%A8%EB%B8%94%EB%9E%99/40868/category/1380/display/1/",
             "itemCode": "P000CILW000A",
-            "originalPrice": 67000,
-            "salePrice": 60300
+            "originalPrice": 76000,
+            "salePrice": 68400,
+            "isbn": "9788951162039"
           },
           {
             "label": "중합본/PU/지퍼/다크브라운",
@@ -3531,7 +3868,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=57300&cate_no=1353&display_group=1",
             "itemCode": "P000DGTW000A",
             "originalPrice": 54000,
-            "salePrice": 48600
+            "salePrice": 48600,
+            "isbn": "9788951162909"
           },
           {
             "label": "중합본/PU/지퍼/카키그레이",
@@ -3539,7 +3877,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=40867&cate_no=1380&display_group=1",
             "itemCode": "P000CILV000A",
             "originalPrice": 54000,
-            "salePrice": 48600
+            "salePrice": 48600,
+            "isbn": "9788951162046"
           }
         ]
       },
@@ -3555,7 +3894,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=37950&cate_no=1366&display_group=1",
             "itemCode": "P000CEDQ000A",
             "originalPrice": 61000,
-            "salePrice": 54900
+            "salePrice": 54900,
+            "isbn": "9788951161865"
           },
           {
             "label": "특대합본/천연/지퍼/다크브라운",
@@ -3563,7 +3903,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=37949&cate_no=1366&display_group=1",
             "itemCode": "P000CEDP000A",
             "originalPrice": 61000,
-            "salePrice": 54900
+            "salePrice": 54900,
+            "isbn": "9788951161858"
           },
           {
             "label": "특대합본/PU/지퍼/버건디",
@@ -3571,7 +3912,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=37954&cate_no=1366&display_group=1",
             "itemCode": "P000CEDU000A",
             "originalPrice": 49000,
-            "salePrice": 44100
+            "salePrice": 44100,
+            "isbn": "9788951161889"
           },
           {
             "label": "특대합본/PU/지퍼/다크브라운",
@@ -3579,7 +3921,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=37953&cate_no=1366&display_group=1",
             "itemCode": "P000CEDT000A",
             "originalPrice": 49000,
-            "salePrice": 44100
+            "salePrice": 44100,
+            "isbn": "9788951161872"
           },
           {
             "label": "특대합본/PU/지퍼/블루블랙",
@@ -3587,7 +3930,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=37955&cate_no=1366&display_group=1",
             "itemCode": "P000CEDV000A",
             "originalPrice": 49000,
-            "salePrice": 44100
+            "salePrice": 44100,
+            "isbn": "9788951161896"
           }
         ]
       },
@@ -3603,7 +3947,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=37951&cate_no=1446&display_group=1",
             "itemCode": "P000CEDR000A",
             "originalPrice": 52000,
-            "salePrice": 46800
+            "salePrice": 46800,
+            "isbn": "9788951161902"
           },
           {
             "label": "특중합본/천연/지퍼/블루블랙",
@@ -3611,7 +3956,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=37952&cate_no=1446&display_group=1",
             "itemCode": "P000CEDS000A",
             "originalPrice": 52000,
-            "salePrice": 46800
+            "salePrice": 46800,
+            "isbn": "9788951161919"
           },
           {
             "label": "특중합본/PU/지퍼/버건디",
@@ -3619,7 +3965,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=37957&cate_no=1446&display_group=1",
             "itemCode": "P000CEDX000A",
             "originalPrice": 40000,
-            "salePrice": 36000
+            "salePrice": 36000,
+            "isbn": "9788951161933"
           },
           {
             "label": "특중합본/PU/지퍼/다크브라운",
@@ -3627,7 +3974,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=37956&cate_no=1446&display_group=1",
             "itemCode": "P000CEDW000A",
             "originalPrice": 40000,
-            "salePrice": 36000
+            "salePrice": 36000,
+            "isbn": "9788951161926"
           },
           {
             "label": "특중합본/PU/지퍼/카키블랙",
@@ -3635,7 +3983,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=37958&cate_no=1446&display_group=1",
             "itemCode": "P000CEDY000A",
             "originalPrice": 40000,
-            "salePrice": 36000
+            "salePrice": 36000,
+            "isbn": "9788951161940"
           }
         ]
       },
@@ -3651,7 +4000,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=38295&cate_no=1408&display_group=1",
             "itemCode": "P000CEQX000A",
             "originalPrice": 49000,
-            "salePrice": 44100
+            "salePrice": 44100,
+            "isbn": "9788951161957"
           },
           {
             "label": "소합본/천연/지퍼/블루블랙",
@@ -3659,7 +4009,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=38296&cate_no=1408&display_group=1",
             "itemCode": "P000CEQY000A",
             "originalPrice": 49000,
-            "salePrice": 44100
+            "salePrice": 44100,
+            "isbn": "9788951161964"
           },
           {
             "label": "소합본/PU/지퍼/다크브라운",
@@ -3667,7 +4018,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=38297&cate_no=1408&display_group=1",
             "itemCode": "P000CEQZ000A",
             "originalPrice": 37000,
-            "salePrice": 33300
+            "salePrice": 33300,
+            "isbn": "9788951161971"
           },
           {
             "label": "소합본/PU/지퍼/레드",
@@ -3675,7 +4027,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=38298&cate_no=1408&display_group=1",
             "itemCode": "P000CERA000A",
             "originalPrice": 37000,
-            "salePrice": 33300
+            "salePrice": 33300,
+            "isbn": "9788951161988"
           },
           {
             "label": "소합본/PU/지퍼/모던브라운",
@@ -3683,7 +4036,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=38299&cate_no=1408&display_group=1",
             "itemCode": "P000CERB000A",
             "originalPrice": 37000,
-            "salePrice": 33300
+            "salePrice": 33300,
+            "isbn": "9788951161995"
           }
         ]
       },
@@ -3699,7 +4053,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=57327&cate_no=1363&display_group=1",
             "itemCode": "P000DGUX000A",
             "originalPrice": 38000,
-            "salePrice": 34200
+            "salePrice": 34200,
+            "isbn": "9788951162879"
           },
           {
             "label": "특소합본/PU/지퍼/인디고블루",
@@ -3707,7 +4062,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=45763&cate_no=1363&display_group=1",
             "itemCode": "P000CPSD000A",
             "originalPrice": 38000,
-            "salePrice": 34200
+            "salePrice": 34200,
+            "isbn": "9788951162626"
           },
           {
             "label": "특소합본/PU/지퍼/민트",
@@ -3715,7 +4071,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=45764&cate_no=1363&display_group=1",
             "itemCode": "P000CPSE000A",
             "originalPrice": 38000,
-            "salePrice": 34200
+            "salePrice": 34200,
+            "isbn": "9788951162633"
           }
         ]
       },
@@ -3731,7 +4088,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=57301&cate_no=1412&display_group=1",
             "itemCode": "P000DGTX000A",
             "originalPrice": 32000,
-            "salePrice": 28800
+            "salePrice": 28800,
+            "isbn": "9788951162862"
           },
           {
             "label": "초미니합본/PU/지퍼/인디고블루",
@@ -3739,7 +4097,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=45767&cate_no=1412&display_group=1",
             "itemCode": "P000CPSH000A",
             "originalPrice": 32000,
-            "salePrice": 28800
+            "salePrice": 28800,
+            "isbn": "9788951162671"
           },
           {
             "label": "초미니합본/PU/지퍼/로즈핑크",
@@ -3747,7 +4106,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=45768&cate_no=1412&display_group=1",
             "itemCode": "P000CPSI000A",
             "originalPrice": 32000,
-            "salePrice": 28800
+            "salePrice": 28800,
+            "isbn": "9788951162664"
           }
         ]
       },
@@ -3763,7 +4123,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=43118&cate_no=1366&display_group=1",
             "itemCode": "P000CLUK000A",
             "originalPrice": 70000,
-            "salePrice": 63000
+            "salePrice": 63000,
+            "isbn": "9788951162589"
           },
           {
             "label": "특대합본/천연/지퍼/버건디",
@@ -3771,7 +4132,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=43119&cate_no=1366&display_group=1",
             "itemCode": "P000CLUL000A",
             "originalPrice": 70000,
-            "salePrice": 63000
+            "salePrice": 63000,
+            "isbn": "9788951162596"
           },
           {
             "label": "특대합본/PU/지퍼/모카브라운",
@@ -3779,7 +4141,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=43121&cate_no=1366&display_group=1",
             "itemCode": "P000CLUN000A",
             "originalPrice": 55000,
-            "salePrice": 49500
+            "salePrice": 49500,
+            "isbn": "9788951162619"
           },
           {
             "label": "특대합본/PU/지퍼/다크브라운",
@@ -3787,7 +4150,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=43120&cate_no=1366&display_group=1",
             "itemCode": "P000CLUM000A",
             "originalPrice": 55000,
-            "salePrice": 49500
+            "salePrice": 49500,
+            "isbn": "9788951162602"
           }
         ]
       },
@@ -3803,7 +4167,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=46840&cate_no=1380&display_group=1",
             "itemCode": "P000CRHO000A",
             "originalPrice": 83000,
-            "salePrice": 74700
+            "salePrice": 74700,
+            "isbn": "9788951162688"
           },
           {
             "label": "대합본/천연/지퍼/버건디",
@@ -3811,7 +4176,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=46761&cate_no=1380&display_group=1",
             "itemCode": "P000CREN000A",
             "originalPrice": 83000,
-            "salePrice": 74700
+            "salePrice": 74700,
+            "isbn": "9788951162695"
           },
           {
             "label": "대합본/PU/지퍼/버건디",
@@ -3819,7 +4185,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=42703&cate_no=1380&display_group=1",
             "itemCode": "P000CLEL000A",
             "originalPrice": 67000,
-            "salePrice": 60300
+            "salePrice": 60300,
+            "isbn": "9788951162374"
           },
           {
             "label": "대합본/PU/지퍼/블루블랙",
@@ -3827,7 +4194,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=42702&cate_no=1380&display_group=1",
             "itemCode": "P000CLEK000A",
             "originalPrice": 67000,
-            "salePrice": 60300
+            "salePrice": 60300,
+            "isbn": "9788951162367"
           }
         ]
       },
@@ -3843,7 +4211,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=38198&cate_no=1366&display_group=1",
             "itemCode": "P000CENE000A",
             "originalPrice": 86000,
-            "salePrice": 77400
+            "salePrice": 77400,
+            "isbn": "9788951161841"
           },
           {
             "label": "특대합본/천연/지퍼/다크브라운",
@@ -3851,7 +4220,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=18288&cate_no=1366&display_group=1",
             "itemCode": "P000BBBK000A",
             "originalPrice": 86000,
-            "salePrice": 77400
+            "salePrice": 77400,
+            "isbn": "9788951161506"
           }
         ]
       },
@@ -3867,15 +4237,17 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=18285&cate_no=1353&display_group=1",
             "itemCode": "P000BBBH000A",
             "originalPrice": 75000,
-            "salePrice": 67500
+            "salePrice": 67500,
+            "isbn": "9788951161551"
           },
           {
             "label": "중합본/천연/지퍼/블루블랙",
             "img": "https://chhouse.kr/web/product/big/202405/b5a1668be5dafc43a97bee8195f6c16a.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=38136&cate_no=1353&display_group=1",
             "itemCode": "P000CEKU000A",
-            "originalPrice": 75000,
-            "salePrice": 67500
+            "originalPrice": 71000,
+            "salePrice": 63900,
+            "isbn": "9788951161827"
           },
           {
             "label": "중합본/PU/지퍼/다크브라운",
@@ -3883,7 +4255,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=42809&cate_no=1353&display_group=1",
             "itemCode": "P000CLIN000A",
             "originalPrice": 61000,
-            "salePrice": 54900
+            "salePrice": 54900,
+            "isbn": "9788951162268"
           },
           {
             "label": "중합본/PU/지퍼/블루블랙",
@@ -3891,7 +4264,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=42807&cate_no=1353&display_group=1",
             "itemCode": "P000CLIL000A",
             "originalPrice": 61000,
-            "salePrice": 54900
+            "salePrice": 54900,
+            "isbn": "9788951162244"
           }
         ]
       },
@@ -3907,7 +4281,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=37960&cate_no=1353&display_group=1",
             "itemCode": "P000CEEA000A",
             "originalPrice": 60000,
-            "salePrice": 54000
+            "salePrice": 54000,
+            "isbn": "9788951161773"
           },
           {
             "label": "중합본/천연/지퍼/카키그레이",
@@ -3915,7 +4290,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=42148&cate_no=1353&display_group=1",
             "itemCode": "P000CKJC000A",
             "originalPrice": 60000,
-            "salePrice": 54000
+            "salePrice": 54000,
+            "isbn": "9788951162107"
           },
           {
             "label": "중합본/천연/지퍼/블루블랙",
@@ -3923,7 +4299,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=37959&cate_no=1353&display_group=1",
             "itemCode": "P000CEDZ000A",
             "originalPrice": 60000,
-            "salePrice": 54000
+            "salePrice": 54000,
+            "isbn": "9788951161780"
           },
           {
             "label": "중합본/PU/지퍼/블루블랙",
@@ -3931,7 +4308,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=54240&cate_no=1353&display_group=1",
             "itemCode": "P000DCGE000A",
             "originalPrice": 49000,
-            "salePrice": 44100
+            "salePrice": 44100,
+            "isbn": "9788951162817"
           },
           {
             "label": "중합본/PU/지퍼/다크브라운",
@@ -3939,7 +4317,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=54241&cate_no=1353&display_group=1",
             "itemCode": "P000DCGF000A",
             "originalPrice": 49000,
-            "salePrice": 44100
+            "salePrice": 44100,
+            "isbn": "9788951162824"
           },
           {
             "label": "중합본/PU/무지퍼/블루블랙",
@@ -3947,7 +4326,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=54238&cate_no=1353&display_group=1",
             "itemCode": "P000DCGC000A",
             "originalPrice": 42500,
-            "salePrice": 38250
+            "salePrice": 38250,
+            "isbn": "9788951162787"
           },
           {
             "label": "중합본/PU/무지퍼/다크브라운",
@@ -3955,7 +4335,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=54239&cate_no=1353&display_group=1",
             "itemCode": "P000DCGD000A",
             "originalPrice": 42500,
-            "salePrice": 38250
+            "salePrice": 38250,
+            "isbn": "9788951162794"
           }
         ]
       },
@@ -3971,7 +4352,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=47031&cate_no=1408&display_group=1",
             "itemCode": "P000CROX000A",
             "originalPrice": 59000,
-            "salePrice": 53100
+            "salePrice": 53100,
+            "isbn": "9788951162718"
           },
           {
             "label": "소합본/천연/지퍼/버건디",
@@ -3979,7 +4361,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=47032&cate_no=1408&display_group=1",
             "itemCode": "P000CROY000A",
             "originalPrice": 59000,
-            "salePrice": 53100
+            "salePrice": 53100,
+            "isbn": "9788951162725"
           },
           {
             "label": "소합본/천연/지퍼/크림",
@@ -3987,7 +4370,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=47033&cate_no=1408&display_group=1",
             "itemCode": "P000CROZ000A",
             "originalPrice": 59000,
-            "salePrice": 53100
+            "salePrice": 53100,
+            "isbn": "9788951162756"
           },
           {
             "label": "소합본/PU/지퍼/라벤더",
@@ -3995,7 +4379,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=47034&cate_no=1408&display_group=1",
             "itemCode": "P000CRPA000A",
             "originalPrice": 47000,
-            "salePrice": 42300
+            "salePrice": 42300,
+            "isbn": "9788951162732"
           },
           {
             "label": "소합본/PU/지퍼/인디고블루",
@@ -4003,7 +4388,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=47030&cate_no=1408&display_group=1",
             "itemCode": "P000CROW000A",
             "originalPrice": 47000,
-            "salePrice": 42300
+            "salePrice": 42300,
+            "isbn": "9788951162749"
           }
         ]
       },
@@ -4019,23 +4405,26 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=46924&cate_no=1408&display_group=1",
             "itemCode": "P000CRKU000A",
             "originalPrice": 53000,
-            "salePrice": 47700
+            "salePrice": 47700,
+            "isbn": "9788951162763"
           },
           {
             "label": "소합본/천연/지펴/블루스카이",
             "img": "https://chhouse.kr/web/product/big/202404/e9e541dab8d02b9ba89fa5828bd191b2.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=39850&cate_no=1408&display_group=1",
             "itemCode": "P000CGYS000A",
-            "originalPrice": 53000,
-            "salePrice": 47700
+            "originalPrice": 59000,
+            "salePrice": 53100,
+            "isbn": "9788951161636"
           },
           {
             "label": "소합본/천연/지펴/블루블랙",
             "img": "https://chhouse.kr/web/product/big/202404/1a54046cc98c69b09e9dda0e5ed6de82.jpg",
             "url": "https://chhouse.kr/product/detail.html?product_no=39851&cate_no=1408&display_group=1",
             "itemCode": "P000CGYT000A",
-            "originalPrice": 53000,
-            "salePrice": 47700
+            "originalPrice": 59000,
+            "salePrice": 53100,
+            "isbn": "9788951161643"
           },
           {
             "label": "소합본/PU/지퍼/트윙클골드",
@@ -4043,7 +4432,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=44077&cate_no=1408&display_group=1",
             "itemCode": "P000CNFH000A",
             "originalPrice": 37000,
-            "salePrice": 33300
+            "salePrice": 33300,
+            "isbn": "9788951161612"
           }
         ]
       }
@@ -4064,7 +4454,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=42829&cate_no=1393&display_group=1",
             "itemCode": "P000CLJH000A",
             "originalPrice": 40000,
-            "salePrice": 36000
+            "salePrice": 36000,
+            "isbn": "9788953142619"
           },
           {
             "label": "중합본/PU/지퍼/진갈색",
@@ -4072,7 +4463,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=42828&cate_no=1393&display_group=1",
             "itemCode": "P000CLJG000A",
             "originalPrice": 40000,
-            "salePrice": 36000
+            "salePrice": 36000,
+            "isbn": "9788953142626"
           },
           {
             "label": "중합본/PU/지퍼/진청색",
@@ -4080,7 +4472,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=42830&cate_no=1393&display_group=1",
             "itemCode": "P000CLJI000A",
             "originalPrice": 40000,
-            "salePrice": 36000
+            "salePrice": 36000,
+            "isbn": "9788953142602"
           }
         ]
       },
@@ -4096,7 +4489,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=56538&cate_no=1452&display_group=1",
             "itemCode": "P000DFQO000A",
             "originalPrice": 32000,
-            "salePrice": 28800
+            "salePrice": 28800,
+            "isbn": "9788953151871"
           },
           {
             "label": "특미니합본/PU/지퍼/네이비",
@@ -4104,7 +4498,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=56537&cate_no=1452&display_group=1",
             "itemCode": "P000DFQN000A",
             "originalPrice": 32000,
-            "salePrice": 28800
+            "salePrice": 28800,
+            "isbn": "9788953151857"
           },
           {
             "label": "특미니합본/PU/지퍼/베이지",
@@ -4112,7 +4507,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=56540&cate_no=1452&display_group=1",
             "itemCode": "P000DFQQ000A",
             "originalPrice": 32000,
-            "salePrice": 28800
+            "salePrice": 28800,
+            "isbn": "9788953151864"
           },
           {
             "label": "특미니합본/PU/지퍼/민트블루",
@@ -4120,7 +4516,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=56539&cate_no=1452&display_group=1",
             "itemCode": "P000DFQP000A",
             "originalPrice": 32000,
-            "salePrice": 28800
+            "salePrice": 28800,
+            "isbn": "9788953151888"
           }
         ]
       },
@@ -4136,7 +4533,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=56767&cate_no=1392&display_group=1",
             "itemCode": "P000DFZJ000A",
             "originalPrice": 30000,
-            "salePrice": 27000
+            "salePrice": 27000,
+            "isbn": "9788953151918"
           },
           {
             "label": "초미니합본/PU/밴드형/로즈핑크",
@@ -4144,7 +4542,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=56766&cate_no=1392&display_group=1",
             "itemCode": "P000DFZI000A",
             "originalPrice": 30000,
-            "salePrice": 27000
+            "salePrice": 27000,
+            "isbn": "9788953151925"
           },
           {
             "label": "초미니합본/PU/밴드형/라이트네이비",
@@ -4152,7 +4551,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=56765&cate_no=1392&display_group=1",
             "itemCode": "P000DFZH000A",
             "originalPrice": 30000,
-            "salePrice": 27000
+            "salePrice": 27000,
+            "isbn": "9788953151895"
           },
           {
             "label": "초미니합본/PU/밴드형/다크그레이",
@@ -4160,7 +4560,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=56764&cate_no=1392&display_group=1",
             "itemCode": "P000DFZG000A",
             "originalPrice": 30000,
-            "salePrice": 27000
+            "salePrice": 27000,
+            "isbn": "9788953151901"
           }
         ]
       },
@@ -4176,7 +4577,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=43493&cate_no=1414&display_group=1",
             "itemCode": "P000CMIV000A",
             "originalPrice": 86000,
-            "salePrice": 77400
+            "salePrice": 77400,
+            "isbn": "9788953142640"
           },
           {
             "label": "특대합본/천연/지퍼/다크초코",
@@ -4184,7 +4586,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=43494&cate_no=1414&display_group=1",
             "itemCode": "P000CMIW000A",
             "originalPrice": 86000,
-            "salePrice": 77400
+            "salePrice": 77400,
+            "isbn": "9788953142633"
           },
           {
             "label": "특대합본/천연/지퍼/다크블루",
@@ -4192,7 +4595,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=43495&cate_no=1414&display_group=1",
             "itemCode": "P000CMIX000A",
             "originalPrice": 86000,
-            "salePrice": 77400
+            "salePrice": 77400,
+            "isbn": "9788953142657"
           },
           {
             "label": "특대합본/천연/무지퍼/다크초코",
@@ -4200,7 +4604,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=46696&cate_no=1414&display_group=1",
             "itemCode": "P000CRCA000A",
             "originalPrice": 65000,
-            "salePrice": 58500
+            "salePrice": 58500,
+            "isbn": "9788953144767"
           },
           {
             "label": "특대합본/천연/무지퍼/다크블루",
@@ -4208,7 +4613,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=46697&cate_no=1414&display_group=1",
             "itemCode": "P000CRCB000A",
             "originalPrice": 65000,
-            "salePrice": 58500
+            "salePrice": 58500,
+            "isbn": "9788953144774"
           },
           {
             "label": "특대합본/천연/무지퍼/다크레드",
@@ -4216,7 +4622,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=53172&cate_no=1414&display_group=1",
             "itemCode": "P000DARC000A",
             "originalPrice": 65000,
-            "salePrice": 58500
+            "salePrice": 58500,
+            "isbn": "9788953150461"
           }
         ]
       },
@@ -4232,7 +4639,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=44780&cate_no=1414&display_group=1",
             "itemCode": "P000COGI000A",
             "originalPrice": 76000,
-            "salePrice": 68400
+            "salePrice": 68400,
+            "isbn": "9788953138339"
           },
           {
             "label": "대합본/천연/지퍼/다크초코",
@@ -4240,7 +4648,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=44779&cate_no=1414&display_group=1",
             "itemCode": "P000COGH000A",
             "originalPrice": 76000,
-            "salePrice": 68400
+            "salePrice": 68400,
+            "isbn": "9788953138322"
           },
           {
             "label": "대합본/천연/지퍼/다크블루",
@@ -4248,7 +4657,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=44778&cate_no=1414&display_group=1",
             "itemCode": "P000COGG000A",
             "originalPrice": 76000,
-            "salePrice": 68400
+            "salePrice": 68400,
+            "isbn": "9788953142541"
           }
         ]
       },
@@ -4264,7 +4674,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=42831&cate_no=1393&display_group=1",
             "itemCode": "P000CLJJ000A",
             "originalPrice": 69000,
-            "salePrice": 62100
+            "salePrice": 62100,
+            "isbn": "9788953142589"
           },
           {
             "label": "중합본/천연/지퍼/다크블루",
@@ -4272,7 +4683,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=42832&cate_no=1393&display_group=1",
             "itemCode": "P000CLJK000A",
             "originalPrice": 69000,
-            "salePrice": 62100
+            "salePrice": 62100,
+            "isbn": "9788953142596"
           },
           {
             "label": "중합본/천연/지퍼/다크초코",
@@ -4280,7 +4692,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=42833&cate_no=1393&display_group=1",
             "itemCode": "P000CLJL000A",
             "originalPrice": 69000,
-            "salePrice": 62100
+            "salePrice": 62100,
+            "isbn": "9788953142572"
           },
           {
             "label": "중합본/PU/무지퍼/황갈색",
@@ -4288,7 +4701,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=46384&cate_no=1393&display_group=1",
             "itemCode": "P000CQQA000A",
             "originalPrice": 50000,
-            "salePrice": 45000
+            "salePrice": 45000,
+            "isbn": "9788953144088"
           },
           {
             "label": "중합본/PU/무지퍼/진갈색",
@@ -4296,7 +4710,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=46383&cate_no=1393&display_group=1",
             "itemCode": "P000CQPZ000A",
             "originalPrice": 50000,
-            "salePrice": 45000
+            "salePrice": 45000,
+            "isbn": "9788953144071"
           },
           {
             "label": "중합본/PU/무지퍼/연청색",
@@ -4304,7 +4719,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=55548&cate_no=1393&display_group=1",
             "itemCode": "P000DEEM000A",
             "originalPrice": 50000,
-            "salePrice": 45000
+            "salePrice": 45000,
+            "isbn": "9788953151314"
           }
         ]
       },
@@ -4320,7 +4736,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=46693&cate_no=1393&display_group=1",
             "itemCode": "P000CRBX000A",
             "originalPrice": 45000,
-            "salePrice": 40500
+            "salePrice": 40500,
+            "isbn": "9788953144101"
           },
           {
             "label": "중합본/PU/지퍼/브라운",
@@ -4328,7 +4745,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=46694&cate_no=1393&display_group=1",
             "itemCode": "P000CRBY000A",
             "originalPrice": 45000,
-            "salePrice": 40500
+            "salePrice": 40500,
+            "isbn": "9788953144125"
           },
           {
             "label": "중합본/PU/지퍼/와인",
@@ -4336,7 +4754,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=46692&cate_no=1393&display_group=1",
             "itemCode": "P000CRBW000A",
             "originalPrice": 45000,
-            "salePrice": 40500
+            "salePrice": 40500,
+            "isbn": "9788953144118"
           }
         ]
       },
@@ -4352,7 +4771,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=53956&cate_no=1394&display_group=1",
             "itemCode": "P000DBVG000A",
             "originalPrice": 62000,
-            "salePrice": 55800
+            "salePrice": 55800,
+            "isbn": "9788953150355"
           },
           {
             "label": "소합본/천연/지퍼/스틸블루",
@@ -4360,7 +4780,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=53959&cate_no=1394&display_group=1",
             "itemCode": "P000DBVJ000A",
             "originalPrice": 62000,
-            "salePrice": 55800
+            "salePrice": 55800,
+            "isbn": "9788953150362"
           },
           {
             "label": "소합본/천연/지퍼/다크블루",
@@ -4368,7 +4789,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=53957&cate_no=1394&display_group=1",
             "itemCode": "P000DBVH000A",
             "originalPrice": 62000,
-            "salePrice": 55800
+            "salePrice": 55800,
+            "isbn": "9788953150331"
           },
           {
             "label": "소합본/천연/지퍼/다크초코",
@@ -4376,7 +4798,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=53958&cate_no=1394&display_group=1",
             "itemCode": "P000DBVI000A",
             "originalPrice": 62000,
-            "salePrice": 55800
+            "salePrice": 55800,
+            "isbn": "9788953150348"
           },
           {
             "label": "소합본/PU/지퍼/스카이블루",
@@ -4384,7 +4807,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=53319&cate_no=1394&display_group=1",
             "itemCode": "P000DAWT000A",
             "originalPrice": 52000,
-            "salePrice": 46800
+            "salePrice": 46800,
+            "isbn": "9788953150393"
           },
           {
             "label": "소합본/PU/지퍼/민트그레이",
@@ -4392,7 +4816,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=53317&cate_no=1394&display_group=1",
             "itemCode": "P000DAWR000A",
             "originalPrice": 52000,
-            "salePrice": 46800
+            "salePrice": 46800,
+            "isbn": "9788953150409"
           },
           {
             "label": "소합본/PU/지퍼/피치핑크",
@@ -4400,7 +4825,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=53320&cate_no=1394&display_group=1",
             "itemCode": "P000DAWU000A",
             "originalPrice": 52000,
-            "salePrice": 46800
+            "salePrice": 46800,
+            "isbn": "9788953150386"
           },
           {
             "label": "소합본/PU/지퍼/베이지",
@@ -4408,7 +4834,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=53318&cate_no=1394&display_group=1",
             "itemCode": "P000DAWS000A",
             "originalPrice": 52000,
-            "salePrice": 46800
+            "salePrice": 46800,
+            "isbn": "9788953150379"
           }
         ]
       },
@@ -4424,7 +4851,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=43846&cate_no=1394&display_group=1",
             "itemCode": "P000CMWK000A",
             "originalPrice": 55000,
-            "salePrice": 49500
+            "salePrice": 49500,
+            "isbn": "9788953138698"
           },
           {
             "label": "소합본/천연/지퍼/선셋레드",
@@ -4432,7 +4860,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=43845&cate_no=1394&display_group=1",
             "itemCode": "P000CMWJ000A",
             "originalPrice": 55000,
-            "salePrice": 49500
+            "salePrice": 49500,
+            "isbn": "9788953138674"
           },
           {
             "label": "소합본/천연/지퍼/미드나잇블루",
@@ -4440,7 +4869,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=43844&cate_no=1394&display_group=1",
             "itemCode": "P000CMWI000A",
             "originalPrice": 55000,
-            "salePrice": 49500
+            "salePrice": 49500,
+            "isbn": "9788953138681"
           }
         ]
       },
@@ -4456,7 +4886,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=44404&cate_no=1418&display_group=1",
             "itemCode": "P000CNRW000A",
             "originalPrice": 39000,
-            "salePrice": 35100
+            "salePrice": 35100,
+            "isbn": "9788953142688"
           },
           {
             "label": "미니합본/PU/지퍼/퍼플",
@@ -4464,7 +4895,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=44403&cate_no=1418&display_group=1",
             "itemCode": "P000CNRV000A",
             "originalPrice": 39000,
-            "salePrice": 35100
+            "salePrice": 35100,
+            "isbn": "9788953142664"
           },
           {
             "label": "미니합본/PU/지퍼/레드",
@@ -4472,7 +4904,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=44405&cate_no=1418&display_group=1",
             "itemCode": "P000CNRX000A",
             "originalPrice": 39000,
-            "salePrice": 35100
+            "salePrice": 35100,
+            "isbn": "9788953142671"
           },
           {
             "label": "미니합본/PU/지퍼/네이비",
@@ -4480,7 +4913,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=44406&cate_no=1418&display_group=1",
             "itemCode": "P000CNRY000A",
             "originalPrice": 39000,
-            "salePrice": 35100
+            "salePrice": 35100,
+            "isbn": "9788953142695"
           }
         ]
       },
@@ -4496,7 +4930,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=44629&cate_no=1392&display_group=1",
             "itemCode": "P000COAN000A",
             "originalPrice": 34000,
-            "salePrice": 30600
+            "salePrice": 30600,
+            "isbn": "9788953138018"
           },
           {
             "label": "특초미니/PU/지퍼/진청색",
@@ -4504,7 +4939,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=44628&cate_no=1392&display_group=1",
             "itemCode": "P000COAM000A",
             "originalPrice": 34000,
-            "salePrice": 30600
+            "salePrice": 30600,
+            "isbn": "9788953138025"
           },
           {
             "label": "특초미니/PU/지퍼/펄청색",
@@ -4512,7 +4948,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=44627&cate_no=1392&display_group=1",
             "itemCode": "P000COAL000A",
             "originalPrice": 34000,
-            "salePrice": 30600
+            "salePrice": 30600,
+            "isbn": "9788953138049"
           },
           {
             "label": "특초미니/PU/지퍼/펄분홍",
@@ -4520,7 +4957,8 @@ export const bibleData = {
             "url": "https://chhouse.kr/product/detail.html?product_no=44626&cate_no=1392&display_group=1",
             "itemCode": "P000COAK000A",
             "originalPrice": 34000,
-            "salePrice": 30600
+            "salePrice": 30600,
+            "isbn": "9788953138032"
           }
         ]
       },
@@ -4535,17 +4973,19 @@ export const bibleData = {
             "label": "중단본/PU/무지퍼/호박색",
             "img": "https://chhouse.kr/web/product/big/202407/1af6d8e9fd2cf6bcd86b6aaf4c26c937.jpg",
             "url": "https://chhouse.kr/product/%ED%81%B0%EA%B8%80%EB%A1%9C%EC%9D%BD%EB%8A%94%EC%9A%B0%EB%A6%AC%EB%A7%90%EB%B9%84%EC%A0%84%EC%84%B1%EA%B2%BD-%EC%A4%91%EB%8B%A8%EB%B3%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EC%83%89%EC%9D%B8-%ED%98%B8%EB%B0%95%EC%83%89/35246/category/1439/display/1/",
-            "itemCode": "NEW_D_큰글로읽는우리말비전성경_0",
+            "itemCode": "P000CADQ000A",
             "originalPrice": 40000,
-            "salePrice": 36000
+            "salePrice": 36000,
+            "isbn": "9788953142169"
           },
           {
             "label": "중단본/PU/무지퍼/파란색",
             "img": "https://chhouse.kr/web/product/big/202409/6c9759aa5bd95e937936e8f98558e1f0.jpg",
             "url": "https://chhouse.kr/product/%ED%81%B0%EA%B8%80%EB%A1%9C%EC%9D%BD%EB%8A%94%EC%9A%B0%EB%A6%AC%EB%A7%90%EB%B9%84%EC%A0%84%EC%84%B1%EA%B2%BD-%EC%A4%91%EB%8B%A8%EB%B3%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EC%83%89%EC%9D%B8-%ED%8C%8C%EB%9E%80%EC%83%89/35245/category/1439/display/1/",
-            "itemCode": "NEW_D_큰글로읽는우리말비전성경_1",
+            "itemCode": "P000CADP000A",
             "originalPrice": 40000,
-            "salePrice": 36000
+            "salePrice": 36000,
+            "isbn": "9788953142152"
           }
         ]
       },
@@ -4560,33 +5000,37 @@ export const bibleData = {
             "label": "소단본/PU/무지퍼/네이비블루",
             "img": "https://chhouse.kr/web/product/big/202502/1cb2ab154ceb44a15b5abe106da7ca8b.jpg",
             "url": "https://chhouse.kr/product/%ED%81%B0-%EA%B8%80%EB%A1%9C-%EC%9D%BD%EB%8A%94-%EC%9A%B0%EB%A6%AC%EB%A7%90%EB%B9%84%EC%A0%84%EC%84%B1%EA%B2%BD-%EC%86%8C%EB%8B%A8%EB%B3%B8-%EC%83%89%EC%9D%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EB%84%A4%EC%9D%B4%EB%B9%84%EB%B8%94%EB%A3%A8/52415/category/1429/display/1/",
-            "itemCode": "NEW_D_큰글로읽는우리말비전성경_2",
+            "itemCode": "P000CZNZ000A",
             "originalPrice": 34000,
-            "salePrice": 30600
+            "salePrice": 30600,
+            "isbn": "9788953149762"
           },
           {
             "label": "소단본/PU/무지퍼/머드그레이",
             "img": "https://chhouse.kr/web/product/big/202502/f0ff846d534607fe3804ce6a177a0ca3.jpg",
             "url": "https://chhouse.kr/product/%ED%81%B0-%EA%B8%80%EB%A1%9C-%EC%9D%BD%EB%8A%94-%EC%9A%B0%EB%A6%AC%EB%A7%90%EB%B9%84%EC%A0%84%EC%84%B1%EA%B2%BD-%EC%86%8C%EB%8B%A8%EB%B3%B8-%EC%83%89%EC%9D%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EB%A8%B8%EB%93%9C%EA%B7%B8%EB%A0%88%EC%9D%B4/52414/category/1429/display/1/",
-            "itemCode": "NEW_D_큰글로읽는우리말비전성경_3",
+            "itemCode": "P000CZNY000A",
             "originalPrice": 34000,
-            "salePrice": 30600
+            "salePrice": 30600,
+            "isbn": "9788953149731"
           },
           {
             "label": "소단본/PU/무지퍼/스트로베리레드",
             "img": "https://chhouse.kr/web/product/big/202502/b2c61658b24aad57fdfbe73841407740.jpg",
             "url": "https://chhouse.kr/product/%ED%81%B0-%EA%B8%80%EB%A1%9C-%EC%9D%BD%EB%8A%94-%EC%9A%B0%EB%A6%AC%EB%A7%90%EB%B9%84%EC%A0%84%EC%84%B1%EA%B2%BD-%EC%86%8C%EB%8B%A8%EB%B3%B8-%EC%83%89%EC%9D%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EC%8A%A4%ED%8A%B8%EB%A1%9C%EB%B2%A0%EB%A6%AC%EB%A0%88%EB%93%9C/52416/category/1429/display/1/",
-            "itemCode": "NEW_D_큰글로읽는우리말비전성경_4",
+            "itemCode": "P000CZOA000A",
             "originalPrice": 34000,
-            "salePrice": 30600
+            "salePrice": 30600,
+            "isbn": "9788953149748"
           },
           {
             "label": "소단본/PU/무지퍼/올리브그린",
             "img": "https://chhouse.kr/web/product/big/202502/5d5d335b4adf2eae07aee27d8e8e98f7.jpg",
             "url": "https://chhouse.kr/product/%ED%81%B0-%EA%B8%80%EB%A1%9C-%EC%9D%BD%EB%8A%94-%EC%9A%B0%EB%A6%AC%EB%A7%90%EB%B9%84%EC%A0%84%EC%84%B1%EA%B2%BD-%EC%86%8C%EB%8B%A8%EB%B3%B8-%EC%83%89%EC%9D%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EC%98%AC%EB%A6%AC%EB%B8%8C%EA%B7%B8%EB%A6%B0/52417/category/1429/display/1/",
-            "itemCode": "NEW_D_큰글로읽는우리말비전성경_5",
+            "itemCode": "P000CZOB000A",
             "originalPrice": 34000,
-            "salePrice": 30600
+            "salePrice": 30600,
+            "isbn": "9788953149755"
           }
         ]
       },
@@ -4601,49 +5045,55 @@ export const bibleData = {
             "label": "중합본/PU/무지퍼/네이비",
             "img": "https://chhouse.kr/web/product/big/202605/b8432d61583748bde4e4450fe7fd875f.jpg",
             "url": "https://chhouse.kr/product/%EB%91%90%EB%9E%80%EB%85%B8-%EC%9A%B0%EB%A6%AC%EB%A7%90%EC%84%B1%EA%B2%BD-%EC%83%88%EC%B0%AC%EC%86%A1%EA%B0%80-%EC%8A%AC%EB%A6%BC-%EC%A4%91%ED%95%A9%EB%B3%B8-%EC%83%89%EC%9D%B8-%EC%A7%80%ED%8D%BC-%EB%84%A4%EC%9D%B4%EB%B9%84/57649/category/1439/display/1/",
-            "itemCode": "NEW_D_우리말성경 슬림_0",
+            "itemCode": "P000DHHH000A",
             "originalPrice": 45000,
-            "salePrice": 40500
+            "salePrice": 40500,
+            "isbn": "9788953152830"
           },
           {
             "label": "중단본/PU/무지퍼/애쉬브라운",
             "img": "https://chhouse.kr/web/product/big/202605/3452c4a09b654063f9f8569dde7b2dce.jpg",
             "url": "https://chhouse.kr/product/%EB%91%90%EB%9E%80%EB%85%B8-%EC%9A%B0%EB%A6%AC%EB%A7%90%EC%84%B1%EA%B2%BD-%EC%83%88%EC%B0%AC%EC%86%A1%EA%B0%80-%EC%8A%AC%EB%A6%BC-%EC%A4%91%ED%95%A9%EB%B3%B8-%EC%83%89%EC%9D%B8-%EC%A7%80%ED%8D%BC-%EC%95%A0%EC%89%AC%EB%B8%8C%EB%9D%BC%EC%9A%B4/57650/category/1439/display/1/",
-            "itemCode": "NEW_D_우리말성경 슬림_1",
+            "itemCode": "P000DHHI000A",
             "originalPrice": 45000,
-            "salePrice": 40500
+            "salePrice": 40500,
+            "isbn": "9788953152854"
           },
           {
             "label": "중단본/PU/무지퍼/네이비",
             "img": "https://chhouse.kr/web/product/big/202501/537e11a038b8d7186444bd2b5bc08484.jpg",
             "url": "https://chhouse.kr/product/%EB%91%90%EB%9E%80%EB%85%B8-%EC%9A%B0%EB%A6%AC%EB%A7%90%EC%84%B1%EA%B2%BD-%EC%8A%AC%EB%A6%BC-%EC%A4%91%EB%8B%A8%EB%B3%B8-%EC%83%89%EC%9D%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EB%84%A4%EC%9D%B4%EB%B9%84/52260/category/1439/display/1/",
-            "itemCode": "NEW_D_우리말성경 슬림_2",
+            "itemCode": "P000CZIA000A",
             "originalPrice": 32000,
-            "salePrice": 28800
+            "salePrice": 28800,
+            "isbn": "9788953149441"
           },
           {
             "label": "중단본/PU/무지퍼/다크그레이",
             "img": "https://chhouse.kr/web/product/big/202501/15ca9e628a08744f765c7679c5c812e0.jpg",
             "url": "https://chhouse.kr/product/%EB%91%90%EB%9E%80%EB%85%B8-%EC%9A%B0%EB%A6%AC%EB%A7%90%EC%84%B1%EA%B2%BD-%EC%8A%AC%EB%A6%BC-%EC%A4%91%EB%8B%A8%EB%B3%B8-%EC%83%89%EC%9D%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EB%8B%A4%ED%81%AC%EA%B7%B8%EB%A0%88%EC%9D%B4/52261/category/1439/display/1/",
-            "itemCode": "NEW_D_우리말성경 슬림_3",
+            "itemCode": "P000CZIB000A",
             "originalPrice": 32000,
-            "salePrice": 28800
+            "salePrice": 28800,
+            "isbn": "9788953149458"
           },
           {
             "label": "중단본/PU/무지퍼/애쉬브라운",
             "img": "https://chhouse.kr/web/product/big/202501/99c329e155f1de576b82803c84d6571d.jpg",
             "url": "https://chhouse.kr/product/%EB%91%90%EB%9E%80%EB%85%B8-%EC%9A%B0%EB%A6%AC%EB%A7%90%EC%84%B1%EA%B2%BD-%EC%8A%AC%EB%A6%BC-%EC%A4%91%EB%8B%A8%EB%B3%B8-%EC%83%89%EC%9D%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EC%95%A0%EC%89%AC%EB%B8%8C%EB%9D%BC%EC%9A%B4/52263/category/1439/display/1/",
-            "itemCode": "NEW_D_우리말성경 슬림_4",
+            "itemCode": "P000CZID000A",
             "originalPrice": 32000,
-            "salePrice": 28800
+            "salePrice": 28800,
+            "isbn": "9788953149465"
           },
           {
             "label": "중단본/PU/무지퍼/바이올렛",
             "img": "https://chhouse.kr/web/product/big/202501/1d6c9b69524fb7168aa8e30f2e5d047a.jpg",
             "url": "https://chhouse.kr/product/%EB%91%90%EB%9E%80%EB%85%B8-%EC%9A%B0%EB%A6%AC%EB%A7%90%EC%84%B1%EA%B2%BD-%EC%8A%AC%EB%A6%BC-%EC%A4%91%EB%8B%A8%EB%B3%B8-%EC%83%89%EC%9D%B8-%EB%AC%B4%EC%A7%80%ED%8D%BC-%EB%B0%94%EC%9D%B4%EC%98%AC%EB%A0%9B/52262/category/1439/display/1/",
-            "itemCode": "NEW_D_우리말성경 슬림_5",
+            "itemCode": "P000CZIC000A",
             "originalPrice": 32000,
-            "salePrice": 28800
+            "salePrice": 28800,
+            "isbn": "9788953149472"
           }
         ]
       },
@@ -4658,25 +5108,28 @@ export const bibleData = {
             "label": "중단본/페이퍼백/레드베이지",
             "img": "https://chhouse.kr/web/product/big/202407/78ac97bb70bbd0847942724206c7e271.jpg",
             "url": "https://chhouse.kr/product/%EB%91%90%EB%9E%80%EB%85%B8-%EC%9A%B0%EB%A6%AC%EB%A7%90%EC%84%B1%EA%B2%BD-%ED%8E%98%EC%9D%B4%ED%8D%BC%EB%B0%B1-dkv2406-%EC%A4%91%EB%8B%A8%EB%B3%B8-%EB%AC%B4%EC%83%89%EC%9D%B8-%EB%A0%88%EB%93%9C%EB%B2%A0%EC%9D%B4%EC%A7%80/49036/category/1439/display/1/",
-            "itemCode": "NEW_D_더바이블 우리말성경_0",
+            "itemCode": "P000CUOA000A",
             "originalPrice": 26000,
-            "salePrice": 23400
+            "salePrice": 23400,
+            "isbn": "9788953148673"
           },
           {
             "label": "중단본/페이퍼백/블루화이트",
             "img": "https://chhouse.kr/web/product/big/202407/80ae57130692d1780ca71da6390885cf.jpg",
             "url": "https://chhouse.kr/product/%EB%91%90%EB%9E%80%EB%85%B8-%EC%9A%B0%EB%A6%AC%EB%A7%90%EC%84%B1%EA%B2%BD-%ED%8E%98%EC%9D%B4%ED%8D%BC%EB%B0%B1-dkv2406-%EC%A4%91%EB%8B%A8%EB%B3%B8-%EB%AC%B4%EC%83%89%EC%9D%B8-%EB%B8%94%EB%A3%A8%ED%99%94%EC%9D%B4%ED%8A%B8/49037/category/1439/display/1/",
-            "itemCode": "NEW_D_더바이블 우리말성경_1",
+            "itemCode": "P000CUOB000A",
             "originalPrice": 26000,
-            "salePrice": 23400
+            "salePrice": 23400,
+            "isbn": "9788953148666"
           },
           {
             "label": "중단본/페이퍼백/실버그린",
             "img": "https://chhouse.kr/web/product/big/202407/e0cfccbafdc3bbb75b5b0c3afa1ebdd8.jpg",
             "url": "https://chhouse.kr/product/%EB%91%90%EB%9E%80%EB%85%B8-%EC%9A%B0%EB%A6%AC%EB%A7%90%EC%84%B1%EA%B2%BD-%ED%8E%98%EC%9D%B4%ED%8D%BC%EB%B0%B1-dkv2406-%EC%A4%91%EB%8B%A8%EB%B3%B8-%EB%AC%B4%EC%83%89%EC%9D%B8-%EC%8B%A4%EB%B2%84%EA%B7%B8%EB%A6%B0/49038/category/1439/display/1/",
-            "itemCode": "NEW_D_더바이블 우리말성경_2",
+            "itemCode": "P000CUOC000A",
             "originalPrice": 26000,
-            "salePrice": 23400
+            "salePrice": 23400,
+            "isbn": "9788953148680"
           }
         ]
       }

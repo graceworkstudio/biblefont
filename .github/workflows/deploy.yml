@@ -1,9 +1,9 @@
 name: Deploy to Cafe24 FTP
 
+# 2026-11-25: 푸시할 때마다 운영 폴더를 덮어쓰지 않도록 수동 실행 전용으로 바꿈.
+# 운영 반영은 카페24 파일업로더로 직접 올린다.
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
   web-deploy:

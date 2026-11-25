@@ -207,14 +207,14 @@ input[type="range"]::-moz-range-thumb {
     position: absolute;
     background-color: #f97316;
 }
-.cross-tl::before { top: -15px; left: -1px; width: 3px; height: 15px; }
-.cross-tl::after { top: -1px; left: -15px; width: 15px; height: 3px; }
-.cross-tr::before { top: -15px; right: -1px; width: 3px; height: 15px; }
-.cross-tr::after { top: -1px; right: -15px; width: 15px; height: 3px; }
-.cross-bl::before { bottom: -15px; left: -1px; width: 3px; height: 15px; }
-.cross-bl::after { bottom: -1px; left: -15px; width: 15px; height: 3px; }
-.cross-br::before { bottom: -15px; right: -1px; width: 3px; height: 15px; }
-.cross-br::after { bottom: -1px; right: -15px; width: 15px; height: 3px; }
+.cross-tl::before { top: -15px; left: -1px; width: 3px; height: 25px; }
+.cross-tl::after { top: -1px; left: -15px; width: 25px; height: 3px; }
+.cross-tr::before { top: -15px; right: -1px; width: 3px; height: 25px; }
+.cross-tr::after { top: -1px; right: -15px; width: 25px; height: 3px; }
+.cross-bl::before { bottom: -15px; left: -1px; width: 3px; height: 25px; }
+.cross-bl::after { bottom: -1px; left: -15px; width: 25px; height: 3px; }
+.cross-br::before { bottom: -15px; right: -1px; width: 3px; height: 25px; }
+.cross-br::after { bottom: -1px; right: -15px; width: 25px; height: 3px; }
 
 /* Orange Gauge Slider Styling */
 input[type="range"].orange-slider {

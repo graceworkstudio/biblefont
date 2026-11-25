@@ -12,7 +12,7 @@ try:
         js_content = response.read().decode('utf-8')
     
     # Find setCommonInput
-    idx = js_content.find("setCommonInput:")
+    idx = js_content.find("setCommonInput")
     if idx != -1:
         print("Found setCommonInput:")
         print(js_content[idx:idx+1500])

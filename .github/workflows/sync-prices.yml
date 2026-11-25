@@ -1,0 +1,56 @@
+name: Sync prices from Cafe24
+
+# 쇼핑몰 상품 페이지를 읽어 가격·품절 상태 파일(status.json)을 live-data 브랜치에 올린다.
+# main 브랜치는 건드리지 않으므로 FTP 배포 워크플로는 실행되지 않는다.
+
+on:
+  schedule:
+    - cron: '7 21 * * *' # 하루 한 번, 한국시간 오전 6시 7분
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-prices
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Prepare live-data branch
+        run: |
+          if git ls-remote --exit-code --heads origin live-data >/dev/null 2>&1; then
+            git fetch --depth 1 origin live-data
+            git worktree add _data origin/live-data
+          else
+            git worktree add --detach _data
+            cd _data
+            git checkout --orphan live-data
+            git rm -rfq .
+          fi
+
+      - name: Sync
+        run: node scripts/sync-cafe24.mjs --out _data
+
+      - name: Publish
+        run: |
+          cd _data
+          git add status.json missing.json isbn-cache.json
+          if git diff --cached --quiet; then
+            echo "변화 없음"
+            exit 0
+          fi
+          git -c user.name="biblezoom-sync" -c user.email="actions@users.noreply.github.com" \
+            commit -q -m "sync: $(date -u '+%Y-%m-%d %H:%M') UTC"
+          git push origin HEAD:live-data
