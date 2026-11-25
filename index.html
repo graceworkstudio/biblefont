@@ -130,23 +130,6 @@
 
 
     <script type="module" src="/src/main.jsx"></script>
-    <script>
-      // Service Worker 등록
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/sw.js').then((reg) => {
-            // 새 버전 감지 시 자동 업데이트
-            reg.addEventListener('updatefound', () => {
-              const newWorker = reg.installing;
-              newWorker.addEventListener('statechange', () => {
-                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                  newWorker.postMessage({ type: 'SKIP_WAITING' });
-                }
-              });
-            });
-          });
-        });
-      }
-    </script>
+    <!-- 서비스워커 등록 제거(2026-11-25): /sw.js 가 쇼핑몰 루트에 없어 404 오류만 났고, 만약 루트에 두면 쇼핑몰 전체(장바구니·주문 화면 포함)를 가로채게 되어 위험함 -->
   </body>
 </html>
