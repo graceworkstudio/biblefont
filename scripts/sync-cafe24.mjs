@@ -150,19 +150,26 @@ async function main() {
   // 2) 쇼핑몰 성경 카테고리 전체
   const { listed, rootTotal } = await fetchListing();
   const listedNos = Object.keys(listed);
-  if (listedNos.length < 100 || (rootTotal && listedNos.length < rootTotal * 0.9)) {
+  console.log(`성경 카테고리 목록: ${listedNos.length}개 읽음 (사이트 표시 전체 ${rootTotal})`);
+  if (listedNos.length < 100 || (rootTotal && listedNos.length < rootTotal * 0.97)) {
     throw new Error(`성경 카테고리 목록을 ${listedNos.length}개만 읽었습니다(전체 ${rootTotal}). 반영하지 않습니다.`);
   }
 
   // 3) 바이블줌에 없는 상품: ISBN만 알면 되므로 캐시
   const bzSet = new Set(bzNos);
   const others = listedNos.filter((no) => !bzSet.has(no));
-  await pool(others.filter((no) => !isbnCache[no]), async (no) => {
+  const otherErrors = [];
+  const todoOthers = others.filter((no) => !isbnCache[no]);
+  await pool(todoOthers, async (no) => {
     try {
       const p = await fetchProduct(no);
       if (!p.gone) isbnCache[no] = { isbn: p.isbn, title: p.title, price: p.price, retail: p.retail, size: p.size, pages: p.pages, publisher: p.publisher };
-    } catch { /* 다음 실행에서 다시 시도 */ }
+    } catch (e) { otherErrors.push(`${no}: ${e.message}`); } // 다음 실행에서 다시 시도
   });
+  if (otherErrors.length) console.log(`- 바이블줌에 없는 상품 ${todoOthers.length}개 중 ${otherErrors.length}개 읽기 실패 (예: ${otherErrors.slice(0, 3).join(' / ')})`);
+  if (todoOthers.length > 20 && otherErrors.length > todoOthers.length * 0.3) {
+    throw new Error(`바이블줌에 없는 상품 ${todoOthers.length}개 중 ${otherErrors.length}개를 읽지 못해 ISBN 연결을 믿을 수 없습니다. 반영하지 않습니다.`);
+  }
   for (const no of Object.keys(isbnCache)) if (!listed[no]) delete isbnCache[no]; // 목록에서 사라진 상품은 캐시에서도 제거
 
   // 4) ISBN 추적: 같은 ISBN의 다른 판매 중 상품이 있고
