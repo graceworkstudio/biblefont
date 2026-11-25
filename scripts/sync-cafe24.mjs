@@ -22,7 +22,11 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SHOP = 'https://chhouse.kr';
 const BIBLE_ROOT_CATE = 44; // 쇼핑몰 「성경」 최상위 카테고리
 const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
-const CONCURRENCY = 5;
+const CONCURRENCY = 3;
+const MIN_GAP_MS = 250; // 쇼핑몰에 부담을 주지 않도록 요청 사이 최소 간격(전체 합산)
+let nextSlot = 0;
+const throttle = async () => { const now = Date.now(); const at = Math.max(now, nextSlot); nextSlot = at + MIN_GAP_MS; if (at > now) await new Promise((r) => setTimeout(r, at - now)); };
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 const args = process.argv.slice(2);
 const outDir = path.resolve(args.includes('--out') ? args[args.indexOf('--out') + 1] : path.join(ROOT, 'sync-out'));
@@ -42,6 +46,7 @@ async function get(url, tries = 3) {
   let lastErr;
   for (let i = 0; i < tries; i++) {
     try {
+      await throttle();
       const res = await fetch(url, { headers: { 'User-Agent': UA, 'Accept-Language': 'ko-KR,ko;q=0.9' } });
       if (res.status === 404) return { status: 404, html: '' };
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -63,7 +68,12 @@ async function pool(items, worker) {
 
 // 상품 상세 페이지 한 장 → 필요한 값만
 async function fetchProduct(no) {
-  const { status, html } = await get(`${SHOP}/product/detail.html?product_no=${no}`);
+  let status, html;
+  for (let attempt = 1; attempt <= 4; attempt++) {
+    ({ status, html } = await get(`${SHOP}/product/detail.html?product_no=${no}`));
+    if (status === 404 || /product_price = '\d+'/.test(html)) break;
+    await sleep(4000 * attempt); // 상품 페이지가 아닌 응답(과속 제한 등)이면 점점 길게 쉬었다가 다시
+  }
   if (status === 404) return { gone: true };
   const g = (re) => { const m = html.match(re); return m ? m[1] : null; };
   const price = num(g(/product_price = '(\d+)'/));
@@ -102,7 +112,12 @@ async function fetchListing() {
   await pool(targets, async (c) => {
     const got = new Set();
     for (let p = 1; p <= 200; p++) {
-      const { html } = await get(`${SHOP}/product/list.html?cate_no=${c.cate_no}&page=${p}`);
+      let html = '';
+      for (let attempt = 1; attempt <= 4; attempt++) {
+        ({ html } = await get(`${SHOP}/product/list.html?cate_no=${c.cate_no}&page=${p}`));
+        if (/prdCount/.test(html)) break;
+        await sleep(4000 * attempt);
+      }
       const total = num((html.match(/prdCount">[^<]*<strong>([\d,]+)/) || [])[1]) || 0;
       if (c.cate_no === BIBLE_ROOT_CATE) rootTotal = total;
       const before = got.size;
